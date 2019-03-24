@@ -1,8 +1,7 @@
 # Site settings
 title: Hi -Jimmy
 description: "My personal site."
-#url: "/Pulchritude/"
-url: "/"
+url: "https://jimmyjhickey.github.io"
 
 author:
   name: "Jimmy Hickey"
@@ -10,8 +9,7 @@ author:
   url: "https://jimmyjhickey.github.io/"
 
 # Build settings
-#baseurl: /Pulchritude # Change this to your relative path (ex: /blog/), or leave just a /
-baseurl: / # Change this to your relative path (ex: /blog/), or leave just a /
+baseurl: "/" # Change this to your relative path (ex: /blog/), or leave just a /
 
 markdown: kramdown
 source: .
