@@ -3,7 +3,7 @@ layout: page
 title: About Me
 ---
 
-Hi, I'm Jimmy Hickey. I'm a programmer and aspiring statistician. You can learn more about my professional background in the resume section and more about me as a person below.
+Hi, I'm Jimmy Hickey. I'm a programmer and aspiring statistician. You can learn more about my professional background in the resumé section and more about me as a person below.
 
 ### Hobbies
 * Programming
