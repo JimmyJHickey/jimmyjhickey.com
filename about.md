@@ -3,9 +3,17 @@ layout: page
 title: About Me
 ---
 
-Hi, I'm Jimmy Hickey. I'm a programmer and aspiring statistician. You can learn more about my professional background in the resumé section and more about me as a person below.
+# About Me
 
-### Hobbies
+Hi, I'm Jimmy Hickey. I'm a programmer and aspiring statistician. You can learn more about my professional background 
+in the resumé section and more about me as a person below.
+
+<!--
+* Do not remove this line (it will not be displayed)
+{:toc}
+-->
+
+## Hobbies
 * Programming
 * Knitting
 * Sewing
@@ -13,30 +21,32 @@ Hi, I'm Jimmy Hickey. I'm a programmer and aspiring statistician. You can learn 
 * Exercising
 * Video Games
 
-
-### TV Shows I Like
-* It's Always Sunny In Philadelphia
-* Modern Family
-* M*A*S*H
-* Seinfeld
+## TV Shows I Like
 * Black Mirror
 * Brooklyn Nine-Nine
+* It's Always Sunny In Philadelphia
+* M\*A\*S\*H
+* Modern Family
+* Seinfeld
+* The Office
 
-### Musicians I like
-* Vampire Weekend
-* Father John Misty
+
+## Musicians I like
 * Billy Joel
+* Father John Misty
+* Vampire Weekend
+* Vulfpeck
 * Watsky
 
-### Podcasts I like
-* The Omnibus Project
-* Stuff You Should Know
-* This American Life
+## Podcasts I like
 * Monday Morning Podcast
 * Conan O'Brien Needs a Friend
+* Omnibus Project
+* Stuff You Should Know
+* This American Life
 
-### My more politically charged opinions
+## My more politically charged opinions
+* 0 based indexing > 1 based indexing
 * Dark theme > Light theme
 * Monospace > Variable-width
-* 0 based indexing > 1 based indexing
 * Oxford comma > No Oxford comma
