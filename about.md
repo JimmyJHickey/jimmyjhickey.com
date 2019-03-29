@@ -8,11 +8,6 @@ title: About Me
 Hi, I'm Jimmy Hickey. I'm a programmer and aspiring statistician. You can learn more about my professional background 
 in the resumé section and more about me as a person below.
 
-<!--
-* Do not remove this line (it will not be displayed)
-{:toc}
--->
-
 ## Hobbies
 * Programming
 * Knitting
@@ -33,6 +28,7 @@ in the resumé section and more about me as a person below.
 
 ## Musicians I like
 * Billy Joel
+* Chance the Rapper
 * Father John Misty
 * Vampire Weekend
 * Vulfpeck
