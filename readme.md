@@ -7,3 +7,5 @@ Hi there. This is my blog. It's built on the shoulders of giants. Thank you gian
 [Hosting with Git Pages](https://pages.github.com/)
 
 [Emerald Jekyll Theme](https://github.com/KingFelix/emerald)
+
+[Scroll Button](https://github.com/vfeskov/vanilla-back-to-top)
