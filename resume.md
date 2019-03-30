@@ -2,3 +2,142 @@
 layout: page
 title: Resumé
 ---
+
+<h1> Resumé </h1>
+
+You can have my one page resumé as a file <a href="/files/Jimmy_Hickey_Resume.pdf" target="_blank">here</a>. Otherwise you can scroll and view my extended work.
+
+* Do not remove this line (it will not be displayed)
+{:toc}
+
+## Skills 
+**Programming Languages**: Bash ⋅ Python ⋅ Java
+
+**Hardware Oriented Languages**: Arduino ⋅ Labview ⋅ Verilog
+
+**Math & Statistics**: Excel ⋅ JMP ⋅ LaTeX ⋅ Mathematica ⋅ R ⋅ Tableau
+
+**Bioinformatics**: Cromwell + WDL
+
+**Familiar**: Assembly ⋅ C ⋅ CSS ⋅ HTML ⋅ Jess ⋅ MySQL ⋅ Perl
+
+## Work Experience
+
+### Mayo Clinic
+**IT Programmer Analyst: Genomics Systems Unit**
+
+July 2018 -- Present
+
+### Digi International
+**Software Engineering Intern**
+
+May 2017 -- August 2017
+
+### Winona State University
+**Software Tester and Developer**
+
+August 2016 -- May 2018
+
+**Peer Tutor**
+
+July 2016 -- May 2018
+
+## Graduate
+TBD
+
+## Undergraduate
+
+### Winona State University
+
+Fall 2014 -- Spring 2018
+
+BS Computer Science
+
+BS Physics
+
+BA Mathematics
+
+Minor Statistics
+
+Minor Data Science
+
+4.0/4.0
+
+## Competitions and Talks
+
+### MUDAC 2018
+
+**1st place**
+
+<a href="/files/MUDAC.pdf" target="_blank">Selected Slides</a>
+
+The Midwestern Undergraduate Data Analytics Competition (MUDAC) was a 24 hour data analytics competition hosted at Winona State University on April 7-8 2018. We analyzed attrition of season ticket holders for the Minnesota Wild. We analyzed the data, made visualizations, and then presented to judges. Many of the slides cannot be posted to adhere to an NDA. My team included <a href="https://www.linkedin.com/in/bradley-erickson/" target="_blank">Bradley Erickson</a>, <a href="https://www.linkedin.com/in/bradly-hennes-64628a140/" target="_blank">Bradly Hennes</a>, and <a href="https://www.linkedin.com/in/uzmali/" target="_blank">Uzma Ghazanfar</a>. The Kaggle in class competition can be found <a href="https://www.kaggle.com/c/mudac2018" target="_blank">here</a>; we are Team 4 (nicknamed Bergen's Beauties) on the leaderboards.
+
+### Police Data Challenge
+
+**Best College Overall**
+
+<a href="/files/Police_ASA.pdf" target="_blank" >Slides</a>
+
+The Police Data Challenge was hosted by the American Statistics Association. We analyzed police call data from the city of Seattle. Using visualizations, we made analyzed trends in different types of crimes. We used these insights we made implementable recommendations for the Seattle Police Department. I worked with <a href="https://www.linkedin.com/in/kapilkhanal/" target="_blank">Kapil Khanal</a>.
+
+
+### MinneMUDAC 2017
+
+**Honorable Mention**
+
+<a href="/files/MinneMUDAC_Presentation.pdf" target="_blank" >Slides</a>
+
+In this competition we analyzed health care claims data. The goal was to predict future expenditures for patients with diabetes using past claims data and demographic information. My team included <a href="https://www.linkedin.com/in/william-diedrick-32690b14b/" target="_blank">Will Diedrick</a>, <a href="https://www.linkedin.com/in/akif-khan/" target="_blank">Akif Khan</a>, <a href="https://www.linkedin.com/in/kapilkhanal/" target="_blank">Kapil Khanal</a>, and <a href="https://www.linkedin.com/in/sean-wittenberg-8970a4137/" target="_blank">Sean Wittenberg</a>. You can find more information <a href="http://minneanalytics.org/more-than-60-teams-present-findings-at-minnemudac-2017/" target="_blank">here</a>.
+
+
+### SCUDEM II 2018
+
+<a href="/files/SCUDEM_Presentation.pdf" target="_blank">Slides</a>
+
+<a href="/files/ExecSummary.pdf" target="_blank">Executive Summary</a>
+
+The SIMIODE Challenge Using Differential Equations Modeling (SCUDEM) offered 3 modeling problems. We chose to answer question 2, modeling a predator and prey relationship. You can find more information about the Competition <a href="https://simiode.org/scudem/scudem-ii-2018-competition" target="_blank">here</a>.I worked on this project with <a href="https://gmancino.github.io" target="_blank">Gabe Mancino</a> and <a href="http://www.math.unl.edu/~nmeyer15/" target="_blank">Nick Meyer</a>.
+
+
+### Pi Mu Epsilon 2018
+
+<a href="/files/PME_Presentation.pdf" target="_blank" >Slides</a>
+
+Abstract: With the ever-increasing popularity of the Internet comes a deluge of publicly available data useful for providing insights on methods to better society. Data science involves the process of gathering, managing, analyzing, and communicating data. This presentation will explore each of these steps using mental health, medical, and police calls data. The ultimate goal of this process is to learn from the data and make implementable suggestions to improve society.
+
+
+### Mental Health Project
+
+<a href="https://public.tableau.com/views/UsingDatatoBetterUnderstandMentalHealth/Title?:embed=y&:display_count=yes" target="_blank" >See it online</a>
+
+I visualized some data about mental health, stress, and anxiety. The data came from IPUMS, the CDC, and PubMed Central. I used Tableau for visualization.
+
+## Awards
+### Winona State University
+* Outstanding Graduate in Computer Science
+* Outstanding Graduate in Physics
+* Outstanding Graduate in Mathematics and Statistics
+* Outstanding Student Leader
+
+## Extracurriculars
+### Winona State Women in Computer Science Club
+**Vice President, Treasurer, ACM-W Co-Chair**
+
+January 2018 -- May 2018
+
+Promote diversity in the field of computing and technology by planning activities and meetings with other students. Plan, manage, and host hands on workshops with guest speakers.
+
+### Dean's Advisory Council
+**Senior Physics Chair**
+
+August 2017 -- May 2018
+
+Advise dean on matters pertaining to students in the College of Science and Engineering. Participate in community and outreach activities such as student panels.
+
+### Physics Club
+**President**
+
+August 2016 -- May 2018
+
+Plan and coordinate weekly meetings, events, and club trips. Work closely with department to create projects and outreach events.
