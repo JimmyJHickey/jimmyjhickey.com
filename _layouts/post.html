@@ -3,7 +3,10 @@ layout: default
 ---
 <article id="post-page">
 	<h2>{{ page.title }}</h2>		
-	<time datetime="{{ page.date | date_to_xmlschema }}" class="by-line">{{ page.date | date_to_string }}</time>
+	<time datetime="{{ page.date | date:"%Y	 %m %d" }}" class="by-line">{{ page.date | date_to_string }}</time>
+
+	<blockquote>{{ page.description }}</blockquote>
+
 	<div class="content">
 
 		{{ content }}
