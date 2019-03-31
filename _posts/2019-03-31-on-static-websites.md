@@ -1,6 +1,7 @@
 ---
 layout: post
 title: On Static Websites
+description: An overview on static websites, their advantages, and how to use them.
 ---
 
 * Do not remove this line (it will not be displayed)
