@@ -1,8 +1,14 @@
 language: ruby
+
 before_script:
-- rm -rf _site
+ - chmod +x ./script/cibuild
+
+install:
+- gem install jekyll html-proofer
+
 script:
-- exec jekyll build
+ - jekyll build && htmlproofer ./_site
+
 branches:
  only:
  - master
