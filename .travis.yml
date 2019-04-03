@@ -4,7 +4,7 @@ before_script:
  - rm -rf ./_site
 
 install:
-- gem install jekyll html-proofer
+- gem install jekyll jekyll-paginate
 
 script:
  - jekyll build
