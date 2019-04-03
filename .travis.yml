@@ -4,5 +4,5 @@ before_script:
 script:
 - exec jekyll build
 branches:
-	only:
-	- master
+ only:
+ - master
