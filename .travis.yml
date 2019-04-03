@@ -1,0 +1,8 @@
+language: ruby
+before_script:
+- rm -rf _site
+script:
+- exec jekyll build
+branches:
+	only:
+	- master
