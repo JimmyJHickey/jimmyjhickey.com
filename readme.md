@@ -15,3 +15,5 @@ Hi there. This is my blog. It's built on the shoulders of giants. Thank you gian
 [Comments with Disqus](https://disqus.com/)
 
 [Builds with Travis CI](https://travis-ci.org/)
+
+[MathJax for math type](https://www.mathjax.org/)
