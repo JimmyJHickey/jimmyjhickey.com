@@ -1,8 +1,14 @@
 language: ruby
+
 before_script:
-- rm -rf _site
+ - rm -rf ./_site
+
+install:
+- gem install jekyll jekyll-paginate
+
 script:
-- exec jekyll build
+ - jekyll build
+
 branches:
-	only:
-	- master
+ only:
+ - master
