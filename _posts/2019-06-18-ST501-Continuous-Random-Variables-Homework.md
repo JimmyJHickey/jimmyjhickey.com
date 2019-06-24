@@ -2,7 +2,7 @@
 layout: post
 comments: false
 title: Example Problems on Continuous Random Variables
-description: ST501 Homework 4 Continuous Random Variables
+description: ST501 Homework 4 on Continuous Random Variables
 tags: ST501 Random-Variables Continuous Probability Examples Statistics
 ---
 
