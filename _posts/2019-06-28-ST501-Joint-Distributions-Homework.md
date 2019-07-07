@@ -2,7 +2,7 @@
 layout: post
 comments: false
 title: Example Problems on Joint Distributions
-description: ST501 Homework 5 on Joint Distributions
+description: ST501 Homework 6 on Joint Distributions
 tags: ST501 Random-Variables Joint Joint-Probability Distribution Examples Statistics
 ---
 

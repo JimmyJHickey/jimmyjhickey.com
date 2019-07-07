@@ -248,7 +248,7 @@ $$
 	\begin{align}
         F^{-1}_W(w) = w & = 1 - e^{-(y/\alpha)^\beta} \\
             1 -w & = e^{-(y/\alpha)^\beta} \\
-            \ln (1-x) & = -\Big( \frac{y}{\alpha\Big)^\beta \\
+            \ln (1-x) & = -\Big( \frac{y}{\alpha}\Big)^\beta \\
             y = \alpha \cdot ( -\ln(1-x))^{1/\beta}
 	\end{align}
 $$
