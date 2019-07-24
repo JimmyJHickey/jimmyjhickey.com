@@ -51,7 +51,7 @@ $$
 Thus, by definition, $\bar X \xrightarrow{p} \mu$.
 
 # 5.5
-**Using moment-generating functions, show that as $n\rightarrow \infty, \ p \rightarrow 0$, and $np\rightarrow \lambda$, the binomial distribution with parameters $n$ and $p$ tends to the Poission distribution.**
+**Using moment-generating functions, show that as $n\rightarrow \infty, \ p \rightarrow 0$, and $np\rightarrow \lambda$, the binomial distribution with parameters $n$ and $p$ tends to the Poisson distribution.**
 
 To show convergence in distribution with MGFs, we can use the definition: $Y_n \xrightarrow{d} Y$ if $\lim_{n\rightarrow \infty} M_{Y_n}(y) = M_Y(y)$.
 
@@ -75,7 +75,7 @@ $$
 	\end{align}
 $$
 
-Notice that this is the MGF of a Poission distribution. Thus, $Bin(n,p) \xrightarrow{d} Poi(\lambda)$ with $n\rightarrow \infty, \ p \rightarrow 0$, and $np\rightarrow \lambda$.
+Notice that this is the MGF of a Poisson distribution. Thus, $Bin(n,p) \xrightarrow{d} Poi(\lambda)$ with $n\rightarrow \infty, \ p \rightarrow 0$, and $np\rightarrow \lambda$.
 
 # 5.6
 **Using moment-generating functions, show that as $\alpha \rightarrow \infty$ the gamma distribution with parameters $\alpha$ and $\lambda$, properly standardized, tends to the standard normal distributions**
