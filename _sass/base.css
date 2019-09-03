@@ -1,0 +1,45 @@
+/*
+ * Emerald is a simple blog theme built for Jekyll.
+ */
+/*- Base reset -*/
+/* line 7, /Users/jimmy/git/jimmyjhickey.github.io/_sass/base.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 13, /Users/jimmy/git/jimmyjhickey.github.io/_sass/base.scss */
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, img {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+/*- Base color -*/
+/*- Base settings -*/
+/* line 32, /Users/jimmy/git/jimmyjhickey.github.io/_sass/base.scss */
+html {
+  background-color: #FFF;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #4682B4; }
+  @media (min-width: 940px) {
+    /* line 32, /Users/jimmy/git/jimmyjhickey.github.io/_sass/base.scss */
+    html {
+      font-size: 18px; } }
+
+/*- Link -*/
+/* line 44, /Users/jimmy/git/jimmyjhickey.github.io/_sass/base.scss */
+a {
+  color: #FFA07A;
+  text-decoration: none;
+  font-weight: 700; }
+  /* line 48, /Users/jimmy/git/jimmyjhickey.github.io/_sass/base.scss */
+  a:hover, a:focus {
+    color: #ff8e61; }
+
+/* line 54, /Users/jimmy/git/jimmyjhickey.github.io/_sass/base.scss */
+pre {
+  overflow: auto;
+  /* Scrollbar is displayed as it's needed */ }
+
+/*# sourceMappingURL=base.css.map */
