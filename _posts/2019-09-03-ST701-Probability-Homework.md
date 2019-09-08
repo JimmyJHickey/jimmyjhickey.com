@@ -118,7 +118,7 @@ No, $A$ and $B$ cannot be disjoint. Notice that $P(B) = 1 - P(B^C) = \frac{ 3 }{
 # 1.23
 **Two people each toss a fair coin $n$ times. Find the probability that they will toss the same number of heads. (Answer: $(\frac{ 1 }{ 4 })^n \cdot {2n \choose n}$ )**
 
-Notice that the process of flipping a coin is a binomial distribution with $n$ trials and a probability of success $1/2$. To find the number of times the two people match we can multiply their CDFs together:
+Notice that the process of flipping a coin is a binomial distribution with $n$ trials and a probability of success $1/2$. Notice that the outcome of each person is indepent of the other. Since we are looking for when they flip the same number of heads we are essentially looking for $P(X=k) \land P(Y=k)$ (where $X$ and $Y$ represent the outcomes of the first and second person respectively). Since these events are independent, we can multiply their CDFs together.
 
 $$
 	\begin{align}
