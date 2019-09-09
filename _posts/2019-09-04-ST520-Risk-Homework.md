@@ -244,27 +244,27 @@ Looking at the graph shows that 67.1187 is a minimum.
 We can now plug this back into our inequality to get the optimal number of case participants.
 $$
 	\begin{align}
-		67.1187 & \leq 400 - 4x_{case}\\
-		x_{case} & \leq 83.2203
+		x_case & = 400 - 4x_{case}\\
+		x_{case} & = 131.525
 	\end{align}
 $$
 
-Thus, the optimal number of cases and controls, given the budget constraint, are about 67.1187 and 83.2203, respectively.
+Thus, the optimal number of cases and controls, given the budget constraint, are about 67.1187 and 131.525, respectively.
 
 Now we divide the participants up and calculate the variance.
 $$
 	\begin{array}{l | l l}
 		 & \text{Heart Attack} & \text{No Heart Attack} \\ \hline
-		\text{Coffee Drinker} & 83.2203 \cdot \frac{ 0.006 }{ 0.006 + 0.004 } = 49.9322 &  67.1187 \cdot \frac{ 0.495 }{ 0.495 + 0.495 } = 33.5594\\
-		\text{Non Coffee Drinker} & 83.2203 \cdot \frac{ 0.004 }{ 0.006 + 0.004 } = 33.2881 &  67.1187 \cdot \frac{ 0.495 }{ 0.495 + 0.495 } = 33.5594\\ \hline
+		\text{Coffee Drinker} & 67.1187 \cdot \frac{ 0.006 }{ 0.006 + 0.004 } = 40.2712 &  131.525 \cdot \frac{ 0.495 }{ 0.495 + 0.495 } = 33.5594\\
+		\text{Non Coffee Drinker} & 67.1187 \cdot \frac{ 0.004 }{ 0.006 + 0.004 } = 26.8475 & 131.525 \cdot \frac{ 0.495 }{ 0.495 + 0.495 } = 33.5594\\ \hline
 	\end{array}
 $$
 
 $$
 	\begin{align}
 		\widehat{Var}(\log(\hat{\theta})) & = \frac{ 1 }{ n_{11} } + \frac{ 1 }{ n_{12} } + \frac{ 1 }{ n_{21} } + \frac{ 1 }{ n_{22} }\\
-			& = \frac{1}{49.9322}+\frac{1}{33.5594}+\frac{1}{33.2881}+\frac{1}{33.5594} \\
-			& = 0.109664
+			& = \frac{1}{40.2712}+\frac{1}{33.5594}+\frac{1}{26.8475}+\frac{1}{33.5594} \\
+			& = 0.091877
 	\end{align}
 $$
 
