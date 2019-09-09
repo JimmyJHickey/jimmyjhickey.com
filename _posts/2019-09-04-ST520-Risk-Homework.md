@@ -268,6 +268,8 @@ $$
 	\end{align}
 $$
 
+The variance is smaller than with equal number of casese and controls.
+
 # 3
 **Suppose the joint distribution of an exposure variable and a disease variable in the target population is given in the following table.**
 
