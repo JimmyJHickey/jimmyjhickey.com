@@ -98,7 +98,7 @@ The set of U.S. birth results in female, identical twins. (Notice that $A$ and $
 ## b.
 **Find $P(A \cap B \cap C)$.**
 
-$$P(A \cap B \cap C) = \frac{ 1 }{ 90 } \cdot \frac{ 1 }{ 3 } \cdot \frac{ 1 }{ 2 } = \frac{ 1 }{ 450 }$$
+$$P(A \cap B \cap C) = \frac{ 1 }{ 90 } \cdot \frac{ 1 }{ 3 } \cdot \frac{ 1 }{ 2 } = \frac{ 1 }{ 540 }$$
 
 Where 
 

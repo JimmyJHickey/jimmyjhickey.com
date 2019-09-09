@@ -97,7 +97,7 @@ $$
 	\end{align}
 $$
 
-We are 95% confident that the true odds ration is in the range $(3.70289, 7.57714)$.
+We are 95% confident that the true odds ratio is in the range $(3.70289, 7.57714)$.
 
 # 2
 **An investigator wants to investigate the association between heart attack and
@@ -249,7 +249,24 @@ $$
 	\end{align}
 $$
 
-Thus, the optimal number of cases and controls, given the budget constraint, are about 67 and 83, respectively.
+Thus, the optimal number of cases and controls, given the budget constraint, are about 67.1187 and 83.2203, respectively.
+
+Now we divide the participants up and calculate the variance.
+$$
+	\begin{array}{l | l l}
+		 & \text{Heart Attack} & \text{No Heart Attack} \\ \hline
+		\text{Coffee Drinker} & 83.2203 \cdot \frac{ 0.006 }{ 0.006 + 0.004 } = 49.9322 &  67.1187 \cdot \frac{ 0.495 }{ 0.495 + 0.495 } = 33.5594\\
+		\text{Non Coffee Drinker} & 83.2203 \cdot \frac{ 0.004 }{ 0.006 + 0.004 } = 33.2881 &  67.1187 \cdot \frac{ 0.495 }{ 0.495 + 0.495 } = 33.5594\\ \hline
+	\end{array}
+$$
+
+$$
+	\begin{align}
+		\widehat{Var}(\log(\hat{\theta})) & = \frac{ 1 }{ n_{11} } + \frac{ 1 }{ n_{12} } + \frac{ 1 }{ n_{21} } + \frac{ 1 }{ n_{22} }\\
+			& = \frac{1}{49.9322}+\frac{1}{33.5594}+\frac{1}{33.2881}+\frac{1}{33.5594} \\
+			& = 0.109664
+	\end{align}
+$$
 
 # 3
 **Suppose the joint distribution of an exposure variable and a disease variable in the target population is given in the following table.**
