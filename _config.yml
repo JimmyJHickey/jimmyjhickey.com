@@ -1,12 +1,12 @@
 # Site settings
 title: Hi -Jimmy
 description: "My personal site."
-url: "https://jimmyjhickey.github.io"
+url: "https://jimmyjhickey.com"
 
 author:
   name: "Jimmy Hickey"
   email: "jimmyjhickey@gmail.com"
-  url: "https://jimmyjhickey.github.io/"
+  url: "https://jimmyjhickey.com/"
 
 # Build settings
 baseurl: "/" # Change this to your relative path (ex: /blog/), or leave just a /
