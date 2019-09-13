@@ -22,7 +22,7 @@ Take our sample proportion $p = \frac{ X }{ n } = \frac{ 2 }{ 20 }$. Then,
 
 $$
 	\begin{align}
-		(\pi_L, \pi_U) & = p \pm Z_{\alpha / 2}\Big( \frac{ p(1-p) }{ n } \Big))^2 \\
+		(\pi_L, \pi_U) & = p \pm Z_{\alpha / 2}\Big( \frac{ p(1-p) }{ n } \Big)^2 \\
 			& = \frac{ 5 }{ 20 } \pm 1.28\cdot \Big( \frac{ \frac{ 5 }{ 20 }(1-\frac{ 5 }{ 20 }) }{ 20 } \Big)^2 \\
 			& = (0.126065, 0.373935)
 	\end{align}
