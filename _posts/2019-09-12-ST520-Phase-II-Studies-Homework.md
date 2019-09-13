@@ -17,6 +17,7 @@ Problems: 1, 2, 3, 4
 
 ## a.
 **normal approximation**
+
 Take our sample proportion $p = \frac{ X }{ n } = \frac{ 2 }{ 20 }$. Then,
 
 $$
@@ -29,6 +30,7 @@ $$
 
 ## b.
 **exact confidence intervals**
+
 We can look at our equations for the exact confidence interval and use R to calculate it.
 
 $$
