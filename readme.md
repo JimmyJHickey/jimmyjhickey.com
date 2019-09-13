@@ -1,6 +1,6 @@
-Hi there. This is my blog. It's built on the shoulders of giants. Thank you giants.
+Hi there. This is my website. It's built on the shoulders of giants. Thank you giants.
 
- [![Build Status](https://api.travis-ci.com/JimmyJHickey/jimmyjhickey.github.io.svg?branch=master)](https://travis-ci.org/JimmyJHickey/jimmyjhickey.github.io)
+ [![Build Status](https://api.travis-ci.com/JimmyJHickey/jimmyjhickey.com.svg?branch=master)](https://travis-ci.org/JimmyJHickey/jimmyjhickey.com)
 
 
 ### Giants
