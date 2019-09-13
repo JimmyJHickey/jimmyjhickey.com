@@ -149,7 +149,8 @@ p_success_stage_1 = function(p)
 
 p_success_stage_2 = function(p)
 {
-  return(choose(3, 1) * p * (1-p)^2 * sum(dbinom(4:5, 5, p)) + choose(3,2) * p^2 * (1-p) * sum(dbinom(3:5, 5, p)))
+  return(choose(3, 1) * p * (1-p)^2 * sum(dbinom(4:5, 5, p)) 
+  + choose(3,2) * p^2 * (1-p) * sum(dbinom(3:5, 5, p)))
 }
 
 p_success = function(p)
@@ -190,7 +191,8 @@ We can calculate this for each probability in R.
 expected_sample_size = function(n, n0, p)
 {
   p_stopping_stage_1 = p^3 + (1-p)^3
-  return(n0 * p_stopping_stage_1 + n * (1 - p_stopping_stage_1 ))
+  return(n0 * p_stopping_stage_1 
+  	+ n * (1 - p_stopping_stage_1 ))
 }
 
 # i.
