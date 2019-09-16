@@ -62,7 +62,7 @@ ci_proportion = function(p)
   prob = 0
   for(i in 0:20)
   {
-    bounds = binconf(i, 20, alpha=0.10, method="exact")
+    bounds = binconf(i, 20, alpha=0.20, method="exact")
 
     if( bounds[2] <= p && p <= bounds[3] )
     {
@@ -73,22 +73,22 @@ ci_proportion = function(p)
 }
 
 ci_proportion(0.2)
-# 0.9563281
+# 0.8441322
 
 ci_proportion(0.5)
-# 0.9586105
+# 0.8846817
 ```
 
 
 ### i.
 $\pi = 0.2$
 
-For $\pi = 0.2$ we get a probability of 0.9563281.
+For $\pi = 0.2$ we get a probability of 0.8441322.
 
 ### ii.
 $\pi = 0.5$
 
-For $\pi = 0.5$ we get  a probability of 0.9586105.
+For $\pi = 0.5$ we get  a probability of 0.8846817.
 
 
 #  2
