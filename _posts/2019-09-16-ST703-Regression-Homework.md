@@ -31,10 +31,20 @@ run;
 
 From the SAS output, we are 95% confident that the true average height of one of the sons' is between 67.9263 and 68.2507 inches.
 
+We can double check this calculation by hand. Notice that we do not know $\sigma$, our sample size is large, and we are assuming that our $Y_i$'s are normal.
+
+$$
+	\begin{align}
+		(\mu_L, \mu_U) & = \hat{y} \pm t_{\alpha/2, n-1} \frac{ s }{ \sqrt{n} }\\
+			& = 68.0885 \pm t_{0.05/2, 928-1} \frac{ 2.5179 }{ \sqrt{928} }\\
+			& = (67.9265, 68.2505)
+	\end{align}
+$$
+
 ## II.
 **Is there a linear association between the height of adult males and the average height of their parents? More specifically, obtain a 95% confidence interval for the correlation between these variables.**
 
-We can use the `proc corr` procedure in SAS to find information about the correlation. Notice that we are specifing a 2-sided, 95% confidence interval with no bias adjustment.
+We can use the `proc corr` procedure in SAS to find information about the correlation. Notice that we are specifying a 2-sided, 95% confidence interval with no bias adjustment.
 
 ```
 proc corr data=galton
@@ -48,6 +58,16 @@ run;
 ![Confidence interval](../img/post_img/2019-09-16-ST703-Regression-Homework/1.2-CI.png)
 
 From the SAS output, we are 95% confident that the true correlation between the height of adult males and the average height of their parents is between 0.406407 and 0.508115.
+
+We can also double check this by hand.
+
+$$
+	\begin{align}
+		(\rho_L, \rho_U) & = \Bigg( \frac{\frac{(r+1) e^{-\frac{2 z}{\sqrt{n-3}}}}{1-r}-1}{\frac{(r+1) e^{-\frac{2 z}{\sqrt{n-3}}}}{1-r}+1}, \frac{\frac{(r+1) e^{\frac{2 z}{\sqrt{n-3}}}}{1-r}-1}{\frac{(r+1) e^{\frac{2 z}{\sqrt{n-3}}}}{1-r}+1} \Bigg) \\
+		& = \Bigg( \frac{\frac{(0.45876+1) e^{-\frac{2 \cdot 1.96}{\sqrt{928-3}}}}{1-0.45876}-1}{\frac{(0.45876+1) e^{-\frac{2 \cdot 1.96}{\sqrt{928-3}}}}{1-0.45876}+1}, \frac{\frac{(0.45876+1) e^{\frac{2 \cdot 1.96}{\sqrt{928-3}}}}{1-0.45876}-1}{\frac{(0.45876+1) e^{\frac{2 \cdot 1.96}{\sqrt{928-3}}}}{1-0.45876}+1} \Bigg) \\
+		& = (0.406403, 0.508114)
+	\end{align}
+$$
 
 ## III.
 **Letting $Y$ denote the sons’ heights and $X$ denote the midparent heights (i.e., average height of parents), consider a simple linear regression model. Answer the following:**
@@ -90,7 +110,7 @@ We can calculate $\hat{\beta_1}$.
 $$
 	\begin{align}
 		\hat{\beta_1} & = r_{xy} \frac{ s_y }{ s_x }\\
-			& = \frac{0.45876 2.51794}{1.78733} \\
+			& = \frac{0.45876 \cdot 2.51794}{1.78733} \\
 			& = 0.64629
 	\end{align}
 $$
@@ -156,7 +176,7 @@ Notice that we can also read it from the SAS output parameter estimates under pa
 We are 95% confident that the true value of $\beta_1$ is between 0.565603 and 0.726911 son-inches/parent-inch.
 
 ### h.
-**What is the line that best fits these data, using the criterion that smallst sum of squared residuals is "best?"**
+**What is the line that best fits these data, using the criterion that smallest sum of squared residuals is "best?"**
 
 From SAS, we can get $\hat{\beta_0}=23.94153$ and $\hat{\beta_1}=0.64629$.With our beta parameters estimated, we can put together our regression model.
 
@@ -185,7 +205,7 @@ We can also confirm this in SAS.
 ### j.
 **What is the estimated average height of sons whose midparent height is 68?**
 
-We are estimating $E(Y) | X=68$.
+We are estimating $E(Y) \| X=68$.
 
 $$
 	\begin{align}
@@ -287,26 +307,83 @@ $$
 	\end{align}
 $$
 
+We can use our calculated value of $r = 0.45876$ from SAS in part II to calculate a test statistic.
 
+$$
+	\begin{align}
+		z & = \sqrt{n-3} \left(\frac{1}{2} \log \left(\frac{1+r}{1-r}\right)-\frac{1}{2} \log \left(\frac{1+\rho_0}{1+\rho_0}\right)\right)\\
+			& = \sqrt{928-3} \left(\frac{1}{2} \log \left(\frac{1+0.45876}{1-0.45876}\right)-\frac{1}{2} \log \left(\frac{1+0}{1+0}\right)\right) \\
+			& = 15.0773\\
+	\end{align}
+$$
+
+Using $\alpha = 0.05$, we get a small p-value (less than 0.001); thus, we have evidence to reject the null hypothesis in favor of the alternation that $\rho \neq 0$.
 
 ### r.
 **Is the observed linear association between son’s height and midparent height strong? Use Pearson’s correlation coefficient to answer.**
 
+$$
+	\begin{align}
+		r_{xy} & = \frac{ s_{xy} }{ s_x s_y }\\
+			& = \frac{ \hat{\beta_1} s_x^2 }{ s_x s_y }\\
+			& = \frac{ 0.64629 \cdot 1.78733 }{ 2.51794 } \\
+			& = 0.458761
+	\end{align}
+$$
+
+Our estimate of the linear association between son's heign and midparent height is 0.458761 (which matches what we got from SAS).
 
 ### s.
 **Comment on whether the simple linear regression model assumptions are reasonable.**
+
+We have four assumptions to check when using linear regression. First we will check the normality of our residuals by looking at a qqplot.
+
+![qqplot](../img/post_img/2019-09-16-ST703-Regression-Homework/1.3.s-qqplot.png)
+
+We see that for the most part, the line looks straight, but around the edges there is some curvature. 
+
+With simple linear regression, we can check two assumptions by looking at a plot of our residuals against our predicted values. We cab see if our residuals have equal variance and if their mean is 0. If these are true, we will see a random scatter of points on this residual plot.
+
+![scatter plot](../img/post_img/2019-09-16-ST703-Regression-Homework/1.3.n-scatterplot.png)
+
+These data look fairly random (they are not following a pattern/curve), so this assumption holds.
+
+The final assumption we need to check is that our data are independent of each other. In this case, we would assume that the midparent height of one person does not affect the height of another person, which is a safe assumption. Thus, our assumption of independence holds.
 
 
 ### t.
 **Consider estimating the population mean height of adult males whose midparent height is 72. Obtain a set of plausible values for this mean, using 95% confidence. Compare and contrast this set to that found for part (I.) of this exercise.**
 
+We can estimate the population mean by plugging 72 into our regression model.
+
+$$
+	\begin{align}
+		\hat{Y_0} & = \hat{\beta_0} + \hat{\beta_1} \cdot x_0 \\
+			& = 23.9415 +0.64629 \cdot 72\\
+			& = 70.4744
+	\end{align}
+$$
+
+We can find a 95% confindence interval $E(Y)$ at $X = 72$.
+
+$$
+	\begin{align}
+		(\hat{Y_{0_L}}, \hat{Y_{0_U}}) & = \hat{Y_0} \pm t_{n-2, \alpha/2} \cdot SE(\hat{Y_0}) \\
+			& = 70.4744 \pm 1.96 \cdot 0.1687
+			& = (70.1437, 70.8051)
+	\end{align}
+$$
+
+We are 95% confident that the true mean of adult males whose midparent height is 72 is between 70.1437 and 70.8051 inches.
+
+Notice that both our estimate and our confidence interval are larger than what we calculated in Part I without taking midparent height into account.
 
 # 2
 
 ## a.
 **Obtain an approximate 95% confidence interval for the population correlation coefficient $\rho$ when a bivariate random sample of size $n=20$ results in a sample correlation coefficient of $r_{xy}=-0.45$. Also, conduct a test of $H_0: \rho = 0$.**
 
-We can a large sample confidence inteval for $\rho$.
+We can a large sample confidence interval for $\rho$.
 
 $$
 	\begin{align}
@@ -352,41 +429,160 @@ $$
 	\end{align}
 $$
 
-So, $P(R > 0.7; \rho = 0.6) =  P(Z > 0.904927) = 0.1827931$. Thus, we do not  
+So, $P(R > 0.7; \rho = 0.6) =  P(Z > 0.904927) = 0.1827931$. Thus, we do not have enough evidence to reject the null hypothesis.
+
 
 #  3
 **Dataset ChirpFrequency.txt in the database provides information on striped ground crickets. Fifteen bivariate measurements of chirps per second $(y)$ and temperature $(x)$ in degrees Fahrenheit are given.**
 
+Note that all SAS output was generated with `proc corr` and `proc reg`.
+
+```
+proc corr data=chirp
+  plots=matrix(histogram) csscp;
+  var chirps temperature;
+run;
+
+proc reg data=chirp_pred simple;
+  model chirps=temperature / alpha=0.05 clb clm cli;
+  id temperature;
+  output out=chirp_reg
+    residual=r pred=yhat
+    ucl=pihigh lcl=pilow
+    uclm=cihigh lclm=cilow
+    stdp=stdmean;
+run;
+```
+
 ## a.
 **Obtain a scatterplot of these measurements.**
+We can get a scatterplot of temperature vs. chirps from `proc corr` in SAS.
 
+```
+proc corr data=chirp
+  plots=matrix(histogram) csscp;
+  var chirps temperature;
+run;
+```
+
+![scatterplot](../img/post_img/2019-09-16-ST703-Regression-Homework/3.a-scatterplot.png)
 
 
 ## b.
 **Specify the simple linear regression model for these data. Identify all parameters in the model, providing the interpretation of each. Note that this does not require any data analysis.**
 
+$$
+Y = \beta_{0} + \beta_{1} \cdot x + E
+$$
 
+
+$$
+\begin{array}{ r | l }
+	Y & \text{The number of chirps per second} \\
+	\beta_{0} & \text{The intercept. The expected number of chirps per second} \\
+		& \text{if the temperature is 0 $^{\circ}$ F.} \\
+	\beta_{1} & \text{The slope of the temperature. The expected change in chirps per second.}\\
+		& \text{in with a one degree F increase in temperature}\\
+	x & \text{The temperature in degree F}\\
+	E & \text{Random error. A measure of how Y differs from its mean.}
+\end{array}
+$$
 
 ## c.
-**Explain how the interpretation (and the estimate) of the slope and intercept parameters change if temperature is expressed in Celcius. Note that this does not require any data analysis.**
+**Explain how the interpretation (and the estimate) of the slope and intercept parameters change if temperature is expressed in Celsius. Note that this does not require any data analysis.**	
 
+The slope and intercept would both need to be transformed.
+
+$$
+	\begin{align}
+		\beta_{0, celcius} & = (\beta_{1, fahrenheit} - 32) \cdot \frac{ 5 }{ 9 }\\
+		\beta_{1, celcius} & = (\beta_{1, fahrenheit} - 32) \cdot \frac{ 5 }{ 9 }
+	\end{align}
+$$
+
+
+$$
+\begin{array}{ r | l }
+	Y & \text{The number of chirps per second} \\
+	\beta_{0} & \text{The intercept. The expected number of chirps per second} \\
+		& \text{if the temperature is 0 $^{\circ}$ C.} \\
+	\beta_{1, celcius} & \text{The slope of the temperature. The expected change in chirps per second.}\\
+		& \text{in with a one degree C increase in temperature}\\
+\end{array}
+$$
 
 ## d.
-**Estimate the mena chirp frequency among crickets in a termpature of $80^{\circ} F$. Estimate the standard deviation among chirp frequency measurements made at this fixed temperature.**
+**Estimate the mean chirp frequency among crickets in a temperature of $80^{\circ} F$. Estimate the standard deviation among chirp frequency measurements made at this fixed temperature.**
 
+To estimate this, we will need the $\hat{\beta}$ estimates from SAS.
+
+![parameter estimates](../img/post_img/2019-09-16-ST703-Regression-Homework/3.d-parameter-estimates.png)
+
+$$
+\hat{Y_0} = -0.30914 + 0.21193 \cdot 80 = 16.453  
+$$
+
+This closely matches what SAS calculates.
+
+![prediction](../img/post_img/2019-09-16-ST703-Regression-Homework/3.d-prediction.png)
+
+
+For the standard deviation, we will need more information about the data that SAS can provide.
+
+![stats](../img/post_img/2019-09-16-ST703-Regression-Homework/3.d-stats.png)
+
+We can estimate the standard deviation $\sigma$ with the unbiased estimator $s$. We will need the Sum of Squared Error from the ANOVA table.
+
+![ANOVA](../img/post_img/2019-09-16-ST703-Regression-Homework/3.d-ANOVA.png)
+
+$$
+	\begin{align}
+		s & = \sqrt{\frac{ SSE }{ n-2 }}\\
+			& = \sqrt{\frac{12.27001}{15-2}} \\
+			& = 0.971518
+	\end{align}
+$$
 
 ## e.
-**Use the regression line to estiamte the mean chirp frequency among circkets in a temperature of $105^{\circ} F$. What is wrong with this estimate.**
+**Use the regression line to estimate the mean chirp frequency among crickets in a temperature of $105^{\circ} F$. What is wrong with this estimate.**
 
+We can calculate this using the same parameter estimates as in part d.
+
+$$
+\hat{Y_0} = -0.30914 + 0.21193 \cdot 105 = 21.9435 
+$$
+
+This is close to the prediction that SAS gives.
+
+![prediction](../img/post_img/2019-09-16-ST703-Regression-Homework/3.e-prediction.png)
+
+However, if we look at our data, we notice that are there are no points taken around 105.
 
 ## f.
-**Report eh sum of squared deviations between the fitted values and the average chirp frequency $\bar{y}$.**
+**Report the sum of squared deviations between the fitted values and the average chirp frequency $\bar{y}$.**
 
+This is equal to the Sum of Squares for the regression, which can be found in SAS in the ANOVA table.
+
+![ANOVA](../img/post_img/2019-09-16-ST703-Regression-Homework/3.d-ANOVA.png)
+
+$$
+\sum (\hat{y_i} - \bar{y_i})^2 = SSRegression = 28.28733
+$$
 
 ## g.
 **What proportion of variance in chirp frequencies is explained by the linear regression model?**
 
+We can calculate this using the ANOVA table values again.
 
+$$
+R^2 = 1 - \frac{ SSE }{ SSTotal } = 1 = \frac{ 12.27001 }{ 40.5573 } = 0.697465
+$$
+
+This means that 69.75% of the variability in chirp frequencies is explained by the linear regression model.
+
+This closely matches the value that SAS gives.
+
+![R^2](../img/post_img/2019-09-16-ST703-Regression-Homework/3.g-R2.png)
 
 #  4
 **A random sample leads to $n=11$ bivariate measurements of $(y_1, x_1), \dots , (y_{11}, x_{11})$ with sample means and sample variances**
@@ -409,9 +605,64 @@ $$
 $$
 
 
+\$$
+	\begin{align}
+		F-ratio & = \frac{ MSE_{Regn} }{ df_{Reg} }\\
+			& = 36\\ \\
+		p-value & = P(F_{n-p-1}^{p} < F_{obs}) \\
+			& = P(F_{9}^{1} > 36) \\
+			& = 0.0002024993 \\ \\
+		SSE & = SSTotal - SSRegn\\
+			& = 200 - 160 \\
+			& = 40 \\ \\
+		df_{Error} & = n - p - 1 \\
+			& = (n-1) - p \\
+			& = df_{total} - df_{Reg} \\
+			& = 10 - 1 \\
+			& = 9 \\ \\
+		MSE & = \frac{ SSE }{ df_{Error} } \\
+			& = \frac{ 40 }{ 9 }
+	\end{align}
+$$
+
+
+$$
+	\begin{array}{c c c c c c}
+		\text{Source} & \text{Sum of Squares} & \text{d.f.} & \text{Mean Square} & \text{F-ratio} & p \text{-value}\\ \hline
+		\text{Regression} & 160 & 1 & 160 & 36 & 0.0002024993
+		\\\\\
+		\text{Error} & 40 & 9 & \frac{ 40 }{ 9 } & & \\
+		\text{Corrected Total} & 200 & 10 & & & \\ \hline
+	\end{array}
+$$
+
 ## b.
 **Determine the uncorrected total sum of squares, $\sum y_i^2$.**
 
+$$
+	\begin{align}
+		SSTotal & = \sum (y_i-\bar{y})^2 \\
+			& = \sum (y_i^2 - 2 y_i \bar{y} + \bar{y}^2)\\
+			& = \sum y_i^2 - 2 \bar{y}\sum y_i + \sum \bar{y}^2\\
+			& = \sum y_i^2 - 2 \bar{y} \cdot n \bar{y} + n \bar{y}^2 \\
+			& = \sum y_i^2 - 2 n \bar{y} ^ 2 + n \bar{y}^2\\
+		\sum y_i^2 & = SSTotal + n \bar{y}^2 \\
+			& = 200+11\cdot 85^2\\
+			& = 79675
+	\end{align}
+$$
 
 ## c.
-**The sample correlaction coefficient was $r_{xy}=-0.894$. Report the slope of the least squares regression line.**
+**The sample correlation coefficient was $r_{xy}=-0.894$. Report the slope of the least squares regression line.**
+
+Notice that $r_{xy} = \frac{ s_{xy} }{ s_x s_y }$.
+
+\$$
+	\begin{align}
+		\hat{\beta_1} & = \frac{ s_{xy} }{ s_x^2 } \\
+			& = \frac{ r_{xy} s_x s_y }{ s_x^2 }\\
+			& = \frac{ r_{xy} s_y }{ s_x }\\
+			& = \frac{ -0.894 \cdot \sqrt{20} }{ \sqrt{1} }\\
+			& = -3.99809
+	\end{align}
+$$
