@@ -58,7 +58,7 @@ f(x)=
     \end{cases}
 $$
 
-**find a monotone function $u(x)$ such that the random variable $Y=u(X)$ has a uniform(0,1) distribution,**
+**find a monotone function $u(x)$ such that the random variable $Y=u(X)$ has a uniform(0,1) distribution.**
 
 
 #  2.11
