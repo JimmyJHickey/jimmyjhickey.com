@@ -46,6 +46,7 @@ $$
 ## (c)
 **What are the advantages and disadvantages of this kind of design as compared to using simple randomization where each treatment is assigned with probability of half independently of each other?**
 
+With simple randomzation, there is a fairly high change of imbalanced groups, especially with smaller sample sizes. Permuted block randomization solves that by ensuring that the groups are balanced (with at most $\frac{ block size }{ 2 }$ imbalance). However, this study does not using a varying block size. Thus, when the first patient in the block is assigned a treatement, the treatment for the other person is known (to be the other treatment). This may introduce other biases.
 
 #  2
 **Let the random variable $X\sim b(n,\pi)$. The sample proportion is denoted by $p=X/n$.**
