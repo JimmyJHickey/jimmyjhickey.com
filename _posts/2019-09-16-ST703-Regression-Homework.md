@@ -31,7 +31,9 @@ run;
 
 From the SAS output, we are 95% confident that the true average height of one of the sons' is between 67.9263 and 68.2507 inches.
 
-We can double check this calculation by hand. Notice that we do not know $\sigma$, our sample size is large, and we are assuming that our $Y_i$'s are normal.
+We can double check this calculation by hand. Notice that we do not know $\sigma$, our sample size is large, and we are assuming that our $Y_i$'s are normal (by the qqplot).
+
+![qqplot](../img/post_img/2019-09-16-ST703-Regression-Homework/1.1-qqplot.png)
 
 $$
 	\begin{align}
@@ -57,7 +59,7 @@ run;
 
 ![Confidence interval](../img/post_img/2019-09-16-ST703-Regression-Homework/1.2-CI.png)
 
-From the SAS output, we are 95% confident that the true correlation between the height of adult males and the average height of their parents is between 0.406407 and 0.508115.
+From the SAS output, we are 95% confident that the true correlation between the height of adult males and the average height of their parents is between 0.406407 and 0.508115. We also get the predicted correlation to be 0.45876.
 
 We can also double check this by hand.
 
@@ -130,7 +132,7 @@ Note that $\hat{\beta_1}$ is an estimate of the true slope based on the data.
 
 (2) False
 
-(3) True
+(3) False
 
 
 ### e.
@@ -166,7 +168,7 @@ We can calculate a 95% confidence interval.
 $$
 	\begin{align}
 		(\beta_{1L}, \beta_{1U}) & = \hat{\beta_0} \pm t_{928-2, 0.05/2} \cdot SE(\hat{\beta_0}) \\
-			& = 0.64629 \pm 1.96253 0.0411137 \\
+			& = 0.64629 \pm 1.96253 \cdot 0.0411137 \\
 			& = (0.565603, 0.726977)
 	\end{align}
 $$
@@ -266,13 +268,13 @@ We can calculate the estimated standard error at 68 inches of midparent height.
 $$
 	\begin{align}
 		SE(\hat{Y_0}) & = s \cdot \sqrt{ \frac{ 1 }{ n } + \frac{ (x_0 - \bar{x})^2 }{ \sum(x_i - \bar{x})^2 } }\\
-		& = s \cdot \sqrt{ \frac{ 1 }{ n } + \frac{ (x_0 - \bar{x})^2 }{ (n-2 \cdot s_x^2) } }\\
+		& = s \cdot \sqrt{ \frac{ 1 }{ n } + \frac{ (x_0 - \bar{x})^2 }{ ((n-1) \cdot s_x^2) } }\\
 		& = \sqrt{\frac{(68-68.0885)^2}{(928-2) 1.78733^2}+\frac{1}{928}} \sqrt{\frac{(928-1) \left(6.34003\, -0.64629^2 \cdot 3.19456\right)}{928-2}}\\
 		& = 0.0735742
 	\end{align}
 $$
 
-From the SAS output in part j., we get the estimated standard error to be 0.0746. 
+From the SAS output in part j., we get the estimated standard error to be 0.073574. 
 
 ### p.
 **Is the standard error of the estimated average height of sons with midparent height 72 bigger, smaller, or the same as that for midparent height 68?**
@@ -282,9 +284,9 @@ We can calculate this as we did in part o.
 $$
 	\begin{align}
 		SE(\hat{Y_0}) & = s \cdot \sqrt{ \frac{ 1 }{ n } + \frac{ (x_0 - \bar{x})^2 }{ \sum(x_i - \bar{x})^2 } }\\
-		& = s \cdot \sqrt{ \frac{ 1 }{ n } + \frac{ (x_0 - \bar{x})^2 }{ (n-2 \cdot s_x^2) } }\\
-		& = \sqrt{\frac{(72-68.0885)^2}{(928-2) 1.78733^2}+\frac{1}{928}} \sqrt{\frac{(928-1) \left(6.34003\, -0.64629^2 \cdot 3.19456\right)}{928-2}}\\
-		& = 0.176969
+		& = s \cdot \sqrt{ \frac{ 1 }{ n } + \frac{ (x_0 - \bar{x})^2 }{ ((n-1) \cdot s_x^2) } }\\
+		& = \sqrt{\frac{(72-68.0885)^2}{(928-1) 1.78733^2}+\frac{1}{928}} \sqrt{\frac{(928-1) \left(6.34003\, -0.64629^2 \cdot 3.19456\right)}{928-2}}\\
+		& = 0.17689
 	\end{align}
 $$
 
@@ -331,7 +333,7 @@ $$
 	\end{align}
 $$
 
-Our estimate of the linear association between son's heign and midparent height is 0.458761 (which matches what we got from SAS).
+Our estimate of the linear association between son's height and midparent height is 0.458761 (which matches what we got from SAS from part II). This suggests that there is a moderately strong postive correlation.
 
 ### s.
 **Comment on whether the simple linear regression model assumptions are reasonable.**
@@ -348,7 +350,7 @@ With simple linear regression, we can check two assumptions by looking at a plot
 
 These data look fairly random (they are not following a pattern/curve), so this assumption holds.
 
-The final assumption we need to check is that our data are independent of each other. In this case, we would assume that the midparent height of one person does not affect the height of another person, which is a safe assumption. Thus, our assumption of independence holds.
+The final assumption we need to check is that our data are independent of each other. In this case, we would assume that the midparent height of one person does not affect the height of another person. We would need more context about the data collection (no sibilings, etc.) to be confident in this. 
 
 
 ### t.
@@ -369,7 +371,7 @@ We can find a 95% confindence interval $E(Y)$ at $X = 72$.
 $$
 	\begin{align}
 		(\hat{Y_{0_L}}, \hat{Y_{0_U}}) & = \hat{Y_0} \pm t_{n-2, \alpha/2} \cdot SE(\hat{Y_0}) \\
-			& = 70.4744 \pm 1.96 \cdot 0.1687
+			& = 70.4744 \pm 1.96 \cdot 0.1687 \\
 			& = (70.1437, 70.8051)
 	\end{align}
 $$
@@ -481,10 +483,12 @@ $$
 	Y & \text{The number of chirps per second} \\
 	\beta_{0} & \text{The intercept. The expected number of chirps per second} \\
 		& \text{if the temperature is 0 $^{\circ}$ F.} \\
-	\beta_{1} & \text{The slope of the temperature. The expected change in chirps per second.}\\
+	\beta_{1} & \text{The slope of the temperature. The expected change in chirps per second}\\
 		& \text{in with a one degree F increase in temperature}\\
 	x & \text{The temperature in degree F}\\
-	E & \text{Random error. A measure of how Y differs from its mean.}
+	E & \text{Random error. A measure of how Y differs from its mean.}\\
+		& \text{Notice that } E \stackrel{iid}{\sim} N(0, \sigma^2)\\
+	\sigma^2 & \text{The population variation of chirps per second.}
 \end{array}
 $$
 
@@ -495,7 +499,7 @@ The slope and intercept would both need to be transformed.
 
 $$
 	\begin{align}
-		\beta_{0, celcius} & = (\beta_{1, fahrenheit} - 32) \cdot \frac{ 5 }{ 9 }\\
+		\beta_{0, celsius} & = (\beta_{1, fahrenheit} - 32) \cdot \frac{ 5 }{ 9 }\\
 		\beta_{1, celcius} & = (\beta_{1, fahrenheit} - 32) \cdot \frac{ 5 }{ 9 }
 	\end{align}
 $$
@@ -504,7 +508,7 @@ $$
 $$
 \begin{array}{ r | l }
 	Y & \text{The number of chirps per second} \\
-	\beta_{0} & \text{The intercept. The expected number of chirps per second} \\
+	\beta_{0, celsius} & \text{The intercept. The expected number of chirps per second} \\
 		& \text{if the temperature is 0 $^{\circ}$ C.} \\
 	\beta_{1, celcius} & \text{The slope of the temperature. The expected change in chirps per second.}\\
 		& \text{in with a one degree C increase in temperature}\\
@@ -556,7 +560,7 @@ This is close to the prediction that SAS gives.
 
 ![prediction](../img/post_img/2019-09-16-ST703-Regression-Homework/3.e-prediction.png)
 
-However, if we look at our data, we notice that are there are no points taken around 105.
+However, if we look at our data, we notice that are there are no points taken around 105, so this is not a useful estimate.
 
 ## f.
 **Report the sum of squared deviations between the fitted values and the average chirp frequency $\bar{y}$.**
