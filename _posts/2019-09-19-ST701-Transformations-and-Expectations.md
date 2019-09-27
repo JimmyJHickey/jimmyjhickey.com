@@ -6,7 +6,7 @@ description: ST701 Homework 3 on Transformation and Expectations of RVs
 tags: ST701 Transformations Expectations Statistics
 ---
 
-Problems: 1.1, 1.4, 1.5, 1.13, 1.23, Problem 6
+Problems: 2.6, 2.7, 2.9, 2.11, 2.23, 2.24, 2.25, 2.33
 
 
 * Do not remove this line (it will not be displayed)
@@ -265,7 +265,7 @@ $$
 		E(Y) & = \int_{0}^{\infty} y \cdot f_Y(y) dy \\
 			& = \int_{0}^{\infty} y \cdot \frac{ 2 }{ \sqrt{2\pi} } e^{-y^2/2} dy \\
 			& = \frac{ 2 }{ \sqrt{2\pi} } \int_{0}^{\infty} y \cdot e^{-y^2/2} dy \\\\
-			& u = -y^2 /2 & du = -y dy\\\\
+			& u = -y^2 /2 & du = -y dy \\ \\
 			& = \sqrt{\frac{ 2 }{ \pi }} \cdot \int y e^u \frac{ -1 }{ y }du\\
 			& = -\sqrt{\frac{ 2 }{ \pi }} e^u \Big|  \\
 			& = -\sqrt{\frac{ 2 }{ \pi }} e^{-y^2/2} \Big|_{0}^{\infty} \\
@@ -283,7 +283,7 @@ $$
 			& u = y & v = -e^{y^2/2}\\
 			& du = dy & dv = y e^{y^2/2}dy \\ \\
 			& = \frac{ 1 }{ \sqrt{2 \pi} }\Big( y \cdot -e^{y^2/2} |_{-\infty}^{\infty} - \int_{-\infty}^{\infty} -e^{y^2/2} dy  \Big) \\
-			& = \sqrt{\frac{ 2 }{ pi }} ( 0 + \sqrt{\frac{ \pi }{ 2 }})
+			& = \sqrt{\frac{ 2 }{ \pi }} ( 0 + \sqrt{\frac{ \pi }{ 2 }}) \\
 			& = 1\\
 		Var(Y) & = E(Y^2) - E(Y)^2 \\
 			& = 1 - \Big( \sqrt{\frac{ 2 }{ \pi }} \Big)^2 \\
@@ -310,7 +310,7 @@ $$
 			& = P(-\sqrt{y} \leq X \leq \sqrt{y}) \\
 			& = F_X(\sqrt{y}) -  F_X(\sqrt{-y})\\
 		f_Y(y) & = \frac{ d }{ dy } (F_X(\sqrt{y}) -  F_X(\sqrt{-y})) \\
-			& = f_X(\sqrt{y}) \cdot \frac{ d }{ dy } sqrt{y} -  f_X(\sqrt{-y})\cdot \frac{ d }{ dy } \sqrt{-y}\\
+			& = f_X(\sqrt{y}) \cdot \frac{ d }{ dy } \sqrt{y} -  f_X(\sqrt{-y})\cdot \frac{ d }{ dy } \sqrt{-y}\\
 			& = f_X(\sqrt{y}) \cdot \frac{ 1 }{ 2 \sqrt{y} } -  f_X(\sqrt{-y})\cdot \frac{ - 1 }{ 2 \sqrt{y} }\\
 			& = \frac{ 1 }{ 2 \sqrt{y} } \Big( \frac{ 1 }{ 2 } ( 1 + \sqrt{y}) + \frac{ 1 }{ 2 } ( 1 - \sqrt{y}) \Big) \\
 			& = \frac{ 1 }{ 2 \sqrt{y} } & 0 < y< 1 \\
@@ -428,7 +428,7 @@ $$
 		f_Y(y) & = \frac{ d }{ dy }(1 - F_X(-y)) \\
 			& = - f_X(-y) \cdot -1 \\
 			& = f_X(-y) \\
-			& = f_X(y) & \text{since f_X(x) is an even function}
+			& = f_X(y) & \text{since } f_X(x) \text{ is an even function}
 	\end{align}
 $$
 
