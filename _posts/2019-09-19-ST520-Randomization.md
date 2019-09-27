@@ -20,10 +20,10 @@ $$
 		\text{treatment} & \text{A} & \text{B} \\
 		\text{response} & 0.3 & 0.9 \\ \hline
 		 & \rlap{\text{Block 2}} & \\ \hline
-		\text{treatment} & \text{A} & \text{B} \\
+		\text{treatment} & \text{B} & \text{A} \\
 		\text{response} & 1.0 & 0.2 \\ \hline
 		 & \rlap{\text{Block 3}} & \\ \hline
-		\text{treatment} & \text{A} & \text{B} \\
+		\text{treatment} & \text{B} & \text{A} \\
 		\text{response} & 0.5 & 0.7 \\ \hline
 		 & \rlap{\text{Block 4}} & \\ \hline
 		\text{treatment} & \text{A} & \text{B} \\
@@ -37,11 +37,41 @@ $$
 
 **Find the distribution of the test statistic that is induced by the permuted block randomization under the sharp null hypothesis (i.e., design based inference).**
 
+To make find the distribution of the test statistic using permuted block randomization under the sharp null hypothesis, we need to find the average change in treatment response (in our case $B-A$) for all possible scenarios. Notice that we have 4 blocks of 2, so we have ${2 \choose 1}^4 = 16$ possible scenarios.
+
+$$
+\begin{array}{| c |  c c | c c | c c | c c | c c | c |}
+\hline
+i & \rlap{\text{Block 1}} & & \rlap{\text{Block 2}} & & \rlap{\text{Block 3}} & & \rlap{\text{Block 4}} & & & \bar{Y_B} & \bar{Y_A} & \bar{Y_B} - \bar{Y_A}\\ \hline
+& 0.3 & 0.9 & 1.0 & 0.2 & 0.5 & 0.7 & 0.1 & 0.2 & & & \\
+1 & A & B & B & A & B & A & A & B &  & 0.65 & 0.325 & 0.325 \\
+2 & A & B & B & A & B & A & B & A &  & 0.625 & 0.35 & 0.275 \\
+3 & A & B & B & A & A & B & A & B &  & 0.7 & 0.275 & 0.425 \\
+4 & A & B & B & A & A & B & B & A &  & 0.675 & 0.3 & 0.375 \\
+5 & A & B & A & B & B & A & A & B &  & 0.45 & 0.525 & -0.075 \\
+6 & A & B & A & B & B & A & B & A &  & 0.425 & 0.55 & -0.125 \\
+7 & A & B & A & B & A & B & A & B &  & 0.5 & 0.475 & 0.025 \\
+8 & A & B & A & B & A & B & B & A &  & 0.475 & 0.5 & -0.025 \\
+9 & B & A & B & A & B & A & A & B &  & 0.5 & 0.475 & 0.025 \\
+10 & B & A & B & A & B & A & B & A &  & 0.475 & 0.5 & -0.025 \\
+11 & B & A & B & A & A & B & A & B &  & 0.55 & 0.425 & 0.125 \\
+12 & B & A & B & A & A & B & B & A &  & 0.525 & 0.45 & 0.075 \\
+13 & B & A & A & B & B & A & A & B &  & 0.3 & 0.675 & -0.375 \\
+14 & B & A & A & B & B & A & B & A &  & 0.275 & 0.7 & -0.425 \\
+15 & B & A & A & B & A & B & A & B &  & 0.35 & 0.625 & -0.275 \\
+16 & B & A & A & B & A & B & B & A &  & 0.325 & 0.65 & -0.325 \\ \hline
+\end{array}
+$$
 
 
 ## (b)
 **What is the p-value for the clinical trial described above?**
 
+We want to use a one sided p-value since we are testing if B is better than A. Under the sharp null hypothesis is our p-value is the total number of $t_i$'s greater than or equal to $t_1$ divided by the total number of trials. Notice that only trial 1, 3, and 4, meet this crieteria. Thus,
+
+$$
+p = P(T \geq t_1 | \text{ sharp } H_0) = \frac{ 3 }{ 16 } = 0.1875.
+$$
 
 ## (c)
 **What are the advantages and disadvantages of this kind of design as compared to using simple randomization where each treatment is assigned with probability of half independently of each other?**
