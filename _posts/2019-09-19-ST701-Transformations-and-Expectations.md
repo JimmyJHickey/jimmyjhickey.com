@@ -142,7 +142,27 @@ $$
 
 Now we will look at the second case.
 
+$$
+	\begin{align}
+		f_Y(y) & = \frac{ 1 }{ 2 \sqrt{y} } (f_X(\sqrt{y}) + f_X(-\sqrt{1})) \\
+			& = \frac{ 1 }{ 2 \sqrt{y} } ( \frac{ 2 }{ 9 }(\sqrt{y} +1) + \frac{ 2 }{ 9 }(-1 +1)) \\
+			& = \frac{ 1 }{ 2 \sqrt{y} } (\frac{ 2 }{ 9 } \sqrt{y} + \frac{ 2 }{ 9 })\\
+			& = \frac{ 1 }{ 9 } + \frac{ 1 }{ 9 \sqrt{y} } & y \in (1, 4]
+	\end{align}
+$$
 
+Putting these together gives:
+
+$$
+f_Y(y) = 
+	\begin{cases}
+			\begin{align}
+				& \frac{ 2 }{ 9 \sqrt{y} } & y \in (0,1] \\
+				& \frac{ 1 }{ 9 } + \frac{ 1 }{ 9 \sqrt{y} } & y \in (1, 4] \\
+				& 0 & \text{otherwise}
+			\end{align}
+	\end{cases}
+$$
 
 #  2.9
 **If the random variable $X$ has pdf**
@@ -185,7 +205,11 @@ $$
 	\begin{align}
 		E(X^2) & = \int_{-\infty}^{\infty} x^2 \cdot f_X(x) dx \\
 			& = \int_{-\infty}^{\infty} x^2 \cdot (1/\sqrt{2\pi}) e^{-x^2/2} dx \\
-				& = 1
+			& u = x & v = -e^{x^2/2}\\
+			& du = dx & dv = x e^{x^2/2}dx\\
+			& = \frac{ 1 }{ \sqrt{2 \pi} }\Big( x \cdot -e^{x^2/2} |_{-\infty}^{\infty} - \int_{-\infty}^{\infty} -e^{x^2/2} dx  \Big) \\
+			& = \frac{ 1 }{ \sqrt{2 \pi} } - (-\sqrt{2 \pi})\\
+			& = 1
 	\end{align}
 $$
 
@@ -195,7 +219,7 @@ $$
 	\begin{align}
 		f_Y(y) & = \frac{ 1 }{ 2 \sqrt{y} } (f_X(\sqrt{y}) + f_X(-\sqrt{y})) \\
 			& = \frac{ 1 }{ 2 \sqrt{y} } \Big( (1/\sqrt{2\pi}) e^{-(\sqrt{y})^2/2} + (1/\sqrt{2\pi}) e^{-(-\sqrt{y})^2/2} \Big) \\
-			& = \frac{ 1 }{ \sqrt{2 \pi y} } (e^{-y/2})		
+			& = \frac{ 1 }{ \sqrt{2 \pi y} } (e^{-y/2})
 	\end{align}
 $$
 
@@ -203,9 +227,13 @@ Then,
 
 $$
 	\begin{align}
-		E(Y) & = \int_{-\infty}^{\infty} y \cdot f_Y(y) dy \\
-			& = \int_{-\infty}^{\infty} y \cdot \frac{ 1 }{ \sqrt{2 \pi y} } (e^{-y/2})	dy\\
-			& = \frac{ 1 }{ \sqrt{2 \pi} } \int_{-\infty}^{\infty} \sqrt{y} \cdot  (e^{-y/2})	dy\\
+		E(Y) & = \int_{0}^{\infty} y \cdot f_Y(y) dy \\
+			& = \int_{0}^{\infty} y \cdot \frac{ 1 }{ \sqrt{2 \pi y} } (e^{-y/2})	dy\\
+			& = \frac{ 1 }{ \sqrt{2 \pi} } \int_{-\infty}^{\infty} \sqrt{y} \cdot  (e^{-y/2})	dy\\ \\
+			& u = \sqrt{y} & v = -2 e^{-y/2} \\
+			& du = \frac{ 1 }{ 2\sqrt{y} } dy & dv = e^{-y/2} dy \\ \\
+			& = \frac{ 1 }{ \sqrt{2 \pi} } \cdot \sqrt{y} \cdot -2 e^{-y/2} \Big|_{0}^{\infty} - \int_0^{\infty} \frac{ 1 }{ \sqrt{2 \pi} } \cdot -2 e^{-y/2} \cdot  \frac{ 1 }{ 2\sqrt{y} } dy \\
+			& = 0 + \int_0^{\infty} \frac{ 1 }{ \sqrt{2 y \pi} } \cdot e^{-y/2} dy \\
 			& = 1.
 	\end{align}
 $$
@@ -236,7 +264,12 @@ $$
 	\begin{align}
 		E(Y) & = \int_{0}^{\infty} y \cdot f_Y(y) dy \\
 			& = \int_{0}^{\infty} y \cdot \frac{ 2 }{ \sqrt{2\pi} } e^{-y^2/2} dy \\
-			& = \frac{ 2 }{ \sqrt{2\pi} } \int_{-\infty}^{\infty} y \cdot e^{-y^2/2} dy \\
+			& = \frac{ 2 }{ \sqrt{2\pi} } \int_{0}^{\infty} y \cdot e^{-y^2/2} dy \\\\
+			& u = -y^2 /2 & du = -y dy\\\\
+			& = \sqrt{\frac{ 2 }{ \pi }} \cdot \int y e^u \frac{ -1 }{ y }du\\
+			& = -\sqrt{\frac{ 2 }{ \pi }} e^u \Big|  \\
+			& = -\sqrt{\frac{ 2 }{ \pi }} e^{-y^2/2} \Big|_{0}^{\infty} \\
+			& = -\sqrt{\frac{ 2 }{ \pi }}  (0 - 1)\\
 			& = \sqrt{\frac{ 2 }{ \pi }}
 	\end{align}
 $$
@@ -246,7 +279,11 @@ Notice that we need to find $E(Y^2)$ in order to find the variance.
 $$
 	\begin{align}
 		E(Y^2) & = \int_{0}^{\infty} y^2 \cdot f_Y(y) dy \\
-			& = \int_{0}^{\infty} y^2 \cdot \frac{ 2 }{ \sqrt{2\pi} } e^{-y^2/2} dy \\
+			& = \int_{0}^{\infty} y^2 \cdot \frac{ 2 }{ \sqrt{2\pi} } e^{-y^2/2} dy \\ \\
+			& u = y & v = -e^{y^2/2}\\
+			& du = dy & dv = y e^{y^2/2}dy \\ \\
+			& = \frac{ 1 }{ \sqrt{2 \pi} }\Big( y \cdot -e^{y^2/2} |_{-\infty}^{\infty} - \int_{-\infty}^{\infty} -e^{y^2/2} dy  \Big) \\
+			& = \sqrt{\frac{ 2 }{ pi }} ( 0 + \sqrt{\frac{ \pi }{ 2 }})
 			& = 1\\
 		Var(Y) & = E(Y^2) - E(Y)^2 \\
 			& = 1 - \Big( \sqrt{\frac{ 2 }{ \pi }} \Big)^2 \\
@@ -273,7 +310,7 @@ $$
 			& = P(-\sqrt{y} \leq X \leq \sqrt{y}) \\
 			& = F_X(\sqrt{y}) -  F_X(\sqrt{-y})\\
 		f_Y(y) & = \frac{ d }{ dy } (F_X(\sqrt{y}) -  F_X(\sqrt{-y})) \\
-			& = f_X(\sqrt{y}) \cdot \frac{ d }{ dy } sqrt{y} -  f_X(\sqrt{-y})\cdot \frac{ d }{ dy } sqrt{-y}\\
+			& = f_X(\sqrt{y}) \cdot \frac{ d }{ dy } sqrt{y} -  f_X(\sqrt{-y})\cdot \frac{ d }{ dy } \sqrt{-y}\\
 			& = f_X(\sqrt{y}) \cdot \frac{ 1 }{ 2 \sqrt{y} } -  f_X(\sqrt{-y})\cdot \frac{ - 1 }{ 2 \sqrt{y} }\\
 			& = \frac{ 1 }{ 2 \sqrt{y} } \Big( \frac{ 1 }{ 2 } ( 1 + \sqrt{y}) + \frac{ 1 }{ 2 } ( 1 - \sqrt{y}) \Big) \\
 			& = \frac{ 1 }{ 2 \sqrt{y} } & 0 < y< 1 \\
@@ -288,11 +325,11 @@ $$
 	\begin{align}
 		E(Y) & = \int_0^1 y \cdot \frac{ 1 }{ 2\sqrt{y} } dy\\
 			& = \frac{ 1 }{ 2 } \int_0^1 \sqrt{y} dy \\
-			& = \frac{ 1 }{ 2 } (\frac{ 2 }{ 3 } \cdot y^{3/2})|_0^1 \\
+			& = \frac{ 1 }{ 2 } (\frac{ 2 }{ 3 } \cdot y^{3/2})\Big|_0^1 \\
 			& = \frac{ 1 }{ 3 }\\ \\
 		E(Y^2) & = \int_0^1 y^2 \cdot \frac{ 1 }{ 2\sqrt{y} } dy\\
 			& = \frac{ 1 }{ 2 } \int_0^1 y^{3/2} dy \\
-			& = \frac{ 1 }{ 2 } \frac{ 2 }{ 5 } (y^{5/2}) |_0^1 \\
+			& = \frac{ 1 }{ 2 } \frac{ 2 }{ 5 } (y^{5/2}) \Big|_0^1 \\
 			& = \frac{ 1 }{ 5 } \\ \\
 		Var(Y) & = E(Y^2) - E(Y)^2 \\
 			& = \frac{ 1 }{ 5 } - \frac{ 1 }{ 9 } \\
@@ -315,11 +352,11 @@ $$
 	\begin{align}
 		E(X) & = \int_{0}^{1} x \cdot a x^{a-1} dx \\
 			& = \int_{0}^{1} a x^{a} dx\\
-			& = \frac{ a }{ a+1 } x^{a+1} |_{0}^{1} \\
+			& = \frac{ a }{ a+1 } x^{a+1} \Big|_{0}^{1} \\
 			& = \frac{ a }{ a+1 } \\ \\
 		E(X^2) & = \int_{0}^{1} x^2 \cdot a x^{a-1} dx \\
 			& = \int_{0}^{1} a x^{a+1} dx\\
-			& = \frac{ a }{ a+2 } x^{a+2} |_{0}^{1} \\
+			& = \frac{ a }{ a+2 } x^{a+2} \Big|_{0}^{1} \\
 			& = \frac{ a }{ a+2} \\ \\
 		Var(X) & = \frac{ a }{ a+2} - (\frac{ a }{ a+1 })^2
 	\end{align}
@@ -355,10 +392,10 @@ $$
 $$
 	\begin{align}
 		E(X) & = \int_0^2 x \cdot \Big( \frac{ 3 }{ 2 }x^2 - 3x + \frac{ 3 }{ 2 } dx \Big) \\
-			& = \Big( \frac{ 3 }{ 8 }x^4-x^3+\frac{ 3 }{ 4}x^2 \Big)|_0^2 \\
+			& = \Big( \frac{ 3 }{ 8 }x^4-x^3+\frac{ 3 }{ 4}x^2 \Big) \Big|_0^2 \\
 			& = 1 \\ \\
 		E(X^2) & = \int_0^2 x^2 \cdot \Big( \frac{ 3 }{ 2 }x^2 - 3x + \frac{ 3 }{ 2 } dx \Big) \\
-			& = \Big( \frac{ 3 }{ 10 }x^5-\frac{ 3 }{ 4 }x^4+\frac{ 1 }{ 2}x^3 \Big)|_0^2 \\
+			& = \Big( \frac{ 3 }{ 10 }x^5-\frac{ 3 }{ 4 }x^4+\frac{ 1 }{ 2}x^3 \Big) \Big|_0^2 \\
 			& = \frac{ 8 }{ 5 } \\ \\
 		Var(X) & = \frac{ 8 }{ 5 } - 1^2 \\
 			& = \frac{ 3 }{ 5 }
@@ -457,10 +494,10 @@ $$
 			& = \frac{ e^{-\lambda} }{ e^{-e^{t \lambda}} } \cdot 1 \\
 			& = e^{\lambda(e^t - 1)} \\ \\
 		E(X) & = M^{(1)}_X(0)\\
-			& = e^{\lambda(e^t-1)} \cdot (\lambda e^t) |_{t=0} \\
+			& = e^{\lambda(e^t-1)} \cdot (\lambda e^t) \Big|_{t=0} \\
 			& = \lambda \\ \\
 		E(X^2) & = M^{(2)}_X(0)\\
-			& = e^{\lambda (e^t - 1)}(\lambda e^t)(\lambda e^t) + e^{\lambda (e^t-1)}\cdot \lambda e^t |_{t=0} \\
+			& = e^{\lambda (e^t - 1)}(\lambda e^t)(\lambda e^t) + e^{\lambda (e^t-1)}\cdot \lambda e^t \Big|_{t=0} \\
 			& = \lambda^2 + \lambda \\ \\
 		Var(X) & = \lambda^2 + \lambda  - (\lambda)^2 \\
 			& = \lambda
@@ -499,11 +536,11 @@ $$
 $$
 	\begin{align}
 		E(X) & = M_X^{(1)}(0) \\
-			& = \frac{ (1-e^t(1-p))\cdot 0 - p(-e^t(1-p)) }{ (1-e^t(1-p))^2 }|_{t=0} \\
+			& = \frac{ (1-e^t(1-p))\cdot 0 - p(-e^t(1-p)) }{ (1-e^t(1-p))^2 }\Big|_{t=0} \\
 			& = \frac{ p(1-p) }{ p^2 }\\
 			& = \frac{ 1-p }{ p } \\ \\
 		E(X^2) & = M_X^{(2)}(0) \\
-			& = p e^t(1-p)\cdot (-2)(1-e^t(1-p))^{-3}(-e^t(1-p))+(1-e^t(1-p))^{-2}\cdot pe^t(1-p) |_{t=0}\\
+			& = p e^t(1-p)\cdot (-2)(1-e^t(1-p))^{-3}(-e^t(1-p))+(1-e^t(1-p))^{-2}\cdot pe^t(1-p) \Big|_{t=0}\\
 			& = \frac{ -2(1-p)(p-1) }{ p^2 } + \frac{ p(1-p) }{ p^2 } \\
 			& = \frac{ (p-2)(p-1) }{ p^2 } \\ \\
 		Var(X) & = \frac{ (p-2)(p-1) }{ p^2 } - (\frac{ 1-p }{ p })^2 \\
@@ -547,10 +584,10 @@ $$
 			& = e^{(2 \mu \sigma^2 t + (\sigma^2 t)^2)/2 \sigma^2 } \cdot 1 \\
 			& = e^{\mu t + \frac{ \sigma^2 t^2 }{ 2 }} \\ \\
 		E(X) & = M_X^{(1)}(0) \\
-			& = e^{\mu t} \sigma^2 t e^{\frac{ \sigma^2 t }{ 2} } + e^{\frac{ \sigma^2 t }{ 2} } \cdot \mu e^{\mu t} |_{t=0}\\
+			& = e^{\mu t} \sigma^2 t e^{\frac{ \sigma^2 t }{ 2} } + e^{\frac{ \sigma^2 t }{ 2} } \cdot \mu e^{\mu t} \Big|_{t=0}\\
 			& = \mu \\ \\
 		E(X^2) & = M_X^{(2)}(0)) \\
-			& = e^{\mu t} \cdot (\sigma^2 e^{\sigma^2 t^2 /2}+ \sigma^2 t \cdot \sigma^2 t \cdot e^{\sigma^2 t^2 /2}) + \mu (\sigma^2 t + \mu e^t\cdot e^{\sigma^2 t /2}) |_{t=0} \\
+			& = e^{\mu t} \cdot (\sigma^2 e^{\sigma^2 t^2 /2}+ \sigma^2 t \cdot \sigma^2 t \cdot e^{\sigma^2 t^2 /2}) + \mu (\sigma^2 t + \mu e^t\cdot e^{\sigma^2 t /2}) \Big|_{t=0} \\
 			& = \sigma^2 + \mu^2 \\ \\
 		Var(X) & = \sigma^2 + \mu^2 - (\mu)^2 \\
 			& = \sigma^2
