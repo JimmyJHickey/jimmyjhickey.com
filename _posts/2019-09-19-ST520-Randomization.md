@@ -67,7 +67,7 @@ $$
 ## (b)
 **What is the p-value for the clinical trial described above?**
 
-We want to use a one sided p-value since we are testing if B is better than A. Under the sharp null hypothesis is our p-value is the total number of $t_i$'s greater than or equal to $t_1$ divided by the total number of trials. Notice that only trial 1, 3, and 4, meet this crieteria. Thus,
+We want to use a one sided p-value since we are testing if B is better than A. Under the sharp null hypothesis is our p-value is the total number of $t_i$'s greater than or equal to $t_1$ divided by the total number of trials. Notice that only trial 1, 3, and 4, meet this criteria. Thus,
 
 $$
 p = P(T \geq t_1 | \text{ sharp } H_0) = \frac{ 3 }{ 16 } = 0.1875.
@@ -76,7 +76,7 @@ $$
 ## (c)
 **What are the advantages and disadvantages of this kind of design as compared to using simple randomization where each treatment is assigned with probability of half independently of each other?**
 
-With simple randomzation, there is a fairly high change of imbalanced groups, especially with smaller sample sizes. Permuted block randomization solves that by ensuring that the groups are balanced (with at most $\frac{ block size }{ 2 }$ imbalance). However, this study does not using a varying block size. Thus, when the first patient in the block is assigned a treatement, the treatment for the other person is known (to be the other treatment). This may introduce other biases.
+With simple randomization, there is a fairly high change of imbalanced groups, especially with smaller sample sizes. Permuted block randomization solves that by ensuring that the groups are balanced (with at most $\frac{ block size }{ 2 }$ imbalance). However, this study does not using a varying block size. Thus, when the first patient in the block is assigned a treatment, the treatment for the other person is known (to be the other treatment). This may introduce other biases.
 
 #  2
 **Let the random variable $X\sim b(n,\pi)$. The sample proportion is denoted by $p=X/n$.**
@@ -169,10 +169,33 @@ $$
 $$
 
 ## (a)
-**In terms of $(\bar{Y_i}, s_i^2, n_i), \ i=1, \dots, N$ derive an ubiased estimator for $\sigma^2_{*\mu}$.**
+**In terms of $(\bar{Y_i}, s_i^2, n_i), \ i=1, \dots, N$ derive an unbiased estimator for $\sigma^2_{*\mu}$.**
+
+We can use the law of iterated expectation of variances.
+
+$$
+	\begin{align}
+		Var(\bar{Y_i}) & = Var(E(\bar{Y_i} | \mu_i, \sigma_i^2)) + E(Var(\bar{Y_i} | \mu_i, \sigma^2_i))\\
+			& = Var(\mu_i) + E(\frac{ \sigma^2_i }{ n_i }) \\
+			& = \sigma_{*\mu}^2 +  E(\frac{ \sigma^2_i }{ n_i }) \\
+		\sigma_{*\mu}^2 & = Var(\bar{Y_i}) -  E(\frac{ \sigma^2_i }{ n_i }) \\
+			& = \frac{ 1 }{ N - 1 } \sum (\bar{Y_i} - \bar{\bar{Y}})^2 - \frac{ 1 }{ N } \sum \frac{ \sigma_i^2 }{ n_i }
+	\end{align}
+$$
+
+Where $\bar{\bar{Y}}$ is the average of the means.
 
 ## (b)
 **Derive this estimate for the data provided in the table above.**
+
+Notice that $\bar{\bar{Y}} = 33.1$.
+
+$$
+\frac{1}{10-1} \cdot (20-33.1)^2+(23-33.1)^2+(25-33.1)^2+(28-33.1)^2+(30-33.1)^2+(31-33.1)^2+(34-33.1)^2+(40-33.1)^2+(41-33.1)^2+(59-33.1)^2 -\frac{1}{10} \left(\frac{2475}{52}+\frac{1971}{48}+\frac{2009}{47}+\frac{1711}{163}+\frac{2484}{135}+\frac{2139}{150}+\frac{2275}{37}+\frac{1411}{111}+\frac{2379}{62}+\frac{1622}{100}\right)
+
+
+= 98.6539
+$$
 
 
 #  4
@@ -181,7 +204,82 @@ $$
 ## (a)
 **What is the optimal allocation of patients to treatment A and B subject to the budgetary constraints of the investigator? That is, what allocation of patients would result in the smallest variance of the estimator of treatment difference?**
 
+Notice that we want to estimate and optimize $\Delta$, so we can use the equation,
 
+$$
+\hat{\Delta} = \bar{Y_A} - \bar{Y_B} = \sigma^2 \Big( \frac{ 1 }{ n_A } + \frac{ 1 }{ n_B } \Big).
+$$
+
+Our optimization equation is $150 n_a + 100 n_b \leq 30000$. We can solve this for $n_B$ to get
+
+$$
+n_B = \frac{ 30000 - 150n_A }{ 100 }.
+$$
+
+We can then plug this into the equation for $\hat{\Delta}$ and take the derivative at 0 to find where the variance is minimized.
+
+$$
+	\begin{align}
+		\hat{\Delta} & = \sigma^2 \Big( \frac{ 1 }{ n_A } + \frac{ 100 }{30000 - 150n_A } \Big)\\
+		\frac{ d }{ dn_A }\hat{\Delta} & = \frac{ 15000 \sigma^2 }{ (30000-150\cdot n_A)^2 } - \frac{ \sigma^2 }{ n_A^2 } \\
+		0 & = \frac{ 15000 \sigma^2 }{ (30000-150\cdot n_A)^2 } - \frac{ \sigma^2 }{ n_A^2 } \\
+		n_A & = 110.102, 1089.9
+	\end{align}
+$$
+
+We see on the graph that the derivative goes from negative to positive at 110.102, so we will examine that point further. Also notice that 1089.9 lives outside of the budget constraint.
+
+![derivative graph](../img/post_img/2019-09-19-ST520-Randomization/4.a-derivative-graph.png)
+
+
+
+Since our $n_A$ is not a whole number, we will check both 110 and 111 to see which gives the lowest variance.
+
+$$
+	\begin{align}
+		@ n_A = 110 \\
+		n_B & = \frac{ 30000-150(110) }{ 100 } \\
+			& = 135
+		\hat{\Delta} & = \sigma^2 \Big( \frac{ 1 }{ 110 } + \frac{ 1 }{ 135 } \Big)\\
+			& = 0.0164983 \sigma^2
+	\end{align}
+$$
+
+
+
+$$
+	\begin{align}
+		@ n_A = 111 \\
+		n_B & = \frac{ 30000-150(111) }{ 100 } \\
+			& = 133.5 = 133 & \text{round down due to budget}
+		\hat{\Delta} & = \sigma^2 \Big( \frac{ 1 }{ 111 } + \frac{ 1 }{ 133 } \Big)\\
+			& = 0.0165278 \sigma^2
+	\end{align}
+$$
+
+
+We can see that the case $n_A = 110, \ n_B = 0.164983$ gives the lowest variance, thus it is the optimal allocation.
 ## (b)
 **If the investigator insisted on equal allocation to both treatments, then how much more money would need to be spent to get the same degree of precision (i.e. variance of estimator) as the allocation in part (a).**
 
+Equal treatments means that $n_A = n_B$. In order to have the same variance,
+
+$$
+	\begin{align}
+		0.0164983 \sigma^2 & = \sigma^2 (\frac{ 1 }{ n_A } + \frac{ 1 }{ n_B })\\
+			& = \sigma^2 (\frac{ 1 }{ n_A } + \frac{ 1 }{ n_A })\\
+		n_A & = \frac{2}{.0164717}.
+	\end{align}
+$$
+
+
+For the sake of having the exact same variance, we will leave this unrounded. Thus, the investigator would need to spend
+
+$$
+	\begin{align}
+		\text{Budget} & = 150 \cdot \frac{2}{.0164717} + 100 \cdot \frac{2}{.0164717} \\
+			& 30355.1\\ 
+	\end{align}
+$$
+
+This is $30000 - 30355.1 = 355.10$ dollars more than the imbalanced study.
