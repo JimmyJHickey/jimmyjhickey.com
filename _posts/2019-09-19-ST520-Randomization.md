@@ -239,7 +239,7 @@ $$
 	\begin{align}
 		@ n_A = 110 \\
 		n_B & = \frac{ 30000-150(110) }{ 100 } \\
-			& = 135
+			& = 135 \\
 		\hat{\Delta} & = \sigma^2 \Big( \frac{ 1 }{ 110 } + \frac{ 1 }{ 135 } \Big)\\
 			& = 0.0164983 \sigma^2
 	\end{align}
@@ -251,7 +251,7 @@ $$
 	\begin{align}
 		@ n_A = 111 \\
 		n_B & = \frac{ 30000-150(111) }{ 100 } \\
-			& = 133.5 = 133 & \text{round down due to budget}
+			& = 133.5 = 133 & \text{round down due to budget} \\
 		\hat{\Delta} & = \sigma^2 \Big( \frac{ 1 }{ 111 } + \frac{ 1 }{ 133 } \Big)\\
 			& = 0.0165278 \sigma^2
 	\end{align}
