@@ -58,7 +58,10 @@ $$
 $$
 
 
-We will use the parameter estimates table from SAS given in (a).
+We will use the parameter estimates table from SAS given in (a). Notice that we have a large $n$ and are assuming normality even though the qqplot does not look great.
+
+
+![qqplot](../img/post_img/2019-09-26-ST703-Multiple-Linear-Regression/1.b-qqplot.png)
 
 
 $$
@@ -111,7 +114,7 @@ We would expect $Var(Y)$ to be larger than $Var(Y\|X=x)$, which we calculated in
 ## (e)
 **Report a standard error and 95% confidence interval for the mean pace for runners aged $x=34$.**
 
-We can find a standard error estimate for $E(Y \| \mathbf{x}_0)$ with $\sigma^2 \mathbf{x}_0 (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{x}_0^T$ where $\mathbf{x_0} = [1\ 34\ 1156]$. We can use this to calculate the confidence interval
+We can find a standard error estimate for $E(Y \| \mathbf{x}_0)$ with $\sqrt{\sigma^2 \mathbf{x}_0 (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{x}_0^T}$ where $\mathbf{x_0} = [1\ 34\ 1156]$. We can use this to calculate the confidence interval
 
 $$
 E(Y | x = 34) \pm t_{n-3, \alpha/2} \cdot SE(E(Y | x = 34)).
@@ -127,7 +130,7 @@ Our standard error is 0.2055. We are 95% confident that the true mean pace for r
 ## (f)
 **Obtain a 95% prediction interval for the pace of an individual runner selected from the cohort of 34 year-olds.**
 
-We can find the prediction interval $Y \| x = 34$ with the following formula. Note that the variance of $Y \| x_0 = 34$ is $\sigma^2 + \sigma^2 \mathbf{x}_0 (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{x}_0^T$ where $\mathbf{x_0} = [1\ 34\ 1156]$.
+We can find the prediction interval $Y \| x = 34$ with the following formula. Note that the variance of $Y \| x_0 = 34$ is $\sqrt{\sigma^2 + \sigma^2 \mathbf{x}_0 (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{x}_0^T}$ where $\mathbf{x_0} = [1\ 34\ 1156]$.
 
 $$
 \hat{Y_0} \pm _{n-3, \alpha/2} \cdot SE(Y - \hat{Y_0})
@@ -143,33 +146,38 @@ We are 95% confident that the next new observation given an age of 34 will be wi
 
 Problem (e) is estimating the mean of the pace $\beta_0 + \beta_1 x + \beta_2 x^2$.
 
-Problem (f) is asking to estimate the value given a new observation with an age of 34. We are estimating $Y = \beta_0 + \beta_1 x + \beta_2 x^2 + E$.
+Problem (f) is asking to estimate the value given a new observation with an age of 34. We are estimating $Y = \beta_0 + \beta_1 x + \beta_2 x^2 + E$. 
+
+Notice that the prediction interval has a wider range.
 
 ## (h)
 **Construct a 99% confidence interval for the parameter $\theta = \beta_1 - \beta_2$.**
 
-We can treat this like a two sampled t-test. Our confidence interval will have the equation
-
 
 $$
-(\hat{\beta_1} - \hat{\beta_2}) \pm t_{\nu, \alpha/2} \cdot \sqrt{ \frac{ s_{\beta_1}^2 }{ n_1 } + \frac{ s_{\beta_2}^2 }{ n_2 } }
+(\hat{\beta_1} - \hat{\beta_2}) \pm t_{\nu, \alpha/2} \cdot \sqrt{ Var(\hat{\beta_1} - \hat{\beta_2}) }
 $$
 
-We can use the estimates from part (a) to say $\hat{\beta_1} = -0.19699$, $\hat{\beta_2} =0.00294$, $s_{\beta_1} = 0.04113^2$, and $s_{\beta_2} = 0.00057380^2$. Note that $n_1 = n_2 = 160$. We can calculate $\nu$ with
+Notice that
 
 $$
-\nu = \frac{ \Big(s_{\beta_1}^2 / n_1 + s_{\beta_2}^2 / n_2 \Big)^2 }{ \frac{ (s_{\beta_1}^2 / n_1)^2 +}{ n_1 -1 } + \frac{  (s_{\beta_2}^2 / n_2)^2 }{ n_2 -1 }} = 159.
+Var(\hat{\beta_1} - \hat{\beta_2})) = Var(\hat{\beta_1}) + Var(\hat{\beta_2})) - 2 Cov(\hat{\beta_1}), \hat{\beta_2}))
 $$
+
+We can use the estimates from part (a) to say $\hat{\beta_1} = -0.19699$, $\hat{\beta_2} =0.00294$, and we can get the variance and covariance from SAS.
+
+
+![variance](../img/post_img/2019-09-26-ST703-Multiple-Linear-Regression/1.h-variance.png)
 
 
 Thus, our confidence interval is
 
 $$
-(\theta_L, \theta_U) = (-0.19699-0.00294) \pm 2.35003 \sqrt{\frac{0.04113^2}{160}+\frac{0.0005738^2}{160}} = (-0.207572, -0.192288).
+(-0.19699-0.00294) \pm 2.60751 \sqrt{0.00169207 + 3.29241 *10^{-7} - 2 (-0.000022716)} = (-0.30863, -0.0912303).
 $$
 
 
-We are 99% confident that the true value of $\theta$ is between -0.207572 and -0.192288.
+We are 99% confident that the true value of $\theta$ is between -0.30863 and -0.0912303.
 
 ## (i)
 **Consider the _rate_ at which the mean function for pace, $\mu(x)$, changes with age.**
@@ -180,7 +188,7 @@ We are 99% confident that the true value of $\theta$ is between -0.207572 and -0
 We can take the derivative of regression function to find the mean function for pace.
 
 $$
-	\frac{ d }{ d\mu } = \beta_1 + \beta_2 \cdot x_1
+	\frac{ d }{ d\mu } = \beta_1 + 2 \beta_2 \cdot x_1
 $$
 
 ### ii.
@@ -189,10 +197,10 @@ $$
 Using the parameter estimates from part (a) we get,
 
 $$
-(\frac{ d }{ d\mu } | x = 30) = -0.19699 + 0.00294 \cdot 30 =-0.10879
+(\frac{ d }{ d\mu } | x = 30) = -0.19699 +2 \cdot  0.00294 \cdot 30 =-0.02059
 $$
 
-This means that the estimated rate of change for 30 year-olds is -0.10879 miles per minute per year. 
+This means that the estimated rate of change for 30 year-olds is -0.02059 miles per minute per year. 
 
 ### iii.
 **Estimate the rate of change for 50 year-olds.**
@@ -200,10 +208,10 @@ This means that the estimated rate of change for 30 year-olds is -0.10879 miles 
 Using the parameter estimates from part (a) we get,
 
 $$
-(\frac{ d }{ d\mu } | x = 30) = -0.19699 + 0.00294 \cdot 50 =-0.04999
+(\frac{ d }{ d\mu } | x = 30) = -0.19699 + 2 \cdot 0.00294 \cdot 50 =0.09701
 $$
 
-This means that the estimated rate of change for 50 year-olds is -0.04999 miles per minute per year.
+This means that the estimated rate of change for 50 year-olds is 0.09701 miles per minute per year.
 
 ### iv.
 **A simple and familiar test of one of the regression parameters can we used to investigate the claim that "the rate at which the mean function for pace changes with age is constant." State relevant hypotheses and conduct the test.**
@@ -224,7 +232,7 @@ We can calculate a t-statistic to test our hypothesis.
 $$
 	\begin{align}
 		t & = \frac{ \hat{\beta_2} - \beta_{2,0} }{ SE(\hat{\beta_2}) } \\
-			& = \frac{ 0.00294 - 0  }{ 0.00057380 }
+			& = \frac{ 0.00294 - 0  }{ 0.00057380 }\\
 			& = 5.12374
 	\end{align}
 $$
@@ -240,14 +248,14 @@ For this we want to check when the derivative is equal to 0.
 $$
 	\begin{align}
 		0 & = \beta_1 + \beta_2 \cdot x_1 \\
-			& = -0.19699 + 0.00294 \cdot x_1 \\
-		x_1 & = 67.0034
+			& = -0.19699 + 2 \cdot 0.00294 \cdot x_1 \\
+		x_1 & = 33.5017
 	\end{align}
 $$
 
-Looking at the graph of the derivative, we see that it goes from negative to positive at 67.0034, so this is indeed a minimum.
+Looking at the graph of the derivative, we see that it goes from negative to positive at 33.5017, so this is indeed a minimum.
 
-![derivative graph](../img/post_img/2019-09-26-ST703-Multiple-Linear-Regression/1.j-derivative_graph)
+![derivative graph](../img/post_img/2019-09-26-ST703-Multiple-Linear-Regression/1.j-derivative_graph.png)
 
 
 # 2
@@ -309,7 +317,7 @@ $$
 
 The difference in these two models is the presence of an interaction term in model 2. In this case, the intercept parameter, $\beta_0$ has the same interpretation, it is the expected value when all other predictors are 0.
 
-The differences arise with $\beta_1$ and $\beta_2$ becaues of the interaction term. In model 1, $\beta_1$ and $\beta_2$ represent the change in the expected value of the response given a one unit increase in $x_{i1}$ or $x_{i2}$, repectively, while holding the other constant. The same cannot be said for model 2 unless the variable being held constant is 0; otherwise the interaction term and the value of $x_{i2}$ will play a role in the expected change in response.
+The differences arise with $\beta_1$ and $\beta_2$ because of the interaction term. In model 1, $\beta_1$ and $\beta_2$ represent the change in the expected value of the response given a one unit increase in $x_{i1}$ or $x_{i2}$, respectively, while holding the other constant. The same cannot be said for model 2 unless the variable being held constant is 0; otherwise the interaction term and the value of $x_{i2}$ will play a role in the expected change in response.
 
 
 Model 1:
@@ -355,7 +363,7 @@ $$
 ## (d)
 **Use the given ANOVA table to test the null hypothesis that $H_0: \ \beta_1 = \beta_2 = 0$ in model 1. Write your conclusion.**
 
-In words, our null hypothesis, $H_0: \ \beta_1 = \beta_2 = 0$, means that neither of the variables are usful for predicting $Y$ while the alternative hypothesis is that at least one of $\beta_1$ or $\beta_2$ is useful. 
+In words, our null hypothesis, $H_0: \ \beta_1 = \beta_2 = 0$, means that neither of the variables are useful for predicting $Y$ while the alternative hypothesis is that at least one of $\beta_1$ or $\beta_2$ is useful. 
 
 
 The F-Value in the ANOVA table for model 1 is $F = \frac{ MSRegn }{ MSE } = 34.555$ with a probability of 0.0012 when compared to an F distribution with 2 numerator and 5 denominator degrees of freedom. Using an $\alpha=0.05$, we have sufficient evidence to reject the null hypothesis in favor of the alternative, that at least one of $\beta_1$ or $\beta_2$ is useful. 
