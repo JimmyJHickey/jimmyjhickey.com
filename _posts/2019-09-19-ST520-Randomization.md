@@ -90,6 +90,20 @@ $$
 
 **is an unbiased estimator for $\pi(1-\pi), \ n \geq 2$.**
 
+$$
+	\begin{align}
+		E\Big(\frac{ n }{ n-1 }\cdot p (1-p)\Big) & = \frac{ n }{ n-1 }E(\frac{ X }{ n } ( 1- \frac{ X }{ n })) \\
+			& = \frac{ n }{ n-1 } E(\frac{ X }{ n } - \frac{ X^2 }{ n^2 }) \\
+			& = \frac{ n }{ n-1 } \Big( \frac{ 1 }{ n } E(X) - \frac{ 1 }{ n^2 }E(X^2) \Big) \\
+			& = \frac{ n }{ n-1 } \Big( \frac{ 1 }{ n } (n \cdot \pi) - \frac{ 1 }{ n^2 }(n\cdot \pi(1-\pi) + n^2 \pi^2) \Big) \\
+			& = \frac{ n }{ n-1 } \Big( \pi - \frac{ 1 }{ n^2 } (n \pi - n \pi^2 + n^2 \pi^2) \Big) \\
+			& = \frac{ n }{ n-1 } \Big( \pi - \frac{ \pi }{ n } + \frac{ \pi^2 }{ n } - \pi^2 \Big) \\
+			& = \frac{ n \pi - \pi + \pi^2 - n \pi^2 }{ n - 1 } \\
+			& = \frac{ \pi (n-1) - \pi^2(n-1) }{ n = 1 } \\
+			& = \pi - \pi^2 \\
+			& = \pi (1-\pi)
+	\end{align}
+$$
 
 ## (b)
 **Consider data from $N$ studies using the same treatment regimen. We observe $(X_i, n_i), \ i = 1, \dots, N$, where $n_i$ denotes the number of patients in the $i$-th study and $X_i$ denotes the number of these patients that respond to treatment. It will be assumed that these data are from a hierarchical model where $(X_i, n_i, \pi_i), \ i = 1, \dots, N$ are assumed to be iid random vectors. The $\pi_i$ are assumed to be study-specific response rates which themselves represent an iid sample from some distribution. Conditional on $\pi_i$ and $n_i$, $X_i$ is assumed to follow a binomial distribution. Specifically,**
@@ -107,6 +121,22 @@ $$
 **and prove that is unbiased.**
 
 
+$$
+	\begin{align}
+		E \Big[ E\Big( \frac{ n_i }{ n_i - 1 } \cdot p_i (1-p_i) \Big) \Big] & = E \Big[ E\Big( \frac{ n_i }{ n_i - 1 } \cdot \frac{ X_i }{ n_i } (1-\frac{ X_i }{ n_i }) \Big) \Big] \\
+			& = E \Big[  \frac{ 1 }{ n_i - 1 } \cdot E\Big( X_i - \frac{ X_i^2 }{ n_i } \Big) \Big] \\
+			& = E \Big[  \frac{ 1 }{ n_i - 1 } \cdot \Big( E(X_i) - E\Big(\frac{ X_i^2 }{ n_i }\Big) \Big) \Big] \\
+			& = E \Big[  \frac{ 1 }{ n_i - 1 } \cdot \Big( E(E(X_i | n_i, \pi_i )) - \frac{ 1 }{ n_i } E(E(X_i^2 | n_i, \pi_i )) \Big) \Big] \\
+			& = E \Big[  \frac{ 1 }{ n_i - 1 } \cdot \Big( E(n_i \pi_i) - \frac{ 1 }{ n_i } E(n_i \pi_i (1-\pi_i) + n_i^2 \pi_i^2) \Big) \Big] \\
+			& = E \Big[  \frac{ 1 }{ n_i - 1 } \cdot \Big( E(n_i \pi_i) - \frac{ 1 }{ n_i } E(ni_i \pi_i - n_i \pi_i^2 + n_i^2 \pi_i^2) \Big) \Big] \\
+			& = E \Big[  \frac{ 1 }{ n_i - 1 } \cdot \Big( E(n_i \pi_i) - E( \pi_i - \pi_i^2 + n_i \pi_i^2 \Big) \Big] \\
+			& = E \Big[  \frac{ 1 }{ n_i - 1 } E(n_i \pi_i - \pi_i - \pi_i^2 + n_i \pi_i^2 \Big) \Big] \\
+			& = E \Big[  \frac{ n_i \pi_i - \pi_i + \pi_i^2 - n_i \pi_i^2 }{ n_i - 1 } \Big] \\
+			& = E \Big[  \frac{ \pi_i ( n_i - 1) + \pi_i^2(n_i - 1) }{ n_i - 1 } \Big] \\
+			& = E(\pi_i - \pi_i^2) \\
+			& = E(\pi_i ( 1 - \pi_i))
+	\end{align}
+$$
 
 #  3
 **Consider the following hierarchical model which may be appropriate in conceptualizing results from different studies using the same regimen but where the response of interest is a continuous measurement. The data from $N$ such studies are defined as**
@@ -278,7 +308,7 @@ For the sake of having the exact same variance, we will leave this unrounded. Th
 $$
 	\begin{align}
 		\text{Budget} & = 150 \cdot \frac{2}{.0164717} + 100 \cdot \frac{2}{.0164717} \\
-			& 30355.1\\ 
+			& = 30355.1\\ 
 	\end{align}
 $$
 
