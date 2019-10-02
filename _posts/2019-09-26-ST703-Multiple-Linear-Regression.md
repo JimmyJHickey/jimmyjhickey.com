@@ -21,6 +21,9 @@ $$
 \mu(x) = \beta_0 + \beta_1 x + \beta_2 x^2
 $$
 
+
+For this whole problem we will be making our standard regression assumptions, which are normality in our residuals, equal variance of residuals with respect to our predicted values, independence, and that the expected value of our error is zero.
+
 ## (a)
 **Obtain the least squares regression equation.**
 
