@@ -20,21 +20,53 @@ should assume the standard deviation of systolic blood pressure on the new drug 
 ## (a)
 **Using clear notation state the null hypothesis and alternative hypothesis that will be tested.**
 
-
-
+$$
+	\begin{align}
+		H_0: & \mu_1 - \mu_2 \leq 5 \\
+		H_A: & \mu_1 - \mu_2 > 5
+	\end{align}
+$$
 
 ## (b)
 **What test statistic would you use?**
 
+Since we are assuming that the variances are the same, we can use a Pooled Two Sample T-Test.
+
+
+$$
+T = \frac{ \bar{Y_1} - \bar{Y_2} }{ S_P	\sqrt{\frac{ 1 }{ n1 } + \frac{ 1 }{ n_2 }} }
+$$
 
 
 ## (c)
 **What sample size would you recommend based on the considerations above (i.e., the number of patients on placebo and new drug).**
 
 
+$$
+	\begin{align}
+		z_{\alpha} + z_{\beta} & = \frac{ \Delta }{ \sigma \cdot \sqrt{\frac{ 1 }{ n_1 } + \frac{ 1 }{ n_2 }} }\\
+		z_{\alpha} + z_{\beta} & = \frac{ \Delta }{ \sigma \cdot \sqrt{\frac{ 1 }{ 2/3 n } + \frac{ 1 }{ 1/3 n }} }\\
+		z_{\alpha} + z_{\beta} & = \frac{ \Delta }{ \sigma \cdot \sqrt{\frac{ 9 }{ 2n }} }\\
+		n & = \Big( \frac{ \sigma \cdot (z_{\alpha} + z_{\beta}) }{ \Delta } \Big)^2\cdot \frac{ 9 }{ 2 } \\
+			& = \frac{9}{2} \left(\frac{25}{5} (1.96\, +2.05)\right)^2 \\
+			& = 1809.01 \approx 1812 \\ \\
+		n_1 = 1812 \cdot 2/3 & = 1208  \\
+		n_2 = 1812 \cdot 1/3 & = 604
+	\end{align}
+$$
+
 ## (d)
 **What sample size would you recommend if you were to randomize with equal probability (equal allocation) to the two treatments (placebo and new drug)?**
 
+$$
+	\begin{align}
+		\frac{ 1 }{ 2n } + \frac{ 1 }{ 2n } & = \Big( \frac{ \sigma \cdot (z_{\alpha} + z_{\beta}) }{ \Delta } \Big)^2 \\
+		n & = \Big( \frac{ \sigma \cdot (z_{\alpha} + z_{\beta}) }{ \Delta } \Big)^2 \cdot 4 \\
+			& = 4 \left(\frac{25}{5} (1.96\, +2.05)\right)^2 \\
+			& = 1608.01 \approx 1610\\
+		n_1 = n_2 & = 1/2 n = 805
+	\end{align}
+$$
 
 
 #  2
@@ -55,7 +87,7 @@ $$
 \bar{Y_j} = \frac{ \sum_{i=1}^{n_j} Y_{ij} }{ n_j }, \ j=1,2
 $$
 
-and the sample standard deviation is
+**and the sample standard deviation is**
 
 $$
 s_j = \sqrt{\frac{ \sum_{i=1}^{n_j} \Big( Y_{ij} - \bar{Y_j} \Big)^2 }{ n_j-1 }}, \ j=1,2
