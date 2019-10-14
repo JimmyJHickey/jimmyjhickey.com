@@ -32,9 +32,8 @@ $$
 
 Since we are assuming that the variances are the same, we can use a Pooled Two Sample T-Test.
 
-
 $$
-T = \frac{ \bar{Y_1} - \bar{Y_2} }{ S_P	\sqrt{\frac{ 1 }{ n1 } + \frac{ 1 }{ n_2 }} }
+T = \frac{ \bar{Y_1} - \bar{Y_2} }{ S_P	\sqrt{\frac{ 1 }{ n_1 } + \frac{ 1 }{ n_2 }} }
 $$
 
 
@@ -48,10 +47,10 @@ $$
 		z_{\alpha} + z_{\beta} & = \frac{ \Delta }{ \sigma \cdot \sqrt{\frac{ 1 }{ 2/3 n } + \frac{ 1 }{ 1/3 n }} }\\
 		z_{\alpha} + z_{\beta} & = \frac{ \Delta }{ \sigma \cdot \sqrt{\frac{ 9 }{ 2n }} }\\
 		n & = \Big( \frac{ \sigma \cdot (z_{\alpha} + z_{\beta}) }{ \Delta } \Big)^2\cdot \frac{ 9 }{ 2 } \\
-			& = \frac{9}{2} \left(\frac{25}{5} (1.96\, +2.05)\right)^2 \\
-			& = 1809.01 \approx 1812 \\ \\
-		n_1 = 1812 \cdot 2/3 & = 1208  \\
-		n_2 = 1812 \cdot 1/3 & = 604
+			& = \frac{9}{2} \left(\frac{25}{5} (1.96\, +0.8416212)\right)^2 \\
+			& = 883.022 \approx 885 \\ \\
+		n_1 = 885 \cdot 2/3 & = 590  \\
+		n_2 = 885 \cdot 1/3 & = 295
 	\end{align}
 $$
 
@@ -62,9 +61,9 @@ $$
 	\begin{align}
 		\frac{ 1 }{ 2n } + \frac{ 1 }{ 2n } & = \Big( \frac{ \sigma \cdot (z_{\alpha} + z_{\beta}) }{ \Delta } \Big)^2 \\
 		n & = \Big( \frac{ \sigma \cdot (z_{\alpha} + z_{\beta}) }{ \Delta } \Big)^2 \cdot 4 \\
-			& = 4 \left(\frac{25}{5} (1.96\, +2.05)\right)^2 \\
-			& = 1608.01 \approx 1610\\
-		n_1 = n_2 & = 1/2 n = 805
+			& = 4 \left(\frac{25}{5} (1.96\, +0.8416212)\right)^2 \\
+			& = 784.908 \approx 786\\
+		n_1 = n_2 & = 1/2 n = 393
 	\end{align}
 $$
 
@@ -97,10 +96,36 @@ $$
 ## (a)
 **What test statistic would you use to test for treatment difference and compute the value of this statistic using the data above.**
 
+We can use a two sampled t-test. We will not pool the variances.
+
+$$
+	\begin{align}
+		T & = \frac{ \bar{Y_1} - \bar{Y_2} }{ \sqrt{ \frac{ s_1^2 }{ n_1 } + \frac{s_2^2}{n_2} } }
+			& =\frac{135.8\, -142.5}{\sqrt{\frac{24.6^2} \\{200}+\frac{23.7^2}{195}}} \\
+			& = -2.75688
+	\end{align}
+$$
 
 ## (b)
 **Compute the p-value and use this to make conclusions on whether or not the anti-hypertensive drug is effective.**
 
+We will run a two sided test with the following hypotheses.
+
+$$
+	\begin{align}
+		H_0: & \bar{Y_1} - \bar{Y_2} = 0\\
+		H_A: & \bar{Y_1} - \bar{Y_2} \neq 0
+	\end{align}
+$$
+
+We can use R to calculate our 2-sided p-value with $df = 200+ 195 - 2$ degrees of freedom.
+
+```
+2 * ( 1 - pt( abs(-2.75688), df = 200 + 195 - 2))
+	0.006107625
+```
+
+Using $\alpha = 0.05$, since $0.0061< 0.05$, we have evidence to reject the null in favor of the alternative that the sample means are different.
 
 #  3
 **You are also consulted to help design yet another clinical trial, in this case, comparing two treatments for patients after a myocardial infarction (heart attack) with the goal of increasing survival after a heart attack. The primary outcome is the binary outcome of whether a patient survives six months after randomization where time is measured after the randomized treatment is administered to the patient after his/her myocardial infraction. Based on current information for such patients it is expected that roughly 80% will survive six months after treatment for their heart attack. If one of these two treatments is effective then it is felt that it would be important to detect an increase of 10% in six month survival (i.e., from .80 to .90) with 90% power using a two-sided test at the .05 level of significance. Randomization to the two treatments will be with equal probability and all patients will be followed for at least six months so there will be no issue of censored observations. Consequently, the primary outcome is the binary outcome of
@@ -110,11 +135,55 @@ whether a patient survives six months or not.**
 ## (a)
 **Using the design considerations above compute the sample size that you would recommend if you were to use the proportions test to test for significance. Show all your calculations.**
 
+We will test the following hypotheses.
 
+$$
+	\begin{align}
+		H_0: & p_1 - p_2 \leq 0.1 \\
+		H_A: & p_1 - p_2 > 0.1
+	\end{align}
+$$
+
+From the problem we have $\hat{p_1} = 0.9$, $\hat{p_2} = 0.8$, $\Delta = 0.1$, $n_1 = n_2$, $\beta = 0.1$, $z_{\beta} = 1.28$, $\alpha =0.05$, and $z_{\alpha / 2} = 1.96$. Also notice
+
+
+$$
+\bar{\pi} = \pi_1 \cdot \frac{ n_1 }{ n_1 + n_2 } + \pi_2 \cdot \frac{ n_2 }{ n_1 + n_2 } = \frac{ 1 }{ 2 } n_1 + \frac{ 1 }{ 2 } n_2 = 0.85.
+$$
+
+
+Now we can calculate $n$.
+
+$$
+	\begin{align}
+		n & = \frac{ \Big[ z_{\alpha/2} +z_{\beta} \cdot \Big( \frac{ \pi_1 \cdot (1-\pi_1) + \pi_2 \cdot (1-\pi_2}{ 2 \bar{\pi} \cdot (1-\bar{\pi}) )} \Big) \Big]^2 \cdot 4 \bar{\pi} \cdot (1-\bar{\pi}) }{ \Delta_A^2 }\\
+			& = \frac{\left(\frac{1.28 (0.9 (1-0.9)+0.8 (1-0.8))}{2 0.85 (1-0.85)}+1.96\right)^2 4\cdot 0.85 (1-0.85)}{0.1^2} \\
+			& = 527.115 \approx 528
+	\end{align}
+$$
+
+
+We should use a sample size of 528 patients equally distributed between the two groups.
 
 ## (b)
 **Using the design considerations above compute the sample size that you would recommend if you were to use the test based on the arc sine square root transformation test to test for significance. Show all your calculations.**
 
+We can calculate
+
+$$
+n = \frac{ (z_{\alpha / 2} + z_{\beta})^2}{ \Delta_A^2 }
+$$
+
+where $\Delta_A^2  = \arcsin( \sqrt{p_1}) - \arcsin(\sqrt{p_2})$.
+
+$$
+	\begin{align}
+		n & = \frac{(1.96\, +1.28)^2}{\left(\arcsin \left(\sqrt{0.9}\right)-\arcsin\left(\sqrt{0.8}\right)\right)^2} \\
+			& = 521.367 \approx 522
+	\end{align}
+$$
+
+Using the arc sine square root transformation, we should use a sample size of 522, equally distributed between the two groups.
 
 #  4
 **Another group of investigators went ahead and conducted such a clinical trial without consulting a statistician. In this clinical trial a total of 150 patients were randomized. Of the 73 patients randomized to treatment 1, 54 survived six months; and among the 77 patients randomized to treatment 2, 63 survived six months.**
@@ -122,16 +191,70 @@ whether a patient survives six months or not.**
 ## (a)
 **Compute the two-sided p-value using the proportions test.**
 
+We are testing the following hypotheses.
 
+$$
+	\begin{align}
+		H_0 : & p_1 - p_2 = 0\\
+		H_A: & p_1 - p_2 \neq 0 \\
+	\end{align}
+$$
+
+We will calculate our test statistic. First notice that
+
+$$
+\bar{p} = \frac{ X_1 + X_2 }{ n_1 + n_2 } = \frac{54+63}{73+77} = \frac{39}{50}.
+$$
+
+
+$$
+	\begin{align}
+		T & = \frac{ p_1 - p_2 }{ \bar{p} (1-\bar{p}) \cdot (\frac{ 1 }{ n_1 } + \frac{ 1 }{ n_2 })} \\
+			& = \frac{\frac{54}{73}-\frac{63}{77}}{\sqrt{\frac{39}{50} \left(1-\frac{39}{50}\right) \left(\frac{1}{73}+\frac{1}{77}\right)}} \\
+			& = -1.15938
+	\end{align}
+$$
+
+
+We can then calculate the p-value using R with $df = 77 + 73 - 2$ degrees of freedom.
+
+
+```
+2 * (1 - pt( abs(-1.15938), df = 77 + 73 - 2))
+	0.2481684
+```
+
+Using $\alpha = 0.05$, with our p-value $0.2481684 > 0.05$ we do not have evidence to reject the null hypothesis that the proportions are different.
 
 ## (b)
 **Compute the two-sided p-value using the arc sine square-root transformation.**
 
 
+$$
+	\begin{align}
+		T & = \frac{ \arcsin(\sqrt{p_1}) - \arcsin( \sqrt{p_2}) }{ \Big( \frac{ 1 }{ 4n_1 } + \frac{ 1 }{ 4n_2 } \Big)^{1/2} } \\
+			& = \frac{\arcsin\left(\sqrt{\frac{54}{73}}\right)-\arcsin\left(\sqrt{\frac{63}{77}}\right)}{\sqrt{\frac{1}{4\cdot 77}+\frac{1}{4\cdot 73}}} \\
+			& = -1.16153
+	\end{align}
+$$
+
+From this we can use R to calculate a p-value.
+
+```
+2 * ( 1 - pt(abs(-1.16152), df = 77 + 33 -2) )
+	0.2479911
+```
+
+Using $\alpha = 0.05$, our p-value $0.2479911 > 0.05$ so we do not have evidence to reject the null hypothesis that the proportions are different.
+
+
 ## (c)
 **Based on these results what would you conclude?**
 
+Both test have p-values $> 0.05$ that we do not have sufficient evidence to reject the null in favor of the alternative.
 
 
 ## (d)
 **In view of the answer you gave on question 3 what would you conclude regarding whether there is truly a treatment difference?**
+
+We fail to reject the null that there is no treatment difference. Perhaps if we adjusted the sample size using our statistical calculations, we could better approximate the difference in treatments.
