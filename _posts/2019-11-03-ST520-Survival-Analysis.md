@@ -1,9 +1,9 @@
 ---
 layout: post
 comments: false
-title: Example Problems on Survival Analysys
-description: ST520 Homework 4 on Sample Size Calculations
-tags: ST520 Statistics Clinical-Trials Sample-Size Calculations
+title: Example Problems on Survival Analysis
+description: ST520 Homework 5 on Survival Analysis
+tags: ST520 Statistics Clinical-Trials Survival-Analysis
 ---
 
 Problems: 1, 2, 3, 4, 5, 6
