@@ -406,9 +406,6 @@ We can perform this in SAS by the following contrast statement.
 	trmt 0.5 -0.25 -0.25 0.5 -0.25 -0.25 -1 0.5 0.5;
 ```
 
-![Contrast SS](../img/post_img/2019-11-17-ST703-Factorial-Design/3aiii-Contrast.png)
-
-
 
 Referring to our contrast output above, can see that the p-value 0.0002 < 0.05, so we do have evidence to reject the null in favor of the alternative. So, the lines are not parallel.
 
@@ -470,7 +467,7 @@ proc glm data = bees order = data;
 run;
 ```
 
-![Contrast SS](../img/post_img/2019-11-17-ST703-Factorial-Design/3bii-contrast.png)
+![Contrast SS](../img/post_img/2019-11-17-ST703-Factorial-Design/3bii-contrasts.png)
 
 
 Using a significance level of 0.05, we can reject tests C and D since their p-values are smaller than 0.05. However, we cannot reject tests A and B. This is the same result we got from the one way classification (which it should be, becuase they are testing the same contrasts.)
@@ -723,7 +720,7 @@ $$
 Sex and Sleep
 
 
-![1st order age sleep](../img/post_img/2019-11-17-ST703-Factorial-Design/5a-1order-age-sleep.png)
+![1st order age sleep](../img/post_img/2019-11-17-ST703-Factorial-Design/5a-1order-sex-sleep.png)
 
 
 
