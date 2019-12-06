@@ -255,7 +255,7 @@ $$
 	\begin{align}
 		P(|X_{(n)} - 1 | \geq \epsilon) & = P(X_{(n)} - \geq 1 - \frac{ t^{1/\beta} }{ n^{1/\beta} }) \\
 			& = P(n^{1/\beta}(1-X_{(n)} \leq t^{1/\beta}) \\
-			& \stackrel{d}{\arrow} 1 - e^{-t 1/\beta}
+			& \stackrel{d}{\rightarrow} 1 - e^{-t 1/\beta}
 	\end{align}
 $$
 
