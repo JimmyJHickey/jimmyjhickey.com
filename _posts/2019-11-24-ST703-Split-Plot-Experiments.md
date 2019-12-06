@@ -101,7 +101,7 @@ $$
 
 ![bonferonni](../img/post_img/2019-11-24-ST703-Split-Plot-Experiments/1e-bon.png)
 
-Here we can see the differnces between time 1 and 2 and between 1 and 3 are significant but not the difference between 2 and 3.
+Here we can see the differences between time 1 and 2 and between 1 and 3 are significant but not the difference between 2 and 3.
 
 ## f.
 **Test for main effects of brand. Report the standard error on any pairwise difference among brands.**
