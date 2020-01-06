@@ -12,8 +12,6 @@ Hi there. This is my website. It's built on the shoulders of giants. Thank you g
 
 [Scroll Button](https://github.com/vfeskov/vanilla-back-to-top)
 
-[Comments with Disqus](https://disqus.com/)
-
 [Builds with Travis CI](https://travis-ci.org/)
 
 [MathJax for math type](https://www.mathjax.org/)
