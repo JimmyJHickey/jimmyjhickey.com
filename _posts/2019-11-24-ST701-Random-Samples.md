@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Properties of a Random Sample
 description: ST701 Homework 6 on Properties of a Random Sample
 tags: ST701 Distributions Expectations Statistics Random-Sample
+category: ST701
 ---
 
 Problems: 4.54, 5.6, 5.22, 5.24, 5.42, 5.44, 7, 8

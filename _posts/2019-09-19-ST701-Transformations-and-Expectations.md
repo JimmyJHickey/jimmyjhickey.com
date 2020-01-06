@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Transformation and Expectations of RVs
 description: ST701 Homework 3 on Transformation and Expectations of RVs
 tags: ST701 Transformations Expectations Statistics
+category: ST701
 ---
 
 Problems: 2.6, 2.7, 2.9, 2.11, 2.23, 2.24, 2.25, 2.33

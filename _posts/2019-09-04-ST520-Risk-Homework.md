@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Study Design, Relative Risk, and Odds Ratios
 description: ST520 Homework 1 on Study Design, Relative Risk, and Odds Ratios
 tags: ST520 Statistics Clinical-Trials Study-Design
+category: ST520
 ---
 
 

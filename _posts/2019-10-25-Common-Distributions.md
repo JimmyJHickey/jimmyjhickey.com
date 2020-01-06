@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Common Distributions
 description: ST701 Homework 4 Common Distributions
 tags: ST701 Distributions Expectations Statistics
+category: ST701
 ---
 
 Problems: 3.4, 3.12, 3.20, 3.25, 3.26 (a), 3.31, 3.38

@@ -1,0 +1,17 @@
+---
+layout: page
+title: Post Archive
+---
+<!-- Posts -->
+
+<p>Here's a categorized archive of my posts for easier searching.</p>
+
+
+{% for category in site.categories reversed %}
+  <h3>{{ category[0] }}</h3>
+  <ul>
+    {% for post in category[1] reversed %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endfor %}

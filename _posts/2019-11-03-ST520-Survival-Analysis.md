@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Survival Analysis
 description: ST520 Homework 5 on Survival Analysis
 tags: ST520 Statistics Clinical-Trials Survival-Analysis
+category: ST520
 ---
 
 Problems: 1, 2, 3, 4, 5, 6

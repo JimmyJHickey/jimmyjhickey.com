@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Continuous Random Variables
 description: ST501 Homework 4 on Continuous Random Variables
 tags: ST501 Random-Variables Continuous Probability Examples Statistics
+category: ST501
 ---
 
 Problems: 2.41, 2.46, 2.55, 4.31, 1, 2, 3, 4, 5, 6

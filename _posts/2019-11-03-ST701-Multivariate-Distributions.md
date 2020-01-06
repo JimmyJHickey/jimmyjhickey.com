@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Multivariate Distributions
 description: ST701 Homework 5 on Multivariate Distributions
 tags: ST701 Distributions Expectations Statistics
+category: ST701
 ---
 
 Problems: 4.5, 4.10, 4.15, 4, 4.17, 4.24, 4.30, 4.40

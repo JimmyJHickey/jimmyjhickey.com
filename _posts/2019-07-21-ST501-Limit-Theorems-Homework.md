@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Limit Theorems
 description: ST501 Homework 7 on Limit Theorems
 tags: ST501 Random-Variables Limit Theorems Distribution Probability Examples Statistics
+category: ST501
 ---
 
 Problems: 5.2, 5.5, 5.6, 5.19, 5.28, Extra Problem 1

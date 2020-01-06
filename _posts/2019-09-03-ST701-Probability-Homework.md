@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Set Theory and Probability
 description: ST701 Homework 1 on Set Theory and Probability
 tags: ST701 Set-Theory Probability Examples Statistics
+category: ST701
 ---
 
 Problems: 1.1, 1.4, 1.5, 1.13, 1.23, Problem 6

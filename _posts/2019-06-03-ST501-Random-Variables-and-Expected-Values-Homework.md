@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Random Variables and Expected Values
 description: ST501 Homework 3 on Random Variables and Expected Values
 tags: ST501 Random-Variables Expected-Values Probability Examples Statistics
+category: ST501
 ---
 
 Problems: 2.13, 2.14, 2.33 (just find the density), 2.34, 2.38, 2.39 bc, 4.2, 4.4, 4.5, 4.10, 4.30

@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Multiple Linear Regression
 description: ST703 Homework 4 on Multiple Linear Regression
 tags: ST703 SAS Regression ANOVA Examples Statistics
+category: ST703
 ---
 
 Problems: 1, 2, 3

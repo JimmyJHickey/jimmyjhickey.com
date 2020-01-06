@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Sample Size Calculations
 description: ST520 Homework 4 on Sample Size Calculations
 tags: ST520 Statistics Clinical-Trials Sample-Size Calculations
+category: ST520
 ---
 
 Problems: 1, 2, 3, 4

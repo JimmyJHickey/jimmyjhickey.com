@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Factorial Design
 description: ST703 Homework 8 on Factorial Design
 tags: ST703 SAS Factorial Design Examples Statistics
+category: ST703
 ---
 
 Problems: 1, 2, 3, 4, 5

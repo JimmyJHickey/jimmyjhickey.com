@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Hypothesis Testing and Confidence Intervals
 description: ST703 Homework 2 on Hypothesis Testing and Confidence Intervals
 tags: ST703 SAS Confidence-Intervals Confidence-Intervals Examples Statistics
+category: ST703
 ---
 
 Problems: 4.4, 4.11, 6.2, 6.4, 6.19

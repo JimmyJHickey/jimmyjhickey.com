@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Counting and Probability Laws
 description: ST501 Homework 2 on Counting and Probability Laws
 tags: ST501 Counting Probability Examples Statistics
+category: ST501
 ---
 
 Problems: 1.9, 1.12, 1.15, 1.19, 1.27, 1.32, 1.33, 1.37, 1.45, 1.46, 1.50, 1.53, 1.69, 1.70, 1.76 + R Problem

@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Set Theory and Probability
 description: ST501 Homework 1 on Set Theory and Probability
 tags: ST501 Set-Theory Probability Examples Statistics
+category: ST501
 ---
 
 Problems: 1.2, 1.4, 1.6 + R Problem

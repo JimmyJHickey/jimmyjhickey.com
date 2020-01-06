@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Familywise Error
 description: ST703 Homework 6 on Familywise Error
 tags: ST703 SAS Regression Familywise-Error Examples Statistics
+category: ST703
 ---
 
 Problems: 1, 2, 3, 4

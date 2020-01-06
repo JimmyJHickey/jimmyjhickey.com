@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Random Effects
 description: ST703 Homework 9 on Random Effects
 tags: ST703 SAS Random-Effects Examples Statistics
+category: ST703
 ---
 
 Problems: 1, 2, 3, 4

@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Functions of Random Variables and Joint Distributions
 description: ST501 Homework 5 on Functions of Random Variables and Joint Distributions
 tags: ST501 Random-Variables Functions Joint-Probability Probability Examples Statistics
+category: ST501
 ---
 
 Problems: 2.56, 2.59, 2.60, 2.61, 2.62, 2.65, 2.67, 2.69, 3.3

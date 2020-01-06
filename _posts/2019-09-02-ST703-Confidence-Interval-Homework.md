@@ -4,6 +4,7 @@ comments: false
 title: Finding Confidence Intervals with SAS
 description: ST703 Homework 1 on Confidence Intervals
 tags: ST703 SAS Confidence-Intervals Examples Statistics
+category: ST703
 ---
 
 Problems: 4.4 [p.145] part (a) only, 4.5 [p.146] part (b) only, 4.8 [p.147] part (d) only, 4.10 [p.148] part (b) only.

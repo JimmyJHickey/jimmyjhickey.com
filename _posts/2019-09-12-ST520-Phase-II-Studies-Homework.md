@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Stage II Design of Clinic Trials
 description: ST520 Homework 2 on Stage II Design
 tags: ST520 Statistics Clinical-Trials Study-Design Stage-II
+category: ST520
 ---
 
 Problems: 1, 2, 3, 4

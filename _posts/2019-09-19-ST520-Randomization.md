@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Randomization
 description: ST520 Homework 3 on Randomization
 tags: ST520 Statistics Clinical-Trials Randomization
+category: ST520
 ---
 
 Problems: 1, 2, 3, 4

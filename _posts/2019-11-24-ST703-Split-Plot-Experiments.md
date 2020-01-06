@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Split Plot Experiments
 description: ST703 Homework 10 on Split Plot Experiments
 tags: ST703 SAS Split-Plot-Experiments Examples Statistics
+category: ST703
 ---
 
 Problems: 1, 2

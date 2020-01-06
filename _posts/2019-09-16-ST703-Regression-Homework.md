@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Regression and ANOVA
 description: ST703 Homework 3 on Regression and ANOVA
 tags: ST703 SAS Regression ANOVA Examples Statistics
+category: ST703
 ---
 
 Problems: 1, 2, 3, 4

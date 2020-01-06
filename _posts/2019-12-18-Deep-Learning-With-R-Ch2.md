@@ -4,6 +4,7 @@ comments: false
 title: Notes on Deep Learning with R Chapter 2
 description: Chapter 2 - The Mathematical Building Blocks of Neural Networks
 tags: Statistics Deep-Learning-With-R Chollet Allaire
+category: Deep Learning With R
 ---
 
 These are my notes on Chapter 2 of _Deep Learning with R_ by Chollet and Allaire.

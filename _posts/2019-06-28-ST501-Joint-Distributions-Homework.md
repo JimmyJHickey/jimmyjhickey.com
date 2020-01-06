@@ -4,6 +4,7 @@ comments: false
 title: Example Problems on Joint Distributions
 description: ST501 Homework 6 on Joint Distributions
 tags: ST501 Random-Variables Joint Joint-Probability Distribution Examples Statistics
+category: ST501
 ---
 
 Problems: 3.7, 3.8 - Just set up the integrals, no need to solve them out, 3.14, 3.18, 3.27, 4.25, 4.44, 4.48, 4.50, 4.55, 4.56

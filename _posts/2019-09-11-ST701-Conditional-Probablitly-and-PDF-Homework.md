@@ -4,6 +4,7 @@ comments: false
 title: Example Problems Conditional Probability and Probability Functions
 description: ST701 Homework 2 on Conditional Probability and Probability Functions
 tags: ST701 Set-Theory Conditional-Probability Probability-Functions Examples Statistics
+category: ST701
 ---
 
 Problems: 1.24, 1.34, 1.38, 1.39, 1.51, 1.53
