@@ -309,7 +309,7 @@ Thus, $\|x_i\| \leq \|\|x\|\|_2 \leq \|\|x\|\|_1$.
 # 6
 **Show that every eigenvalue of a real symmetric matrix is real.**
 
-Take $A$ to be our real symmetric matrix with dimensions $p\times p$. By the spectral theorem we can say $A = QDQ^T$ where $D$ is a diagonal matrix of eigenvalues and $Q$ is the corresponding eigenvectors (also notice $$. Since $Q$ is linearly independent, it forms a basis of $\mathbb{R}^p$; all of its entries are real. Now notice $Q^T A Q = D$. Since all the entries in the left matrices are real and the real numbers are closed under addition and multiplication, that means all of the elements in $D$ must also be real. Thus, the eigenvalues are all real.
+Take $A$ to be our real symmetric matrix with dimensions $p\times p$. By the spectral theorem we can say $A = QDQ^T$ where $D$ is a diagonal matrix of eigenvalues and $Q$ is the corresponding eigenvectors. Since $Q$ is linearly independent, it forms a basis of $\mathbb{R}^p$; all of its entries are real. Now notice $Q^T A Q = D$. Since all the entries in the left matrices are real and the real numbers are closed under addition and multiplication, that means all of the elements in $D$ must also be real. Thus, the eigenvalues are all real.
 
 # 7
 **Show that if $X \sim \text{N}_{p}(\mu, \Sigma)$ and $Y = X'AX$, then $E(Y) = \text{tr}(A\Sigma) + \mu'A\mu$.**
