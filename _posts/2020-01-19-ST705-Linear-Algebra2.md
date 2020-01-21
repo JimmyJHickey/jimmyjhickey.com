@@ -21,7 +21,7 @@ $$
 **where $c$ does not depend on $x$.**
 
 
-We will take $\widetilde{\Sigma}^{-1} = \Sigma_{1}^{-1} + \Sigma_{2}^{-1}$ and $\widetilde{\mu} = \widetilde{\Sigma}(\Sigma_1^{-1} \mu_1 + \Sigma_2^{-1} \mu_2$. Notice we are assuming that $\widetilde{\Sigma}^{-1}$ is invertible. We will start by expanding the the left hand side of the equation are regrouping the terms.
+We will take $\widetilde{\Sigma}^{-1} = \Sigma_{1}^{-1} + \Sigma_{2}^{-1}$ and $\widetilde{\mu} = \widetilde{\Sigma}(\Sigma_1^{-1} \mu_1 + \Sigma_2^{-1} \mu_2$. Notice we are assuming that $\widetilde{\Sigma}^{-1}$ is invertible. We will start by expanding the left hand side of the equation are regrouping the terms.
 
 $$
 	\begin{align}
@@ -102,7 +102,7 @@ $$
 # 3
 **Suppose you do not know that the rank of a matrix is equal to the number of nonzero eigenvalues.  Show that the rank of a projection matrix is equal to its trace.  First think about how to show this in the symmetric case, and then consider the more general case of a non-symmetric idempotent matrix.**
 
-We know that $A = A^T$ since $A$ is a projetion matrix. Let's first examine the symmetric case. We know that $A$ is diagonalizable.
+We know that $A = A^T$ since $A$ is a projection matrix. Let's first examine the symmetric case. We know that $A$ is diagonalizable.
 
 $$
 A = Q^T D Q
@@ -154,31 +154,79 @@ $$
 u_i = BC x_i = B (C x_i ), \ \forall i \in \{1, \dots , k \}.
 $$
 
-Notice that $C x_i \in \mathbb{R}^q$. Since $u_i$ is a basis vector, we know that we can find its preimage and that it is unique from $u_j, \ i \neq j$. Thus, $u_i \in \text{ column }( B ) \ \forall i \in \\{1, \dots , k \\}$
+Notice that $C x_i \in \mathbb{R}^q$. Since $u_i$ is a basis vector, we know that we can find its preimage and that it is unique from $u_j, \ i \neq j$. Thus, $u_i \in \text{ column }( B ) \ \forall i \in \\{1, \dots , k \\}$.
 
+
+Now we will show $\text{ column }( B ) \subset \text{ column }( BC )$. Take $x \in \mathbb{R}^p$ such that $x = Bv$. Since $\text{rank}( B ) = \text{rank}( BC )$, we can say that $v = Cu$ for $u \in \mathbb{R}^l$. Therefore $x = Bv = BCu$, or $x \in C(BC)$.
 
 # 5
-**The _signular value decomposition_ of a matrix $A$ arises from the realtionship of the eigenproblems of $A^TA$ and $AA^T$. The spectral decompositions of $A^T A$ and $AA^T$, both nonnegative definite with nonnegative eigenvalues, lead to the expressions**
+**The _signular value decomposition_ of a matrix $A$ arises from the relationship of the eigenproblems of $A^TA$ and $AA^T$. The spectral decompositions of $A^T A$ and $AA^T$, both nonnegative definite with nonnegative eigenvalues, lead to the expressions**
 
 
 $$
 A^T A = V \begin{bmatrix} \Lambda^2 & 0 \\ 0 & 0 \end{bmatrix} V^T \text{ and } AA^T = U  \begin{bmatrix} \Lambda^2 & 0 \\ 0 & 0 \end{bmatrix} U^T
 $$
 
-**where $U$ and $V$ are orthogonal matrices with eigenvectors as columns, and $\Lambda^2$ is the ($rxr$) diagonal matrix of nonzero eigenvalues with $\text{rank}(\Lambda) = \text{rank}( A ) = r$. The diagonal elements of $\Lambda$, square roots of eigenvalues of the inner and outer prodcut matrices, are known as _singular values_ of the matrix $A$. Note that the blocks of $0$ above are sized to fit the appropriate dimensions.**
+**where $U$ and $V$ are orthogonal matrices with eigenvectors as columns, and $\Lambda^2$ is the ($rxr$) diagonal matrix of nonzero eigenvalues with $\text{rank}(\Lambda) = \text{rank}( A ) = r$. The diagonal elements of $\Lambda$, square roots of eigenvalues of the inner and outer product matrices, are known as _singular values_ of the matrix $A$. Note that the blocks of $0$ above are sized to fit the appropriate dimensions.**
 
 ## a
 **Show that if $v^{(j)}$ is a column of $V$ and an eigenvector of $A^TA$, then $Av^{(j)}$ is an (unnormalized) eigenvector of $AA^T$.**
 
+Since $v^{(j)} = v$ is an eigenvector we know
+
+$$
+A^T A v = \lambda v.
+$$
+
+We can left multiply by $A$.
+
+$$
+A A^T A v = A \lambda v \rightarrow A A^T (Av) = \lambda (Av)
+$$
 
 
-
+Thus, $Av$ is an (unnormalized) eigenvector of $A A^T$.
 
 ## b
 **Show that $AV = U \Sigma$ where $\Sigma$ is some diagonal matrix.**
 
+Say $\text{rank}( A ) = p$. Then we can write 
+
+$$
+AV = [Av_1 \ Av_2 \ \dots \ Av_p \ 0 \dots \ 0].
+$$
 
 
+Notice that
+
+$$
+	\begin{align}
+		A A^T (A v_j ) & = \lambda_j A v_j \\
+		v_j^T A^T A A^T A v_j & = \lambda_j v_j^T A^T A v_j \\
+		||A^T A v_j || ^2 & = \lambda_j ||Av_j||^2 \\
+		\lambda_j & = \frac{ ||A^T A v_j || ^2 }{ ||Av_j||^2 } \\
+		\lambda_j & = || A v_j ||^2 \\
+		\sqrt{ \lambda_j } & = || A v_j ||
+	\end{align}
+$$
+
+We can use will divide each column in $AV$ by its corresponding eigenvalue, but we must also multiply it back in (in essence, we are multiplying by 1).
+
+$$
+AV = \underbrace{\Big[\frac{ A v_1 }{ \sqrt{ \lambda_1 } } \ \frac{ A v_2 }{ \sqrt{ \lambda_2 } } \ \dots \frac{ A v_p }{ \sqrt{ \lambda_p } } \ 0 \dots \ 0 \Big]}_{U} \cdot 
+\underbrace{
+\begin{bmatrix}
+\sqrt{ \lambda_1 } &  &  & & & \\
+ & \sqrt{ \lambda_2 } &  &   \\
+ & & \ddots & & & \\
+& &  & \sqrt{ \lambda_p } &   &  \\
+& & &  & 0 &  \\
+& & & & & \ddots 
+\end{bmatrix}
+}_{\Sigma}
+$$
+
+Notice that all of the empty cells in $\Sigma$ are 0.
 
 ## c
 **Show that**
@@ -191,7 +239,7 @@ $$
 \end{bmatrix}
 $$
 
-
+See the derivation in (b).
 
 
 
@@ -208,6 +256,15 @@ U^T A V =
 $$
 
 
+Remember that $U$ is orthogonal, so $U^T U = U U^T = I$.
+
+$$
+	\begin{align}
+		AV & = U \Sigma \\
+		U^T A V & = U^T U \Sigma \\
+		U^T A V & = \Sigma 
+	\end{align}
+$$
 
 ## e
 **Show that the following is the Moore-Penrose generalized inverse for $A$:**
@@ -221,6 +278,30 @@ A^+ =  V
 U^T
 $$
 
+To show that $A^+$ is the generalized inverse of $A$, we must show that $AA^+A = A$, $A^+ A A^+ = A^+$, and that $A A^+$ and $A^+A$ are symmetric.
+
+$$
+	\begin{align}
+		A A^+ A & = A \Big[ V \Sigma^{-1} U^T U \Sigma V^T \Big] \\
+			& = A \Big[ V \Sigma^{-1} I \Sigma V^T \Big] \\
+			& = A \Big[ V I V^T \Big] \\
+			& = A \Big[ I \Big] \\
+			& = A
+	\end{align}
+$$
+
+
+$$
+	\begin{align}
+		A^+ A A^+ & = A^+ \Big[ U \Sigma V^T V \Sigma^{-1} U^T \Big] \\
+			& = A^+ \Big[ U \Sigma I \Sigma^{-1} U^T \Big] \\
+			& = A^+ \Big[ U I U^T \Big] \\
+			& = A^+ \Big[ I \Big] \\
+			& = A^+
+	\end{align}
+$$
+
+Notice that from the derivations above, $A A^+ = I = A^+ A$. Thus, they are symmetric.
 
 # 6
 **Let $A$, $B$, $C$, and $D$ be real valued matrices of dimension $p\times p$, $p\times q$, $q\times p$, and $q\times q$, respectively.  Show that if $D$ is invertible, then**
