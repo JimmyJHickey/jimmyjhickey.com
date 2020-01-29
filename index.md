@@ -3,7 +3,7 @@ layout: page
 title: Home
 ---
 
-Hi, I'm Jimmy Hickey. I'm a programmer and statistics PhD student at North Carolina State University. You can learn more about my professional background in the resumé section and more about me as a person below. In the posts section you will mostly see my homework solutions and some notes.
+Hi, I'm Jimmy Hickey. I'm a programmer and statistics PhD student at North Carolina State University. You can learn more about my professional background in the [resumé section](resume) and more about me as a person below. In the [posts section](posts) you will mostly see my homework solutions and some notes. You can see some of my programming adventures in the [projects section](projects).
 
 ## Hobbies
 * Programming
