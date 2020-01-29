@@ -2,7 +2,7 @@
 layout: post
 comments: false
 title: Example Problems on Sufficient Statistics
-description: ST705 Homework 1 on Sufficient Statistics
+description: ST702 Homework 1 on Sufficient Statistics
 tags: ST702 Sufficient Ancillary Statistics
 category: ST702
 ---
