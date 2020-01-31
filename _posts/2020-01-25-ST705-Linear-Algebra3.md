@@ -3,7 +3,7 @@ layout: post
 comments: false
 title: Example Problems on Linear Algebra and The Normal Equations
 description: ST705 Homework 3 on Linear Algebra and The Normal Equations
-tags: ST705 Linear-Algebra Nomral-Equations Statistics
+tags: ST705 Linear-Algebra Normal-Equations Statistics
 category: ST705
 ---
 
