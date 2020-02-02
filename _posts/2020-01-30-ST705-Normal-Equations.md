@@ -243,7 +243,7 @@ $$
 Where $a$ is a constant. This also has rank 1. We can add $k$ matrices of these forms together to get $AB$. Then we can make the remaining, if any, $n-k$ matrices the 0 matrix, which has rank 0. 
 
 $$
-AB = [U_1, \dots, U_k, 0, \dots , 0 ]
+AB =  \sum_{i=1}^{k}U_i +  \sum_{i=k+1}^{n} 0
 $$
 
 Notice that this will always work because $AB$ will have $n$ or fewer linearly independent columns.
