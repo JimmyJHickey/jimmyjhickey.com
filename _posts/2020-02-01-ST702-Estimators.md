@@ -1,9 +1,9 @@
 ---
 layout: post
 comments: false
-title: Example Problems on Sufficient and Ancillary Statistics
-description: ST702 Homework 2 on Sufficient and Ancillary Statistics
-tags: ST702 Sufficient Ancillary Statistics
+title: Example Problems on Estimators
+description: ST702 Homework 4 on Estimators
+tags: ST702 Sufficient Estimators
 category: ST702
 ---
 
@@ -114,4 +114,4 @@ $$
 
 
 ## b
-**Calculate the exact variance of $\sigma Y_i / \sigma x_i$ and compare it to the variance of the MLE.**
+**Calculate the exact variance of $\sum Y_i / \sum x_i$ and compare it to the variance of the MLE.**

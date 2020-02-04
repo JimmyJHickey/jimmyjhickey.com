@@ -360,17 +360,16 @@ $$
 	\end{align}
 $$
 
-Set $b_1 = x$. Then,
+If we set $b_1 = x$ then notice that we will get the same solutions as above.
+
 
 $$
 	\begin{align}
-		x + b_3 & = \frac{ 1 }{ 2 }(y_1 + y_2) \\
-		b_3 & = \frac{ 1 }{ 2 }(y_1 + y_2) - x \\ \\
-		b_2 + x + 2 (\frac{ 1 }{ 2 }(y_1 + y_2) - x) & = \frac{ 1 }{ 2 }(y_3 + y_4) \\
-		b_2 = \frac{ 1 }{ 2 } (y_3 + y_4) - \frac{ 1 }{ 2 }(y_1 + y_2) + x
+		b_1 & = x \\
+		b_2 & = 2+x \\
+		b_3 & = 2-x
 	\end{align}
 $$
-
 
 
 # 5 (2.9)
@@ -671,6 +670,19 @@ $$
 
 is an appropriate vector because it is in the column space of $X$. It is $c_1 + \frac{ 3 }{ 2 }c_3 - \frac{ 1 }{ 2 } c_2$.
 
+$$
+\begin{bmatrix}
+	1 \\
+	0 \\
+	0\\
+	2\\ 
+	2
+\end{bmatrix}
+$$
+
+is also an appropriate vector because it is in the column space of $X$. It is $c_1 + \frac{ 1 }{ 2 }c_2 + \frac{ 3 }{ 2 } c_3$.
+
+
 ## g
 **Using the right-hand side you gave above in (f), find all solutions to the equations $Xb = P_X y$.**
 
@@ -705,9 +717,50 @@ $$
 		b_1 + b_2 + b_3 + b_4 & = 2 \\
 		1 + x + 2 + x + b_4 + b_4 & = 2 \\
 		b_4 & = -1/2 -x \\
-		b_3 & = 3/2 
+		b_3 & = 3/2.
 	\end{align}
 $$
+
+
+
+Also,
+
+$$
+	\begin{align}
+		Xb & = P_X y \\
+		\begin{bmatrix}
+			b_1 - b_2 + b_3 - b_4 \\
+			b_1 \\
+			b_1 \\
+			b_1 + b_2 + b_3 + b_4 \\
+			b_1 + b_2 + b_3 + b_4
+		\end{bmatrix}
+		
+		& = \begin{bmatrix}
+			1 \\
+			0 \\
+			0\\
+			2\\ 
+			2
+		\end{bmatrix}.
+	\end{align}
+$$
+
+
+Then take $b_1 = 0$, and $b_2 = x$. Then,
+
+$$
+	\begin{align}
+		b_1 - b_2 + b_3 - b_4 & = 3 \\
+		0 - x + b_3 - b_4 & = 1 \\
+		b_3 & = 1 + b_4 + x \\ \\
+		b_1 + b_2 + b_3 + b_4 & = 2 \\
+		0 + x + 1 + b_4 + x + b_4 & = 2 \\
+		b_4 & = \frac{ 1 }{ 2 }- x \\
+		b_3 & = \frac{ 3 }{ 2 }.
+	\end{align}
+$$
+
 
 ## h
 **Which of the following had the same column space as $X$?**

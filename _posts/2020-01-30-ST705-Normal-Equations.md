@@ -132,11 +132,11 @@ $$
 		y_i & = \beta_0 + \beta_1 x_i + \beta_2 x^2 e_i \\
 			& = \beta_0 + \beta_1 (s + t i) + \beta_2 (s + t i)^2 e_i \\
 			& = \beta_0 + \beta_1 s + \beta_1 \cdot t i + \beta_2 s^2 + \beta_2 2 s t i + \beta_2 t^2 i^2 + e_i \\
-			& = (\beta_0 + \beta_1 s + \beta_2 s^2) + (\beta_1 \cdot t + 2 \beta_2 s t) i + (\beta_2 t^2) i^i + e_i.
+			& = (\beta_0 + \beta_1 s + \beta_2 s^2) + (\beta_1 \cdot t + 2 \beta_2 s t) i + (\beta_2 t^2) i^2 + e_i.
 	\end{align}
 $$
 
-Take $\gamma_0 =\beta_0 + \beta_1 s + \beta_2 s^2$, $\gamma_1 = \beta_1 \cdot t + 2 \beta_2 s t$, and $\beta_2 t^2$. This can be generalized to higher degree polynomials. You just have to expand the terms and then group them.
+Take $\gamma_0 =\beta_0 + \beta_1 s + \beta_2 s^2$, $\gamma_1 = \beta_1 \cdot t + 2 \beta_2 s t$, and $\gamma_2 = \beta_2 t^2$. This can be generalized to higher degree polynomials. You just have to expand the terms and then group them.
 
 
 # 5 
