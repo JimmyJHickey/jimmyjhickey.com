@@ -680,7 +680,7 @@ $$
 \end{bmatrix}
 $$
 
-is also an appropriate vector because it is in the column space of $X$. It is $c_1 + \frac{ 1 }{ 2 }c_2 + \frac{ 3 }{ 2 } c_3$.
+is also an appropriate vector because it is in the column space of $X$. It is $\frac{ 1 }{ 2 }c_2 + \frac{ 3 }{ 2 } c_3$.
 
 
 ## g
