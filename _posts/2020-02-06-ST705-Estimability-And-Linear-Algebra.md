@@ -65,7 +65,7 @@ $$
 Then,
 
 $$
-\langle v_j , u_i \rangle = v_j ^T u_i = v_j^T \frac{ w_i }{ ||w_i|| } = \frac{ w_i v_j }{ || w_i || }
+\langle v_j , u_i \rangle = v_j ^T u_i = v_j^T \frac{ w_i }{ ||w_i|| } = \frac{ w_i^T v_j }{ || w_i || }
 $$
 
 
@@ -97,7 +97,7 @@ $$
 Then,
 
 $$
-UR = [U_1, \dots U_p] \begin{bmatrix}
+UR = [U_1, \dots , U_p] \begin{bmatrix}
 	||w_1|| & 0 & \dots & 0 \\
 	0 & ||w_2|| & \dots & 0 \\
 	\vdots & 0 & \ddots & \dots \\
@@ -134,10 +134,12 @@ Since this is the product of two orthogonal matrices, we know that $R_2 R_1^{-1}
 Notice 
 
 $$
-R_1^{-1} & = (U_1^T V)^{-1} \\
-	& = V^T U_1 \\
-	& = R_1^T U_1^T U_1 \\
-	& = R_1^T.
+	\begin{align}
+		R_1^{-1} & = (U_1^T V)^{-1} \\
+			& = V^T U_1 \\
+			& = R_1^T U_1^T U_1 \\
+			& = R_1^T.
+	\end{align}
 $$
 
 
@@ -500,60 +502,253 @@ $$
 \end{bmatrix}
 $$
 
-Fix $\alpha_2 = p$ and $\beta_3 = q$.
+Fix $\mu$ and $\beta_3$. Then we get,
 
 $$
-\left(
-\begin{array}{c}
- 3 p+2 q+3 \text{$\alpha $1}+2 \text{$\beta $1}+2 \text{$\beta $2}+6 \mu  \\
- q+3 \text{$\alpha $1}+\text{$\beta $1}+\text{$\beta $2}+3 \mu  \\
- 3 p+q+\text{$\beta $1}+\text{$\beta $2}+3 \mu  \\
- p+\text{$\alpha $1}+2 \text{$\beta $1}+2 \mu  \\
- p+\text{$\alpha $1}+2 \text{$\beta $2}+2 \mu  \\
- p+2 q+\text{$\alpha $1}+2 \mu  \\
-\end{array}
-\right) = \left(
-\begin{array}{c}
- \text{y11}+\text{y12}+\text{y13}+\text{y21}+\text{y22}+\text{y23} \\
- \text{y11}+\text{y12}+\text{y13} \\
- \text{y21}+\text{y22}+\text{y33} \\
- \text{y11}+\text{y21} \\
- \text{y12}+\text{y22} \\
- \text{y13}+\text{y33} \\
-\end{array}
-\right)
+	\begin{align}
+		\alpha_1 & = \frac{ y_{11} }{ 6 } + \frac{ y_{12} }{ 6 } + \frac{ 2y_{13} }{ 3 } - \frac{ y_{21} }{ 6 } - \frac{ y_{22} }{ 6 } + \frac{ y_{23} }{ 6 } - \beta_3 - \mu \\
+		\alpha_2 & = -\frac{ y_{11} }{ 6 } - \frac{ y_{12} }{ 6 } + \frac{ y_{13} }{ 3 } + \frac{ y_{21} }{ 6 } + \frac{ y_{22} }{ 6 } + \frac{ 2 y_{23} }{ 3 }- \beta_3 - \mu \\
+		\beta_1 & = \frac{ y_{11} }{ 2 } - \frac{ y_{13} }{ 2 } + \frac{ y_{21} }{ 2 } - \frac{ y_{23} }{ 2 } + \beta_3 \\
+		\beta_2 & = \frac{ y_{12}}{ 2 } - \frac{ y_{13} }{ 2 } + \frac{ y_{22} }{ 2 } - \frac{ y_{23} }{ 2 } + \beta_3
+	\end{align}
 $$
 
 
-Subtracting the first equation from twice the second gives
-
-$$
-\alpha_1 = \frac{ -y_{11} - y_{12} - y_{13} + y_{21} + y_{22} + y_{23} + 3p }{ 3 }
-$$
 
 ## c
 **Give a set of basis vectors for $\mathcal  N (X)$.**
 
+We need to find the basis of vectors $a$ such that
+
+$$
+X a = 0.
+$$
 
 
+$$
+	\begin{align}
+		a_1 + a_2 + a_3 + a_4 + a_5 + a_6 & = 0 \\
+		a_1 + a_2 + a_3 & = 0 \\
+		a_4 + a_5 + a_6 & = 0 \\
+		a_1 + a_4 & = 0 \\
+		a_2 + a_5 & = 0 \\
+		a_3 + a_6 & = 0 
+	\end{align}
+$$
+
+
+Fix $a_5$ and $a_6$.
+
+$$
+	\begin{align}
+		a_3 & = -a_6 \\
+		a_2 & = -a_5 \\
+		a_4 & = -a_5 - a_6 \\
+		a_1 & = a_5 + a_6
+	\end{align}
+$$
+
+So our basis vectors are
+
+$$
+\begin{bmatrix}
+	1 \\
+	-1 \\
+	0 \\
+	-1 \\
+	1 \\
+	0 \\
+\end{bmatrix}
+
+\begin{bmatrix}
+	1 \\
+	0 \\
+	-1 \\
+	-1 \\
+	0 \\ 
+	1
+\end{bmatrix}.
+$$
+
+
+
+Another pair that would work are
+
+$$
+\begin{bmatrix}
+	-1 \\
+	0 \\
+	0 \\
+	1 \\
+	1 \\
+	1
+\end{bmatrix}
+\begin{bmatrix}
+	-1 \\
+	1 \\
+	1 \\
+	0 \\
+	0 \\
+	0
+\end{bmatrix}.
+$$
 
 ## d
 **Give a list of $r$ linearly independent estimable functions $\lambda ^T b$.**
 
+To do this we can find the $\text{ column }( X^T )$.
 
+$$
+X^T = 
+\left(
+\begin{array}{cccccc}
+ 1 & 1 & 1 & 1 & 1 & 1 \\
+ 1 & 1 & 1 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 1 & 1 & 1 \\
+ 1 & 0 & 0 & 1 & 0 & 0 \\
+ 0 & 1 & 0 & 0 & 1 & 0 \\
+ 0 & 0 & 1 & 0 & 0 & 1 \\
+\end{array}
+\right)
+$$
 
+Notice that this also has rank 4, so we need to choose 4 linearly independent columns. E.x. columns 1, 2, 5, and 6. 
 
 ## e
 **Show that $\alpha_1 - \alpha_2$ is estimable and give its least squares estimator.**
 
+Take $\lambda^T = [0, 1,-1, 0, 0, 0]$ such that 
+
+$$
+\lambda^T b = \alpha_1 - \alpha_2.
+$$
+
+Now we need to find $a$ such that
+
+$$
+a^T X = \lambda ^T.
+$$
 
 
+$$
+[a_1, a_2, a_3, a_4, a_5, a_6] 		
+\begin{bmatrix}
+	1 & 1 & 0 & 1 & 0 & 0 \\
+	1 & 1 & 0 & 0 & 1 & 0 \\
+	1 & 1 & 0 & 0 & 0 & 1 \\
+	1 & 0 & 1 & 1 & 0 & 0 \\
+	1 & 0 & 1 & 0 & 1 & 0 \\
+	1 & 0 & 1 & 0 & 0 & 1
+\end{bmatrix}
+= [0, 1, -1, 0, 0, 0]	
+$$
+
+
+$$
+	\begin{align}
+		a_1 + a_2 + a_3 + a_4 + a_5 + a_6 & = 0 \\
+		a_1 + a_2 + a_3 & = 1 \\
+		a_4 + a_5 + a_6 & = -1 \\
+		a_1 + a_4 & = 0 \\
+		a_2 + a_5 & = 0 \\
+		a_3 + a_6 & = 0.
+	\end{align}
+$$
+
+
+Now fix $a_5$ and $a_6$.
+
+
+$$
+	\begin{align}
+		a_2 & = -a_5 \\
+		a_3 & = -a_6 \\
+		a_4 & = -1 + a_5 + a_6 \\
+		a_1 & = 1 - a_5 - a_6
+	\end{align}
+$$
 
 ## f
 **Show that $\beta_1 - 2\beta_2 + \beta_3$ is estimable and give its least squares estimator.**
 
+Take $\lambda^T = [0, 0, 0, 1, -2, 1]$ such that 
+
+$$
+\lambda^T b = \beta_1 - 2 \beta_2 + \beta_3.
+$$
+
+Now we need to find $a$ such that
+
+$$
+a^T X = \lambda ^T.
+$$
+
+
+
+$$
+[a_1, a_2, a_3, a_4, a_5, a_6] 		
+\begin{bmatrix}
+	1 & 1 & 0 & 1 & 0 & 0 \\
+	1 & 1 & 0 & 0 & 1 & 0 \\
+	1 & 1 & 0 & 0 & 0 & 1 \\
+	1 & 0 & 1 & 1 & 0 & 0 \\
+	1 & 0 & 1 & 0 & 1 & 0 \\
+	1 & 0 & 1 & 0 & 0 & 1
+\end{bmatrix}
+= [0, 0, 0, 1, -2, 1]	
+$$
+
+
+$$
+	\begin{align}
+		a_1 + a_2 + a_3 + a_4 + a_5 + a_6 & = 0 \\
+		a_1 + a_2 + a_3 & = 0 \\
+		a_4 + a_5 + a_6 & = 0 \\
+		a_1 + a_4 & = 1 \\
+		a_2 + a_5 & = -2 \\
+		a_3 + a_6 & = 1.
+	\end{align}
+$$
+
+
+Now fix $a_5$ and $a_6$.
+
+$$
+	\begin{align}
+		a_2 & = -2 - a_5 \\
+		a_3 & = 1 - a_6 \\
+		a_4 & = -a_5 - a_6 \\
+		a_1 & = -a_2 - a_3 \\
+			& = -(-2 - a_5) - (1-a_6) \\
+			& = a_5 + a_6 + 1
+	\end{align}
+$$
 
 
 ## g
 **Find all parameter vectors $b$ and $Xb$ = $(8,7,6,6,5,4)^T$.**
 
+$$
+	\begin{align}
+		b_1 + b_2 + b_4 & = 8 \\
+		b_1 + b_2 + b_5 & = 7 \\
+		b_1 + b_2 + b_6 & = 6 \\
+		b_1 + b_3 + b_4 & = 6 \\
+		b_1 + b_3 + b_5 & = 5 \\
+		b_1 + b_3 + b_6 & = 4
+	\end{align}
+$$
+
+Fix $b_1$ and $b_2$.
+
+
+$$
+	\begin{align}
+		b_4 & = 8 - b_1 - b_2 \\
+		b_5 & = 7 - b_1 - b_2 \\
+		b_6 & = 6 - b_1 - b_2 \\
+		b_3 & = 6 - b_1 - b_4 \\
+			& = 6 - b_1 - (8 - b_1 - b_2) \\
+			& = b_2 - 2
+	\end{align}
+$$
