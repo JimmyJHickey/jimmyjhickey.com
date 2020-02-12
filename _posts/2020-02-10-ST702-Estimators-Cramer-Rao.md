@@ -2,7 +2,7 @@
 layout: post
 comments: false
 title: Example Problems on Estimators
-description: ST702 Homework 4 on Estimators
+description: ST702 Homework 5 on Estimators
 tags: ST702 Cramer-Rao Estimators
 category: ST702
 ---
@@ -13,13 +13,24 @@ category: ST702
 # 7.45
 **Let $X_1, X_2, \dots X_n$ be iid from a distribution with mean $\mu$ and variance $\sigma^2$, and let $S^2$ be the usual unbiased estimator of $\sigma^2$. In Example 7.3.4 we saw that, under normality, the MLE has smaller MSE than $S^2$. In this exercise we will explore variance estimators some more.**
 
-# a
+## a
 **Show that, for any estimator of the form $aS^2$, where $a$ is some constant,**
 
 $$
 MSE(aS^2) = E[aS^2 - \sigma^2]^2 = a^2 Var(S^2) + (a - 1)^2 \sigma^4
 $$
 
+$$
+	\begin{align}
+		MSE(aS^2) & = E[W - \theta]^2 \\
+			& = E[aS^2 - \sigma^2]^2 \\
+			& = Var(aS^2) - (Bias(aS^2))^2 \\
+			& = a^2 Var(S^2) - (E(aS^2) - \sigma^2)^2 \\
+			& = a^2 Var(S^2) - (a^2 E(S^2)^2 - 2a E(S^2)\sigma^2 + \sigma^4)\\
+			& = a^2 Var(S^2) - (a^2 (\sigma^2)^2 - 2a \sigma^2 \sigma^2 + \sigma^4) & \text{unbiased}\\
+			& = a^2 Var(S^2) + (a-1)^2 \sigma^4
+	\end{align}
+$$
 
 ## b
 **Show that**
@@ -28,12 +39,12 @@ $$
 Var(S^2) = \frac{ 1 }{ n } \Big( \kappa - \frac{ n-3 }{ n-1 } \sigma^4 \Big)
 $$
 
-**where $\kappa = E[X-\mu]^4$ is the _kurtosis_.**
+**where $\kappa = E[X-\mu]^4 / \sigma^4$ is the _kurtosis_.**
 
 
 
 ## c
-**Show that under normality, the kurtosis is $3 \sigma^4$ and establish that, in this case, the estimator of the form $aS^2$ with the minimum MSE is $\frac{ n-1 }{ n+1 }S^2$. (Lemma 3.6.5 may be helpful)**
+**Show that under normality, the kurtosis is $3$ and establish that, in this case, the estimator of the form $aS^2$ with the minimum MSE is $\frac{ n-1 }{ n+1 }S^2$. (Lemma 3.6.5 may be helpful)**
 
 
 
@@ -42,7 +53,7 @@ $$
 **If normality is not assumed, show that $MSE(aS^2)$ is minimized at**
 
 $$
-a = \frac{ n-1 }{ n+1 + \frac{ (\kappa - 1) (n-1) }{ n } }
+a = \frac{ n-1 }{ n+1 + \frac{ (\kappa - 3) (n-1) }{ n } }
 $$
 
 **which is useless as is depends on a parameter.**
@@ -59,7 +70,7 @@ $$
 
 
 
-## ii
+### ii
 **for distributions with $\kappa < 3$, the optimal $a$ will satify $\frac{ n-1 }{ n+1 } < a < 1$.**
 
 
