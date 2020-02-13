@@ -142,7 +142,7 @@ Take $\gamma_0 =\beta_0 + \beta_1 s + \beta_2 s^2$, $\gamma_1 = \beta_1 \cdot t 
 # 5 
 **Let $A$ be an $m\times n$ matrix with rank $m$.  Prove that there exists an $n\times m$ matrix $B$ such that $AB = I_{m}$.**
 
-Since $A$ has full row rank, that means that the rows of $A$ form a basis for $\mathbb{R}^m$. If we take $b_i$ to be a column vector such that $A b_i = e_i$ and take $B = [b_1, \dots b_m]$, then $A B = I_m$.
+Since $A$ has rank $m$, that means that the columns of $A$ form a basis for $\mathbb{R}^m$. If we take $b_i$ to be a column vector such that $A b_i = e_i$ and take $B = [b_1, \dots b_m]$, then $A B = I_m$.
 
 # 6 
 **Let $A \in \mathbb{R}^{n\times p}$ with rank$(A) = p$.  Further, suppose  $X \in \mathbb{R}^{n\times q}$ with $\text{column}(X) = \text{column}(A)$.  Show that there exists a unique matrix $S$ so that $X = AS$.**
