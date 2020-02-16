@@ -220,6 +220,7 @@ $$
 \end{pmatrix}'.
 $$
 
+
 For some intuition, let's look at the example in the book before generalizing. Here they take $n=2$ and $m=3$. This is what their design matrix looks like.
 
 $$
@@ -233,7 +234,13 @@ $$
 \end{bmatrix}
 $$
 
-Notice that the first column is all 1s for the intercept. Then next 2 ($n$) columns are indicators for which $\alpha$ group the observation belongs. The next 3 ($m$) columns are indicators for which $\beta$ group the observation belongs. Finally, we have the last 6 ($mn$) columns which are indicators for the mixed term depending on which $\alpha$ and $\beta$ group the data belongs. The rank of this matrix is 6 which can be seen most quickly by looking at the last 6 columns and noticing that they are the standard basis vectors. Notice that if we add more rows, they will be replicates of rows we already have and thus will not add to the rank. So, we can consider the case where each class has 1 replicate without loss of generality. The null space should have
+Notice that the first column is all 1s for the intercept. Then next 2 ($n$) columns are indicators for which $\alpha$ group the observation belongs. The next 3 ($m$) columns are indicators for which $\beta$ group the observation belongs. Finally, we have the last 6 ($mn$) columns which are indicators for the mixed term depending on which $\alpha$ and $\beta$ group the data belongs. The rank of this matrix is 6 which can be seen most quickly by looking at the last 6 columns and noticing that they are the standard basis vectors. Notice that if we add more rows, they will be replicates of rows we already have and thus will not add to the rank. So, we can consider the case where each class has 1 replicate without loss of generality. 
+
+
+Our estimable functions live in the row space of $X$ (the column space of $X^T$). If we look at the entries each has a $\mu$, an $\alpha_i$, a $\beta_j$, and a $\theta_{ij}$ term. So we can estimate parameters, $\lambda^T \beta$, of the form $\mu + \alpha_i + \beta_j + \theta_{ij}$ and linear combinations of them.
+
+
+Alternatively, can also try this going through the null space. The null space of our $2 \times 3$ example should have 
 
 $$
 \dim(\mathcal N(X))= \dim(X)- \text{rank}( \mathcal C(X) ) = 12 - 6 = 6
