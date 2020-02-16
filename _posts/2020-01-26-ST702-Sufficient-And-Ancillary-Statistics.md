@@ -29,7 +29,7 @@ $$
 $$
 
 
-Notice that the left exponential is independent of $\theta$ and the right exponentials are only constant in $\theta$ is the order statistcs of $x$ and $y$ are the same. Thus, the order statistics are the minimal sufficient statistics.
+Notice that the left exponential is independent of $\theta$ and the right exponentials are only constant in $\theta$ if the order statistics of $x$ and $y$ are the same. Thus, the order statistics are the minimal sufficient statistics.
 
 
 ## e
@@ -74,7 +74,7 @@ $$
 	\begin{align}
 		\frac{ f(\mathbf{x}, n_x | \theta) }{ f(\mathbf{y}, n_y | \theta) } & = \frac{ f(\mathbf{x} | \theta, n_x) P(N = n_x) }{ f( \mathbf{y} | \theta, n_y ) P(N=n_y) } \\
 			& = \frac{ {n_x \choose x} \theta^x (1-\theta)^{n_x-\theta} p_{n_x} }{ {n_y \choose y} \theta^y (1-\theta)^{n_y-\theta} p_{n_y} } \\
-			& = \frac{ {n_x \choose x}  }{ {n_y \choose y}  } \frac{ p_{n_x} }{ p_{n_{y}} } \theta^{x=y} (1-\theta)^{n_x - x - (n_y - y)}
+			& = \frac{ {n_x \choose x}  }{ {n_y \choose y}  } \frac{ p_{n_x} }{ p_{n_{y}} } \theta^{x-y} (1-\theta)^{n_x - x - (n_y - y)}
 	\end{align}
 $$
 
