@@ -29,7 +29,7 @@ $$
 
 $$
 	\begin{align}
-		L ( \sigma | \mathbb x) & = \prod_{i=1}^1 f(x_i | \sigma) \\
+		L ( \sigma | \mathbf x) & = \prod_{i=1}^1 f(x_i | \sigma) \\
 			& = \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 } } \exp(\frac{ -x^2 }{ 2 \sigma^2 }) \\
 		l( \sigma | x) & = -\frac{ 1 }{ 2 } \log(2 \pi \sigma^2) - \frac{ x^2 }{ 2 \sigma ^2 } \\ \\
 		\frac{ \partial l }{ \partial \sigma } & = \frac{ -1 }{ \sigma} + \frac{ x^2 }{ \sigma^3 } \\
@@ -46,7 +46,7 @@ $$
 \frac{ \partial ^2 l }{ \partial \sigma^2 } = \frac{ 2 }{ \sigma^2 } - \frac{ 3 x^2 }{ \sigma^4 }
 $$
 
-is decreasing at $\sigma = |x|$, so we found a maximum.
+is decreasing at $\sigma = \|x\|$, so we found a maximum.
 
 
 ## c
@@ -96,7 +96,7 @@ _Maximum Likelihood_
 
 $$
 	\begin{align}
-		L(\theta | \mathbb X) & = \prod \frac{ 1 }{ \theta } I(0 \leq x \leq \theta) \\
+		L(\theta | \mathbf X) & = \prod \frac{ 1 }{ \theta } I(0 \leq x \leq \theta) \\
 			&= \frac{ 1 }{ \theta^n } I(0 \leq x_{(1)}) I(x_{(n)} \leq \theta)
 	\end{align}
 $$
@@ -285,7 +285,7 @@ $$
 ## c
 **Find the distribution of the MLE of $\beta$.**
 
-We now know that $Y_i \sim N(\beta x_i, \sigma^2$, so we know that $\sum c_i Y_i \sim N(\sum c_i \mu_i, \sum c_i^2 \sigma_i^2$. So,
+We now know that $Y_i \sim N(\beta x_i, \sigma^2)$, so we know that $\sum c_i Y_i \sim N(\sum c_i \mu_i, \sum c_i^2 \sigma_i^2)$. So,
 
 $$
 	\begin{align}

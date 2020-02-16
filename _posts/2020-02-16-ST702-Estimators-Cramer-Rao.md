@@ -2,7 +2,7 @@
 layout: post
 comments: false
 title: Example Problems on Estimators
-description: ST702 Homework 4 on Estimators
+description: ST702 Homework 5 on Estimators
 tags: ST702 Cramer-Rao Estimators
 category: ST702
 ---
