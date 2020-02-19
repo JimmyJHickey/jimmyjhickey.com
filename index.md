@@ -44,4 +44,4 @@ Hi, I'm Jimmy Hickey. I'm a programmer and statistics PhD student at North Carol
 * Dark theme > Light theme
 * Monospace > Variable-width
 * Oxford comma > No Oxford comma
-* $E(X)^2 \neq E[(X)^2]$
+* $E[(X)^2] \neq E(X)^2$
