@@ -45,3 +45,5 @@ Hi, I'm Jimmy Hickey. I'm a programmer and statistics PhD student at North Carol
 * Monospace > Variable-width
 * Oxford comma > No Oxford comma
 * $E[(X)^2] \neq E(X)^2$
+
+
