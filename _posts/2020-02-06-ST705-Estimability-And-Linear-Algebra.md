@@ -668,6 +668,14 @@ $$
 	\end{align}
 $$
 
+
+The least squares estimator would be
+
+$$
+\lambda^T \hat b = \frac{ y_{11} + y_{12} + y_{13}}{ 3  } + \frac{ y_{21} + y{22} + y{23} }{ 3 }.
+$$
+
+
 ## f
 **Show that $\beta_1 - 2\beta_2 + \beta_3$ is estimable and give its least squares estimator.**
 
@@ -751,4 +759,11 @@ $$
 			& = 6 - b_1 - (8 - b_1 - b_2) \\
 			& = b_2 - 2
 	\end{align}
+$$
+
+
+The least squares estimator would be
+
+$$
+\lambda^T \hat b = \frac{ y_{11} + y_{21}}{ 2  } - 2 \cdot \frac{ y_{12} + y_{22} }{ 2 } + \frac{ y_{13} + y_{23} }{ 2 }.
 $$
