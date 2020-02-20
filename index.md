@@ -45,6 +45,6 @@ Hi, I'm Jimmy Hickey. I'm a programmer and statistics PhD student at North Carol
 * Monospace > Variable-width
 * Oxford comma > No Oxford comma
 * $E[(X)^2] \neq E(X)^2$
-* $E[(X)^2] = E[X^2] > $ expectation of open parenthesis E squared close parenthesis $ > E(X)^2 > EX^2$
+* $E[(X)^2] = E[X^2] > $ expectation of open parenthesis X squared close parenthesis $ > E(X)^2 > EX^2$
 
 
