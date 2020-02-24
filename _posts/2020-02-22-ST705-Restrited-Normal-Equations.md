@@ -279,7 +279,7 @@ $\begin{bmatrix}
 ## a
 **$X \hat b_H = X \widetilde b_H$, and**
 
-Since $\hat b_H$ and $\widetilde b_H$ are both solutions to the RNE, they both minimze $Q(\beta)$ over $\beta \in \{ P^T \beta = \delta \}$. So,
+Since $\hat b_H$ and $\widetilde b_H$ are both solutions to the RNE, they both minimize $Q(\beta)$ over $\beta \in \{ P^T \beta = \delta \}$. So,
 
 $$
 Q(\widetilde  b) = Q(\hat b_H) + || X(\hat b_H - \widetilde b_H) ||^2.
@@ -457,9 +457,9 @@ p +
 $$
 
 ## c
-**Find the BLUE of $p$ in this situtaion.**
+**Find the BLUE of $p$ in this situation.**
 
-If we look at our model from part (b) we will notice that our errors have mean 0 and are uncorrelated; however, they are not equal. So, we will nee dot rescale our model before getting the BLUE.
+If we look at our model from part (b) we will notice that our errors have mean 0 and are uncorrelated; however, they are not equal. So, we will need to rescale our model before getting the BLUE.
 
 $$
 	\begin{align}
