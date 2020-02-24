@@ -125,7 +125,7 @@ X b =
 \begin{bmatrix}
 	1_b & 1_b & 0 & \dots & 0 & I_b \\
 	1_b &0 & 1_b & \dots & 0 & I_b \\
-	\vdots & \vdots & \vdots & \vdots & \vdots \\
+	\vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
 	1_b & 0 & 0 & \dots & 0 & I_b \\
 	1_b & 0 & 0 & \dots  & 1_b & I_b
 \end{bmatrix}
@@ -153,18 +153,116 @@ $$
 ## a
 **Show $P_{X_A} X_B = P_1 X_B$.**
 
+We can expand the left hand side.
+
+$$
+	\begin{align}
+		P_{X_A} X_B & = X_A (X_A^T X_A)^g X_A^T X_B \\ \\
+		(X_A^T X_A)^{-1} & = 
+			\begin{bmatrix}
+				b & 0 & \dots & 0 \\
+				0 & b &  &  \\
+				\vdots  & & \ddots & \\
+				0 &&& b\\
+			\end{bmatrix} \\
+			& = \frac{ 1 }{ b } I_{a} \\ \\
+		\frac{ 1 }{ b }X_A X_A^T & = \frac{ 1 }{ b }
+			\begin{bmatrix}
+				1_b 1_b^T & 0 & \dots & 0 \\
+				0 & 1_b 1_b^T & & \\
+				& & \ddots & \\
+				0 & & & 1_b 1_b^T
+			\end{bmatrix} \\ \\
+		\frac{ 1 }{ b }X_A X_A^T X_B & = \frac{ 1 }{ b }
+			\begin{bmatrix}
+				1_{ab} & 1_{ab} & \dots & 1_{ab}
+			\end{bmatrix}
+	\end{align}
+$$
+
+Notice that
+
+$$
+\begin{bmatrix} 1_{ab} & 1_{ab} & \dots & 1_{ab} \end{bmatrix} \in \mathbb{R}^{ab \times b}.
+$$
+
+
+We can expand the right hand side as well. Notice that $P_1 \in \mathbb{R}^{ab \times ab}$ and $X_B \in \mathbb{R}^{ab \times b}$.
+
+$$
+	\begin{align}
+		P_1 X_B & = \frac{ 1 }{ ab } 
+			\begin{bmatrix}
+				1_{ab} & 1_{ab} & \dots & 1_{ab}
+			\end{bmatrix}
+			\begin{bmatrix}
+				I_b \\
+				I_b \\
+				\vdots \\
+				I_b
+			\end{bmatrix}\\
+			& = \frac{ a }{ ab } 
+			\begin{bmatrix}
+				1_{ab} & 1_{ab} & \dots & 1_{ab}
+			\end{bmatrix} \\
+			& = P_{X_A} X_B
+	\end{align}
+$$
+
 
 
 ## b
 **Show that $P_{X_A} P_{X_B} = P_{1_{ab}}$.**
 
+From above we know
+
+$$
+	\begin{align}
+		P_{X_A} X_B & = P_1 X_B \\
+		P_{X_A} X_B (X_B^T X_B)^g X_B^T & = P_1 X_B (X_B^T X_B)^g X_B^T \\
+		P_{X_A} P_{X_B} & = P_1 X_B (X_B^T X_B)^g X_B^T \\
+			& = \frac{1}{b} 
+				\begin{bmatrix} 1_{ab} & 1_{ab} & \dots & 1_{ab} \end{bmatrix} (X_B^T X_B)^g X_B^T
+	\end{align}
+$$
+
+Notice that $(X_B^T X_B)^g = (X_B^T X_B)^{-1} = \frac{ 1 }{ a }I_b$. Also notice that $X_B^T$ only has one $1$ in each column.
+
+$$
+	\begin{align}
+		P_{X_A} P_{X_B} & = \frac{1}{b} 
+				\begin{bmatrix} 1_{ab} & 1_{ab} & \dots & 1_{ab} \end{bmatrix} \frac{ 1 }{ a } X_B^T \\
+				& = \frac{ 1 }{ ab } \begin{bmatrix} 1_{ab} & 1_{ab} & \dots & 1_{ab} \end{bmatrix} X_B^T \\
+				& = \frac{ 1 }{ ab } 1_{ab} 1_{ab}^T \\
+				& = 1_{ab} (1_{ab}^T 1_{ab})^-1 1_{ab}^T \\
+				& = P_{1_{ab}}
+	\end{align}
+$$
 
 
 ## c
 **Show that $P_X - P_{X_A} = P_{X_B} - P_1$**
 
+Since $\text{ column }( X_A ) \subset \text{ column }( X )$ and $\text{ column }( 1 ) \subset \text{ column }( X_B )$, by theorem 2.2 we know that $P_X - P_{X_A}$ projects onto $\text{ column }( (I-P_{X_A})X )$ and that $P_{X_B} - P_1$ projects onto $\text{ column }( (I-P_1) X_B)$. Notice
+
+$$
+	\begin{align}
+		(I-P_1) X_B & = X_B - P_1 X_B \\
+			& = X_B - P_{X_A} X_B \\
+			& = (I - P_{X_A})X_B
+	\end{align}
+$$
+
+by part (a). These matrices project everything onto everything that is in the column spaces of $X$ and $X_B$, but not in the column space of $X_A$ respectively. Recall that 
+
+$$X = \begin{bmatrix} 1_{ab} &  X_A & X_B \end{bmatrix}.$$
+
+Since $1_{ab}$ is in the column space of $X_A$ (it can be made by adding all of the columns of $X_A$), these column spaces are going to be the same. And since projection matrices are unique,
 
 
+$$
+P_X - P_{X_A} = P_{X_B} - P_1.
+$$
 
 # 3 (3.26)
 **Prove the result: let 
@@ -198,7 +296,7 @@ Thus, $\widehat b_H = \widetilde b_H$.
 
 
 ## b
-**if $\lambda^T b$ is estimable in the resticted model, then $\lambda^T \hat b_H = \lambda^T \widetilde b_H$.**
+**if $\lambda^T b$ is estimable in the restricted model, then $\lambda^T \hat b_H = \lambda^T \widetilde b_H$.**
 
 Since $\lambda^T b$ is estimable, we know that
 
@@ -398,8 +496,19 @@ $$
 	\end{align}
 $$
 
+Where 
 
-Thus,
+$$
+\widetilde Y = 
+\begin{bmatrix}
+	1/\sqrt{ n_1 }Y_1 \\
+	\vdots \\
+	1/sqrt{n_N} Y_N
+\end{bmatrix}.
+$$
+
+
+Now we have satisfied the last Gauss-Markov assumption, equal variances. Thus, our least squares estimator will be our BLUE.
 
 $$
 	\begin{align}
