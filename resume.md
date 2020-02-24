@@ -25,7 +25,7 @@ I am on a research training program in partnership with Duke Clinical Research I
 I helped plan the prospective PhD student visit day for February 2020.
 
 
-I helped run a [Deep Learning Reading Group](https://github.com/AlvinSheng/SLG-Deep-Learning) in Spring 2020.
+I helped run a [Deep Learning Reading Group](https://github.com/AlvinSheng/SLG-Deep-Learning) in Spring 2020. We worked through [Deep Learning with R](https://www.manning.com/books/deep-learning-with-r).
 
 ## Undergraduate
 
