@@ -10,40 +10,19 @@ You can have my one page resumé as a file <a href="/files/Jimmy_Hickey_Resume.p
 * Do not remove this line (it will not be displayed)
 {:toc}
 
-## Skills 
-**Programming Languages**: Bash ⋅ Python ⋅ Java
-
-**Hardware Oriented Languages**: Arduino ⋅ Labview ⋅ Verilog
-
-**Math & Statistics**: Excel ⋅ JMP ⋅ LaTeX ⋅ Mathematica ⋅ R ⋅ Tableau
-
-**Bioinformatics**: Cromwell + WDL
-
-**Familiar**: Assembly ⋅ C ⋅ CSS ⋅ HTML ⋅ Jess ⋅ MySQL ⋅ Perl
-
-## Work Experience
-
-### Mayo Clinic
-**IT Programmer Analyst: Genomics Systems Unit**
-
-July 2018 -- Present
-
-### Digi International
-**Software Engineering Intern**
-
-May 2017 -- August 2017
-
-### Winona State University
-**Software Tester and Developer**
-
-August 2016 -- May 2018
-
-**Peer Tutor**
-
-July 2016 -- May 2018
-
 ## Graduate
-TBD
+
+### North Carolina State University
+
+Fall 2019 -- Present
+
+Statistics PhD Student
+
+4.0/4.0
+
+I am on a research training program in partnership with Duke Clinical Research Institute. My first year I am shadowing and meeting with their biostatisticians to learn about how they run clinical trials, analyze data, write secondary manuscripts, etc. My second year I will join the team and help out! [You can read more about it here.](https://statistics.sciences.ncsu.edu/graduate/support/nhlbi/)
+
+I also helped plan the prospective PhD student visit day for February 2020.
 
 ## Undergraduate
 
@@ -62,6 +41,58 @@ Minor Statistics
 Minor Data Science
 
 4.0/4.0
+
+## Skills 
+**Programming Languages**: Bash ⋅ Python ⋅ Java
+
+**Hardware Oriented Languages**: Arduino ⋅ Labview ⋅ Verilog
+
+**Math & Statistics**: Excel ⋅ JMP ⋅ LaTeX & MathJax ⋅ Mathematica ⋅ R ⋅ SAS ⋅ Tableau
+
+**Bioinformatics**: Cromwell + WDL
+
+**Familiar**: Assembly ⋅ C ⋅ CSS ⋅ HTML ⋅ Jess ⋅ MySQL ⋅ Perl
+
+## Work Experience
+
+### Mayo Clinic
+**IT Programmer Analyst: Genomics Systems Unit**
+
+July 2018 -- August 2019
+
+* Develop variant annotation, microbiome, and multiple myeloma fusion detection pipelines for research and clinical purposes. 
+* Develop a unit test framework for our pipelines.
+* Suggested and helped start an Onboarding Program from new employees in our unit.
+* Help maintain and update IT infrastructure. 
+* Provided extensive documentation and training on my projects when I left.
+
+
+### Digi International
+**Software Engineering Intern**
+
+May 2017 -- August 2017
+
+* Build firmware for routing devices.
+* Help build an automated testing environment and write unit tests.
+
+### Winona State University
+**Software Tester and Developer**
+
+August 2016 -- May 2018
+
+
+* Build firmware for microcontrollers and routing devices.
+* Devise high-level use cases; design and develop solutions for customers.
+
+
+**Peer Tutor**
+
+July 2016 -- May 2018
+
+* Tutor students in Physics, Mathematics, and Computer Science.
+* Provide technological insight, external educational resources, as well as study habits to help students learn effectively independently.
+* Teach in both one-on-one and group settings.
+
 
 ## Competitions and Talks
 
@@ -135,9 +166,15 @@ August 2017 -- May 2018
 
 Advise dean on matters pertaining to students in the College of Science and Engineering. Participate in community and outreach activities such as student panels.
 
-### Physics Club
+### Winona State Physics Club
 **President**
 
 August 2016 -- May 2018
 
 Plan and coordinate weekly meetings, events, and club trips. Work closely with department to create projects and outreach events.
+
+## Additional Links
+
+* I try to post most of my work on [my GitHub](https://github.com/JimmyJHickey).
+* You can check out [my Linkedin](https://www.linkedin.com/in/jimmyjhickey/) (but pretty much all of that information is already here.)
+* And of course you can explore more of [my website](https://jimmyjhickey.com/)!
