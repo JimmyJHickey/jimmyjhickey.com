@@ -22,7 +22,10 @@ Statistics PhD Student
 
 I am on a research training program in partnership with Duke Clinical Research Institute. My first year I am shadowing and meeting with their biostatisticians to learn about how they run clinical trials, analyze data, write secondary manuscripts, etc. My second year I will join the team and help out! [You can read more about it here.](https://statistics.sciences.ncsu.edu/graduate/support/nhlbi/)
 
-I also helped plan the prospective PhD student visit day for February 2020.
+I helped plan the prospective PhD student visit day for February 2020.
+
+
+I helped run a [Deep Learning Reading Group](https://github.com/AlvinSheng/SLG-Deep-Learning) in Spring 2020.
 
 ## Undergraduate
 
