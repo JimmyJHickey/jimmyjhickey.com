@@ -273,7 +273,7 @@ $$
 	\end{align}
 $$
 
-By the factorization theorem $X_{(1)}$ is sufficient. Now we can how that it is complete. First, we need its distribution.
+By the factorization theorem $X_{(1)}$ is sufficient. Now we can show that it is complete. First, we need its distribution.
 
 
 $$
