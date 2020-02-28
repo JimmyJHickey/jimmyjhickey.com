@@ -212,8 +212,8 @@ Since the dot product is 0, they are orthogonal.
 
 $$
 	\begin{align}
-		\text{tr}(A+B) & = \sum_{i=1}^{n} a_ii + b_ii \\
-			& = \sum_{i=1}^{n} (a_ii) + \sum_{i=1}^{n} (b_ii) \\
+		\text{tr}(A+B) & = \sum_{i=1}^{n} a_{ii} + b_{ii} \\
+			& = \sum_{i=1}^{n} (a_{ii}) + \sum_{i=1}^{n} (b_{ii}) \\
 			& = \text{tr}(A) + \text{tr}(B)
 	\end{align}
 $$
