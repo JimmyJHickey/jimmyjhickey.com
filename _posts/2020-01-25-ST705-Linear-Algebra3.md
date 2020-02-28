@@ -208,7 +208,7 @@ $$
 In order to show that $S^{\perp}$ is a subspace we have to show three conditions:
 
 
-1: That there is a zero element. Take $y \in S$. Then $\langle 0 , y \rangle = 0$ by the definition of the inner product. Thus, $0 \in S^{perp}$.
+1: That there is a zero element. Take $y \in S$. Then $\langle 0 , y \rangle = 0$ by the definition of the inner product. Thus, $0 \in S^{\perp}$.
 
 
 2: That the space is closed under vector addition. Take $a, b \in S^\perp$ and $y \in S$. Then $\langle a , y  \rangle = \langle b , y \rangle = 0$. Then, 
@@ -232,7 +232,7 @@ Thus. $a x \in S^\perp$.
 ## b
 **Let $W \subseteq V$ be a finite dimensional subspace, and let $y \in V$.  Show that there exist unique vectors $u \in W$ and $z \in W^{\perp}$ such that $y = u + z$.**
 
-Take $\{ u_1, \dots u_k \}$ to be an orthonormal basis for $W$ (which is guaranteed to exist by Graham-Schmidt). Then define $u = \sum_{ i=1 }^{ k } = \langle y , u_i \rangle u_i$ and $z = y - u$. Then $y = u + z$. We need to show that $\langle u , z \rangle = 0$.
+Take $\{ u_1, \dots u_k \}$ to be an orthonormal basis for $W$ (which is guaranteed to exist by Graham-Schmidt). Then define $u = \sum_{ i=1 }^{ k } \langle y , u_i \rangle u_i$ and $z = y - u$. Then $y = u + z$. We need to show that $\langle u , z \rangle = 0$.
 
 $$
 	\begin{align}

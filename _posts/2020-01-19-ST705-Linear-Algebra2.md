@@ -21,7 +21,7 @@ $$
 **where $c$ does not depend on $x$.**
 
 
-We will take $\widetilde{\Sigma}^{-1} = \Sigma_{1}^{-1} + \Sigma_{2}^{-1}$ and $\widetilde{\mu} = \widetilde{\Sigma}(\Sigma_1^{-1} \mu_1 + \Sigma_2^{-1} \mu_2$. Notice we are assuming that $\widetilde{\Sigma}^{-1}$ is invertible. We will start by expanding the left hand side of the equation are regrouping the terms.
+We will take $\widetilde{\Sigma}^{-1} = \Sigma_{1}^{-1} + \Sigma_{2}^{-1}$ and $\widetilde{\mu} = \widetilde{\Sigma}(\Sigma_1^{-1} \mu_1 + \Sigma_2^{-1} \mu_2)$. Notice we are assuming that $\widetilde{\Sigma}^{-1}$ is invertible. We will start by expanding the left hand side of the equation are regrouping the terms.
 
 $$
 	\begin{align}
@@ -160,7 +160,7 @@ Notice that $C x_i \in \mathbb{R}^q$. Since $u_i$ is a basis vector, we know tha
 Now we will show $\text{ column }( B ) \subset \text{ column }( BC )$. Take $x \in \mathbb{R}^p$ such that $x = Bv$. Since $\text{rank}( B ) = \text{rank}( BC )$, we can say that $v = Cu$ for $u \in \mathbb{R}^l$. Therefore $x = Bv = BCu$, or $x \in C(BC)$.
 
 # 5
-**The _signular value decomposition_ of a matrix $A$ arises from the relationship of the eigenproblems of $A^TA$ and $AA^T$. The spectral decompositions of $A^T A$ and $AA^T$, both nonnegative definite with nonnegative eigenvalues, lead to the expressions**
+**The _singular value decomposition_ of a matrix $A$ arises from the relationship of the eigenproblems of $A^TA$ and $AA^T$. The spectral decompositions of $A^T A$ and $AA^T$, both nonnegative definite with nonnegative eigenvalues, lead to the expressions**
 
 
 $$
