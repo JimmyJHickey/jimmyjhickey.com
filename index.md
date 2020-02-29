@@ -32,6 +32,8 @@ Hi, I'm Jimmy Hickey. I'm a programmer and statistics PhD student at North Carol
 * Vulfpeck
 * Watsky
 
+[If I only got one song from each artist.](https://open.spotify.com/playlist/0nhcPOjf46ntP6eHWh1j6P?si=rIfadwQJRvKyZibhZGBpHw)
+
 ## Podcasts I like
 * Monday Morning Podcast
 * Conan O'Brien Needs a Friend
