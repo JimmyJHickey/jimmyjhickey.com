@@ -504,7 +504,7 @@ $$
 Since the $v_i$'s are lineary independent, 
 
 $$
-\langle v_i , v_j \rangle
+\langle v_i , v_j \rangle =
 \begin{cases}
 	0 & i \neq j \\
 	1 & i = j.
