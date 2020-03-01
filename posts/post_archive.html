@@ -4,7 +4,9 @@ title: Post Archive
 ---
 <!-- Posts -->
 
-<p>Here's a categorized archive of my posts for easier searching.</p>
+<p>
+	Here's a categorized archive of my posts for easier searching. <a href="{% if site.baseurl == "/" %}{{ "/posts"}}{% else %}{{ "/posts" | prepend: site.baseurl }}{% endif %}">Click here to go back to recent posts.</a>
+</p>
 
 
 {% for category in site.categories reversed %}
