@@ -69,7 +69,7 @@ $$
 $$
 
 
-Notice that 
+The last equality holds because $v_j^T w_i$ is a scalar. Notice that 
 
 $$
 R = 
