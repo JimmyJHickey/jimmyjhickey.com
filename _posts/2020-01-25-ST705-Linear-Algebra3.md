@@ -232,7 +232,7 @@ Thus. $a x \in S^\perp$.
 ## b
 **Let $W \subseteq V$ be a finite dimensional subspace, and let $y \in V$.  Show that there exist unique vectors $u \in W$ and $z \in W^{\perp}$ such that $y = u + z$.**
 
-Take $\{ u_1, \dots u_k \}$ to be an orthonormal basis for $W$ (which is guaranteed to exist by Graham-Schmidt). Then define $u = \sum_{ i=1 }^{ k } \langle y , u_i \rangle u_i$ and $z = y - u$. Then $y = u + z$. We need to show that $\langle u , z \rangle = 0$.
+Take $\{ u_1, \dots u_k \}$ to be an orthonormal basis for $W$ (which is guaranteed to exist by Gram-Schmidt). Then define $u = \sum_{ i=1 }^{ k } \langle y , u_i \rangle u_i$ and $z = y - u$. Then $y = u + z$. We need to show that $\langle u , z \rangle = 0$.
 
 $$
 	\begin{align}
