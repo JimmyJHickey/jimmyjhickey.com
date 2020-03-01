@@ -292,7 +292,7 @@ $$
 || X(\hat b_H - \widetilde b_H) ||^2 = 0.
 $$
 
-Thus, $\widehat b_H = \widetilde b_H$.
+Thus, $X \widehat b_H = X \widetilde b_H$.
 
 
 ## b
