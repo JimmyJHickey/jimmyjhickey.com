@@ -618,7 +618,7 @@ $$
 Notice that we again used the trick from 4,
 
 $$
-\langle v_i , v_j \rangle
+\langle v_i , v_j \rangle =
 \begin{cases}
 	0 & i \neq j \\
 	1 & i = j.
