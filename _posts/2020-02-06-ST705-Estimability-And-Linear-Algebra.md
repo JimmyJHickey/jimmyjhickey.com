@@ -151,7 +151,7 @@ Since $R_1$ is upper triangular, that means that $R_1^T  = R_1^{-1}$ is lower tr
 
 
 $$
-\mathbf I = \mathbf I_n - \frac{ 2 }{ || \mathbf  u ||^2 } \mathbf u \mathbf u^T
+\mathbf U = \mathbf I_n - \frac{ 2 }{ || \mathbf  u ||^2 } \mathbf u \mathbf u^T
 $$
 
 
@@ -199,7 +199,7 @@ $$
 	\begin{align}
 		||u||^2 & = (x + ||x|| e^{(1)})^T (x + ||x|| e^{(1)}) \\
 			& = x^T x + ||x|| (e^{(1)})^T x + ||x||^2 + x^T e^{(1)} ||x|| \\
-			& = 2 ||x||(x + ||x|| e^{(1)}).
+			& = 2 ||x||(||x|| + x^T e^{(1)}).
 	\end{align}
 $$
 
@@ -208,8 +208,8 @@ Then,
 
 $$
 	\begin{align}
-		Ux & = x - \frac{ 2(x + ||x|| e^{(1)}) (x + ||x|| e^{(1)})^T}{ 2 ||x||(x + ||x|| e^{(1)})  } x  \\
-			& = x - \frac{ (x + ||x|| e^{(1)})) (||x||^2 + ||x || e^{(1)})}{ 2 ||x||(x + ||x|| e^{(1)}) } \\ 
+		Ux & = x - \frac{ 2(x + ||x|| e^{(1)}) (x + ||x|| e^{(1)})^T}{ 2 ||x||(||x|| + x^T e^{(1)})  } x  \\
+			& = x - \frac{ (x + ||x|| e^{(1)})) (||x||^2 + ||x || e^{(1)})}{ ||x||(||x|| + x^T e^{(1)}) } \\ 
 			& = x - x - ||x|| e^{(1)} \\
 			& = -s e^{(1)}
 	\end{align}

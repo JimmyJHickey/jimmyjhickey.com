@@ -473,14 +473,14 @@ $$
 $$
 
 
-So we know that $\lambda^T$ is orthogonal to $\beta_1 - \beta_2$. And since $\beta_1$ and $\beta_2$ solve the normal equations, we know that
+So we know that $\lambda$ is orthogonal to $\beta_1 - \beta_2$. And since $\beta_1$ and $\beta_2$ solve the normal equations, we know that
 
 $$
 X^T X \beta_1 = X^T X \beta_2 \rightarrow X^T X (\beta_1 - \beta_2) = 0.
 $$
 
 
-This means that $\beta_1  - \beta_2 \in \mathcal N(X^T X) = \mathcal N (X)$. Since $\mathcal N(X)$ and $\text{ column }( X^T )$ are orthogonal complements, we know that $\lambda^T \in \text{ column }( X^T )$ and thus is estimable.
+This means that $\beta_1  - \beta_2 \in \mathcal N(X^T X) = \mathcal N (X)$. Since $\mathcal N(X)$ and $\text{ column }( X^T )$ are orthogonal complements, we know that $\lambda \in \text{ column }( X^T )$ and thus is estimable.
 
 
 # 4
@@ -538,7 +538,7 @@ $$
 	\begin{align}
 		||a + b ||^2 & = \langle a + b , a+b \rangle \\
 			& = \sum \langle a+b , v_i \rangle \langle v_i , a+b \rangle \\
-			& = \sum \langle a_i+b_i , v_i \rangle \langle v_i , a_i+b_i \rangle \\
+			& = \sum \langle a_i v_i+b_i v_i , v_i \rangle \langle v_i , a_iv_i +b_i v_i \rangle \\
 			& = \langle a_1 v_1 + b_1 v_1 , v_1 \rangle  \langle v_1, a_1 v_1 + b_1 v_1 \rangle + \langle a_2 v_2 + b_2 v_2 , v_2 \rangle \langle v_2, a_2 v_2 + b_2 v_2 \rangle \\
 			& = (\langle a_1 v_1 , v_1 \rangle + \langle b_1 v_1 , v_1 \rangle)( \langle v_1 , a_1 v_1 \rangle + \langle v_1 , b_1 v_1 \rangle) + (\langle a_2 v_2 , v_2 \rangle + \langle b_2 v_2 , v_2 \rangle)( \langle v_2 , a_2 v_2 \rangle + \langle v_2 , b_2 v_2 \rangle) \\
 			& = (a_1 + b_1)(\overline{ a_1 } + \overline{ b_1 }) + (a_2 + b_2) (\overline{ a_2 } + \overline{ b_2 }) \\

@@ -503,7 +503,7 @@ $$
 \begin{bmatrix}
 	1/\sqrt{ n_1 }Y_1 \\
 	\vdots \\
-	1/sqrt{n_N} Y_N
+	1/\sqrt{N} Y_N
 \end{bmatrix}.
 $$
 
