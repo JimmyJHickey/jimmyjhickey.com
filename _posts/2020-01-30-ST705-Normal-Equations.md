@@ -60,17 +60,14 @@ $$
 # 2 
 **Let $X = QR$ where $Q$ has orthonormal columns.  Prove that if $\text{rank}(X) = \text{rank}(Q)$, then $P_{X} = QQ'$.**
 
-Let's say that $X \in \mathbb{R}^{n \times m}$ and $Q \in \mathbb{R}^{n \times r}$. Then, $R \in \mathbb{R}^{r \times r}$. Also, since $Q$ has orthonormal columns $\text{rank}( Q ) = r = \text{rank}( X )$ and $\text{rank}( Q R ) = \text{rank}( R ) = \text{rank}( X ) = r$. Thus, $R$ is a square matrix of full rank, so $R^T R$ also has full rank and is invertible.
+Since $Q$ has the same rank as $X$ and it has orthonormal columns, it must have full column rank. Thus, $\text{ column }( Q ) = \text{ column }( X )$ and $P_U = P_X$.
 
 $$
 	\begin{align}
-		P_X & = X (X^T X)^g X^T \\
-			& = QR (R^T Q^T Q R)^g R^T Q^T \\
-			& = QR (R^T I R)^g R^T Q^T & \text{orthonormal columns}\\
-			& = QR (R^T R)^{-1} R^T Q^T & \text{invertible}\\
-			& = Q R R^{-1} R^{T^{-1}} R^T Q^T \\
-			& = Q I I Q^T \\
-			& = Q Q^T
+		P_X & = P_U \\
+			& = U (U^T U)^g U^T \\
+			& = U (I)^g U^T & \text{orthogonal} \\
+			& = U U^T
 	\end{align}
 $$
 
