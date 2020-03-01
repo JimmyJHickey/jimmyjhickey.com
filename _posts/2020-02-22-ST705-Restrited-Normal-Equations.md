@@ -310,7 +310,7 @@ $$
 			& = a^T X \widehat b_H + d^T P^T \widehat b_H \\
 			& = a^T X \widetilde b_H + d^T \delta & (a)\\
 			& = a^T X \widetilde b_H + d^T P^T \widetilde b_H \\
-			& = a^T X + d^T P^T) \widetilde  b_H \\
+			& = (a^T X + d^T P^T) \widetilde  b_H \\
 			& = \lambda^T \widetilde b_H
 	\end{align}
 $$
