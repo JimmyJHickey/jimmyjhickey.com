@@ -89,7 +89,7 @@ $$
 Recall that $\log( x ) \leq x - 1 \ \forall x \geq 0$. This gives us $\log\det(A) \le \text{tr}(A - I)$. Then,
 
 $$
-\log( x ) \leq x - 1 \Rightarrow \log( 1/x ) \leq 1/x - 1 \Rightarrow log(x) \geq 1 - x.
+\log( x ) \leq x - 1 \Rightarrow \log( 1/x ) \leq 1/x - 1 \Rightarrow \log(x) \geq 1 - \frac{ 1 }{ x }.
 $$
 
 This gives us $\text{tr}(I - A^{-1}) \le \log\det(A)$. Thus,
