@@ -492,6 +492,8 @@ This means that $\beta_1  - \beta_2 \in \mathcal N(X^T X) = \mathcal N (X)$. Sin
 
 $$\langle x,y\rangle = \sum_{i=1}^{n}\langle x,v_{i} \rangle\overline{\langle y,v_{i} \rangle}.$$
 
+**This is called Parseval's identity.**
+
 Take $x = \sum a_1 v_i$ and $y = \sum b_i v_i$.
 
 $$
