@@ -152,7 +152,7 @@ $$
 A S_1 = A S_2 \Rightarrow 0 = A S_1 - A S_2 = A (S_1 - S_2).
 $$
 
-Assuming $A \neq 0$, know that $S_1 = S_2$.
+Since $A$ has full rank, know that $S_1 = S_2$.
 
 # 7 (2.14)
 **For $X$ and $W$ below, show $\mathcal C (X) = \mathcal C (W)$, by finding the matrices $S$ and $T$ so that $W = XT$ and $X = WS$:**
