@@ -12,7 +12,7 @@ category: ST705
 {:toc}
 
 # 1
-**Consider the following design matric for ANACOVA with two groups and one covariate.**
+**Consider the following design matrix for ANACOVA with two groups and one covariate.**
 
 
 $$
