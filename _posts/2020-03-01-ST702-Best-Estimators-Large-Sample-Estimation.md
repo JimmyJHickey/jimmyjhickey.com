@@ -196,7 +196,7 @@ $$
 
 
 $$
-Var(X) = \frac{ 1 }{ 3 } - \frac{ \theta^2 }{ 3 }
+Var(X) = \frac{ 1 }{ 3 } - \frac{ \theta^2 }{ 9 }
 $$
 
 
