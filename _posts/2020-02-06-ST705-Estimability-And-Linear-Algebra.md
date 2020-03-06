@@ -672,7 +672,7 @@ $$
 The least squares estimator would be
 
 $$
-\lambda^T \hat b = \frac{ y_{11} + y_{12} + y_{13}}{ 3  } + \frac{ y_{21} + y{22} + y{23} }{ 3 }.
+\lambda^T \hat b = \frac{ y_{11} + y_{12} + y_{13}}{ 3  } + \frac{ y_{21} + y_{22} + y_{23} }{ 3 }.
 $$
 
 
