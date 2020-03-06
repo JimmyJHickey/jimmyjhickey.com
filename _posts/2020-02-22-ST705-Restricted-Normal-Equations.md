@@ -464,10 +464,10 @@ If we look at our model from part (b) we will notice that our errors have mean 0
 $$
 	\begin{align}
 		\widetilde Y & = \begin{bmatrix}
-							\frac{ 1 }{ n_1 } & 0 & \dots & 0 \\
-							0 & \frac{ 1 }{ n_2 } & 0 \cdots & \vdots \\
+							\frac{ 1 }{ \sqrt{n_1} } & 0 & \dots & 0 \\
+							0 & \frac{ 1 }{ \sqrt{n_2} } & 0 \cdots & \vdots \\
 							0 & \dots & \ddots &  \\
-							0 & \dots &  & \frac{ 1 }{ n_N }
+							0 & \dots &  & \frac{ 1 }{ \sqrt{n_N} }
 						\end{bmatrix} 
 						\begin{bmatrix}
 							n_1 \\
@@ -503,19 +503,38 @@ $$
 \begin{bmatrix}
 	1/\sqrt{ n_1 }Y_1 \\
 	\vdots \\
-	1/\sqrt{N} Y_N
+	1/\sqrt{n_N} Y_N
 \end{bmatrix}.
 $$
 
 
-Now we have satisfied the last Gauss-Markov assumption, equal variances. Thus, our least squares estimator will be our BLUE.
+Now we have satisfied the last Gauss-Markov assumption, equal variances. Thus, our least squares estimator will be our BLUE. We know $\widehat p = (X^T X)^g X^T y$.
 
 $$
 	\begin{align}
-		\lambda^T \widehat p & = \widehat p \\
-			& = \frac{ 1 }{ N } \sum_{i=1}^n \frac{ 1 }{ n_1 } y_i.
+		X^T X & = \begin{bmatrix}
+						\sqrt{ n_1 } & \dots  & \sqrt{ n_N }
+					\end{bmatrix}
+					\begin{bmatrix}
+						\sqrt{ n_1 } \\
+						\vdots \\
+						\sqrt{ n_N }
+					\end{bmatrix} \\
+			& =\sum n_i \\
+		(X^T X)^{-1} & = \frac{ 1 }{ \sum n_i } \\
+		X^T y & = \begin{bmatrix}
+						\sqrt{ n_1 } & \dots  & \sqrt{ n_N }
+					\end{bmatrix}
+					\begin{bmatrix}
+						y_1 / \sqrt{ n_1 } \\
+						\vdots \\
+						y_N / \sqrt{ n_N }
+					\end{bmatrix} \\
+			& = \sum y_i \\
+		\widehat b & = \frac{ \sum y_i }{ \sum n_i }
 	\end{align}
 $$
+
 
 # 7 (4.2)
 **Under that Gauss-Markov model, show that for $\lambda$ such that $\lambda^T b$ is estimable, $Var(\lambda^T b) = \sigma^2 \lambda^T (X^T X)^g \lambda$ does not depend on the choice of generalized inverse $(X^T X)^g$.**
