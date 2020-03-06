@@ -13,20 +13,65 @@ category: ST705
 # 1 (4.3)
 **In Example 4.8 (heteroskedasticity) find $Var(\widehat b_{OLS})$ and compare it to $Var(\widehat b_{GLS})$.**
 
-
+$$
+	\begin{align}
+		Var(\widehat  \beta_{OLS}) & = Var \Big( \frac{ \sum x_i y_i }{ \sum x_i^2 } \Big) \\
+			& = \frac{ 1 }{ (\sum x_i^2)^2 } Var(\sum x_i y_i) \\
+			& = \frac{ 1 }{ (\sum x_i^2)^2 } \sum x_i^2 Var(y_i) \\
+			& = \frac{ 1 }{ (\sum x_i^2)^2 }  \sum x_i^2 \sigma^2 x_i^2 \\
+			& = \sigma^2 \frac{ x_i^4 }{ (\sum x_i^2)^2 } 
+	\end{align}
+$$
 
 
 # 2 (4.8)
-**(Compare with Example 4.10 (equicorrelation).) Consider the linear model $y = Xb + e$ where $e = u + Z 1$ (Z is a scalar random variable), where $Cov(u) = \sigma^2 I_N$, $Var(Z) = \tau^2$, and $Z$ and $u$ are uncorrelated. Find $V$ and derive condisitions under which the OLS estimator of every estimable function is BLUE.**
+**(Compare with Example 4.10 (equicorrelation).) Consider the linear model $y = Xb + e$ where $e = u + Z 1$ (Z is a scalar random variable), where $Cov(u) = \sigma^2 I_N$, $Var(Z) = \tau^2$, and $Z$ and $u$ are uncorrelated. Find $V$ and derive conditions under which the OLS estimator of every estimable function is BLUE.**
 
+$$
+	\begin{align}
+		Cov(e) & = Cov(U + Z 1_N) \\
+			& = Cov(U) + Cov(Z 1_N) + 0 \\
+			& = Cov(U) + Cov(1_N Z) \\
+			& = \sigma^2 I + 1_N \tau^2 1_N^T \\
+			& = \sigma^2 (I + \frac{ \tau^2}{ \sigma^2 } 1_N 1_N^T)
+	\end{align}
+$$
 
+Take $V = (I + \frac{ \tau^2}{ \sigma^2 } 1_N 1_N^T)$. Also take $X = \begin{bmatrix} 1_N & X^* \end{bmatrix}$.
+
+$$
+	\begin{align}
+		V X & = (I + \frac{ \tau^2}{ \sigma^2 } 1 1^T) \begin{bmatrix} 1 & X^* \end{bmatrix} \\
+			& = \begin{bmatrix} 1_N + \frac{ N \tau^2 }{ \sigma^2 }1_N & X^* + \frac{ \tau^2 }{ \sigma^2 } 1_N 1_N^T X^* \end{bmatrix} \\ \\
+		X Q & = \begin{bmatrix} 1_N & X^* \end{bmatrix} 
+			\begin{bmatrix}
+				Q_{11} & Q_{12} \\
+				Q_{21} & Q_{22}
+			\end{bmatrix} \\
+			& = \begin{bmatrix} 1_N Q_{11} + X^* Q_{21} & 1_N Q_{12} + X^* Q_{22}\end{bmatrix}
+	\end{align}
+$$
+
+Thus take 
+
+$$
+Q_{11} = 1 + \frac{ N \tau^2 }{ \sigma^2 }, \ Q_{21} = 0, \ Q_{12} = \tau^2 1_N^T X^*, \ Q_{22} = I_{p-1}.
+$$
 
 
 # 3 (4.9)
 **If $X$ has full-column rank and $C^T y$ is also unbiased for estimable $\Lambda^T b$, show that $Cov(C^T y) - Cov(\Lambda^T \widehat b)$ is nonnegative definite.**
 
+$$
+	\begin{align}
+		Cov(c^T y) & = Cov(c^T y - \Lambda^T \widehat \beta + \Lambda^T \widehat \beta) \\
+			& = Cov(c^T y - \Lambda^T \widehat \beta) + Cov(\Lambda^T \widehat \beta) + 2 Cov(c^T y - \Lambda^T \widehat \beta, \Lambda^T \widehat \beta) \\
+			& = Cov(c^T y - \Lambda^T \widehat \beta) + Cov(\Lambda^T \widehat \beta) + 0 & \text{result 4.1} \\
+		Cov(c^T y) - Cov(\Lambda^T \widehat \beta) & = Cov(c^T y - \Lambda^T \widehat \beta) 
+	\end{align}
+$$
 
-
+Since this is a covariance matrix, it must be nonnegative definite.
 
 # 4 (4.12)
 **Prove the Gauss-Markov Theorem directly, that is, by constructing all linear estimators $a^T y$ that are unbiased for $\lambda^T b$ (find a family of solutions $a(z)$), and then minimizing the variance of $\sigma^2 a^T a$.**
@@ -134,7 +179,7 @@ V^T =
 U_1 \Lambda V^T,
 $$
 
-**partitioning off the first $p$ columns of $U$, and express the least squares estimator as $\widehat b = V \Lambda^-1 U_1^T y$.
+**partitioning off the first $p$ columns of $U$, and express the least squares estimator as $\widehat b = V \Lambda^{-1} U_1^T y$.
 Setting some of the small singular values to zero, and using**
 
 $$
@@ -143,3 +188,67 @@ $$
 
 **changing the rank from $p$ to $k$, leads to the estimator $\widetilde b = V \Lambda_*^- U_1^T y$. Find its bias and mean squared error.**
 
+Notice
+
+$$
+\begin{align}
+	\Lambda^-1 & = \begin{bmatrix}
+			1 / \lambda_1  \\
+			& 1 / \lambda_2 \\
+			& & \ddots \\
+			& & & 1/ \lambda_p
+		\end{bmatrix} \\
+	\Lambda_*^- & = \begin{bmatrix}
+			\lambda_1  \\
+			& \lambda_2 \\
+			& & \ddots \\
+			& & & \lambda_k \\
+			& & & & 0 \\
+			& & & & & \ddots
+		\end{bmatrix}
+\end{align}
+$$
+
+
+$$
+\begin{align}
+E(\widetilde B) & = V \Lambda_*^- U_1^T U_1 \Lambda V^T \beta \\
+	& = V \Lambda_*^- \Lambda V^T \beta \\
+	& = V  
+		\begin{bmatrix}
+			\lambda_1  \\
+			& \lambda_2 \\
+			& & \ddots \\
+			& & & \lambda_k \\
+			& & & & 0 \\
+			& & & & & \ddots
+		\end{bmatrix} 
+		\begin{bmatrix}
+			\lambda_1  \\
+			& \lambda_2 \\
+			& & \ddots \\
+			& & & \lambda_p
+		\end{bmatrix}
+		V^T \beta \\
+	& = V 
+		\begin{bmatrix}
+			1 \\
+			& 1 \\
+			& & \ddots \\
+			& & & 1 \\
+			& & & & 0 \\
+			& & & & & \ddots
+		\end{bmatrix}
+		V^T \beta \\
+	& = \begin{bmatrix} v_1 & \dots & v_k & 0 & \dots & 0\end{bmatrix} V^T \beta \\
+	& = \begin{bmatrix} v_1 & \dots & v_k & 0 & \dots & 0\end{bmatrix}
+		\begin{bmatrix}
+				v_1^T \beta \\
+				\vdots \\
+				v_p^T \beta
+			\end{bmatrix} \\
+		& = \sum_{i=1}^k \langle v_i , \beta \rangle v_i
+\end{align}
+$$
+
+This is the projection of $\beta$ onto the $k$-dimensional subspace.
