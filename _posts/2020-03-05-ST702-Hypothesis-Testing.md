@@ -221,8 +221,75 @@ $$
 ## a
 **Show that the LRT statistic is given by $(\overline{ Y })^{-n}/(\prod Y_i)^{-1}$ and hence deduce the arithmetic-geometric mean inequality.**
 
-Notice that $Y_i \sim exponential(1 / \lambda_i)$. The MLE of $ \widehat \lambda_i is \frac{ 1 }{ Y_i }$. Under $H_0$, all of these are the same, so we have an iid sample and can say that $\widehat \lambda = \frac{ 1 }{ \overline{ Y } }$.
+Notice that $Y_i \sim exponential(1 / \lambda_i)$. The MLE of $ \widehat \lambda_i is \frac{ 1 }{ Y_i }$. Under $H_0$, all of these are the same, so we have an iid sample and can say that $\widehat \lambda = \frac{ 1 }{ \overline{ Y } }$. Thus, the LRT statistic is
+
+$$
+\begin{align}
+\lambda(x) & = \frac{ \prod \frac{ 1 }{ \overline{ y } e^{-\frac{ y_i }{ \overline{ y } }} } }{ \prod \frac{ 1 }{ y_i } e^{-\frac{ y_i }{ y_i }} } \\
+	& = \frac{ \Big( \frac{ 1 }{ \overline{ y } } \Big) e^{-\frac{ \sum y_i }{ \overline{ y } }} }{ \prod \Big( \frac{ 1 }{ y_i } \Big) e^{-\sum 1} } \\
+	& = \frac{ \Big( \frac{ 1 }{ \overline{ y } } \Big)^n e^{-\frac{ -n \overline{ y }}{ \overline{ y } }} }{ \prod \Big( \frac{ 1 }{ y_i } \Big) e^{-n} } \\
+	& = \frac{ \Big( \frac{ 1 }{ \overline{ y } } \Big)^n }{ \prod \frac{ 1 }{ y_i } }.
+\end{align}
+$$
+
+
+Recall that the LRT is bounded above by 1.
+
+$$
+\begin{align}
+1 & \geq \frac{ \Big( \frac{ 1 }{ \overline{ y } } \Big)^n }{ \prod \frac{ 1 }{ y_i } } \\
+\Big( \frac{ 1 }{ \overline{ y } } \Big)^n & \leq \prod \frac{ 1 }{ y_i } \\
+\overline{ y } & \geq \Big( \prod y_i \Big)^{1/n}
+\end{align}
+$$
+
 
 ## b
 **Make the transformation $X_i = 1/Y_i$, and show that the LRT statistic based on $X_1, \dots , X_n$ is given by $\Big[ n / \sum (1/X_i) \Big]^n / \prod X_i$ and hence deduce the geometric-harmonic mean inequality.**
 
+First we can find the PDF of $X$.
+
+$$
+\begin{align}
+P(X \leq y) & = P(\frac{ 1 }{ Y } \leq y) \\
+	& = P(1/y \leq Y)\\
+	& = 1 - P(Y \leq 1/y) \\
+F_X & = 1 - e^{-\frac{ \lambda }{ x_i }} \\
+f_x & = -\frac{ \lambda }{ x^2 } e^{- \frac{ \lambda }{ x }}
+\end{align}
+$$
+
+
+Then we can find the MLEs.
+
+$$
+\begin{align}
+L(\lambda | x) & = \prod \frac{ \lambda_i }{ x_i^2 } e^{-\frac{ \lambda_i }{  x_i}} \\
+\ell (\lambda | x) & = \log(\lambda_i) - 2 \log(x_i) - \frac{ \lambda_i }{ x_i } \\
+\frac{ \partial  \ell }{\partial \lambda } & = \frac{ 1 }{ \lambda_i } - \frac{ 1 }{ x_i } \\ \\
+
+\text{under } H_0 \\
+0 & = \frac{ n }{ \lambda } - \sum \frac{ 1 }{ x_i } \\
+\frac{ 1 }{ x_i } & = \frac{ n }{ \lambda } \\
+\widehat  \lambda & = \frac{ n }{ \sum \frac{ 1 }{ x_i } } \\ \\
+
+\text{under } H_1 \\
+0 & = \frac{ 1 }{ \lambda_i } - \frac{ 1 }{ x_i } \\
+\widehat \lambda_i & = x_i
+\end{align}
+$$
+
+Then, as above, we can calculate our LRT.
+
+$$
+\begin{align}
+\lambda(x) & = \frac{ \prod -\frac{ \frac{ n }{ \sum \frac{ 1 }{ x_i } } }{ x_i^2 } e^{- \frac{ \frac{ n }{ \sum \frac{ 1 }{ x_i } } }{ x_i }}}{ \prod -\frac{ x_i }{ x_i^2 } e^{- \frac{ x_i }{ x_i }} } \\
+	& = \frac{\Big[ \frac{n}{\sum (1/X_i)} \Big]^n}{\prod X_i}
+\end{align}
+$$
+
+Again, this is bounded by 1, which gives us
+
+$$
+\overline{ x } & \geq \Big( \prod x_i \Big)^{1/n}
+$$
