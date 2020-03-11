@@ -74,7 +74,7 @@ $$
 Since this is a covariance matrix, it must be nonnegative definite.
 
 # 4 (4.12)
-**Prove the Gauss-Markov Theorem directly, that is, by constructing all linear estimators $a^T y$ that are unbiased for $\lambda^T b$ (find a family of solutions $a(z)$), and then minimizing the variance of $\sigma^2 a^T a$.**
+**Prove the Gauss-Markov Theorem directly, that is, by constructing all linear estimators $a^T y$ that are unbiased for $\lambda^T b$ (find a family of solutions $a(z)$), and then minimizing the variance $\sigma^2 a^T a$.**
 
 
 
@@ -86,7 +86,7 @@ $$
 \widetilde b = (X^T X + k I_P)^{-1} X^T y
 $$
 
-**where $k>0$. Assume here that $X$ is full-column rnak, that is, $\text{rank}( X ) = p$.**
+**where $k>0$. Assume here that $X$ is full-column rank, that is, $\text{rank}( X ) = p$.**
 
 ## a
 **Find $E(\widetilde b)$.**
@@ -95,7 +95,7 @@ $$
 
 
 ## b
-**Is $\lambda^T \widetilde b$ and unbiased estimator of $\lambda^T b$?**
+**Is $\lambda^T \widetilde b$ an unbiased estimator of $\lambda^T b$?**
 
 
 
@@ -124,7 +124,7 @@ Xb =
 	1 & x_1 & z_1 \\
 	1 & x_2 & z_2 \\
 	\vdots & \vdots & \vdots \\
-	1 & x_N & x_N
+	1 & x_N & z_N
 \end{bmatrix}
 \begin{bmatrix}
 	\beta_0 \\
@@ -138,6 +138,7 @@ $$
 
 
 $$
+X^T X
 \begin{bmatrix}
 	N & 0 & 0 \\
 	0 & \sum x_i^2 & \sum x_i z_i \\
@@ -192,7 +193,7 @@ Notice
 
 $$
 \begin{align}
-	\Lambda^-1 & = \begin{bmatrix}
+	\Lambda^{-1} & = \begin{bmatrix}
 			1 / \lambda_1  \\
 			& 1 / \lambda_2 \\
 			& & \ddots \\
@@ -212,7 +213,7 @@ $$
 
 $$
 \begin{align}
-E(\widetilde B) & = V \Lambda_*^- U_1^T U_1 \Lambda V^T \beta \\
+E(\widetilde \beta) & = V \Lambda_*^- U_1^T U_1 \Lambda V^T \beta \\
 	& = V \Lambda_*^- \Lambda V^T \beta \\
 	& = V  
 		\begin{bmatrix}
@@ -252,3 +253,9 @@ E(\widetilde B) & = V \Lambda_*^- U_1^T U_1 \Lambda V^T \beta \\
 $$
 
 This is the projection of $\beta$ onto the $k$-dimensional subspace.
+
+So the bias is 
+
+$$
+Bias(\widetilde \beta) = \sum_{i=1}^k [\langle v_i , \beta \rangle v_i] - \beta.
+$$
