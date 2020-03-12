@@ -19,9 +19,15 @@ $$
 			& = \frac{ 1 }{ (\sum x_i^2)^2 } Var(\sum x_i y_i) \\
 			& = \frac{ 1 }{ (\sum x_i^2)^2 } \sum x_i^2 Var(y_i) \\
 			& = \frac{ 1 }{ (\sum x_i^2)^2 }  \sum x_i^2 \sigma^2 x_i^2 \\
-			& = \sigma^2 \frac{ x_i^4 }{ (\sum x_i^2)^2 } 
+			& = \sigma^2 \frac{ \sum x_i^4 }{ (\sum x_i^2)^2 } 
 	\end{align}
 $$
+
+
+We know that $\widehat \beta_{GLS} = \frac{ \sigma^2 }{ N }$. 
+
+
+The OLS variance is larger.
 
 
 # 2 (4.8)
@@ -200,10 +206,10 @@ $$
 			& & & 1/ \lambda_p
 		\end{bmatrix} \\
 	\Lambda_*^- & = \begin{bmatrix}
-			\lambda_1  \\
-			& \lambda_2 \\
+			1/\lambda_1  \\
+			& 1/\lambda_2 \\
 			& & \ddots \\
-			& & & \lambda_k \\
+			& & & 1/\lambda_k \\
 			& & & & 0 \\
 			& & & & & \ddots
 		\end{bmatrix}
@@ -217,13 +223,13 @@ E(\widetilde \beta) & = V \Lambda_*^- U_1^T U_1 \Lambda V^T \beta \\
 	& = V \Lambda_*^- \Lambda V^T \beta \\
 	& = V  
 		\begin{bmatrix}
-			\lambda_1  \\
-			& \lambda_2 \\
+			1/\lambda_1  \\
+			& 1/\lambda_2 \\
 			& & \ddots \\
-			& & & \lambda_k \\
+			& & & 1/\lambda_k \\
 			& & & & 0 \\
 			& & & & & \ddots
-		\end{bmatrix} 
+		\end{bmatrix}
 		\begin{bmatrix}
 			\lambda_1  \\
 			& \lambda_2 \\
