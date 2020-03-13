@@ -7,7 +7,7 @@ install:
 - gem install jekyll jekyll-paginate
 
 script:
- - jekyll build
+ - bundle exec jekyll build
 
 branches:
  only:
