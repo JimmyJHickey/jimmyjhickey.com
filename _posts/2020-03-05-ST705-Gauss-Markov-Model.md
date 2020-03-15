@@ -24,10 +24,27 @@ $$
 $$
 
 
-We know that $\widehat \beta_{GLS} = \frac{ \sigma^2 }{ N }$. 
+We know that $\widehat \beta_{GLS} = \frac{ \sigma^2 }{ N }$. We can proceed using the Cauchy-Schwartz inequality.
 
 
-The OLS variance is larger.
+$$
+\begin{align}
+| \langle u , v \rangle |^2 & \leq \langle u , u \rangle \langle v , v \rangle \\
+| u_1 v_1 + \dots + u_n v_n |^2 & \leq (u_1^2 + \dots + u_n^2)(v_1^2 + \dots v_n^2)
+\end{align}
+$$
+
+
+Take $u_i = x_i^2$ and $v_i = 1$.
+
+$$
+\begin{align}
+\Big( \sum_{i=1}^N x_i^2 \Big)^2 & \leq \Big( \sum_{i=1}^{N} x_i^4 \Big) N \\
+\frac{ \Big( \sum_{i=1}^N x_i^2 \Big)^2 }{ \Big( \sum_{i=1}^{N} x_i^4 \Big) } & \leq N
+\end{align}
+$$
+
+The OLS variance is greater or equal to the GLS variance.
 
 
 # 2 (4.8)
@@ -82,8 +99,21 @@ Since this is a covariance matrix, it must be nonnegative definite.
 # 4 (4.12)
 **Prove the Gauss-Markov Theorem directly, that is, by constructing all linear estimators $a^T y$ that are unbiased for $\lambda^T b$ (find a family of solutions $a(z)$), and then minimizing the variance $\sigma^2 a^T a$.**
 
+We want to minimize $\sigma^2 a^T a$ which is the same as minimizing $\|\|a\|\|_2^2$.
 
+$$
+\begin{align}
+||a||_2^2 & = ||\underbrace{(X^T)^g \lambda}_{\in C(X)} + \underbrace{(I-(X^T)^g X^t)z}_{\in N(X^T)}||_2^2 \ z \in \mathbb{R}^n \\
+	& = ||(X^T)^g \lambda||_2^2 + ||(I-(X^T)^g X^t)z||_2^2 + 2 (X^T)^g \lambda (I-(X^T)^g X^t)z \\
+	& = ||(X^T)^g \lambda||_2^2 + ||(I-(X^T)^g X^t)z||_2^2 + 0 \\
+\end{align}
+$$
 
+Since these are in orthogonal spaces and both only add to the variance (since they are norms), we know that the minimum is at $z = 0$ where $a = (X^t)^g \lambda$.
+
+$$
+a^T y = \lambda^T (X^T X)^g X^T y = \lambda^T b
+$$
 
 # 5 (4.26)
 **Ridge regression is a technique that has been recommended by some statisticians to address multicollinearity problems arising in multiple regression. In our usual linear models framework with $E(y) = X b$, and $Cov(y) = \sigma^2 I_N$, the ridge regression estimator takes the form**
@@ -97,18 +127,38 @@ $$
 ## a
 **Find $E(\widetilde b)$.**
 
-
+$$
+\begin{align}
+E(\widetilde b) & = E \Big( (X^T X + k I_P)^{-1} X^T y \Big) \\
+	& = (X^T X + k I_P)^{-1} X^T E(y) \\
+	& = (X^T X + k I_P)^{-1} X^T X b \\
+	& = \Big[ (X^T X)^{-1}(X^T X + k I_p) \Big]^{-1} b \\
+	& = \Big[ I_p + X(X^T X)^{-1} \Big]^{-1} b
+\end{align}
+$$
 
 
 ## b
 **Is $\lambda^T \widetilde b$ an unbiased estimator of $\lambda^T b$?**
 
-
+$$
+\begin{align}
+E(\lambda^T \widetilde b) & = \lambda^T E(\widetilde b) \\
+	& = \lambda^T (X^T X + k I_P)^{-1} X^T X b  \\
+	& = a X (X^T X + k I_P)^{-1} X^T X b 
+\end{align}
+$$
 
 ## c
 **Find $Cov(\widetilde b)$.**
 
-
+$$
+\begin{align}
+Cov(\widetilde b) & = \Big[ (X^T X + k I_P)^{-1} X^T \Big] Cov(y) \Big[ (X^T X + k I_P)^{-1} X^T  \Big]^T \\
+	& = \Big[ (X^T X + k I_P)^{-1} X^T  \Big] \sigma^2 I_n \Big[ (X^T X + k I_P)^{-1} X^T  \Big]^T \\
+	& = \sigma^2 \Big[ (X^T X + k I_P)^{-1} X^T \Big] \Big[ (X^T X + k I_P)^{-1} X^T  \Big]^T
+\end{align}
+$$
 
 ## d
 **Mean squared error is commonly used to assess the quality of an estimator. For the ridge regression estimator $\widetilde  b$, find the mean squared error**
@@ -118,7 +168,15 @@ E\Big(||\widetilde b - b ||^2\Big) = E\Big( (\widetilde  b - b)^T(\widetilde b -
 $$
 
 
-
+$$
+\begin{align}
+E\Big(||\widetilde b - b ||^2\Big) & = E\Big( (\widetilde b - b)^T (\widetilde b - b) \Big) \\
+	& = E\Big( (\widetilde b -E(\widetilde b) + E(\widetilde b) - b)^T (\widetilde b - E(\widetilde b) + E(\widetilde b) - b) \Big) \\
+	& = E\Big( (\widetilde b - E(\widetilde b))^T (\widetilde b - E(\widetilde b)) + (\widetilde b -  E(\widetilde b))^T (E(\widetilde b) - b) + (E(\widetilde b) - b)^T(\widetilde b - E(\widetilde b)) + (E(\widetilde b) - b)^T (E(\widetilde b) - b) \Big) \\
+	& = E\Big( (\widetilde b - E(\widetilde b))^T (\widetilde b - E(\widetilde b)) \Big) + 0 + 0 E\Big( (E(\widetilde b) - b)^T(E(\widetilde b)-b) \Big) \\
+	& = tr(Cov(\widetilde b)) + || E(\widetilde b) - b ||_2^2
+\end{align}
+$$
 
 ## e
 **Consider applying ridge regression to a multivariate regression problem with two centered covariates ($\sum x_i = \sum z_i = 0$), taking the form**
@@ -144,7 +202,7 @@ $$
 
 
 $$
-X^T X
+X^T X = 
 \begin{bmatrix}
 	N & 0 & 0 \\
 	0 & \sum x_i^2 & \sum x_i z_i \\
@@ -160,18 +218,36 @@ $$
 **Find the covariance matrix of our usual least squares estimator $\widehat b = (X^T X)^{-1} X^T y$ in this situation.**
 
 
+$$
+\sigma^2 (X^T X)^{-1} = \left(
+\begin{array}{ccc}
+ \frac{\sigma ^2}{10} & 0 & 0 \\
+ 0 & \frac{5 \sigma ^2}{9} & -\frac{1}{9} \left(4 \sigma ^2\right) \\
+ 0 & -\frac{1}{9} \left(4 \sigma ^2\right) & \frac{5 \sigma ^2}{9} \\
+\end{array}
+\right)
+$$
 
 
 ## f
 **Find a value of $k$ such that one component of $\widetilde  b$ (your choice of component) has smaller variance than the corresponding least squares estimator.**
 
+$$
+\sigma^2 (X^T X + k I_P)^{-1} X^T X (X^T X + k I_P)^{-1} = \left(
+\begin{array}{ccc}
+ \frac{10 \sigma ^2}{(k+10)^2} & 0 & 0 \\
+ 0 & \frac{5 (k+5)^2 \sigma ^2}{(k+1)^2 (k+9)^2} & \frac{64 \sigma ^2}{(k+1)^2 (k+9)^2} \\
+ 0 & \frac{64 \sigma ^2}{(k+1)^2 (k+9)^2} & \frac{5 (k+5)^2 \sigma ^2}{(k+1)^2 (k+9)^2} \\
+\end{array}
+\right)
+$$
 
-
+Take $k = 5$ and then the first column will be smaller than in (e).
 
 ## g
 **Part (f) looks like it violates the Gauss-Markov Theorem, Does it?**
 
-
+This does not violate the Guass-Markov Theorem because $\widetilde b$ is not unbiased (so it cannot be BLUE).
 
 # 6 (4.27)
 **Principal components regression is considered another alternative to least squares estimators in the case of multicollinearity. Begin with the singular value decomposition matrix**
@@ -264,4 +340,34 @@ So the bias is
 
 $$
 Bias(\widetilde \beta) = \sum_{i=1}^k [\langle v_i , \beta \rangle v_i] - \beta.
+$$
+
+Also from 5 we know $MSE = tr(Cov(\widetilde b)) + \|\|E(\widetilde b - b)\|\|_2^2$.
+
+$$
+\begin{align}
+E(\widetilde b - b) & = (V \Lambda_*^- U_1^T X - I)b \\
+	& = (V \Lambda_*^- U_1^T U_1 \Lambda V^T - I) b \\
+	& = (V \Lambda_*^- \Lambda V^T - I)b \\
+	& = \Big( V \begin{bmatrix}	I & 0 \\ 0 & 0 \end{bmatrix} V^T - I\Big) b \\ \\
+||E(\widetilde b - b)||_2^2 & = \Big[ b^T \Big( V \begin{bmatrix}
+		I & 0 \\
+		0 & 0 
+	\end{bmatrix} V^T - I\Big) \Big] \Big[ \Big( V \begin{bmatrix}
+		I & 0 \\
+		0 & 0 
+	\end{bmatrix} V^T - I\Big) b  \Big] \\
+	& = b^T V \begin{bmatrix}	I & 0 \\ 0 & 0 \end{bmatrix}  v - 2 b^T V \begin{bmatrix}	I & 0 \\ 0 & 0 \end{bmatrix}  V^T b + b^T b \\
+	& = b^T b - b^T V \begin{bmatrix}	I & 0 \\ 0 & 0 \end{bmatrix}  V^T b
+\end{align}
+$$
+
+
+
+$$
+\begin{align}
+Var(V \Lambda_*^- U_1^T y)) & = V \Lambda_*^- U_1^T Var(y) U_1 (\Lambda_*^-)^T V^T \\ \\
+MSE & = tr(V \Lambda_*^- U_1^T Var(y) U_1 (\Lambda_*^-)^T V^T) + b^T b - b^T V \begin{bmatrix}	I & 0 \\ 0 & 0 \end{bmatrix}  V^T b \\
+	& = tr(V(y) U_1 (\Lambda_*^-)^2 U_1^T) + b^T b - b^T V \begin{bmatrix}	I & 0 \\ 0 & 0 \end{bmatrix}  V^T b
+\end{align}
 $$
