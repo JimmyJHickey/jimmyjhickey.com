@@ -4,4 +4,4 @@ _site
 node_modules
 *.afdesign
 .jekyll-cache/
-
+Gemfile.lock
