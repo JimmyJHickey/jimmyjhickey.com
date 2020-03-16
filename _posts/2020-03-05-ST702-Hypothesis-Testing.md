@@ -291,5 +291,5 @@ $$
 Again, this is bounded by 1, which gives us
 
 $$
-\overline{ x } & \geq \Big( \prod x_i \Big)^{1/n}
+\overline{ x } \geq \Big( \prod x_i \Big)^{1/n}
 $$
