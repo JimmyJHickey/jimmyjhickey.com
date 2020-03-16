@@ -368,6 +368,6 @@ $$
 \begin{align}
 Var(V \Lambda_*^- U_1^T y)) & = V \Lambda_*^- U_1^T Var(y) U_1 (\Lambda_*^-)^T V^T \\ \\
 MSE & = tr(V \Lambda_*^- U_1^T Var(y) U_1 (\Lambda_*^-)^T V^T) + b^T b - b^T V \begin{bmatrix}	I & 0 \\ 0 & 0 \end{bmatrix}  V^T b \\
-	& = tr(V(y) U_1 (\Lambda_*^-)^2 U_1^T) + b^T b - b^T V \begin{bmatrix}	I & 0 \\ 0 & 0 \end{bmatrix}  V^T b
+	& = tr(Var(y) U_1 (\Lambda_*^-)^2 U_1^T) + b^T b - b^T V \begin{bmatrix}	I & 0 \\ 0 & 0 \end{bmatrix}  V^T b
 \end{align}
 $$
