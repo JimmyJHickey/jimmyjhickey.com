@@ -133,7 +133,7 @@ E(\widetilde b) & = E \Big( (X^T X + k I_P)^{-1} X^T y \Big) \\
 	& = (X^T X + k I_P)^{-1} X^T E(y) \\
 	& = (X^T X + k I_P)^{-1} X^T X b \\
 	& = \Big[ (X^T X)^{-1}(X^T X + k I_p) \Big]^{-1} b \\
-	& = \Big[ I_p + X(X^T X)^{-1} \Big]^{-1} b
+	& = \Big[ I_p + k(X^T X)^{-1} \Big]^{-1} b
 \end{align}
 $$
 
@@ -145,7 +145,7 @@ $$
 \begin{align}
 E(\lambda^T \widetilde b) & = \lambda^T E(\widetilde b) \\
 	& = \lambda^T (X^T X + k I_P)^{-1} X^T X b  \\
-	& = a X (X^T X + k I_P)^{-1} X^T X b 
+	& = a^T X (X^T X + k I_P)^{-1} X^T X b 
 \end{align}
 $$
 
