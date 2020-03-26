@@ -169,10 +169,9 @@ $$
 v'Y \sim \text{N}(v'\mu,v'\Sigma v).
 $$
 
----
-
 **Denote $Y \sim \text{N}_{p}(\mu,\Sigma)$.**
 
+---
 
 **Prove that if $\Sigma$ is nonsingular, then $Y \sim \text{N}_{p}(\mu,\Sigma)$ if and only if $Y$ has density,**
 
@@ -206,11 +205,44 @@ These random variables, while dependent, have 0 covariance because covariance an
 ## a
 **Let $Z \sim N(0,1)$; find the density of $U_1 = Z^2$.**
 
+$$
+\begin{align}
+M_{U_1}(t) & = E(e^{t z^2}) \\
+	& = \int_{-\infty}^{\infty} e^{t z^2} \frac{ 1 }{ \sqrt{ 2 \pi } } e^{-z^2 / 2)} dz \\
+	& = \int_{-\infty}^{\infty} \frac{ 1 }{ \sqrt{ 2 \pi } } e^{z^2 (t - 1/ 2} dz \\
+	& = \frac{ 1 }{ \sqrt{ 2 \pi } } \frac{ \sqrt{ \pi } }{ \sqrt{ \frac{ 1 }{ 2 } - t} } \\
+	& = (1 - 2t)^{-1/2} \\
+	& \sim \chi_1^2
+\end{align}
+$$
 
 ## b
 **Let $U_1, U_2$ be independent, each with $\chi_1^2$ distribution. Find the density of $U_1 + U_2$ directly using transformation rules.**
 
+Take $X = U_1 + U_2$.
 
+$$
+\begin{align}
+M_X(t) & = E(e^{t (U_1 + U_2)}) \\
+	& = E(e^{tU_1} e^{t U_2}) \\
+	& = E(e^{tU_1}) E(e^{tU_2}) & \text{independence} \\
+	& = \Big( (1 - 2t)^{-1/2} \Big)^2 \\
+	& = (1 - 2t)^{-2/2} \\
+	& \sim \chi_2^2
+\end{align}
+$$
 
 ## c
 **Let $U_i, i = 1, \dots , p$ be iid $\chi_1^2$. Find the density of $U_1 + \dots + U_p$**
+
+Take $Y = \sum_{i=1}^{p} U_i$.
+
+$$
+\begin{align}
+M_Y(t) & = E(e^{t \sum U_i}) \\
+	& = E(\prod e^{t U_i}) \\
+	& \prod E(e^{t U_i}) & \text{independence} \\
+	& = (1 - 2t)^{-p/2} \\
+	& \sim \chi^2_p
+\end{align}
+$$
