@@ -99,18 +99,69 @@ $$
 ## b
 **Find the limit of the two nonzero elements in row $N$ as $N \rightarrow \infty$.**
 
+As $N \rightarrow \infty$,
 
+$$
+\begin{align}
+L_{j,j} & \rightarrow \sqrt{ 1+ \alpha^2 -1 } \\
+	& = \alpha \\
+L_{j+1, j} & \rightarrow \frac{ \alpha }{ \alpha } \\
+	& = 1
+\end{align}
+$$
 
 
 # 2 (4.21)
 **Under the Aitken model, with $Cov(e)= \sigma^2 V$ if $cov(a^T y, d^T \widehat e) = 0$ for all $d$, then is $a^T y$ still the BLUE for its expectation?**
 
+Notice that 
+
+$$
+\widehat e = y - X \widehat \beta_{GLS} = (I - X(X^T V^{-1} X)^g X^T V^{-1})y.
+$$
+
+We want to show that $d^T \widehat e$ can represent all unbiased estimators of $0$. For this to be true, we need
+
+$$
+h^T = d^T (I - X(X^T V^{-1} X)^g X^T V^{-1}) \in \text{ Null }( X^T ).
+$$
+
+Take $t = Xs \in \text{ column }( X )$, then
+
+$$
+\begin{align}
+\Big[  d^T (I - X(X^T V^{-1} X)^g X^T V^{-1})\Big] Xs \\
+d^T Xs - d^T \underbrace{X(X^T V^{-1} X)^g X^T V^{-1})}_{\text{projection onto } X} Xs \\
+d^T Xs - d^T Xs \\
+0.
+\end{align}
+$$
+
+
+Since $h^T$ is orthogonal to any element in $\text{ column }( X )$, we know that it is in the null space of $X^T$ and thus can represent every unbiased estimator of 0. Finally, since $a^T y$ is uncorrelated with all unbiased estimators of 0, we know that it is BLUE.
 
 
 # 3 (4.22)
 **Prove Aitken's Theorem (Theorem 4.2) indirectly using Corollary 4.1. Is this argument circular, that is, does the corollary use Aitken's Theorem?**
 
+We need to check that $V t \in \text{ column }( X )$ with
 
+$$
+\begin{align}
+t^T y = \lambda^T \widehat \beta_{GLS} = \lambda^T (X^T V^{-1} X)^g X^T V^{-1} y.
+\end{align}
+$$
+
+$$
+\begin{align}
+V t &  = V(\lambda^T (X^T V^{-1} X)^g X^T V^{-1})^T \\
+	& = V V^{-1} X (X^T V^{-1} X)^g \lambda \\
+	& = X (X^T V^{-1} X)^g \lambda \\
+	& \in \text{ column }( X )
+\end{align}
+$$
+
+This argument is not circular. While Corollary 4.1 does assume the Aitken model, it does not use Aitken's Theorem.
 
 # 4 (4.23)
 **Prove Aitken's Theorem (Theorem 4.2) directly. Consider the Aitken model, and let $\lambda^T b$ be estimable. Let $a^T y$ be a linear unbiased estimator of $\lambda^T b$. Show that**
@@ -119,6 +170,26 @@ $$
 Var(a^T y) = Var(\lambda^T \widehat b_{GLS}) + Var(a^T y - \lambda^T \widehat b_{GLS})
 $$
 
+
+$$
+\begin{align}
+Var(a^T y) & = Var(a^T y - \lambda^T \widehat b_{GLS} + \lambda^T \widehat b_{GLS}) \\
+	& = Var(\lambda^T \widehat b_{GLS}) + Var(a^T y - \lambda^T \widehat b_{GLS}) + 2 Cov(a^T y - \lambda^T \widehat b_{GLS}, \lambda^T \widehat b_{GLS}) \\ \\
+Cov(a^T y - \lambda^T \widehat b_{GLS}, \lambda^T \widehat b_{GLS}) & = Cov(a^T y - \lambda^T (X^t V^{-1} X)^g X^t V^{-1} y, \lambda^T (X^t V^{-1} X)^g X^t V^{-1} y) \\
+	& = (a^T - \lambda^T (X^t V^{-1} X)^g X^t V^{-1}) Cov(y,y) (\lambda^T (X^t V^{-1} X)^g X^t V^{-1})^T \\
+	& = (a^T - \lambda^T (X^t V^{-1} X)^g X^t V^{-1}) \sigma^2 V (\lambda^T (X^t V^{-1} X)^g X^t V^{-1})^T \\
+	& = \sigma^2 \Big( (a^T - \lambda^T (X^t V^{-1} X)^g X^t V^{-1}) V V^{-1} X (X^T V^{-1} X)^g \lambda \Big) \\
+	& = \sigma^2 \Big( a^T X (X^T V^{-1} X)^g \lambda  - \lambda^T (X^t V^{-1} X)^g X^t V^{-1} X (X^T V^{-1} X)^g \lambda \Big) \\
+	& = \sigma^2 \Big( \lambda^T (X^T V^{-1} X)^g \lambda  - \lambda^T (X^T V^{-1} X)^g \lambda \Big) \\ 
+	& = 0
+\end{align}
+$$
+
+Thus,
+
+$$
+Var(a^T y) = Var(\lambda^T \widehat b_{GLS}) + Var(a^T y - \lambda^T \widehat b_{GLS}).
+$$
 
 # 5 (5.2)
 **Let $Z \sim N_p(0, I_p)$, and let $A$ be a $p \times p$ matrix such that $A A^T = V$.**
