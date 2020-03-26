@@ -103,7 +103,7 @@ $$
 
 
 # 2 (4.21)
-**Under the Aitken model, with $Cov(e)= \sigma^2 V$ if $cov(a^T y, d^t \widehat e) = 0$ for all $d$, then is $a^T y$ still the BLUE for its expectation?**
+**Under the Aitken model, with $Cov(e)= \sigma^2 V$ if $cov(a^T y, d^T \widehat e) = 0$ for all $d$, then is $a^T y$ still the BLUE for its expectation?**
 
 
 
@@ -126,16 +126,35 @@ $$
 ## a
 **Show that if $Q$ is an orthogonal matrix, then $QZ \sim N_p(0, I_p)$**
 
-
+$$
+\begin{align}
+Q Z & \sim N_p(Q \mu, Q \Sigma Q^T) \\
+	& = N_p (Q \cdot 0, Q I_p Q^T) \\
+	& = N_p(0, Q Q^T) \\
+	& = N_p(0, I_p)
+\end{align}
+$$
 
 ## b
 **Show that $(AQ)(AQ)^T = V$.**
 
+$$
+(AQ)(AQ^T) = AQ Q^T A^T = A I_p A^T = V
+$$
 
 
 
 ## c
 **Show that $X = \mu + AQZ \sim N_p(\mu , V)$.**
+
+
+$$
+\begin{align}
+X & \sim N_p(\mu + AQ \cdot 0, (AQ) I_p (AQ)^T) \\
+	& = N_p(\mu, (AQ)(AQ)^T) \\
+	& = N_p(\mu, V)
+\end{align}
+$$
 
 # 6
 **Recall the definition of the multivariate normal distribution from class:**
