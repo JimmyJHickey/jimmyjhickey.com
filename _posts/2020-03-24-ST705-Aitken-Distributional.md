@@ -99,7 +99,21 @@ $$
 ## b
 **Find the limit of the two nonzero elements in row $N$ as $N \rightarrow \infty$.**
 
-As $N \rightarrow \infty$,
+We can also represent the elements of $L$ as a repeated fraction. Let's look at the $V \in \mathbb{R}^{5x5}$ case for some intuition.
+
+$$
+L = \left(
+\begin{array}{ccccc}
+ \sqrt{a^2+1} & 0 & 0 & 0 & 0 \\
+ \frac{a}{\sqrt{a^2+1}} & \sqrt{-\frac{a^2}{a^2+1}+a^2+1} & 0 & 0 & 0 \\
+ 0 & \frac{a}{\sqrt{-\frac{a^2}{a^2+1}+a^2+1}} & \sqrt{-\frac{a^2}{-\frac{a^2}{a^2+1}+a^2+1}+a^2+1} & 0 & 0 \\
+ 0 & 0 & \frac{a}{\sqrt{-\frac{a^2}{-\frac{a^2}{a^2+1}+a^2+1}+a^2+1}} & \sqrt{-\frac{a^2}{-\frac{a^2}{-\frac{a^2}{a^2+1}+a^2+1}+a^2+1}+a^2+1} & 0 \\
+ 0 & 0 & 0 & \frac{a}{\sqrt{-\frac{a^2}{-\frac{a^2}{-\frac{a^2}{a^2+1}+a^2+1}+a^2+1}+a^2+1}} & \sqrt{-\frac{a^2}{-\frac{a^2}{-\frac{a^2}{-\frac{a^2}{a^2+1}+a^2+1}+a^2+1}+a^2+1}+a^2+1} \\
+\end{array}
+\right)
+$$
+
+As $\lim_{N \rightarrow \infty} \frac{\alpha^2}{1+\alpha^2-b} \rightarrow 1$ where $b = \frac{\alpha^2}{1+\alpha^2}$. Thus,
 
 $$
 \begin{align}
@@ -114,31 +128,20 @@ $$
 # 2 (4.21)
 **Under the Aitken model, with $Cov(e)= \sigma^2 V$ if $cov(a^T y, d^T \widehat e) = 0$ for all $d$, then is $a^T y$ still the BLUE for its expectation?**
 
-Notice that 
-
-$$
-\widehat e = y - X \widehat \beta_{GLS} = (I - X(X^T V^{-1} X)^g X^T V^{-1})y.
-$$
-
-We want to show that $d^T \widehat e$ can represent all unbiased estimators of $0$. For this to be true, we need
-
-$$
-h^T = d^T (I - X(X^T V^{-1} X)^g X^T V^{-1}) \in \text{ Null }( X^T ).
-$$
-
-Take $t = Xs \in \text{ column }( X )$, then
-
 $$
 \begin{align}
-\Big[  d^T (I - X(X^T V^{-1} X)^g X^T V^{-1})\Big] Xs \\
-d^T Xs - d^T \underbrace{X(X^T V^{-1} X)^g X^T V^{-1})}_{\text{projection onto } X} Xs \\
-d^T Xs - d^T Xs \\
-0.
+0 = Cov(a^t y, d^t \widehat e) & = a^t Cov(y, \widehat e) d \\
+	& = a^T Cov(y, (I-P_x)y)d \\
+	& = a^T Cov(y,y) (I-P_x)d \\
+	& = a^T \sigma^2 V (I-P_x) d \\
+0 & = a^T V (I-P_x) d & \forall d \\
+0 & = a^T V(I_Px) \\
+0^T & = (I-P_x) (a^T V)^T \\
+0 & = (I-P_x) V a
 \end{align}
 $$
 
-
-Since $h^T$ is orthogonal to any element in $\text{ column }( X )$, we know that it is in the null space of $X^T$ and thus can represent every unbiased estimator of 0. Finally, since $a^T y$ is uncorrelated with all unbiased estimators of 0, we know that it is BLUE.
+Thus, $Va \in \text{ column }( X )$. Thus, $a^T y$ is BLUE.
 
 
 # 3 (4.22)
