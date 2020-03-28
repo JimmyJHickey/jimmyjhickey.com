@@ -183,10 +183,12 @@ Cov(a^T y - \lambda^T \widehat b_{GLS}, \lambda^T \widehat b_{GLS}) & = Cov(a^T 
 	& = (a^T - \lambda^T (X^t V^{-1} X)^g X^t V^{-1}) \sigma^2 V (\lambda^T (X^t V^{-1} X)^g X^t V^{-1})^T \\
 	& = \sigma^2 \Big( (a^T - \lambda^T (X^t V^{-1} X)^g X^t V^{-1}) V V^{-1} X (X^T V^{-1} X)^g \lambda \Big) \\
 	& = \sigma^2 \Big( a^T X (X^T V^{-1} X)^g \lambda  - \lambda^T (X^t V^{-1} X)^g X^t V^{-1} X (X^T V^{-1} X)^g \lambda \Big) \\
-	& = \sigma^2 \Big( \lambda^T (X^T V^{-1} X)^g \lambda  - \lambda^T (X^T V^{-1} X)^g \lambda \Big) \\ 
+	& = \sigma^2 \Big( \lambda^T (X^T V^{-1} X)^g \lambda  - \lambda^T (X^T V^{-1} X)^g \lambda \Big) \\
 	& = 0
 \end{align}
 $$
+
+Where the second to last step comes from question 5 of the practice midterm.
 
 Thus,
 
