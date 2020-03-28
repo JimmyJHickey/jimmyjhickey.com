@@ -254,7 +254,45 @@ f(y) = \det(2\pi\Sigma)^{-\frac{1}{2}}e^{-\frac{1}{2}(y-\mu)'\Sigma^{-1}(y-\mu)}
 $$
 
 
+Without loss of generality, let's take $Z = A^{-1}(Y-\mu)$ where $A A^T = \Sigma$.
 
+
+$\Leftarrow$
+
+
+$$
+\begin{align}
+f(z) & = (2 \pi)^{-p/2} e^{-z^T z / 2} \\
+	& = (2 \pi)^{-p/2} e^{-1 / 2 \sum z_i^2} \\
+	& = \prod \frac{ 1 }{ \sqrt{ 2 \pi } } e^{1/2 z_i^2}
+\end{align}
+$$
+
+
+Since the joint is the product of the marginals, $Z_i \stackrel{ \text{iid}}{\sim} N(0,1)$. Thus, $v^T Z = \sum v_i Z_i$. Since the sum of univariate normals is still normal, we know that $Z \sim N_p(0,1).
+
+
+$\Rightarrow$
+
+Take $v = e_1, \dots e_p$. Then $Z_i = e_i^T z$.
+
+$$
+Z_i \sim N(e_i^T \cdot 0, e_i^T I e_i) = N(0,1)
+$$
+
+Now we need to show that the multivariate joint is the product of the marginals.
+
+Since $\Sigma = Cov(Z) = I$, we know that $Cov(Z_i, Z_j) = 0$ for $i \neq j$. All normal distributions with no covariance are independent, so $Z_i \perp Z_j$. Then,
+
+$$
+f_Z(z) = \prod f_{Z_i}(z_i).
+$$
+
+This is the expected density. We could transform back to $Y$ using the Jacobian Method.
+
+$$
+f_Y(y) = f_Z(z) \cdot | J(AZ + \mu) |
+$$
 
 # 7
 **Construct two random variables that have zero correlation, but are _not_ independent.**
