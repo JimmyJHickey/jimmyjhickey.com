@@ -17,7 +17,7 @@ category: ST702
 Since $\lambda$ is also the mean of the Poisson distribution, we want to test
 
 $$
-P(X = 10 \| \lambda 15) = \sum_{i=0}^{10} \frac{ e^{-15} 15^i }{ i! }.
+P(X = 10 | \lambda = 15) = \sum_{i=0}^{10} \frac{ e^{-15} 15^i }{ i! }.
 $$
 
 We can do this in R.
