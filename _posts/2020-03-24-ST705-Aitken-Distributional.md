@@ -271,7 +271,7 @@ f(z) & = (2 \pi)^{-p/2} e^{-z^T z / 2} \\
 $$
 
 
-Since the joint is the product of the marginals, $Z_i \stackrel{ \text{iid}}{\sim} N(0,1)$. Thus, $v^T Z = \sum v_i Z_i$. Since the sum of univariate normals is still normal, we know that $Z \sim N_p(0,1).
+Since the joint is the product of the marginals, $Z_i \stackrel{ \text{iid}}{\sim} N(0,1)$. Thus, $v^T Z = \sum v_i Z_i$. Since the sum of univariate normals is still normal, we know that $Z \sim N_p(0,1)$.
 
 
 $\Rightarrow$
