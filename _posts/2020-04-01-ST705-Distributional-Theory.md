@@ -55,16 +55,16 @@ $$
 f_{X,Y} = \frac{ 1 }{ \Gamma(k/2) 2^{\frac{ k+1 }{ 2 }} \sqrt{ \pi }} y^{k/2-1} e^{-\frac{ y +(x-\mu)^2 }{ 2 }}
 $$
 
-Then take $U = \frac{ X }{\sqrt{ Y/k }  } \sim T_k{1/2 \mu)$ and $V = \sqrt{ Y / k }$. Then $Y = kV^2$ and $X = UV$
+Then take $U = \frac{ X }{\sqrt{ Y/k }  } \sim T_k(1/2 \mu)$ and $V = \sqrt{ Y / k }$. Then $Y = kV^2$ and $X = UV$
 
 $$
-J = det\begin{array}{c c}
+J = det\begin{bmatrix}
 	\frac{ \partial  X }{\partial U } & \frac{ \partial  X  }{\partial V} \\
 	\frac{ \partial  Y }{\partial U } & \frac{ \partial  Y}{\partial V}
-\end{array} = det\begin{array}{c c}
+\end{bmatrix} = det\begin{bmatrix}
 	V & U\\
 	0 & 2 kV
-\end{array} = 2kV^2 
+\end{bmatrix} = 2kV^2 
 $$
 
 
@@ -79,6 +79,23 @@ f_U & = \int_{0}^{\infty} 2 kV^2\frac{ 1 }{ \Gamma(k/2) 2^{\frac{ k+1 }{ 2 }} \s
 	& = \frac{ 2 k^{k/2} }{ \Gamma(k/2) 2^{\frac{ k+1 }{ 2 }} \sqrt{ \pi }} \int_{0}^{\infty}  (V)^{k} e^{-\frac{ kV^2 +(UV-\mu)^2 }{ 2 }} dv \\
 \end{align}
 $$
+
+
+For the mean and variance variance recall that $Y \sim \chi^2_\nu = gamma(\frac{ \nu }{ 2 }, 2$ and $X \sim N(\mu, 1)$ and $Y \perp X$. Then,
+
+$$
+\begin{align}
+E(T) & = E(\frac{ X }{ \sqrt{ Y/\nu } }) \\
+	&  = E(X) \sqrt{ \nu } E(Y^{-1/2}) \\
+	& = \mu \sqrt{ \nu } \frac{ \Gamma(\frac{ \nu - 1 }{ 2 }) }{ \Gamma(\frac{ \nu }{ 2 }) \sqrt{ 2 }} \\ \\
+E(T^2) & = E(\frac{ X^2 }{ Y / \nu }) \\
+	& = E(X^2) \nu E(Y^{-1}) \\
+	& = (\mu^1 + 1) \nu \frac{ Gamma(\frac{ \nu - 2 }{ 2 }) }{ \Gamma(\nu / 2) 2 } \\
+	& = \frac{ (\mu^2 + 1) \nu }{ \nu - 2 } \\ \\
+Var(T) & = \frac{ (\mu^2 + 1) \nu }{ \nu - 2 } - \Big( \mu \sqrt{ \nu } \frac{ \Gamma(\frac{ \nu - 1 }{ 2 }) }{ \Gamma(\frac{ \nu }{ 2 }) \sqrt{ 2 }} \Big)^2
+\end{align}
+$$
+
 
 # 5.11
 **Let $U \sim \chi^2_k (\phi)$; find its mean and variance. Confirm with Lemmas 4.1 and Result 4.6 (use $\sigma^2  =1$, $\gamma_3 = 0$, and $\gamma_4 = 3$).**
@@ -174,6 +191,55 @@ $$
 ## b
 **Show that if $A \mu = 0$, then $m_U(t) = \|I-2tAV \|^{-1/2}$.**
 
+We want to show that
+
+$$
+e^{-\frac{ 1 }{ 2 }[\mu^T V^{-1} \mu - \mu^T(V - 2t VAV)^{-1} \mu]} = 1
+$$
+
+
+or, equivalently,
+
+$$
+\mu^T V^{-1} \mu - \mu^T(V - 2t VAV)^{-1} \mu = 0.
+$$
+
+
+We will show that $\mu^T(V - 2t VAV)^{-1} \mu = \mu^T V^{-1} \mu$.
+
+$$
+\begin{align}
+\mu^T(V - 2t VAV)^{-1} \mu & = \mu^T((I - 2t VA)V)^{-1} \mu \\
+	& = \mu^T V^{-1} (I - 2t VA)^{-1} \mu \\
+	& = \mu^T V^{-1} (V^{-1} - 2tA)^{-1} V^{-1}\mu.
+\end{align}
+$$
+
+From here we will use the Sherman-Morrison-Woodbury Identity.
+
+$$
+(Q + W E R)^{-1} = Q^{-1} -  Q^{-1} W(E^{-1}+R Q^{-1} W)^{-1} R Q^{-1}
+$$
+
+Take $V^{-1} = Q$, $W = -2t I$, $E = I$, and $R = A$. Then,
+
+$$
+\begin{align}
+\mu^T(V - 2t VAV)^{-1} \mu & = \mu^T V^{-1} \Big( V  -V 2tI(I^{-1} +  AV 2t I)^{-1} AV \Big) V^{-1}\mu \\
+	& = \mu^T V^{-1} \Big( V V^{-1} \mu -V 2tI(I^{-1} +  AV 2t I)^{-1} AV V^{-1}\mu \Big)\\ 
+	& = \mu^T V^{-1} \Big( \mu +V 2tI(I^{-1} -  AV 2t I)^{-1} A I \mu \Big)\\ 
+	& = \mu^T V^{-1} \Big( \mu +V 2tI(I^{-1} -  AV 2t I)^{-1} (A \mu) \Big)\\ 
+	& = \mu^T V^{-1} \Big( \mu +V 2tI(I^{-1} -  AV 2t I)^{-1} (0) \Big)\\ 
+	& = \mu^T V^{-1} \mu.
+\end{align}
+$$
+
+
+Thus,
+
+$$
+m_U(t) = |I-2tAV |^{-1/2}.
+$$
 
 # 5.14
 **Using the result of Exercise 5.12, show that**
@@ -181,11 +247,66 @@ $$
 ## a
 $$Var(X^T A X) = 2 tr(AV)^2 + 4 \mu^T AVA \mu$$
 
+We will need a few derivative properties from the matrix cookbook.
+
+$$
+\begin{align}
+\frac{ \partial  X^{-1} }{\partial t} & = -X^{-1} \frac{ \partial  X }{\partial t} X^{-1} & (40) \\
+\frac{ \partial  \det(Y) }{\partial t} & = \det(Y) Tr\Big[ Y^{-1}  \frac{ \partial  Y }{\partial t}\Big] & (46)
+\end{align}
+$$
+
+Also define $x(t) = \mu^T V^{-1} \mu - \mu^T(V-2tVAV)^{-1} \mu$. Notice that $x(0) = 0$.
+
+Then,
+
+$$
+\begin{align}
+E(U) & = \frac{ \partial  M_U(t) }{\partial t} |_{t=0} \\
+	& = \frac{ \partial   }{\partial t} | I - 2tAV |^{-1/2} e^{-\frac{ 1 }{ 2 }[\mu^T V^{-1} \mu - \mu^T(V - 2t VAV)^{-1} \mu]} |_{t=0} \\ \\
+\frac{ \partial   }{\partial t} | I - 2tAV |^{-1/2} & = -\frac{ 1 }{ 2 } |I-2tAV|^{-3/2} \frac{ \partial  |I-2tAV| }{\partial t}\\
+	& = -\frac{ 1 }{ 2 } |I-2tAV|^{-1/2} Tr \Big( (I-2tAV)^{-1} \frac{ \partial  I-2tAV }{\partial t} \Big) \\
+	& = -\frac{ 1 }{ 2 } |I-2tAV|^{-1/2} Tr \Big( (I-2tAV)^{-1} (-2AV) \Big) \\
+	& = |I-2tAV|^{-1/2} Tr \Big( (I-2tAV)^{-1} AV \Big) \\ \\
+\frac{ \partial  }{\partial t} e^{-\frac{ 1 }{ 2 }x} & = e^{-\frac{ 1 }{ 2 }x} \frac{ -1 }{ 2 }(\mu^T \cdot - (V-2tVAV)^{-1} (-2VAV)(V-2tVAV)^{-1}\mu) \\
+	& = e^{-\frac{ 1 }{ 2 }x} (-\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}\mu) \\ \\
+E(U) & = |I-2tAV|^{-1/2} Tr \Big( (I-2tAV)^{-1} AV \Big) e^{-\frac{ 1 }{ 2 } x} \\
+	& + | I - 2tAV |^{-1/2} e^{-\frac{ 1 }{ 2 }x} (-\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}\mu) |_{t=0} \\
+	& = Tr(AV) - \mu^T A \mu \\ \\
+E(U^2)& = \frac{ \partial^2  M_U(t) }{\partial^2 t} |_{t=0} \\
+	& = |I-2tAV|^{-1/2} Tr \Big( (I-2tAV)^{-1} AV \Big)^2 e^{- x} \\
+	& + |I-2tAV|^{-1/2} Tr \Big( (I-2tAV)^{-1} AV (-2tAV) (I-2tAV)^{-1} AV\Big) e^{-\frac{ 1 }{ 2 } x} \\
+	& + |I-2tAV|^{-1/2} Tr \Big( (I-2tAV)^{-1} AV \Big) e^{-\frac{ 1 }{ 2 } x} (-\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}\mu) \\
+	& + |I-2tAV|^{-1/2} Tr \Big( (I-2tAV)^{-1} AV \Big) e^{-x} (-\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}\mu) \\
+	& + |I-2tAV|^{-1/2} e^{-x} (-\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}\mu)^2 \\
+	& + |I-2tAV|^{-1/2} e^{-\frac{ 1 }{ 2 }x} \Big(-\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}(-2 VAV)(V-2tVAV)^{-1}\mu + -\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}(-2 VAV)(V-2tVAV)^{-1}\mu \Big) |_{t=0} \\
+	& = Tr(AV)^2 + 0 - Tr(AV)(\mu^T A \mu) - Tr(AV) \mu^T A \mu+ (\mu^T A \mu)^2 + 4 \mu^T AVA \mu \\
+	& = Tr(AV)^2 - 2 Tr(AV) \mu^T A \mu + (\mu^T A \mu)^2 + 4 \mu^T AVA \mu \\ \\
+Var(U) & = E(U^2) - E(U)^2 \\
+	& = Tr(AV)^2 - 2 Tr(AV) \mu^T A \mu + (\mu^T A \mu)^2 + 4 \mu^T AVA \mu - (Tr(AV) - \mu^T A \mu)^2 \\
+	& = Tr(AV)^2 - 2 Tr(AV) \mu^T A \mu + (\mu^T A \mu)^2 + 4 \mu^T AVA \mu - Tr(AV)^2 + 2 Tr(AV) (\mu^T A \mu) - (\mu^T A \mu)^2 \\
+	& = Tr(AV)^2 - Tr(AV)^2 \\
+	& + - 2 Tr(AV) \mu^T A \mu + 2 Tr(AV) (\mu^T A \mu) \\
+	& + (\mu^T A \mu)^2 - (\mu^T A \mu)^2 \\
+	& + 4 \mu^T AVA \mu  \\
+	& = \underbrace{Tr(AV)^2 - Tr(AV)^2}_{\text{I can't get these to add =[}} + 4 \mu^T AVA \mu \\
+	& = 4 \mu^T AVA \mu.
+\end{align}
+$$
+
+
+
+
 
 
 ## b
 **(Easier) If $X \sim N_p(0, V)$, then $Var(X^TAX)=2 tr(AV)^2$.**
 
+From (a), if $Var(X^T A X) = 2 tr(AV)^2 + 4 \mu^T AVA \mu$ and $\mu = 0$, then,
+
+$$
+Var(X^T A X) = 2 tr(AV)^2 + 4 \mu^T AVA \mu = Var(X^T A X) = 2 tr(AV)^2+ 4 0^T AVA 0 = 2 tr(AV)^2.
+$$
 
 
 # 5.16
@@ -311,7 +432,56 @@ Thus, $X_1 \| X_2 = x_2 \sim N(\mu_1 + V_{12} V_{22}^{-1} (x_2 - \mu_2), V_{11} 
 # 5.25
 **Show that $R^2$ given by (5.12) is also equal to the right-hand side of (5.11).**
 
+Take $X$ to be our $n \times p$ design matrix, including an intercept column. Also note that the column vector $1_n$ has the projection matrix
 
+$$
+P_{1_n} = \frac{ 1 }{ n } \begin{bmatrix}
+	1 & \dots &  1\\
+	\vdots & \ddots & \vdots \\
+	1 & \dots & 1
+\end{bmatrix}.
+$$
+
+Also notice that $P_{1_n} y \in \text{ column }( 1_n ) \subseteq \text{ column }( X )$. 
+
+Thus, $P_X P_{1_n} y = P_{1_n} y$. Further,
+
+$$
+\begin{align}
+y^T (P_X - P_{1_n}) y & = y^T (P_X y - P_{1_n} y) \\
+	&= y^T(P_X y - P_X P_{1_n} y) \\
+	& = (P_X y)^T (y - P_{1_n}y) \\
+	& = (\widehat y)^T (y - P_{1_n}y) \\
+	& = \sum_{i=1}^{n} \widehat y_{i} (y_i - \overline{ y }) \\
+	& = \sum_{i=1}^{n} \widehat y_{i} (y_i - \overline{ y }) + \underbrace{\sum_{i=1}^{n} \overline{ y_{i} } (y_i - \overline{ y })}_{=0} \\
+	& = \sum_{i=1}^{n} (\widehat y_i - \overline{ y })(y_i  - \overline{ y }).
+\end{align}
+$$
+
+Notice that
+
+$$
+(P_X - P_{1_n} )y = P_X y - P_{1_n}y = \widehat y - \overline{ y } 1_n.
+$$
+
+So,
+
+$$
+\begin{align}
+\sum_{i=1}^n (\widehat y_i - \overline{ y })^2 & = ||(P_X - P_{1_n}) y ||^2 \\
+	& = y^T(P_X - P_{1_n})^T(P_X - P_{1_n}) y \\
+	& = y^T P_X y - y^T P_{1_n} P_X y - y^T P_X P_{1_n} y + y^T P_{1_n} y \\
+	& = y^T (P_X - P_{1_n}) y \\
+	& = \sum_{i=1}^{n} (\widehat y_i - \overline{ y })(y_i  - \overline{ y }).
+\end{align}
+$$
+
+
+Thus,
+
+$$
+R^t = \frac{ \Big( \sum_{i=1}^n  (\widehat y_i - \overline{ y })(y_i  - \overline{ y }) \Big)^2 }{  \sum_{i=1}^n  (\widehat y_i - \overline{ y })^2 \sum_{i=1}^n (y_i  - \overline{ y })^2 } = \frac{\sum_{i=1}^n  (\widehat y_i - \overline{ y })(y_i  - \overline{ y }) }{  \sum_{i=1}^n (y_i  - \overline{ y })^2 } = \frac{ y^T (P_X P_{1_n} y) }{ y^T (I_n P_{1_n})y }
+$$
 
 
 # 5.27
