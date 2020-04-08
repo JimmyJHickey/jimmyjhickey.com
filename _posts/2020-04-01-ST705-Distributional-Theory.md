@@ -480,7 +480,7 @@ $$
 Thus,
 
 $$
-R^t = \frac{ \Big( \sum_{i=1}^n  (\widehat y_i - \overline{ y })(y_i  - \overline{ y }) \Big)^2 }{  \sum_{i=1}^n  (\widehat y_i - \overline{ y })^2 \sum_{i=1}^n (y_i  - \overline{ y })^2 } = \frac{\sum_{i=1}^n  (\widehat y_i - \overline{ y })(y_i  - \overline{ y }) }{  \sum_{i=1}^n (y_i  - \overline{ y })^2 } = \frac{ y^T (P_X P_{1_n} y) }{ y^T (I_n P_{1_n})y }
+R^t = \frac{ \Big( \sum_{i=1}^n  (\widehat y_i - \overline{ y })(y_i  - \overline{ y }) \Big)^2 }{  \sum_{i=1}^n  (\widehat y_i - \overline{ y })^2 \sum_{i=1}^n (y_i  - \overline{ y })^2 } = \frac{\sum_{i=1}^n  (\widehat y_i - \overline{ y })(y_i  - \overline{ y }) }{  \sum_{i=1}^n (y_i  - \overline{ y })^2 } = \frac{ y^T (P_X -P_{1_n} )y }{ y^T (I_n - P_{1_n})y }
 $$
 
 
