@@ -271,7 +271,7 @@ f(z) & = (2 \pi)^{-p/2} e^{-z^T z / 2} \\
 $$
 
 
-Since the joint is the product of the marginals, $Z_i \stackrel{ \text{iid}}{\sim} N(0,1)$. Thus, $v^T Z = \sum v_i Z_i$. Since the sum of univariate normals is still normal, we know that $Z \sim N_p(0,1)$.
+Since the joint is the product of the marginals, $Z_i \stackrel{ \text{iid}}{\sim} N(0,1)$. Thus, $v^T Z = \sum v_i Z_i$. Since the sum of univariate normals is still normal, we know that $Z \sim N_p(0,1)$. We can then transform this back to $Y$. Since $v^T Y = v^T (AZ + \mu)$, by normal transformation rules, we know that $Y \sim N(v^T \mu, v^T \Sigma v)$
 
 
 $\Rightarrow$
@@ -292,9 +292,19 @@ $$
 
 This is the expected density. We could transform back to $Y$ using the Jacobian Method.
 
+
 $$
-f_Y(y) = f_Z(z) \cdot | J(AZ + \mu) |
+\begin{align}
+f_Y(y) & = f_Z(y) \cdot | J(AZ + \mu) | \\
+	& = f_Z(y) \cdot | A^{-1} | \\
+	& = f_Z(y) \cdot | \Sigma |^{-1/2} \\ 
+	& = |\Sigma |^{-1/2} \frac{ 1 }{ \sqrt{ 2\pi } } e^{\frac{ -1 }{ 2 }z^T z} |_{z=y}\\
+	& = |\Sigma |^{-1/2} \frac{ 1 }{ \sqrt{ 2\pi } } e^{\frac{ -1 }{ 2 }(y - \mu)^T (A^{-1})^T A^{-1} (y - \mu)}\\ 
+	& = | 2 \pi \Sigma |^{-1/2} e^{-\frac{1}{2}(y-\mu)'\Sigma^{-1}(y-\mu)}
+\end{align}
 $$
+
+Thus, $Y \sim N_p(\mu, \Sigma)$.
 
 # 7
 **Construct two random variables that have zero correlation, but are _not_ independent.**
@@ -322,8 +332,8 @@ These random variables, while dependent, have 0 covariance because covariance an
 $$
 \begin{align}
 M_{U_1}(t) & = E(e^{t z^2}) \\
-	& = \int_{-\infty}^{\infty} e^{t z^2} \frac{ 1 }{ \sqrt{ 2 \pi } } e^{-z^2 / 2)} dz \\
-	& = \int_{-\infty}^{\infty} \frac{ 1 }{ \sqrt{ 2 \pi } } e^{z^2 (t - 1/ 2} dz \\
+	& = \int_{-\infty}^{\infty} e^{t z^2} \frac{ 1 }{ \sqrt{ 2 \pi } } e^{-z^2 / 2} dz \\
+	& = \int_{-\infty}^{\infty} \frac{ 1 }{ \sqrt{ 2 \pi } } e^{z^2 (t - 1/ 2)} dz \\
 	& = \frac{ 1 }{ \sqrt{ 2 \pi } } \frac{ \sqrt{ \pi } }{ \sqrt{ \frac{ 1 }{ 2 } - t} } \\
 	& = (1 - 2t)^{-1/2} \\
 	& \sim \chi_1^2
