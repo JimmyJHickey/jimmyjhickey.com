@@ -410,7 +410,7 @@ $$
 
 
 # 6 (4.1)
-**Suppose that the random variable $Y_i$ represents the number of votes that a candidate receives in county $i$. A reasonable model would be that $Y_i, \ i = 1, \dots , N$ would be independent binomial random variables with parameters $n_i=$ number of voters in count $i$ and**
+**Suppose that the random variable $Y_i$ represents the number of votes that a candidate receives in county $i$. A reasonable model would be that $Y_i, \ i = 1, \dots , N$ would be independent binomial random variables with parameters $n_i=$ number of voters in county $i$ and**
 
 $$
 p = Pr(\text{voter that correctly votes for candidate}).
