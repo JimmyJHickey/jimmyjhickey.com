@@ -5,7 +5,7 @@ title: Example Problems on Statistical Inference
 description: ST705 Homework 11 on Statistical Inference
 tags: ST705 Linear-Algebra Inference Statistics
 category: ST705
-published: false
+published: true
 ---
 
 * Do not remove this line (it will not be displayed)
