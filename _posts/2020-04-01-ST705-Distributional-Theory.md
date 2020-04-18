@@ -81,7 +81,7 @@ f_U & = \int_{0}^{\infty} 2 kV^2\frac{ 1 }{ \Gamma(k/2) 2^{\frac{ k+1 }{ 2 }} \s
 $$
 
 
-For the mean and variance variance recall that $Y \sim \chi^2_\nu = gamma(\frac{ \nu }{ 2 }, 2$ and $X \sim N(\mu, 1)$ and $Y \perp X$. Then,
+For the mean and variance variance recall that $Y \sim \chi^2_\nu = gamma(\frac{ \nu }{ 2 }, 2)$ and $X \sim N(\mu, 1)$ and $Y \perp X$. Then,
 
 $$
 \begin{align}
@@ -269,28 +269,28 @@ E(U) & = \frac{ \partial  M_U(t) }{\partial t} |_{t=0} \\
 	& = -\frac{ 1 }{ 2 } |I-2tAV|^{-1/2} Tr \Big( (I-2tAV)^{-1} (-2AV) \Big) \\
 	& = |I-2tAV|^{-1/2} Tr \Big( (I-2tAV)^{-1} AV \Big) \\ \\
 \frac{ \partial  }{\partial t} e^{-\frac{ 1 }{ 2 }x} & = e^{-\frac{ 1 }{ 2 }x} \frac{ -1 }{ 2 }(\mu^T \cdot - (V-2tVAV)^{-1} (-2VAV)(V-2tVAV)^{-1}\mu) \\
-	& = e^{-\frac{ 1 }{ 2 }x} (-\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}\mu) \\ \\
+	& = e^{-\frac{ 1 }{ 2 }x} (\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}\mu) \\ \\
 E(U) & = |I-2tAV|^{-1/2} Tr \Big( (I-2tAV)^{-1} AV \Big) e^{-\frac{ 1 }{ 2 } x} \\
 	& + | I - 2tAV |^{-1/2} e^{-\frac{ 1 }{ 2 }x} (-\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}\mu) |_{t=0} \\
-	& = Tr(AV) - \mu^T A \mu \\ \\
+	& = Tr(AV) + \mu^T A \mu \\ \\
 E(U^2)& = \frac{ \partial^2  M_U(t) }{\partial^2 t} |_{t=0} \\
 	& = |I-2tAV|^{-1/2} Tr \Big( (I-2tAV)^{-1} AV \Big)^2 e^{- x} \\
-	& + |I-2tAV|^{-1/2} Tr \Big( (I-2tAV)^{-1} AV (-2tAV) (I-2tAV)^{-1} AV\Big) e^{-\frac{ 1 }{ 2 } x} \\
-	& + |I-2tAV|^{-1/2} Tr \Big( (I-2tAV)^{-1} AV \Big) e^{-\frac{ 1 }{ 2 } x} (-\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}\mu) \\
-	& + |I-2tAV|^{-1/2} Tr \Big( (I-2tAV)^{-1} AV \Big) e^{-x} (-\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}\mu) \\
-	& + |I-2tAV|^{-1/2} e^{-x} (-\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}\mu)^2 \\
-	& + |I-2tAV|^{-1/2} e^{-\frac{ 1 }{ 2 }x} \Big(-\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}(-2 VAV)(V-2tVAV)^{-1}\mu + -\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}(-2 VAV)(V-2tVAV)^{-1}\mu \Big) |_{t=0} \\
-	& = Tr(AV)^2 + 0 - Tr(AV)(\mu^T A \mu) - Tr(AV) \mu^T A \mu+ (\mu^T A \mu)^2 + 4 \mu^T AVA \mu \\
-	& = Tr(AV)^2 - 2 Tr(AV) \mu^T A \mu + (\mu^T A \mu)^2 + 4 \mu^T AVA \mu \\ \\
+	& + |I-2tAV|^{-1/2} Tr \Big( 2 AV (I-2tAV)^{-1} AV (I-2tAV)^{-1} \Big) e^{-\frac{ 1 }{ 2 } x} \\
+	& + |I-2tAV|^{-1/2} Tr \Big( (I-2tAV)^{-1} AV \Big) e^{-\frac{ 1 }{ 2 } x} (\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}\mu) \\
+	& + |I-2tAV|^{-1/2} Tr \Big( (I-2tAV)^{-1} AV \Big) e^{-x} (\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}\mu) \\
+	& + |I-2tAV|^{-1/2} e^{-x} (\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}\mu)^2 \\
+	& + |I-2tAV|^{-1/2} e^{-\frac{ 1 }{ 2 }x} \Big(\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}(-2 VAV)(V-2tVAV)^{-1}\mu + -\mu^T (V-2tVAV)^{-1} (VAV)(V-2tVAV)^{-1}(-2 VAV)(V-2tVAV)^{-1}\mu \Big) |_{t=0} \\
+	& = Tr(AV)^2 + Tr(2AVAV) + Tr(AV)(\mu^T A \mu) - Tr(AV) \mu^T A \mu+ (\mu^T A \mu)^2 + 4 \mu^T AVA \mu \\
+	& = Tr(AV)^2 + 2 Tr(AV) \mu^T A \mu + (\mu^T A \mu)^2 + 4 \mu^T AVA \mu \\ \\
 Var(U) & = E(U^2) - E(U)^2 \\
-	& = Tr(AV)^2 - 2 Tr(AV) \mu^T A \mu + (\mu^T A \mu)^2 + 4 \mu^T AVA \mu - (Tr(AV) - \mu^T A \mu)^2 \\
-	& = Tr(AV)^2 - 2 Tr(AV) \mu^T A \mu + (\mu^T A \mu)^2 + 4 \mu^T AVA \mu - Tr(AV)^2 + 2 Tr(AV) (\mu^T A \mu) - (\mu^T A \mu)^2 \\
+	& = Tr(AV)^2 + Tr(2AVAV) + 2 Tr(AV) \mu^T A \mu + (\mu^T A \mu)^2 + 4 \mu^T AVA \mu - (Tr(AV) - \mu^T A \mu)^2 \\
+	& = Tr(AV)^2 + 2 Tr(AV) \mu^T A \mu + (\mu^T A \mu)^2 + 4 \mu^T AVA \mu - Tr(AV)^2 + 2 Tr(AV) (\mu^T A \mu) - (\mu^T A \mu)^2 \\
 	& = Tr(AV)^2 - Tr(AV)^2 \\
 	& + - 2 Tr(AV) \mu^T A \mu + 2 Tr(AV) (\mu^T A \mu) \\
 	& + (\mu^T A \mu)^2 - (\mu^T A \mu)^2 \\
 	& + 4 \mu^T AVA \mu  \\
-	& = \underbrace{Tr(AV)^2 - Tr(AV)^2}_{\text{I can't get these to add =[}} + 4 \mu^T AVA \mu \\
-	& = 4 \mu^T AVA \mu.
+	& = Tr(AV)^2 - Tr(AV)^2 + Tr(2AVAV) + 4 \mu^T AVA \mu \\
+	& = 2Tr(AV)^2 + \mu^T AVA \mu.
 \end{align}
 $$
 
@@ -444,7 +444,7 @@ $$
 
 Also notice that $P_{1_n} y \in \text{ column }( 1_n ) \subseteq \text{ column }( X )$. 
 
-Thus, $P_X P_{1_n} y = P_{1_n} y$. Further,
+Thus, $\mu P_X  P_{1\_n}y = P_{1_n} y$. Further,
 
 $$
 \begin{align}
