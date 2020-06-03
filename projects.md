@@ -5,7 +5,7 @@ title: Projects
 
 <h1> Projects </h1>
 
-Here's a big list of the programming projects I've worked on. You can click on the titles to go to the web pages or repositories.
+Here's a big list of the programming projects I've worked on. You can click on the titles to go to the web pages or repositories. You can view all of my [GitHub projects here](https://github.com/JimmyJHickey).
 
 * Do not remove this line (it will not be displayed)
 {:toc}
