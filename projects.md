@@ -10,10 +10,17 @@ Here's a big list of the programming projects I've worked on. You can click on t
 * Do not remove this line (it will not be displayed)
 {:toc}
 
+## [Gradient Descent Blog Post](https://jimmyjhickey.shinyapps.io/gradient_descent/)
+<img src="img/portfolio_img/gradient_descent.jpg" width="400" />
+
+
+I wrote an interactive article explaining Gradient Descent. It includes some real world examples as well as simple theoretical examples. The article includes mathematical derivations and algorithmic analysis as well. You can find the code [here](https://github.com/JimmyJHickey/ST790/tree/master/mini_project) and see it live [here](https://jimmyjhickey.shinyapps.io/gradient_descent/).
+
+
 ## [Dr. Bergen's Letter of Recommendation](https://jimmyjhickey.github.io/old-site/silas.html)
 <img src="img/portfolio_img/silas_office.svg" height="400" />
 
-I built this website as to recommend Dr. [Silas Bergen](http://driftlessdata.space/) for tenure. This was a more creative, personal way to show my support than simply writing a letter. The user clicks on objects in Dr. Bergen's office (drawn slightly out of scale), revealing associated reasons as to why he should get his promotion. It was my first endeavour into web development.
+I built this website as to recommend Dr. [Silas Bergen](http://driftlessdata.space/) for tenure. This was a more creative, personal way to show my support than simply writing a letter. The user clicks on objects in Dr. Bergen's office (drawn slightly out of scale), revealing associated reasons as to why he should get his promotion. It was my first endeavor into web development.
 
 ## [My Old Portfolio Website](https://jimmyjhickey.github.io/old-site/index.html)
 
