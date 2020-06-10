@@ -10,26 +10,35 @@ You can have my one page resumé as a file <a href="/files/Jimmy_Hickey_Resume.p
 * Do not remove this line (it will not be displayed)
 {:toc}
 
-## Graduate
-
-### North Carolina State University
+## Graduate at North Carolina State University
 
 Fall 2019 -- Present
 
 Statistics PhD Student
 
-4.0/4.0
+3.762/4.0
 
+### Research
+
+#### Research Training Program
 I am on a research training program in partnership with Duke Clinical Research Institute. My first year I am shadowing and meeting with their biostatisticians to learn about how they run clinical trials, analyze data, write secondary manuscripts, etc. My second year I will join the team and help out! [You can read more about it here.](https://statistics.sciences.ncsu.edu/graduate/support/nhlbi/)
 
+
+#### Summer 2020
+I have recently start investigating applications of the Dirichlet process with [Dr. Jonathan Willaims](https://jonathanpw.github.io/). More on this to come!
+
+
+
+### Extracurriculars
 I helped plan the prospective PhD student visit day for February 2020.
 
 
 I helped run a [Deep Learning Reading Group](https://github.com/AlvinSheng/SLG-Deep-Learning) in Spring 2020 with [Michael Burton](https://michaeleburton.github.io/) and [Alvin Sheng](https://github.com/AlvinSheng). We worked through [Deep Learning with R](https://www.manning.com/books/deep-learning-with-r).
 
-## Undergraduate
+In Fall 2020 through Spring 2021 I will serve as the President of the Statistics Graduate Student Association.
 
-### Winona State University
+
+## Undergraduate at Winona State University
 
 Fall 2014 -- Spring 2018
 
@@ -45,8 +54,33 @@ Minor Data Science
 
 4.0/4.0
 
+### Extracurriculars
+#### Women in Computer Science Club
+**Vice President, Treasurer, ACM-W Co-Chair**
+
+January 2018 -- May 2018
+
+Promote diversity in the field of computing and technology by planning activities and meetings with other students. Plan, manage, and host hands on workshops with guest speakers.
+
+#### Dean's Advisory Council
+**Senior Physics Chair**
+
+August 2017 -- May 2018
+
+Advise dean on matters pertaining to students in the College of Science and Engineering. Participate in community and outreach activities such as student panels.
+
+#### Physics Club
+**President**
+
+August 2016 -- May 2018
+
+Plan and coordinate weekly meetings, events, and club trips. Work closely with department to create projects and outreach events.
+
+
+
+
 ## Skills 
-**Programming Languages**: Bash ⋅ Python ⋅ Java
+**Programming Languages**: Bash ⋅ Python ⋅ Java ⋅ Julia
 
 **Hardware Oriented Languages**: Arduino ⋅ Labview ⋅ Verilog
 
@@ -154,27 +188,8 @@ I visualized some data about mental health, stress, and anxiety. The data came f
 * Outstanding Graduate in Mathematics and Statistics
 * Outstanding Student Leader
 
-## Extracurriculars
-### Winona State Women in Computer Science Club
-**Vice President, Treasurer, ACM-W Co-Chair**
 
-January 2018 -- May 2018
 
-Promote diversity in the field of computing and technology by planning activities and meetings with other students. Plan, manage, and host hands on workshops with guest speakers.
-
-### Dean's Advisory Council
-**Senior Physics Chair**
-
-August 2017 -- May 2018
-
-Advise dean on matters pertaining to students in the College of Science and Engineering. Participate in community and outreach activities such as student panels.
-
-### Winona State Physics Club
-**President**
-
-August 2016 -- May 2018
-
-Plan and coordinate weekly meetings, events, and club trips. Work closely with department to create projects and outreach events.
 
 ## Additional Links
 
