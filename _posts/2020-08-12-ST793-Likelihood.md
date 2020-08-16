@@ -27,7 +27,7 @@ $$
 
 
 # 2.2
-**One of the data sets obtained from the 1984 consulting session on max fow of riers was $n=35$ yearly maxima from one station displayed in the following R printout.**
+**One of the data sets obtained from the 1984 consulting session on max flow of rivers was $n=35$ yearly maxima from one station displayed in the following R printout.**
 
 
 ```
@@ -40,7 +40,7 @@ $$
 ```
 
 ## a.
-**Find the maximum likelihood estimates for the extreme value location-scale density $f(y; \mu, \sigma) = f_0((y-\mu)/\sigma)/\sigma$, where **
+**Find the maximum likelihood estimates for the extreme value location-scale density $f(y; \mu, \sigma) = f_0((y-\mu)/\sigma)/\sigma$, where**
 
 $$
 f_0(t)=e^{-t}e^{-e^{-t}}.
@@ -104,7 +104,7 @@ $$
 F_Y(y; p_0, p_1, \alpha, \beta) = p_0 I(0 \leq y) + (1 - p_0 - p_1) F(y ; \alpha, \beta) + p_1 I(y \geq 1).
 $$
 
-**where $F(y; \alpha, \beta)$ is the beta distribution. You may recall that the beta density is positive on $0 < y< 1$ so that $F(0; \alpha, \beta) = 0$ and $F(1; \alpha , \beta$) = 1$,**
+**where $F(y; \alpha, \beta)$ is the beta distribution. You may recall that the beta density is positive on $0 < y< 1$ so that $F(0; \alpha, \beta) = 0$ and $F(1; \alpha , \beta) = 1$,**
 
 **but otherwise you do not need to use or know its form in the following; just use $F(y; \alpha, \beta)$ or $f(y; \alpha, \beta)$ where needed. The physical situation relates to test scores standardized to lie in $[0,1]$, but where $n_0$ of the sample values are exactly 0 (turned into a blank test), $n_1$ values are 1 (a perfect score), and the rest are in between 0 and 1. Use the $2h$ method to show that the likelihood is**
 
@@ -127,7 +127,7 @@ L(\beta, \sigma, \lambda | \{ Y_i, x_i\}^n_{i=1} ) = \Big( \frac{ 1 }{ \sqrt{ 2 
 $$
 
 # 2.22 (part a)
-**Consider the standard one-way ANOVA situation with $Y_{ij}$ distributed as $N(\mu_i, \sigma^2), \ i = 1, \dots, k, \ j = 1, \dots, n_i$m and all the random variables are independent.**
+**Consider the standard one-way ANOVA situation with $Y_{ij}$ distributed as $N(\mu_i, \sigma^2), \ i = 1, \dots, k, \ j = 1, \dots, n_i$, and all the random variables are independent.**
 
 ## a
 **Form the log likelihood, take derivatives, and show that the MLEs are**
