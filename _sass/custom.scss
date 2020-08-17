@@ -19,7 +19,23 @@ table{
 }
 
 td
-{
+{  
     padding: 0 40px 0 40px;
 }
 
+
+code{
+    font-size: 12px;
+    color: black;
+    font-family: 'Roboto Mono', monospace;
+    background-color: $code-background-color;
+}
+
+pre{
+    border: solid;
+    border-width: 1px 2px;
+    border-radius: 5px;
+    border-color: $code-border-color;
+    background-color: $code-background-color;
+
+}

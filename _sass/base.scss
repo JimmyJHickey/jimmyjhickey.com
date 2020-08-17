@@ -21,6 +21,9 @@ html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, img {
 $main-color: #FFA07A;
 $background-color: #FFF;
 $text-color: #4682B4;
+$code-text-color: #000;
+$code-border-color: darken($background-color, 20%);
+$code-background-color: darken($background-color, 5%);
 
 
 /*- Base settings -*/
