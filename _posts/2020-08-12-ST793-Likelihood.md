@@ -26,13 +26,42 @@ $$
 **(The normality assumption is actually only possible for $\lambda = 0$, but ignore that detail.) Derive the log likelihood $\ell_n (\mu, \sigma, \lambda \| \mathbf Y)$ of the observed data $Y_1, \dots, Y_n$. Note that $y^{(\lambda)}$ is a strictly increasing function of $y$ (the derivative is always positive). It might be easiest to use the "distribution funtion" method to get the density of $Y_i$, but feel free to use Jacobians, etc.**
 
 
+We know $f_Y(y) = f_{y^{(\lambda)}}(y^{(\lambda)}) \cdot \frac{ d Y^{(\lambda)} }{ dY }$ (the CDF method). We will find this piecewise and then combine it into a likelihood.
 
+$$
+\frac{ d Y^{(\lambda)} }{ dY } = 
+\begin{cases}
+Y^{\lambda - 1} & \lambda \neq 0 \\
+\frac{ 1 }{ Y } & \lambda = 0
+\end{cases}
+$$
+
+Notice that in the second case $1/Y = Y^{\lambda - 1}$ since $\lambda = 0$.
+
+$$
+f_Y(y) = 
+\begin{cases}
+y^{\lambda - 1} \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 }} \exp \Big\{ -\frac{ 1 }{ 2 \sigma^2 }(\frac{ y^\lambda -1 }{ \lambda }- \mu)^2 \Big\} & \lambda \neq 0\\
+y^{\lambda - 1} \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 }} \exp \Big\{ -\frac{ 1 }{ 2 \sigma^2 }(\log(y)- \mu)^2 \Big\} & \lambda = 0
+\end{cases}
+$$
+
+Now we can combine them using an indicator into a likelihood function.
 
 $$
 \begin{align}
-L(\mu, \sigma, \lambda | Y) 
+L(\mu, \sigma, \lambda | Y) & = \prod_{i=1}^n f_Y(y_i) \\
+    & =\prod_{i=1}^n y_i^{\lambda - 1} \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 }} \exp \Big\{ -\frac{ 1 }{ 2 \sigma^2 }(\frac{ y_i^\lambda -1 }{ \lambda }- \mu)^2 \Big\} \mathbb I(\lambda \neq 0) \\
+    & \times y_i^{\lambda - 1} \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 }} \exp \Big\{ -\frac{ 1 }{ 2 \sigma^2 }(\log(y_i)- \mu)^2 \Big\} \mathbb I(\lambda = 0) \\
+    & = \prod_{i=1}^n y_i^{\lambda - 1} \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 } } \\
+    & \times \exp \Big\{ - \frac{ 1 }{ 2 \sigma^2 } \Big(  (\frac{ y_i^\lambda -1 }{ \lambda }- \mu)^2 \mathbb I( \lambda \neq 0 )+ (\log(y_i)- \mu)^2 \mathbb I( \lambda = 0 ) \Big) \Big\} \\
+    & = y_i^{ n(\lambda - 1)} (2 \pi \sigma^2)^{-n/2} \\
+    & \times \exp \Big\{ - \frac{ 1 }{ 2 \sigma^2 } \Big( \sum (\frac{ y_i^\lambda -1 }{ \lambda }- \mu)^2 \mathbb I( \lambda \neq 0 )+ \sum (\log(y_i)- \mu)^2 \mathbb I( \lambda = 0 ) \Big) \Big\} \\
+\ell(\mu, \sigma, \lambda | Y) &= n(\lambda - 1) \log(y_i) - \frac{ n }{ 2 } \log(2 \pi \sigma^2)\\
+    & - \frac{ 1 }{ 2 \sigma^2 } \Big[ \sum (\frac{ y_i^\lambda -1 }{ \lambda }- \mu)^2 \mathbb I( \lambda \neq 0 )+ \sum (\log(y_i)- \mu)^2 \mathbb I( \lambda = 0 ) \Big]
 \end{align}
 $$
+
 
 # 2.2
 **One of the data sets obtained from the 1984 consulting session on max flow of rivers was $n=35$ yearly maxima from one station displayed in the following R printout.**
@@ -258,6 +287,15 @@ $$
 L(\beta, \sigma, \lambda | \{ Y_i, x_i\}^n_{i=1} ) = \Big( \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 }} \Big)^n \exp \Big[ - \sum_{i=1}^n \frac{ (Y_i^{(\lambda)} - x_i^T \beta)^2 }{ 2 \sigma^2 } \Big] \times \prod_{i=1}^n \Bigg\lvert \frac{ \partial t^{(\lambda)} }{\partial t} \Big\rvert_{t=Y_i} \Bigg\rvert.
 $$
 
+Notice that this situation is just a special case of the Box-Cox transformation. Instead of $\mu$, we have a specific mean, $Y_i^{(\lambda)} \sim N(x_i^T \beta, \sigma^2)$. As shown in 2.1, our likelihood will be
+
+$$
+\begin{align}
+L(\beta, \sigma, \lambda | \{ Y_i, x_i\}^n_{i=1} ) & = \Big( \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 }} \Big)^n \exp \Big[ - \sum_{i=1}^n \frac{ (Y_i^{(\lambda)} - \mu)^2 }{ 2 \sigma^2 } \Big] \times \prod_{i=1}^n \Bigg\lvert \frac{ \partial t^{(\lambda)} }{\partial t} \Big\rvert_{t=Y_i} \Bigg\rvert \\
+    & = \Big( \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 }} \Big)^n \exp \Big[ - \sum_{i=1}^n \frac{ (Y_i^{(\lambda)} - x_i^T \beta)^2 }{ 2 \sigma^2 } \Big] \times \prod_{i=1}^n \Bigg\lvert \frac{ \partial t^{(\lambda)} }{\partial t} \Big\rvert_{t=Y_i} \Bigg\rvert.
+\end{align}
+$$
+
 # 2.22 (part a)
 **Consider the standard one-way ANOVA situation with $Y_{ij}$ distributed as $N(\mu_i, \sigma^2), \ i = 1, \dots, k, \ j = 1, \dots, n_i$, and all the random variables are independent.**
 
@@ -272,3 +310,21 @@ $\widehat\sigma^2 = SSE/ N$
 
 **and $N = \sum_{i=1}^{k} n_i$.**
 
+
+$$
+\begin{align}
+L(\mu, \sigma^2 | y ) & = \prod_{i=1}^{k} \prod_{j=1}^{n_i} f(y_{ij}; \mu, \sigma) \\
+    & = \prod_{i=1}^k (2 \pi \sigma^2)^{-n_i/2} exp{\frac{ -1 }{ 2\sigma^2 } \sum_{j=1}^{n_i}(y_{ij} - \mu_i)^2 } \\
+\ell (\mu, \sigma^2 | y) & = \sum_{i=1}^k \frac{ -n_i }{ 2 } \log(2 \pi \sigma^2) - \frac{ 1 }{ 2\sigma^2 }\sum_{j=1}^{n_i}(y_{ij} - \mu_i)^2 \\
+    & = \sum_{i=1}^k \frac{ -n_i }{ 2 } \log(2 \pi \sigma^2) - \frac{ 1 }{ 2\sigma^2 }\sum_{j=1}^{n_i}(y_{ij}^2 - 2 y_{ij} \mu_i + \mu_i^2) \\
+\frac{ \partial \ell }{\partial \mu_a} & = -\frac{ 1 }{ 2 \sigma^2 }(0 - 2 \sum_{i=1}^{n_a} y_i + 2 n_a \mu_a) \stackrel{\text{set}}{=}0 \\
+ \widehat\mu_a & = \frac{ \sum_{i=1}^{n_a} y_i }{ n_a } \\
+    & = \overline{ Y }_a \\
+\frac{ \partial \ell }{\partial \sigma^2} & = \sum_{i=1}^k \frac{ -n_i }{ 2 \sigma^2 } + \frac{ 1 }{ 2 (\sigma^2)^2} \sum_{j=1}^{n_i} (y_{ij} - \widehat \mu_i)^2 \stackrel{\text{set}}{=}0 \\
+0 & = \frac{ -N }{ 2 \sigma^2} + \frac{ 1 }{ 2 (\sigma^2)^2} \sum_{i=1}^{k} \sum_{j=1}^{n_i} (y_{ij} - 
+\overline{ Y }_i)^2 \\
+\frac{ N }{ 2 } \widehat\sigma^2 & = \frac{ 1 }{ 2 } SSE \\
+\widehat\sigma^2 = \frac{ SSE }{ N }
+\end{align}
+$$
+    
