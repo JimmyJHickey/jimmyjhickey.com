@@ -7,10 +7,10 @@ Hi, I'm Jimmy Hickey. I'm a programmer and statistics PhD student at North Carol
 
 ## Hobbies
 * Programming
+* Tennis
+* Reading
 * Knitting
-* Sewing
 * Cross Stitching
-* Exercising
 * Video Games
 
 ## TV Shows I Like
@@ -36,7 +36,6 @@ Hi, I'm Jimmy Hickey. I'm a programmer and statistics PhD student at North Carol
 
 ## Podcasts I like
 * Monday Morning Podcast
-* Conan O'Brien Needs a Friend
 * Omnibus Project
 * Stuff You Should Know
 * This American Life
