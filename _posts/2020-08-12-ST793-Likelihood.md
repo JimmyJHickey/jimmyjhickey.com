@@ -56,9 +56,9 @@ L(\mu, \sigma, \lambda | Y) & = \prod_{i=1}^n f_Y(y_i) \\
     & = \prod_{i=1}^n y_i^{\lambda - 1} \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 } } \\
     & \times \exp \Big\{ - \frac{ 1 }{ 2 \sigma^2 } \Big(  (\frac{ y_i^\lambda -1 }{ \lambda }- \mu)^2 \mathbb I( \lambda \neq 0 )+ (\log(y_i)- \mu)^2 \mathbb I( \lambda = 0 ) \Big) \Big\} \\
     & = y_i^{ n(\lambda - 1)} (2 \pi \sigma^2)^{-n/2} \\
-    & \times \exp \Big\{ - \frac{ 1 }{ 2 \sigma^2 } \Big( \sum (\frac{ y_i^\lambda -1 }{ \lambda }- \mu)^2 \mathbb I( \lambda \neq 0 )+ \sum (\log(y_i)- \mu)^2 \mathbb I( \lambda = 0 ) \Big) \Big\} \\
-\ell(\mu, \sigma, \lambda | Y) &= n(\lambda - 1) \log(y_i) - \frac{ n }{ 2 } \log(2 \pi \sigma^2)\\
-    & - \frac{ 1 }{ 2 \sigma^2 } \Big[ \sum (\frac{ y_i^\lambda -1 }{ \lambda }- \mu)^2 \mathbb I( \lambda \neq 0 )+ \sum (\log(y_i)- \mu)^2 \mathbb I( \lambda = 0 ) \Big]
+    & \times \exp \Big\{ - \frac{ 1 }{ 2 \sigma^2 } \Big( \sum_{i=1}^n (\frac{ y_i^\lambda -1 }{ \lambda }- \mu)^2 \mathbb I( \lambda \neq 0 )+ \sum_{i=1}^n (\log(y_i)- \mu)^2 \mathbb I( \lambda = 0 ) \Big) \Big\} \\
+\ell(\mu, \sigma, \lambda | Y) &= (\lambda - 1)\sum_{i=1}^n \log(y_i) - \frac{ n }{ 2 } \log(2 \pi \sigma^2)\\
+    & - \frac{ 1 }{ 2 \sigma^2 } \Big[ \sum_{i=1}^n (\frac{ y_i^\lambda -1 }{ \lambda }- \mu)^2 \mathbb I( \lambda \neq 0 )+ \sum_{i=1}^n (\log(y_i)- \mu)^2 \mathbb I( \lambda = 0 ) \Big]
 \end{align}
 $$
 
@@ -232,7 +232,7 @@ $$
 Instead of a Zero Inflated Poisson, we are now dealing with a Zero Truncated Poisson.
 
 $$
-g(y ; \lambda) = P(Y = y | Y > 0) = \frac{ f(y; \lambda) }{ 1- f(0; \lambda) } = \frac{ \lambda^y e^-\lambda }{ y! (1-e^-\lambda) } = \frac{ \lambda^y}{ y!(e^\lambda - 1) }
+g(y ; \lambda) = P(Y = y | Y > 0) = \frac{ f(y; \lambda) }{ 1- f(0; \lambda) } = \frac{ \lambda^y e^{-\lambda} }{ y! (1-e^{-\lambda}) } = \frac{ \lambda^y}{ y!(e^\lambda - 1) }
 $$
 
 We can now find the MLE using this PDF.
@@ -262,15 +262,18 @@ $$
 p_0^{n_0}p_1^{n_1}(1 - p_0 - p_1)^{n-n_0-n_1} \prod_{0 < Y_i<1} f(Y_i; \alpha, \beta).
 $$
 
+Take $\theta = (p_0, p_1, \alpha, \beta)$
 
 $$
 \begin{align}
-L(\alpha, \beta | y) & =  \prod_{i=1}^n f_Y(y_i; \alpha, \beta) \\
-    & = \lim_{h\rightarrow = 0^+} \prod_{i=1}^n \frac{ 1 }{ 2 h } (F(y+h) - F(y - h)) \\
-    & = \lim_{h\rightarrow = 0^+}  \prod_{i=1}^n \frac{ 1 }{ 2h }\Big[ p_0 \mathbb I (0 \leq y_i +h) +p_1 \mathbb I (y_i+h > 1) + (1-p_0-p_1) F(y_i + h) - p_0 \mathbb I (0 \leq y_i -h) -p_1 \mathbb I (y_i-h > 1) + (1-p_0-p_1) F(y_i - h)\Big] \\
-    & = \lim_{h\rightarrow = 0^+} p_0^{n_0} p_1^{n_1} \prod_{0 \leq Y_i \leq 1} \frac{ 1 }{ 2h } (1-p_0-p_1) (F(y+h) - F(y-h)) \\
-    & = \lim_{h\rightarrow = 0^+} p_0^{n_0} p_1^{n_1} (1-p_0-p_1)^{n-n_0-n_1} \prod_{0 \leq Y_i \leq 1}\frac{ 1 }{ 2h }  (F(y+h) - F(y-h)) \\ 
-    & = p_0^{n_0} p_1^{n_1} (1-p_0-p_1)^{n-n_0-n_1} \prod_{0 \leq Y_i \leq 1} f(y_i; \alpha, \beta)
+L(p_0, p_1, \alpha, \beta | y) & =  \prod_{i=1}^n f_Y(y_i; \theta) \\
+    & = \lim_{h\rightarrow  0^+} \prod_{i=1}^n \frac{ 1 }{ 2 h } (F_Y(Y_i+h; \theta) - F_Y(Y_i - h; \theta)) \\
+    & = \lim_{h \rightarrow 0^+} \Big[ F_Y(0+h| \theta) - F_Y(0-h|\theta) \Big]^{n_0} \\
+    & \times \lim_{h \rightarrow 0^+} \Big[ F_Y(1+h| \theta) - F_Y(1-h|\theta) \Big]^{n_1} \\
+    & \times \lim_{h \rightarrow 0^+} \prod_{0 \leq Y_i \leq 1} \frac{ 1 }{ 2h }  (F_Y(Y_i+h; \theta) - F_Y(Y_i-h; \theta)) \\
+    & = \Big[ p_0 + (1-p_0-p_1) F(h; \alpha, \beta) \Big]^{n_0} \Big[  p_1 + (1-p_0-p_1) F(1-h; \alpha, \beta) \Big]^{n_1} \\
+    &  \times \lim_{h \rightarrow 0^+} \prod_{0 \leq Y_i \leq 1} \frac{ 1 }{ 2h } (1- p_0 - p_1)  (F(Y_i+h; \theta) - F(Y_i-h; \theta)) \\
+    & = p_0^{n_0} p_1^{n_1} (1-p_0-p_1)^{n-n_0-n_1} \prod_{0 \leq Y_i \leq 1} f(Y_i; \alpha, \beta)
 \end{align}
 $$
 
@@ -327,4 +330,15 @@ L(\mu, \sigma^2 | y ) & = \prod_{i=1}^{k} \prod_{j=1}^{n_i} f(y_{ij}; \mu, \sigm
 \widehat\sigma^2 = \frac{ SSE }{ N }
 \end{align}
 $$
-    
+
+
+We can also check our second order conditions to ensure that this is a maximum.
+
+$$
+\begin{align}
+\frac{ \partial^2 \ell }{\partial \mu_a^2} & = \frac{ -1 }{ \sigma^2 } < 0 \\
+\frac{ \partial^2 \ell }{\partial (\sigma^2)^2}|_{\sigma^2 = \widehat\sigma^2} & = \frac{ N }{ 2 (\widehat\sigma^2)^2 }+ \frac{ SSE }{ (\widehat \sigma^2)^3} \\
+    & = \frac{ N^3 }{ 2 SSE^2 } - \frac{ N^3 }{ SSE^2 } \\
+    & = \frac{ -N^3 }{ 2 SSE^2 } < 0
+\end{align}
+$$
