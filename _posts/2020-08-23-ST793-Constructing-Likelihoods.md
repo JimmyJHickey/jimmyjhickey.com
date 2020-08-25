@@ -15,29 +15,30 @@ category: ST793
 2.12, 2.22, 2.24, 2.25, 1
 
 # 2.12
-**For an iid sample $Y_1 , \dots , Y_n$, Type II censoring occurs when we observe only the smallest $r$ value. For example, in a study of light bulb lifetimes, we might stop the study after the first $r = 10$ bulbs have failed. Assuming a continuous distribution with density $f(y; \theta)$, the likelihood is just the join density of the smallest $r$ order statistics evaluated at those order statistics:**
+**For an iid sample $Y_1 , \dots , Y_n$, Type II censoring occurs when we observe only the smallest $r$ value. For example, in a study of light bulb lifetimes, we might stop the study after the first $r = 10$ bulbs have failed. Assuming a continuous distribution with density $f(y; \theta)$, the likelihood is just the joint density of the smallest $r$ order statistics evaluated at those order statistics:**
 
 $$
-L(\theta; Y_{(1)}, \dots Y_{(r)}) = \frac{ n! }{ (n-r)! } \Big[ \prod_{j=1}^r f(Y_{(i)}; \theta) \Big] [1 - F(Y_{(r)}; \theta)]^{n-r}.
+L(\theta; Y_{(1)}, \dots Y_{(r)}) = \frac{ n! }{ (n-r)! } \Big[ \prod_{j=1}^r f(Y_{(j)}; \theta) \Big] [1 - F(Y_{(r)}; \theta)]^{n-r}.
 $$
 
 **For this situation, let $f(y; \sigma) = e^{-y / \sigma} / \sigma$ and find the MLE of $\sigma$. Also provide an example.**
+
+One example of a Type II censoring would be a longitudinal clinical trial where the trial is stopped when a certain number of participants die.
 
 # 2.22
 
 ## b
 
-**Now define $V_1^T = (Y_{i1} - \overline{ Y }_i, \dots , Y_{i,n_i-1} - \overline{ Y }_i)$.**
-
-**Using standard matrix manipulation with the mulitvariate normal distribution, the density of $V_i$ is given by**
+**Now define $V_1^T = (Y_{i1} - \overline{ Y }\_i, \dots , Y\_{i,n_i-1} - \overline{ Y }_i)$. Using standard matrix manipulation with the mulitvariate normal distribution, the density of $V_i$ is given by**
 
 $$
 (2 \pi)^{(n_i-1)/2} n_i^{1/2} \sigma^{-(n_i-1)} \exp \Big( -\frac{ 1 }{ 2 \sigma^2 } v_i^T (I_{n_i-1} +J_{n_i-1} ) v_i \Big)
 $$
 
 
-**where $I_{n_i-1}$ is the $n_i-1$ by $n_i - 1$ identity matrix and $J_{n_i-1}$ is an $n_i - 1$ by $n_i - 1$ matrix of 1's. Now form the (marginal) likelihood based on $V_1, \dots , V_k$ and show that the MLE for $\sigma^2$ is not $\widehat \sigma^2 = SSE/(N-k)$.**
+**where $I_{n_i-1}$ is the $n_i-1$ by $n_i - 1$ identity matrix and $J_{n_i-1}$ is an $n_i - 1$ by $n_i - 1$ matrix of 1's. Now form the (marginal) likelihood based on $V_1, \dots , V_k$ and show that the MLE for $\sigma^2$ is now $\widehat \sigma^2 = SSE/(N-k)$.**
 
+Notice that the distribution of $V_i$ does not have $\mu$ in it, and is thus ancillary for $\mu$. So, we can maximize this likelihood to get a marginal likelihood estimate of $\sigma^2$.
 
 $$
 \begin{align}
@@ -46,17 +47,18 @@ L_M(\sigma^2) & = \prod_{i=1}^k f_{V_i} \\
 \ell_M(\sigma^2) & = c + (-\frac{ 1 }{ 2 } \sum_{i=1}^k (n_i-1)) \log(\sigma^2) - \frac{ \sum_{i=1}^k v_i^T (I_{n_i-1} + J_{n_i - 1}) v_i }{ 2 \sigma^2 } \\
 \frac{ \partial \ell_M }{\partial \sigma^2} & = \frac{ -(N-k) }{ 2 \sigma^2 } + \frac{ \sum_{i=1}^k v_i^T (I_{n_i-1} + J_{n_i - 1}) v_i }{ 2 (\sigma^2)^2 } \stackrel{\text{set}}{=} 0 \\
 \widehat\sigma^2_{M,MLE} & = \frac{ \sum_{i=1}^k v_i^T (I_{n_i-1} + J_{n_i - 1}) v_i }{ N - k } \\ \\
-v_i^T (I_{n_i-1} + J_{n_i - 1} ) v_i & = v_i 
-\begin{bmatrix}
-2 & 1 & \dots & 1 \\
-1 & 2 &  & \\
-\vdots &  & \ddots & \\
-& & & 2
-\end{bmatrix} v_i \\
-& = \sum_{j=1}^{n_i} Y_{ij} - 2 Y_{ij} \overline{ Y }_i + \overline{ Y }_i^2 \\
-& = \sum_{j=1}^{n_i} (Y_{ij} - \overline{ Y }_i)^2 \\
+\sum_{i=1}^{k} v_i^T (I_{n_i-1} + J_{n_i - 1} ) v_i & = \sum_{i=1}^k v_i^T v_i + v_i ^T J_{i-1} v_i \\
+    & = \sum_{i=1}^k \Big[ \sum_{j=1}^{n_i-1} (Y_{ij} - \overline{ Y_i })^2 +
+    \begin{bmatrix}
+    \sum_{j=1}^{n_1-1} (Y_{ij} - \overline{ Y_i })^2 & \dots & \sum_{j=1}^{n_1-1} (Y_{ij} - \overline{ Y_i })^2
+    \end{bmatrix}
+     v_i \Big]\\
+    & = \sum_{i=1}^k \Big[ \sum_{j=1}^{n_i-1} (Y_{ij} - \overline{ Y_i })^2 + \sum_{l=1}^{n_i-1} \Big( (Y_{il} - \overline{ Y_i }) \sum_{j=1}^{n_i-1}(Y_ij - \overline{ Y_i }) \Big) \Big]\\
+    & = \sum_{i=1}^k \Big[ \sum_{j=1}^{n_i-1} (Y_{ij} - \overline{ Y_i })^2 + \Big( \sum_{j=1}^{n_i-1} Y_{ij} - \overline{ Y }\Big)^2 \Big]\\
+    & = \sum_{i=1}^k \Big[ \sum_{j=1}^{n_i-1} (Y_{ij} - \overline{ Y_i })^2 + \Big( Y_{n_i} - \overline{ Y }\Big)^2 \Big]\\
+    & = \sum_{i=1}^k \sum_{j=1}^{n_i} (Y_{ij} - \overline{ Y_i })^2
 & = SSE \\ \\
-\widehat\sigma^2_{M,MLE} & = \frac{ SSE }{ N }
+\widehat\sigma^2_{M,MLE} & = \frac{ SSE }{ N -k}
 \end{align}
 $$
 
@@ -113,8 +115,8 @@ Cov(Y_{i1}, Y_{i1} + Y_{i2}) & = E(Y_{i1} (Y_{i1} + Y_{i2})) - E(Y_{i1}) E(Y_{i1
     & = E(Y_{i1}^2 + Y_{i1} Y_{i2}) - \mu_i 2 \mu_i \\
     & = E(Y_{i1}^2) + E(Y_{i1} Y_{i2}) - 2 \mu_i^2 \\
     & = (\mu_i^2 + \sigma^2) + E(E(Y_{i1} Y_{i2})|Y_{i1}) - 2 \mu_i^2 \\
-    & = \sigma^2 + E(Y_{i1} E( Y_{i2})|Y_{i1}) - \mu_i^2 \\
-    & = \sigma^2 + \mu_i^2 - \mu_i \\
+    & = \sigma^2 + E(Y_{i1} E( Y_{i2}|Y_{i1})) - \mu_i^2 \\
+    & = \sigma^2 + \mu_i^2 - \mu_i^2 \\
     & = \sigma^2.
 \end{align}
 $$
@@ -190,18 +192,18 @@ $$
 \begin{align}
 \ell_C(\sigma^2) & = C + \frac{ -(n-1) }{ 2 } \log(\sigma^2) + \frac{ -1 }{ 2\sigma^2 } \sum(Y_i - \overline{ Y })^2 \\
 \frac{ \partial \ell_C }{\partial \sigma^2} & = \frac{ - \frac{ (n-1) }{ 2 } }{ \sigma^2 } + \frac{ \sum_{i=1}^n (Y_i - \overline{ Y }) }{ 2 (\sigma^2)^2 } \stackrel{\text{set}}{=} 0 \\
-\widehat \sigma^2_{C, MLE} & = \frac{ \sum (Y_i - \overline{ Y })^2 }{ \frac{ n-1 }{ 2 } }
+\widehat \sigma^2_{C, MLE} & = \frac{ \sum (Y_i - \overline{ Y })^2 }{ n-1 }
 \end{align}
 $$
 
 # 1
-**Assume we observe data $(y_i, w_i) for i =1,\dots, n$ where $y_i$ and $w_i$ arise from the model:**
+**Assume we observe data $(y_i, w_i)$ for $i =1,\dots, n$ where $y_i$ and $w_i$ arise from the model:**
 
 \$$
 \begin{align}
 Y_i &\sim  Bernoulli(p_i)\\
 logit(p_i) & = \alpha +\beta X_i \\
-W_i &= X_i +E_i, where E_i ~ N(0, \sigma^2)
+W_i &= X_i +E_i, \text{where } E_i ~ N(0, \sigma^2)
 \end{align}
 $$
 
