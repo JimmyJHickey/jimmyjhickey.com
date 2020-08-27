@@ -149,13 +149,29 @@ Cov(Y_{i1}, Y_{i1} + Y_{i2}) & = E(Y_{i1} (Y_{i1} + Y_{i2})) - E(Y_{i1}) E(Y_{i1
 \end{align}
 $$
 
+Let 
+
+$$
+A = \begin{bmatrix}
+1 & 0 \\
+1 & 1 
+\end{bmatrix}.
+$$
+
 Thus,
 
 $$
+\begin{align}
+A \begin{bmatrix}
+Y_{i1} \\
+Y_{i2}
+\end{bmatrix} = 
 \begin{bmatrix}
 Y_{i1} \\
 Y_{i1} + Y_{i2}
 \end{bmatrix} \sim 
+MVN ( A (\mu_i, \mu_i)^T, A (\sigma^2 I )A^T)
+= 
 MVN \Big( 
 \begin{bmatrix}
 \mu_i \\
@@ -166,6 +182,7 @@ MVN \Big(
 \sigma^2 & 2 \sigma^2
 \end{bmatrix}
 \Big).
+\end{align}
 $$
 
 Finally,
