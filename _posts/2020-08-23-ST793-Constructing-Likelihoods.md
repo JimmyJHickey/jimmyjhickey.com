@@ -23,8 +23,36 @@ $$
 
 **For this situation, let $f(y; \sigma) = e^{-y / \sigma} / \sigma$ and find the MLE of $\sigma$. Also provide an example.**
 
-One example of a Type II censoring would be a longitudinal clinical trial where the trial is stopped when a certain number of participants die.
+Thinking of this in the context of right censoring, notice that the first $r$ order statistics will follow the distribution and the following values will all be taken via the CDF. Thus, we can use our exponential distribution provided for the PDF and CDF of the likelihood.
 
+$$
+F_Y(y) = \int_{0}^{\infty} \frac{ 1 }{ \sigma } e^{-y / \sigma} dy = 1 - e^{-y / \sigma}
+$$
+
+Now we can find our likelihood.
+
+$$
+\begin{align}
+L(\theta | Y_{(1)}, \dots , Y_{(r)}) & = \frac{ n! }{ (n-r)! } \Big[ \prod_{j=1}^r f(Y_{(j)}; \theta) \Big] [1 - F(Y_{(r)}; \theta)]^{n-r} \\
+    & = \frac{ n! }{ (n-r)! } \Big[ \prod_{j=1}^r \frac{ 1 }{ \sigma } e^{ y_{(i)} / \sigma}\Big] [1 -(1 - e^{-y_(r) / \sigma})]^{n-r} \\
+    & = \frac{ n! }{ (n-r)! } \sigma^{-r}  e^{\sum_{j=1}^r y_{(i)} / \sigma} [e^{-y_(r) / \sigma})]^{n-r} \\
+\ell(\theta | Y_{(1)}, \dots , Y_{(r)}) & = c + -r \log(\sigma) _ \frac{ \sum_{j=1}^r  y_{(i)}}{ \sigma } + \frac{ (n-r) y_{(r)} }{ \sigma } \\ 
+\frac{ \partial \ell }{\partial \sigma} & = \frac{ -r }{ \sigma } + \frac{  \sum_{j=1}^r y_{(i)} +  (n-r) y_{(r)}}{ \sigma^2 } \stackrel{\text{set}}{=} 0 \\
+\widehat \sigma & = \frac{ \sum_{j=1}^r y_{(i)} +  (n-r) y_{(r)} }{ r }
+\end{align}
+$$
+
+Finally, we can check the second derivative to ensure that our optimum is a max.
+
+$$
+\begin{align}
+\frac{ \partial ^2  \ell }{\partial \sigma^2} |_{\sigma = \widehat \sigma} & = \frac{ r }{  \widehat \sigma^2 } - \frac{ 2 r \widehat \sigma }{ \sigma^3 } \\
+    & = \frac{ -r }{ \widehat \sigma^2 } < 0
+\end{align}
+$$
+
+
+One example of a Type II censoring would be a longitudinal clinical trial where the trial is stopped when a certain number of participants die.
 # 2.22
 
 ## b
@@ -56,7 +84,7 @@ L_M(\sigma^2) & = \prod_{i=1}^k f_{V_i} \\
     & = \sum_{i=1}^k \Big[ \sum_{j=1}^{n_i-1} (Y_{ij} - \overline{ Y_i })^2 + \sum_{l=1}^{n_i-1} \Big( (Y_{il} - \overline{ Y_i }) \sum_{j=1}^{n_i-1}(Y_ij - \overline{ Y_i }) \Big) \Big]\\
     & = \sum_{i=1}^k \Big[ \sum_{j=1}^{n_i-1} (Y_{ij} - \overline{ Y_i })^2 + \Big( \sum_{j=1}^{n_i-1} Y_{ij} - \overline{ Y }\Big)^2 \Big]\\
     & = \sum_{i=1}^k \Big[ \sum_{j=1}^{n_i-1} (Y_{ij} - \overline{ Y_i })^2 + \Big( Y_{n_i} - \overline{ Y }\Big)^2 \Big]\\
-    & = \sum_{i=1}^k \sum_{j=1}^{n_i} (Y_{ij} - \overline{ Y_i })^2
+    & = \sum_{i=1}^k \sum_{j=1}^{n_i} (Y_{ij} - \overline{ Y_i })^2 \\
 & = SSE \\ \\
 \widehat\sigma^2_{M,MLE} & = \frac{ SSE }{ N -k}
 \end{align}
@@ -169,7 +197,7 @@ $$
 **Thus, if you know the density of $Y$ and of $V$, then you can get a conditional likelihood equation.**
 
 ## a. 
-**Now let $Y_1, \dots , Y_n$ be iid $N(\mu, \sigma^2)$, $V = \overline{ Y }$, and $\theta = (\sigma, \mu)^T$. form the ratio above and note that it is free of $\mu$. (It helps that $\sum(Y_i - \mu)^2 = \sum(Y_i - \overline{ Y }^2) + n(\overline{ Y }-\mu)^2.$)**
+**Now let $Y_1, \dots , Y_n$ be iid $N(\mu, \sigma^2)$, $V = \overline{ Y }$, and $\theta = (\sigma, \mu)^T$. Form the ratio above and note that it is free of $\mu$. (It helps that $\sum(Y_i - \mu)^2 = \sum(Y_i - \overline{ Y }^2) + n(\overline{ Y }-\mu)^2.$)**
 
 
 Notice that $V \sim N(\mu, \frac{ \sigma^2 }{ n })$. 
@@ -210,3 +238,70 @@ $$
 **The parameters of interest are alpha and beta. Construct a conditional likelihood for the parameter of interest by using the idea of finding a sufficient statistic for the nuisance parameter (in this case  the so called "sufficient statistic" depends on parameters).**
 
 
+Notice that since $U_i \perp Y_i$ we know that $W_i \| X_i \perp Y_i \| X_i$. Thus,
+
+$$
+\begin{align}
+f(Y_i = y_i, W_i = w_i | X_i = x_i) & = f_Y(y_i | x_i) f_W(w_i | x_i) \\
+    & = \frac{ \exp(y_i ( \alpha + \beta x_i)) }{ 1 + \exp(\alpha + \beta x_i) } \cdot \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 } } \exp(\frac{ -1 }{ 2 \sigma^2 } (w_i - x_i)^2) \\
+     & = \frac{ \exp(y_i ( \alpha + \beta x_i)) }{ 1 + \exp(\alpha + \beta x_i) } \cdot \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 } } \exp(\frac{ -w_i^2 + 2 w_i x_i - x_i^2}{ 2 \sigma^2 } ) \\
+     & = \frac{ \exp(y_i  \alpha ) }{ 1 + \exp(\alpha + \beta x_i) } \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 } } \exp(y_i x_i \beta) \exp(\frac{ -w_i^2 + 2 w_i x_i - x_i^2}{ 2 \sigma^2 } ) \\
+     & = \frac{ \exp(y_i  \alpha ) }{ 1 + \exp(\alpha + \beta x_i) } \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 } } \exp(y_i x_i \beta) \exp(\frac{ -w_i^2 + 2 w_i x_i - x_i^2}{ 2 \sigma^2 } ) \\
+    & = \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 } } \frac{ \exp(y_i  \alpha ) }{ 1 + \exp(\alpha + \beta x_i) } \exp( \frac{ -w_i^2 }{ 2\sigma^2 }) \exp(\frac{ -x_i^2 }{ 2 \sigma^2 }) \exp(\frac{2 w_i x_i}{ 2 \sigma^2 } + y_i x_i \beta) \\
+    & = \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 } } \frac{ \exp(y_i  \alpha ) }{ 1 + \exp(\alpha + \beta x_i) } \exp( \frac{ -w_i^2 }{ 2\sigma^2 }) \exp(\frac{ -x_i^2 }{ 2 \sigma^2 }) \exp(\frac{2 w_i x_i}{ 2 \sigma^2 } + y_i x_i \beta) \\
+    & = \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 } } \frac{ \exp(y_i  \alpha ) }{ 1 + \exp(\alpha + \beta x_i) } \exp( \frac{ -w_i^2 }{ 2\sigma^2 }) \exp(\frac{ -x_i^2 }{ 2 \sigma^2 }) \exp(\frac{w_i x_i + \sigma^2 y_i x_i \beta }{  \sigma^2 }) \\
+   & = \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 } } \frac{ \exp(y_i  \alpha ) }{ 1 + \exp(\alpha + \beta x_i) } \exp( \frac{ -w_i^2 }{ 2\sigma^2 }) \exp(\frac{ -x_i^2 }{ 2 \sigma^2 }) \exp(\frac{w_i x_i + \sigma^2 y_i x_i \beta - 1/2 \sigma^2 \beta x_i + 1/2 \sigma^2 \beta x_i }{  \sigma^2 }) \\
+   & = \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 } } \frac{ \exp(y_i  \alpha ) }{ 1 + \exp(\alpha + \beta x_i) } \exp( \frac{ -w_i^2 }{ 2\sigma^2 }) \exp(\frac{ 1/2 \sigma^2 \beta x_i  }{ \sigma^2 })\exp(\frac{ -x_i^2 }{ \sigma^2 }) \exp(\frac{x_i(w_i +  \sigma^2 y_i \beta - 1/2 \sigma^2 \beta) }{  \sigma^2 })
+\end{align}
+$$
+
+By the Factorization Theorem, we can see that $T_i = W_i + (Y_i - \frac{ 1 }{ 2 })\sigma^2 \beta$ is sufficient for $X_i$. From here, we can find the joint density between $Y_i$ and $T_i$. Then we can find the marginal density of $T_i$. Finally, conditioning $Y_i \| T_i$ will give us a distribution independent of $X_i$, which we can then maximize with respect to $\alpha$ and $\beta$.
+
+Since we know the joint density of $f(Y_i, W_i \| X_i)$, we can perform a transformation to get $f(Y_i, T_i \| X_i)$
+
+$$
+\begin{align}
+Y_i & = Y_i \\
+T_i = W_i + (Y_i - \frac{ 1 }{ 2 })\sigma^2 \beta & \Rightarrow W_i = T_i- (Y_i - \frac{ 1 }{ 2 })\sigma^2 \beta \\
+\det(J) = 
+\begin{vmatrix}
+\frac{ \partial Y_i }{\partial Y_i} & \frac{ \partial Y_i }{\partial T_i} \\
+\frac{ \partial W_i }{\partial Y_i} & \frac{ \partial W_i }{\partial T_i} 
+\end{vmatrix}
+& = 
+\begin{vmatrix}
+1 & 0 \\
+-\sigma^2 \beta & 1 
+\end{vmatrix} = 1
+\end{align}
+$$
+
+$$
+\begin{align}
+f(Y_i, T_i  | X_i) & = f_{Y_i, W_i} (y_i, w_i | X_i) (1) \\
+    & = f_{Y_i, W_i} (y_i, t_i - (y_i - 1/2) \sigma^2 \beta | X_i) \\
+    & =\frac{ \exp(y_i(\alpha + \beta x_i)) }{ 1 + \exp(\alpha + \beta x_i) } \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 } } \exp(\frac{ -1 }{ 2 \sigma^2 } (t_i - (y_i - 1/2) \sigma^2 \beta - x_i)^2) \\
+f(T_i | X_i) & = \sum_{y_i \in \mathcal Y} f(Y_i, T_i  | X_i) \\
+    & = \sum_{y = 0}^1 f(Y_i, T_i  | X_i) \\
+    & = \frac{ \exp(0 (\alpha + \beta x_i)) }{ 1 + \exp(\alpha + \beta x_i) } \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 } } \exp(\frac{ -1 }{ 2 \sigma^2 } (t_i - (0 - 1/2) \sigma^2 \beta - x_i)^2) \\
+    & + \frac{ \exp(1(\alpha + \beta x_i)) }{ 1 + \exp(\alpha + \beta x_i) } \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 } } \exp(\frac{ -1 }{ 2 \sigma^2 } (t_i - (1 - 1/2) \sigma^2 \beta - x_i)^2) \\
+    & = \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 } } \frac{ 1 }{ 1 + \exp(\alpha + \beta x_i) } \Big[  \exp(\frac{ -1 }{ 2 \sigma^2 } (t_i + 1/2 \sigma^2 \beta - x_i)^2)  + \exp(\alpha + \beta x_i)  \exp(\frac{ -1 }{ 2 \sigma^2 } (t_i - 1/2 \sigma^2 \beta - x_i)^2) \Big]
+\end{align}
+$$
+
+$$
+\begin{align}
+f(Y_i | T_i ) & = \frac{ f(Y_i, T_i  | X_i) }{ f(T_i | X_i) } \\
+    & = \frac{ \frac{ \exp(y_i(\alpha + \beta x_i)) }{ 1 + \exp(\alpha + \beta x_i) } \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 } } \exp(\frac{ -1 }{ 2 \sigma^2 } (t_i - (y_i - 1/2) \sigma^2 \beta - x_i)^2) }{ \frac{ 1 }{ \sqrt{ 2 \pi \sigma^2 } } \frac{ 1 }{ 1 + \exp(\alpha + \beta x_i) }  } \\
+    & \times \frac{ 1 }{ \exp(\frac{ -1 }{ 2 \sigma^2 } (t_i + 1/2 \sigma^2 \beta - x_i)^2)  + \exp(\alpha + \beta x_i)  \exp(\frac{ -1 }{ 2 \sigma^2 } (t_i - 1/2 \sigma^2 \beta - x_i)^2)  } \\
+    & = \frac{\exp(y_i(\alpha + \beta x_i))  \exp(\frac{ -1 }{ 2 \sigma^2 } (t_i - (y_i - 1/2) \sigma^2 \beta - x_i)^2) }{ \exp(\frac{ -1 }{ 2 \sigma^2 } (t_i + 1/2 \sigma^2 \beta - x_i)^2)  + \exp(\alpha + \beta x_i)  \exp(\frac{ -1 }{ 2 \sigma^2 } (t_i - 1/2 \sigma^2 \beta - x_i)^2) }
+\end{align}
+$$
+
+Using Mathematica, we can simplify this to see that there is no $X_i$ dependency. Thus, we can take the product of this conditional distribution to find the conditional likelihood. Then we would take derivatives with respect to $\alpha$ and $\beta$, setting them to 0 and optimizing. Check the second order conditions to make sure that you get a maximum.
+
+$$
+L(\alpha, \beta | Y_i , T_i) = \prod_{i=1}^{n} y_i F(\alpha + \beta t_i) + (1 - y_i) (1 - F(\alpha + \beta t_i))
+$$
+
+![mathematica](../img/post_img/2020-08-23-ST793-Constructing-Likelihoods/1-mathematica.png)
