@@ -120,12 +120,49 @@ $$
 ## c
 **Find $E(Y \| A = 1), E \\{ Y^\star(1) \\}, E(Y\| A = 0)$, and $E \\{ Y^\star(0) \\}$ for these distributions.**
 
+$$
+\begin{align}
+E(Y|A=1) & = \frac{\frac{5}{18}+\frac{1}{9}}{\frac{1}{18}+\frac{5}{18}+\frac{1}{18}+\frac{1}{9}} \\
+    & = \frac{ 7 }{ 9 }\\ \\
+E(Y^*(1)) & = \frac{1}{36}+\frac{1}{18}+\frac{1}{12}+\frac{ 1 }{ 6 } +\frac{1}{9}+\frac{1}{18}+\frac{1}{6}+\frac{1}{12} \\
+    & = \frac{ 3 }{ 4 } \\ \\
+E(Y|A=0) & = \frac{\frac{1}{12}+\frac{1}{6}}{\frac{1}{12}+\frac{1}{12}+\frac{1}{6}+\frac{1}{6}} \\
+    & = \frac{ 1 }{ 2 }\\ \\
+E(Y^*(0)) & =\frac{1}{36}+\frac{1}{18}+\frac{1}{18}+\frac{1}{9}+\frac{1}{9}+\frac{1}{18}+\frac{1}{18}+\frac{1}{36} \\
+    & = \frac{ 1 }{ 2 }
+\end{align}
+$$
 
 
 ## d
 **Verify that $E \\{ Y^\star(1) \\} = E \\{ E(Y \|X , A = 1) \\}$ and $E \\{ Y^\star(0) \\} = E \\{ E(Y \|X , A = 0) \\}$ for these distributions, where, as in the notes, the outer expectation is with respect to the distribution of $X$.**
 
+Notice that $X$ is binary for $\mathbb I(X = 1) = X$ and $\mathbb I(X=0) = 1-X$.
 
+$$
+\begin{align}
+E(E(Y|X, A = 1)) & = E\Big[ \mathbb  I(X= 1) E(Y | X = 1, A = 1) + \mathbb I(X=0) E(Y|X=0, A=1)\Big] \\
+    & = E\Big[ \mathbb  I(X= 1) P(Y=1, X = 1, A = 1) + \mathbb I(X=0) P(Y=1, X=0, A=1)\Big] \\
+    & = E\Big[ \mathbb  I(X= 1) \frac{ \frac{ 1 }{ 9 } }{ \frac{ 1 }{ 9 } + \frac{ 1 }{ 18 } } + \mathbb I(X=0) \frac{ \frac{ 5 }{ 18 } }{ \frac{ 5 }{ 18 } + \frac{ 1 }{ 18 } }\Big] \\
+    & = E\Big[ \mathbb  I(X= 1) \frac{ \frac{ 1 }{ 9 } }{ \frac{ 1 }{ 9 } + \frac{ 1 }{ 18 } } + \mathbb I(X=0) \frac{ \frac{ 5 }{ 18 } }{ \frac{ 5 }{ 18 } + \frac{ 1 }{ 18 } }\Big] \\
+    & = E\Big[ \frac{ 2 }{ 3 }\mathbb I(X= 1) + \frac{ 5 }{ 6 }\mathbb I(X=0) \Big] \\
+    & = E\Big[ \frac{ 2 }{ 3 }X + \frac{ 5 }{ 6 }(1-X) \Big] \\
+    & = E\Big[  \frac{ 5 }{ 6 }- \frac{ 1 }{ 6 }X \Big] \\
+    & = \frac{ 5 }{ 6 } - \frac{ 1 }{ 6 } E(X) \\
+    & = \frac{ 5 }{ 6 } - \frac{ 1 }{ 6 } (0\cdot P(X = 0) + 1 \cdot P(X=1)) \\
+    & = \frac{5}{6}-\frac{1}{6} \left(\frac{1}{9}+\frac{1}{6}+\frac{1}{18}+\frac{1}{6}\right) \\
+    & = \frac{ 3 }{ 4 } \\
+    & = E(Y^*(1)) \\ \\
+E(E(Y|X, A = 0)) & = E\Big[ \mathbb  I(X= 1) E(Y | X = 1, A = 0) + \mathbb I(X=0) E(Y|X=0, A=0)\Big] \\
+    & = E\Big[ \mathbb  I(X= 1) P(Y=0, X = 1, A = 0) + \mathbb I(X=0) P(Y=0, X=0, A=0)\Big] \\
+    & = E\Big[ \mathbb  I(X= 1) \frac{ \frac{ 1 }{ 6 } }{ \frac{ 1 }{ 6 } + \frac{ 1 }{ 6 } } + \mathbb I(X=0) \frac{ \frac{ 1 }{ 12 } }{ \frac{ 1 }{ 12 } + \frac{ 1 }{ 12 } }\Big] \\
+    & = E\Big[ \mathbb  I(X= 1) \frac{ 1 }{ 2 } + \mathbb I(X=0) \frac{ 1 }{2}\Big] \\
+    & = E\Big[ X \frac{ 1 }{ 2 } + (1-X) \frac{ 1 }{2}\Big] \\
+    & = E\Big[ \frac{ 1 }{ 2 }\Big] \\
+    & = \frac{ 1 }{ 2 } \\
+    & = E(Y^*(0))
+\end{align}
+$$
 
 
 # 2
@@ -143,11 +180,23 @@ $$
 
 **converges in probability to $E \\{ Y^\star(1) \| A = 0 \\}$, the expectation of $Y^\star(1)$ among those observed to receive treatment 0.**
 
+$$
+\begin{align}
+\Big\{ \sum_{i=1}^n (1- A_i) \Big\}^{-1} \sum_{i=1}^n & \Big[ A_i \frac{ \Big( 1 - \pi(X_i) \Big) }{ \pi(X_i) } Y_i \Big] 
+\end{align}
+$$
+
 # 3
 **Consider again the joint distribution of the potential outcomes $Y^\star(1), Y^\star(0), X$, and $A$ given in Problem 1. Identifying $H_1 = X$, consider treatment regime $d$ with rule $d_1(h_1) = 1$ if $h_1 = 1$ and $d_1(h_1) = 0$ if $h_1 = 0$. Find $E \\{ Y^\star(d) \\}$.**
 
 
-
+$$
+\begin{align}
+E(Y^*(d)) & =E\Big(Y^*(1) \mathbb  I(d_1(h_1)=1) \Big) + E\Big(Y^*(0) \mathbb I (d_1(h_1) = 0)\Big)\\
+    & = \left(\frac{1}{36}+\frac{1}{18}+\frac{1}{12}+\frac{1}{6}\right)+\left(\frac{1}{9}+\frac{1}{18}+\frac{1}{18}+\frac{1}{36}\right) \\
+    & = \frac{ 7 }{ 12 }
+\end{align}
+$$
 
 # 4
 **Consider a fixed regime $d$ with true value $\mathcal V(d)$ and the "alternative" IPW estimator $\widehat{\mathcal{V}}_{IPW}(d)$ for the value of a fixed $d$ given in (3.14)**
