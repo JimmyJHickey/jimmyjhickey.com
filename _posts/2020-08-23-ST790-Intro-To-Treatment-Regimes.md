@@ -180,10 +180,25 @@ $$
 
 **converges in probability to $E \\{ Y^\star(1) \| A = 0 \\}$, the expectation of $Y^\star(1)$ among those observed to receive treatment 0.**
 
+Notice that by the no unmeasured confounders assumption, we know that $\\{ Y^\star(1), Y^\star(0) \\} \perp A \| X$. Thus, $P(Y^\star(y)) = P(Y^\star(y) \| (A\|X) )$.
+
 $$
 \begin{align}
-\Big\{ \sum_{i=1}^n (1- A_i) \Big\}^{-1} \sum_{i=1}^n & \Big[ A_i \frac{ \Big( 1 - \pi(X_i) \Big) }{ \pi(X_i) } Y_i \Big] 
+\Big\{ &\sum_{i=1}^n (1- A_i) \Big\}^{-1} \sum_{i=1}^n  \Big[ A_i \frac{ \Big( 1 - \pi(X_i) \Big) }{ \pi(X_i) } Y_i \Big] \\
+& = \Big\{ \sum_{i=1}^n (1- A_i) \Big\}^{-1} \sum_{i=1}^n \Big[ (Y_i^*(1)A_i + Y_i^*(0) (1 - A_i))A_i \frac{ \Big( 1 - \pi(X_i) \Big) }{ \pi(X_i) } \Big] & \text{SUTVA} \\
+& =  \Big\{ \sum_{i=1}^n (1- A_i) \Big\}^{-1} \sum_{i=1}^n \Big[ (Y_i^*(1)A_i^2 + Y_i^*(0) (1 - A_i)A_i) \frac{ \Big( 1 - \pi(X_i) \Big) }{ \pi(X_i) } \Big] \\
+& =  \Big\{ \sum_{i=1}^n (1- A_i) \Big\}^{-1} \sum_{i=1}^n \Big[ Y_i^*(1)A_i \frac{ \Big( 1 - \pi(X_i) \Big) }{ \pi(X_i) } \Big] & A_i = \{0,1\} \\
+& =  \Big\{ \sum_{i=1}^n (1- A_i) \Big\}^{-1} \sum_{i=1}^n \Big[ Y_i^*(1)A_i \frac{ P(A = 0 | X) \Big) }{1 - P(A = 0 | X) } \Big]//
+
+NUC?
 \end{align}
+$$
+
+
+Notice that this is the sample average of $Y^\star(1) \| A = 0$. Thus, by the weak law of large numbers, as $n \rightarrow \infty$,
+
+$$
+\Big\{ \sum_{i=1}^n (1- A_i) \Big\}^{-1} \sum_{i=1}^n \Big[ A_i \frac{ \Big( 1 - \pi(X_i) \Big) }{ \pi(X_i) } Y_i \Big] \stackrel{\text{p}}{\rightarrow} E(Y^*(1) | A = 0)
 $$
 
 # 3
@@ -192,14 +207,14 @@ $$
 
 $$
 \begin{align}
-E(Y^*(d)) & =E\Big(Y^*(1) \mathbb  I(d_1(h_1)=1) \Big) + E\Big(Y^*(0) \mathbb I (d_1(h_1) = 0)\Big)\\
+E(Y^*(d)) & =E\Big(Y^*(1) \mathbb  I(d_1(h_1)=1) \Big) + E\Big(Y^*(0) \mathbb I (d_1(h_1) = 0)\Big) & (3.1)\\
     & = \left(\frac{1}{36}+\frac{1}{18}+\frac{1}{12}+\frac{1}{6}\right)+\left(\frac{1}{9}+\frac{1}{18}+\frac{1}{18}+\frac{1}{36}\right) \\
     & = \frac{ 7 }{ 12 }
 \end{align}
 $$
 
 # 4
-**Consider a fixed regime $d$ with true value $\mathcal V(d)$ and the "alternative" IPW estimator $\widehat{\mathcal{V}}_{IPW}(d)$ for the value of a fixed $d$ given in (3.14)**
+**Consider a fixed regime $d$ with true value $\mathcal V(d)$ and the "alternative" IPW estimator $\widehat{\mathcal{V}}_{IPW\star}(d)$ for the value of a fixed $d$ given in (3.14)**
 
 ## a
 **Take the propensity $\pi_1(h_1)$ to be _known_. Under this condition, using M-estimation theory, find the limiting distribution of**
@@ -219,6 +234,6 @@ $$
 
 **as in (3.12), and let $\widehat \gamma_1$ be the maximum likelihood estimator of $\gamma_1$.**
 
-**Under this condition, using M-estimation theory, deriv the limiting distribution of (1) and give an expression for its variance. Show that the variance you found in (a) is at least as large as the variance here, thus demonstrating the counterintuitive result noted on Slide 134 and more generally that it is preferable on ground of efficiency to estimate the propensity even if it is known.**
+**Under this condition, using M-estimation theory, derive the limiting distribution of (1) and give an expression for its variance. Show that the variance you found in (a) is at least as large as the variance here, thus demonstrating the counterintuitive result noted on Slide 134 and more generally that it is preferable on ground of efficiency to estimate the propensity even if it is known.**
 
 **_Hint:_ You will find it useful to write $\widehat{\mathcal{V}}\_{IPW \star}(d)$ in the simpler form suggested on Slide 133. Then express $\widehat{\mathcal{V}}_{IPW\star}(d)$ equivalently as the solution to an estimating equation and "stack" it with the score equation for ML estimate $\gamma_1$ (e.g. see Slide 109).**
