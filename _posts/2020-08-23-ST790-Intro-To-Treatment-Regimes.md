@@ -237,6 +237,86 @@ $$
 
 **and give an expression for its variance.**
 
+
+Recall that $\mathcal V(d) = \mathbb E(Y^*(d))$and 
+
+$$
+\widehat{\mathcal V}_{IPW*}(d) = \Big[ \sum_{i=1}^n \frac{ \mathcal C_{d,i} }{ \pi_{d,1}(H_{i1}) }\Big]^{-1}  \sum_{i=1}^n \frac{ \mathcal C_{d,i} Y_i }{ \pi_{d,1}(H_{i1}) } , \ (3.14). 
+$$
+
+Where 
+
+$$
+C_d = \mathbb I(A = d(H)) = A\mathbb I(d(H_i) = 1) + (1 - A) \mathbb I(d(H_i) = 0).
+$$
+
+
+Now we want to show that $\widehat {\mathcal V}\_{IPW\star}(d)$ is consistent for $\mathcal V(d)$. Then, by CLT the limiting distribution will be normal, and we will find the estimator asymptotic variance for $\widehat{\mathcal V}\_{IPW\star}(d)$. We can get these properties from M-estimation.
+
+ 
+Since we know the propensity, we also know that
+
+$$
+\mathbb E \Big[ \frac{ \mathcal C_{d} Y }{ \pi_{d,1}(H; \widehat \gamma_1) } \Big] = \mathbb E(Y^*(d))
+$$
+
+by slide 130. And 
+
+$$
+\begin{align}
+\mathbb E \Big[ \frac{ \mathcal C_{d} }{ \pi_{d,1}(H; \widehat \gamma_1) } \Big] & = \mathbb E \Big[ \mathbb E(\frac{ \mathcal C_{d} }{ \pi_{d,1}(H; \widehat \gamma_1) }|H_{1i}) \Big]\\
+	& = \mathbb E( \frac{ 1 }{ \pi_{d,1} } \mathbb E(C_{d,i} | H_{1i})) \\
+	& = \mathbb E(\frac{ 1 }{ \pi_{d,1} } \cdot P(C_{d,i} = 1 | H_{1i})) \\
+	& = \mathbb E(\frac{ 1 }{ \pi_{d,1} } \cdot \pi_{d,1}) \\
+	& = 1.
+\end{align}
+$$
+
+
+Consider the estimating equation
+
+$$
+M(Y_i, \widehat{ \mathcal V}) = (Y_i - \widehat{\mathcal V}) \frac{ C_{d,i} }{ \pi_{d,i} }.
+$$
+
+
+Now we need to check that the expectation is 0 (that it is unbiased for $\mathcal V$).
+
+$$
+\begin{align}
+\mathbb E(M(Y_i, \mathcal V_0)) & = \mathbb E \Big[ (Y_i - \widehat{\mathcal V}) \frac{ C_{d,i} }{ \pi_{d,i} } \Big] \\
+	& = \mathbb E \Big[ Y_i   \frac{ C_{d,i} }{ \pi_{d,i} } \Big] -\mathbb E \Big[ \widehat{\mathcal V} \frac{ C_{d,i} }{ \pi_{d,i} } \Big] \\
+	& = \mathbb E(Y^*(d)) - \mathcal V_0 \\
+	& = \mathcal V(d) - \mathcal V_0 
+ \end{align}
+$$
+
+In order for this expectation to be 0, we need $\mathcal V(d) = \mathcal V_0$, which is what we wanted. Thus we have consistency and asymptotic normality. Now we need to find the asymptotic variance.
+
+From the first order Taylor expansion, the sandwich formula says that the variance will be
+
+$$
+\Sigma = \mathbb E\Big[ \frac{ \partial  M(Y_i, \mathcal V(d)) }{\partial \mathcal V(D)} \Big]^{-1} \mathbb E \Big[ M(Y, \mathcal V(d)) M(Y, \mathcal V(d)) ^T \Big] \mathbb E\Big[ \frac{ \partial  M(Y_i, \mathcal V(d)) }{\partial \mathcal V(D)} \Big]^{-T}.
+$$
+
+
+Notice that in this case we are working with scalars. Now we can work out each piece.
+
+$$
+\begin{align}
+\frac{\partial  M(Y_i, \mathcal V(d)) }{\partial \mathcal V(D)} & = \frac{ \partial  }{\partial \mathcal V(d)} \frac{ C_d Y }{ \pi_{d,1})H_1 } - \frac{ C_d \mathcal V(d) }{ \pi_{d,1})H_1 } \\
+	& = -\frac{ C_{d} }{ \pi_{d,1}(H_1) } \\ \\
+ E\Big[ \frac{ \partial  M(Y_i, \mathcal V(d)) }{\partial \mathcal V(D)} \Big] & = E\Big[ -\frac{ C_{d} }{ \pi_{d,1}(H_1) } \Big] \\
+ 	& = -1
+\end{align}
+$$
+
+Thus our asymptotic variance will be 
+
+$$
+\frac{ 1 }{ (-1)^2 } \mathbb E\Big[ \Big( \frac{ C_d(Y-\mathcal V(d)) }{ \pi_{d,1}(H_1) } \Big)^2 \Big]
+$$
+
 ## b
 **Now take the propensity $\pi_1(h_1)$ to be _unknown_ and modeled by a _correctly specified_ logistic regression model of the form**
 
@@ -249,3 +329,35 @@ $$
 **Under this condition, using M-estimation theory, derive the limiting distribution of (1) and give an expression for its variance. Show that the variance you found in (a) is at least as large as the variance here, thus demonstrating the counterintuitive result noted on Slide 134 and more generally that it is preferable on ground of efficiency to estimate the propensity even if it is known.**
 
 **_Hint:_ You will find it useful to write $\widehat{\mathcal{V}}\_{IPW \star}(d)$ in the simpler form suggested on Slide 133. Then express $\widehat{\mathcal{V}}_{IPW\star}(d)$ equivalently as the solution to an estimating equation and "stack" it with the score equation for ML estimate $\gamma_1$ (e.g. see Slide 109).**
+
+We can start with the same estimating equations above
+
+$$
+\sum_{i=1}^n \frac{ C_{d,i} Y_i }{ \pi_{d,1}(H_{1i}) } - \frac{ C_{d,i} \widehat{\mathcal V}_{IPV*}(d)}{ \pi_{d,1}(H_{1i}) }
+$$
+
+
+We can use the simplification given by (3.15).
+
+$$
+\pi(H_{1i}) = \pi_1(H_{i1})^{d_1(H_{1i})} \Big( 1- \pi_{1}(H_{i1}\Big)^{1-d_{1}(H_{1i})}
+$$
+
+Then we can set up the estimating equation for $\gamma$ using the MLE / score
+
+$$
+\begin{align}
+\ell \lambda_{1i}(h_{1i}; \gamma_1) & = \sum_{i=1}^n \gamma_1^T \widetilde{h}_{1i} - \log(1 + \exp(\gamma_1^T \widetilde h_1)) \\
+\frac{ \partial  \ell }{\partial \gamma_1} & = \sum_{i=1}^n \widetilde h_{1i} - \frac{ 1 }{ 1 + \exp(\gamma_1 \sum_{i=1}^n \widetilde h_{1i}) } \stackrel{\text{set}}{=}0
+\end{align}
+$$
+
+We would then stack them together and find the variance.
+
+After reading the slides and the Boos-Stefanski book, I am still having some trouble setting these problems up. Once I get the estimators, then I know it'll be consistent and asymptotically normal. Then I can proceed to find the variance.
+
+As opposed to part a, in this problem we will be estimating both $\gamma$ and $\mathcal V$, so we will have a stacked vector of estimating equations and an asymptotic covariance matrix (with probably some ugly sandwiching) instead of scalars.
+
+Hopefully in a few weeks I'll be an expert in M-estimation and will be able to come back and figure this one out !
+
+
