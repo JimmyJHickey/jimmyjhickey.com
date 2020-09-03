@@ -180,25 +180,32 @@ $$
 
 **converges in probability to $E \\{ Y^\star(1) \| A = 0 \\}$, the expectation of $Y^\star(1)$ among those observed to receive treatment 0.**
 
-Notice that by the no unmeasured confounders assumption, we know that $\\{ Y^\star(1), Y^\star(0) \\} \perp A \| X$. Thus, $P(Y^\star(y)) = P(Y^\star(y) \| (A\|X) )$.
+We need to find this expression's expectation. Then we can apply the Weak Law of Large Numbers to find what it converges to.
 
 $$
 \begin{align}
-\Big\{ &\sum_{i=1}^n (1- A_i) \Big\}^{-1} \sum_{i=1}^n  \Big[ A_i \frac{ \Big( 1 - \pi(X_i) \Big) }{ \pi(X_i) } Y_i \Big] \\
-& = \Big\{ \sum_{i=1}^n (1- A_i) \Big\}^{-1} \sum_{i=1}^n \Big[ (Y_i^*(1)A_i + Y_i^*(0) (1 - A_i))A_i \frac{ \Big( 1 - \pi(X_i) \Big) }{ \pi(X_i) } \Big] & \text{SUTVA} \\
-& =  \Big\{ \sum_{i=1}^n (1- A_i) \Big\}^{-1} \sum_{i=1}^n \Big[ (Y_i^*(1)A_i^2 + Y_i^*(0) (1 - A_i)A_i) \frac{ \Big( 1 - \pi(X_i) \Big) }{ \pi(X_i) } \Big] \\
-& =  \Big\{ \sum_{i=1}^n (1- A_i) \Big\}^{-1} \sum_{i=1}^n \Big[ Y_i^*(1)A_i \frac{ \Big( 1 - \pi(X_i) \Big) }{ \pi(X_i) } \Big] & A_i = \{0,1\} \\
-& =  \Big\{ \sum_{i=1}^n (1- A_i) \Big\}^{-1} \sum_{i=1}^n \Big[ Y_i^*(1)A_i \frac{ P(A = 0 | X) \Big) }{1 - P(A = 0 | X) } \Big]//
-
-NUC?
+\mathbb E(1-A) &= 1 - \mathbb E(A) \\
+    & = 1 - P(A = 1) \\
+    & = 1 - P(A = 1) \\
+    & = 1 - \pi(X) \\
+\mathbb E(A Y \frac{ 1 - \pi(X) }{ \pi(X) }) & = \mathbb E(A (Y^*(1)A + Y^*(0)(1-A)) \frac{ 1 - \pi(X) }{ \pi(X) })) & \text{SUTVA} \\
+    & = \mathbb E( (Y^*(1)A^2 + Y^*(0)(1-A)A) \frac{ 1 - \pi(X) }{ \pi(X) })) \\
+    & = \mathbb E(Y^*(1)A \frac{ 1 - \pi(X) }{ \pi(X) })) & A = \{0,1\} \\
+    & = \mathbb E(Y^*(1) A \frac{ 1 }{ \pi(X)} - Y^{*}(1) A) \\
+    & = \mathbb E(Y^*(1) \frac{ A }{ \pi(X)} ) - \mathbb E(Y^{*}(1) A) \\
+    & = \mathbb E(Y^*(1) ) - \mathbb E(Y^{*}(1) A) \\
+    & = \mathbb E(Y^*(1) (1-A)) \\
+    & = \mathbb E \Big(\mathbb  E(Y^*(1) (1-A) |A) \Big) \\
+    & = \mathbb E(Y^*(1) (1-A) |A = 1) P(A = 1) + \mathbb E(Y^*(1) (1-A) |A = 0) P(A = 0) \\
+    & = \mathbb E(Y^*(1) (1-1) |A = 1) P(A = 1) + \mathbb E(Y^*(1) (1-0) |A = 0) (1 - P(A = 1)) \\
+    & = \mathbb \mathbb E(Y^*(1)|A = 0) (1 -\pi(X))
 \end{align}
 $$
 
-
-Notice that this is the sample average of $Y^\star(1) \| A = 0$. Thus, by the weak law of large numbers, as $n \rightarrow \infty$,
+Thus by WLLN and  $X_n \stackrel{ \text{p}}{\rightarrow} X, \ Y_n \stackrel{ \text{p}}{\rightarrow} Y \Rightarrow X_nY_n \stackrel{ \text{p}}{\rightarrow} XY$,
 
 $$
-\Big\{ \sum_{i=1}^n (1- A_i) \Big\}^{-1} \sum_{i=1}^n \Big[ A_i \frac{ \Big( 1 - \pi(X_i) \Big) }{ \pi(X_i) } Y_i \Big] \stackrel{\text{p}}{\rightarrow} E(Y^*(1) | A = 0)
+\Big\{ \sum_{i=1}^n (1- A_i) \Big\}^{-1} \sum_{i=1}^n \Big[ A_i \frac{ \Big( 1 - \pi(X_i) \Big) }{ \pi(X_i) } Y_i \Big] \stackrel{ \text{p}}{\rightarrow} \frac{ 1 }{ 1 - \pi(X) } \mathbb E(Y^*(1)|A = 0) (1 -\pi(X)) = \mathbb E(Y^*(1)|A = 0).
 $$
 
 # 3
