@@ -348,11 +348,11 @@ Then we can set up the estimating equation for $\gamma$ using the MLE / score
 $$
 \begin{align}
 \ell \lambda_{1i}(h_{1i}; \gamma_1) & = \sum_{i=1}^n \gamma_1^T \widetilde{h}_{1i} - \log(1 + \exp(\gamma_1^T \widetilde h_1)) \\
-\frac{ \partial  \ell }{\partial \gamma_1} & = \sum_{i=1}^n \widetilde h_{1i} - \frac{ 1 }{ 1 + \exp(\gamma_1 \sum_{i=1}^n \widetilde h_{1i}) } \stackrel{\text{set}}{=}0
+\frac{ \partial  \ell }{\partial \gamma_1} & = \sum_{i=1}^n \widetilde h_{1i} - \frac{ 1 }{ 1 + \exp(\gamma_1 \sum_{i=1}^n \widetilde h_{1i}) }
 \end{align}
 $$
 
-We would then stack them together and find the variance.
+Then show that the expectation of this score function is equal to 0. We would then stack them together and find the variance.
 
 After reading the slides and the Boos-Stefanski book, I am still having some trouble setting these problems up. Once I get the estimators, then I know it'll be consistent and asymptotically normal. Then I can proceed to find the variance.
 
