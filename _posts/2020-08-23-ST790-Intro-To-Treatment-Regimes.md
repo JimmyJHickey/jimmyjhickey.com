@@ -198,15 +198,20 @@ $$
     & = \mathbb E \Big(\mathbb  E(Y^*(1) (1-A) |A) \Big) \\
     & = \mathbb E(Y^*(1) (1-A) |A = 1) P(A = 1) + \mathbb E(Y^*(1) (1-A) |A = 0) P(A = 0) \\
     & = \mathbb E(Y^*(1) (1-1) |A = 1) P(A = 1) + \mathbb E(Y^*(1) (1-0) |A = 0) (1 - P(A = 1)) \\
-    & = \mathbb \mathbb E(Y^*(1)|A = 0) (1 -\pi(X))
+    & = \mathbb E(Y^*(1)|A = 0) (1 -\pi(X))
 \end{align}
 $$
 
 Thus by WLLN and  $X_n \stackrel{ \text{p}}{\rightarrow} X, \ Y_n \stackrel{ \text{p}}{\rightarrow} Y \Rightarrow X_nY_n \stackrel{ \text{p}}{\rightarrow} XY$,
 
 $$
-\Big\{ \sum_{i=1}^n (1- A_i) \Big\}^{-1} \sum_{i=1}^n \Big[ A_i \frac{ \Big( 1 - \pi(X_i) \Big) }{ \pi(X_i) } Y_i \Big] \stackrel{ \text{p}}{\rightarrow} \frac{ 1 }{ 1 - \pi(X) } \mathbb E(Y^*(1)|A = 0) (1 -\pi(X)) = \mathbb E(Y^*(1)|A = 0).
+\begin{align}
+\Big\{ \sum_{i=1}^n (1- A_i) \Big\}^{-1} & \sum_{i=1}^n \Big[ A_i \frac{ \Big( 1 - \pi(X_i) \Big) }{ \pi(X_i) } Y_i \Big] \stackrel{ \text{p}}{\rightarrow} \\
+	& \frac{ 1 }{ 1 - \pi(X) } \mathbb E(Y^*(1)|A = 0) (1 -\pi(X)) = \mathbb E(Y^*(1)|A = 0).
+\end{align}
 $$
+
+
 
 # 3
 **Consider again the joint distribution of the potential outcomes $Y^\star(1), Y^\star(0), X$, and $A$ given in Problem 1. Identifying $H_1 = X$, consider treatment regime $d$ with rule $d_1(h_1) = 1$ if $h_1 = 1$ and $d_1(h_1) = 0$ if $h_1 = 0$. Find $E \\{ Y^\star(d) \\}$.**
