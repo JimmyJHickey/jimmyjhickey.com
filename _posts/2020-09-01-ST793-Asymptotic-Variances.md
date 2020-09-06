@@ -191,7 +191,7 @@ $$
 # 2.42
 **Use simulation to verify that the inverse information matrix Example 2.21 (p. 78) is correct when $\mu = 1$ and $\sigma = 1$. One approach is to generate samples of size $n=100$ (or larger) form a $\text{normal}(1,1)$ distribution and exponentiate to get lognormal data. Then form the log likelihood and find the estimates $\mu, \sigma^2, \lambda$. Repeat for 1000 replications giving a data matrix of size 1000 by 3 estimates. Compute the sample covariance matrix of these and compare it to the inverse of the given information matrix.**
 
-
+See code https://github.com/JimmyJHickey/grad-scripts/blob/master/st793-advanced-inference/hw3/hw3.R.
 
 
 
