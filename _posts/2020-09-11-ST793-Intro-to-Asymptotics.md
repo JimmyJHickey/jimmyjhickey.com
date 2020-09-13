@@ -35,7 +35,8 @@ $$
 \begin{align}
 \lim_{n \rightarrow \infty} P\Big(|\widehat \beta - \beta| > \epsilon) & = \lim_{n \rightarrow \infty} P(\frac{ | \sum_{i=1}^n (x_i - \overline{ x }) e_i |}{ \sum_{i=1}^n (x_i - \overline{ x })^2} > \epsilon\Big) \\
     & = \lim_{n \rightarrow \infty} P\Big(| \sum_{i=1}^n (x_i - \overline{ x }) e_i | >  \sum_{i=1}^n (x_i - \overline{ x })^2 \epsilon\Big) \\
-    & \leq \lim_{n \rightarrow \infty} \frac{ \text{Var} \Big( \Big( \sum_{i=1}^n (x_i - \overline{ x })e_i \Big)^2 \Big) }{ \epsilon^2 \Big( \sum_{i=1}^n (x_i - \overline{ x })^2 \Big)^2 } \\
+    & \leq \lim_{n \rightarrow \infty} \frac{ \text{Var} \Big( \sum_{i=1}^n (x_i - \overline{ x })e_i  \Big) }{ \epsilon^2 \Big( \sum_{i=1}^n (x_i - \overline{ x })^2 \Big)^2 } \\
+    & = \lim_{n \rightarrow \infty} \frac{ \sum_{i=1}^n (x_i - \overline{ x })^2 \sigma^2  }{ \epsilon^2 \Big( \sum_{i=1}^n (x_i - \overline{ x })^2 \Big)^2 } \\
     & = \lim_{n \rightarrow \infty} \frac{ \sigma^2 \sum_{i=1}^n(x_i - \overline{ x })^2 }{ \epsilon^2 \Big( \sum_{i=1}^n (x_i - \overline{ x })^2 \Big)^2 } \\
     & = \lim_{n \rightarrow \infty} \frac{ \sigma^2 }{ \epsilon^2 \Big( \sum_{i=1}^n (x_i - \overline{ x })^2 \Big) }
 \end{align}
