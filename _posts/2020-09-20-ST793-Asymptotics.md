@@ -171,7 +171,7 @@ g\Big(
 \sqrt{ n } \mu_2 \\
 0
 \end{bmatrix}\Bigg)
-= AN(0, \mu_2^2 \sigma^2).
+= AN(0, \mu_2^2 \sigma_1^2).
 $$
 
 # 5.37
@@ -211,7 +211,7 @@ We will start by showing the hint.
 
 $$
 \begin{align}
-P(\sqrt{ 2 } (X_1 + \dots + X_n) \leq y) & =P ( \sqrt{ 2 }(\frac{ 1 }{ 2 }B_2 + \dots + (\frac{ 1 }{ 2 })^{n/2} B_n  )\leq y ) \\
+P(\sqrt{ 2 } (X_2 + \dots + X_n) \leq y) & =P ( \sqrt{ 2 }(\frac{ 1 }{ 2 }B_2 + \dots + (\frac{ 1 }{ 2 })^{n/2} B_n  )\leq y ) \\
     & = P ( (\frac{ 1 }{ 2 })^{1/2} B_2 + \dots + (\frac{ 1 }{ 2 })^{(n-1)/2} B_n  \leq y ) \\
     & = P ( (\frac{ 1 }{ 2 })^{1/2} B_1 + \dots + (\frac{ 1 }{ 2 })^{(n-1)/2} B_{n-1}  \leq y ) & B_i \text{ iid} \\
     & = P(X_1 + \dots + X_{n-1} \leq y) \\
@@ -324,7 +324,8 @@ $$
 (1- h_{ii}) X_i \beta - \sum_{j \neq i} h_{ij} X_j \beta & =  X_i \beta - h_{ii} X_i \beta - \sum_{j \neq i} h_{ij} X_j \beta \\
     & = X_i \beta - \sum_{j=1}^n h_{ij} X_j \beta \\
     & = X_i \beta - \Big( \sum_{j=1}^n h_{ij} X_j \Big) \beta \\
-    & =  X_i \beta - \Big( HX\Big)_i \beta \\
+    & =  X_i \beta - \Big( H_i X\Big) \beta \\
+    & =  X_i \beta - \Big( H X\Big)_i \beta \\
     & = X_i \beta - X_i \beta \\
     & = 0
 \end{align}
