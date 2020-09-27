@@ -103,7 +103,21 @@ Notice that the support of $F(y; \sigma)$ does not depend on $\sigma$. ✅
  
 # 6.3
 
+Recall the definition of the derivative
 
+$$
+\frac{ \partial  }{\partial \theta} f(y; \theta) = \lim_{n \rightarrow \infty} \frac{ f(y; \theta + 1/n) - f(y;\theta) }{ 1/n } = \lim_{n\rightarrow \infty} f_n(y; \theta)
+$$
+
+We know that $\| \frac{ \partial f(y;\theta) }{\partial \theta} \| = \|  f_n(y; \theta)\| \leq g_1(y)$ for all $\theta$ in a neighborhood around $\theta_0$. Now we can directly apply the dominated convergence theorem.
+
+$$
+\begin{align}
+\lim_{n\rightarrow \infty} \int f_n(y;\theta) dy & = \int f dy \\
+    & \text{or} \\
+\frac{ \partial  }{\partial \theta} \int f(y; \theta) dy & = \int \frac{ \partial  }{\partial \theta} f(y;\theta) dy
+\end{align}
+$$
 
 
 # 3.1
@@ -216,9 +230,12 @@ T_S & = S(\widetilde p)^T I_T(\widetilde p)^{-1} S(\widetilde p) \\
     & = \frac{ (1 - \widetilde p y_1)^2 + (1 - \widetilde p y_2)^2 }{ 1-\widetilde p } \\
     & = \frac{ 1 }{ 1 - \widetilde p } (2 - 2 \widetilde p y_1 - 2 \widetilde p y_2 + (\widetilde p y_1)^2 + (\widetilde p y_2)^2 ) \\
     & = \frac{ 1 }{ 1 - \widetilde p } (\widetilde p^2(y_1^2 + y_2^2) - 2 \widetilde p(y_1 + y_2) + 2 ) \\
-    & = \frac{ 1 }{ 1 - \widetilde p } ((\frac{ 2 }{ y_1 +  y_2})^2(y_1^2 + y_2^2) - 2 \widetilde (\frac{ 2 }{ y_1 +  y_2})^2(y_1 + y_2) + 2 ) \\
-    & = \frac{ 1 }{ 1 - \widetilde p } \frac{ 2 (y_1 - y_2)^2 }{ (y_1 + y_2)^2 } \\
-    & =  \frac{ \widetilde p^2 }{ 1 - \widetilde p } (Y_1 - Y_2)^2
+    & = \frac{ 1 }{ 1 - \widetilde p } ((\frac{ 2 }{ y_1 +  y_2})^2(y_1^2 + y_2^2) - 2 (\frac{ 2 }{ y_1 +  y_2})2(y_1 + y_2) + 2 ) \\
+    & = \frac{ 1 }{ 1 - \widetilde p } (\frac{ 4 }{ (y_1+y_2)^2 } (y_1^2+y_2^2) -4 + 2   ) \\
+    & = \frac{ 1 }{ 1 - \widetilde p } (\frac{ 4 }{ (y_1+y_2)^2 } (y_1^2+y_2^2) -\frac{ 2(y_1+y_2)^2 }{ (y_1+y_2)^2 }  ) \\
+    & = \frac{ 1 }{ 1 - \widetilde p } \frac{ 4y_1^2 + y_2^2 - 2y_1^2 - 4y_1 y_2 - 2y_2^2 }{ (y_1+y_2)^2 } \\
+    & = \frac{ 1 }{ 1 - \widetilde p } \frac{ 2(y_1-y_2)^2 }{ (y_1+y_2)^2 } \\
+    & =  \frac{ \widetilde p^2 }{ 2(1 - \widetilde p) } (Y_1 - Y_2)^2
 \end{align} 
 $$
 
