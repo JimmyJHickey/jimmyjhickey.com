@@ -1,8 +1,8 @@
 ---
 layout: post
 comments: false
-title: Example Problems an Introduction to Dynamic Treatment Regimes
-description: ST790 Homework 1 an Introduction to Dynamic Treatment Regimes
+title: Example Problems on Introduction to Dynamic Treatment Regimes
+description: ST790 Homework 1 on Introduction to Dynamic Treatment Regimes
 tags: ST793 Likelihoods Statistics
 category: ST790-Dynamic-Treatment-Regimes
 ---
