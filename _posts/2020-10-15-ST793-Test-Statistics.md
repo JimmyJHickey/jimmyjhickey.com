@@ -157,10 +157,167 @@ $$
 <div style="text-align: right"> 🐙 </div>
 
 # 3
-**Assume the data are $\{ (y_i, x_i), i = 1, \dots, n$ and arise from the regression model**
+**Assume the data are $\{ (y\_i, x\_i), i = 1, \dots, n\}$ and arise from the regression model**
 
 $$
 Y_i = x_i^T \beta + epsilon_i, \ \epsilon_i \stackrel{ \text{iid}}{\sim} N(0, \sigma^2)
 $$
 
 **where $\beta^T = (\beta_1^T, \beta_2^T)$ is a $p$-dimensional parameter and $\beta_1$ is the component corresponding to covariates that are of interest. Using the three classical tests. Relate these tests ot other commmon testing procedures that are used in this setting.**
+
+
+Take $\beta = \begin{bmatrix} \beta_1^T & \beta_2^T \end{bmatrix}$. We are also taking $\sigma^2$ to be unknown. So take $\theta = \begin{bmatrix}
+\beta & \sigma^2
+\end{bmatrix}^T$. We will be testing
+
+$$
+H_0: \beta_1 = \beta_{10} \text{ vs. } H_1: \beta_1 \neq \beta_{10}.
+$$
+
+ Let's start by finding the log likelihood.
+
+$$
+\begin{align}
+\ell(\theta) &= - n \log(2 \pi) - \frac{ n }{ 2 } \log(\sigma^2) - \frac{ 1 }{ 2 \sigma^2 } \Big[ (Y- X\beta)^T(Y - X\beta) \Big] \\
+    & = - n \log(2 \pi) - \frac{ n }{ 2 } \log(\sigma^2) - \frac{ 1 }{ 2 \sigma^2 } \Big[ Y^T Y - 2 Y^T X \beta + \beta^T X^T X \beta \Big]
+\end{align}
+$$
+
+In order to find our Wald test statistic, we need to find the unrestricted MLE and information matrix. Derivative time!
+
+$$
+\begin{align}
+\frac{ \partial \ell }{\partial \beta} & = \frac{ 1 }{ \sigma^2 }(X^T Y - X^T X \beta) \\
+\frac{ \partial \ell }{\partial \sigma^2} & = \frac{ -n }{ 2 } \frac{ 1 }{  \sigma^2} + \frac{ 1 }{ 2 (\sigma^2)^2 } \Big[ (Y- X\beta)^T(Y - X\beta) \Big] \\
+\frac{ \partial ^2 \ell }{\partial \beta \beta^T} & = -\frac{ 1 }{ \sigma^2 } X^T X \\
+\frac{ \partial ^2 \ell }{\partial (\sigma^2)^2} & = \frac{ n }{ 2 } \frac{ 1 }{ (\sigma^2)^2} - \frac{ 1 }{ (\sigma^2)^3 } \Big[ (Y- X\beta)^T(Y - X\beta) \Big] \\
+\frac{ \partial^2 \ell }{\partial \beta \ell } & = -\frac{ 1 }{ 2 (\sigma^2)^2 }(-2X^T Y + 2(X^T X)\beta)
+\end{align}
+$$
+
+Solving the first derivative with respect to $\beta$ gives $\widehat \beta = (X^TX)^{-1}X^T Y$. Similarly, $ \widehat \sigma^2 = \frac{ 1 }{ n} (Y-X^T \beta)^T (Y - X^T \beta)$.
+
+Notice that $\frac{ (Y-X\beta)^T(Y-X\beta) }{ \sigma^2 } \sim \chi^2_n$. This will make our expectations easier. Now we can find our information matrix.
+
+$$
+\begin{align}
+I_T & = \begin{bmatrix}
+-E(\frac{ \partial ^2 }{\partial \beta^T \partial \beta}) & -E(\frac{ \partial ^2 \ell }{\partial \beta \partial \sigma^2}) \\
+-E(\frac{ \partial ^2 \ell }{\partial \beta \partial \sigma^2}) \\ & -E(\frac{ \partial ^2 \ell }{\partial (\sigma^2})^2 \\
+\end{bmatrix} \\
+    & = \begin{bmatrix}
+    \frac{ 1 }{ \sigma^2 } X^T X & 0 \\
+    0 & \frac{n }{ 2(\sigma^2)^2 }
+    \end{bmatrix} \\
+    & = \frac{ 1 }{ \sigma^2 } 
+    \left[\begin{array}{c | c c}
+    [X^T X]_{11} & [X^T X]_{12} & 0 \\ \hline
+    [X^T X]_{21} & [X^T X]_{22} & 0 \\
+    0 & 0 & \frac{ n }{ \sigma^2 }
+    \end{array} \right] \\
+       & = \frac{ 1 }{ \sigma^2 } 
+    \left[\begin{array}{c c}
+    I_{11} & I_{12} \\ 
+    I_{21} & I_{22}
+    \end{array} \right]
+\end{align}
+$$
+
+Then our Wald test statistics is
+
+$$
+\begin{align}
+T_W & = ( \widehat \beta_1 - \beta_{10})^T (I_T^{11}(\widehat \theta))^{-1}( \widehat \beta_1 - \beta_{10}) \\
+    & = ( [(X^TX)^{-1}X^T Y]_1 - \beta_{10})^T (I_T^{11}(\widehat \theta))^{-1}( [(X^TX)^{-1}X^T Y]_1 - \beta_{10}) \\ \\
+(I_T^{11}(\widehat \theta))^{-1} & = I_{T , 11}( \widehat \theta) - I_{T , 12}( \widehat \theta) I_{T , 22}( \widehat \theta)^{-1} I_{T , 21}( \widehat \theta) \\
+    & = \frac{ 1 }{ \widehat \sigma^2 } \Bigg([X^T X]_{11} - \begin{bmatrix}
+    [X^T X]_{12} & 0
+    \end{bmatrix} 
+    \begin{bmatrix}
+    [X^T X]_{22} & 0 \\
+    0 & \frac{ n }{ 2 \widehat \sigma^2 }
+    \end{bmatrix}^{-1}\begin{bmatrix}
+    [X^T X]_{12} \\ 0
+    \end{bmatrix} 
+    \Bigg) \\
+    & = \frac{ 1 }{ \widehat \sigma^2 } \Bigg([X^T X]_{11} - [X^T X]_{12} [X^T X]_{22}^{-1} [X^T X]_{12} \Bigg) \\
+\end{align}
+$$
+
+Notice that $T_W$ looks like the numerator of an F-test of the form $H_0: K^T b = m$. 
+
+Now we can find our score statistic. We will need to find our restricted MLEs. For this, we will split $X\beta = X_1 \beta_1 + X_2 \beta_2$ where $X_1$ is the columns in $X$ corresponding to the covariates of $\beta_1$ and simialry for $X_2$. Our restricted MLE is
+
+$$
+\widetilde \theta = \begin{bmatrix}
+\beta_{10} \\ \widetilde \beta_2 \\ \widetilde \sigma^2
+\end{bmatrix}
+\text{ such that }
+\begin{bmatrix}
+\text{something} \\ 0 \\ 0
+\end{bmatrix}.
+$$
+
+We can rewrite our likelihood as 
+
+$$
+\begin{align}
+\ell(\theta) & = c + \frac{ -n }{ 2 } \log (\sigma^2) - \frac{ 1 }{ 2 \sigma^2 } (Y - X_1 \beta_1 - X_2 \beta_2)^T(Y - X_1 \beta_1 - X_2 \beta_2) \\
+    & = c + \frac{ -n }{ 2 } \log (\sigma^2) - \frac{ 1 }{ 2 \sigma^2 } \Big( Y^T Y - Y^T X_1 \beta_1 - Y^T X_2 \beta_2 - \beta^T_1 X_1^T X_1 \beta_1 + \beta_1^T X_1^T X_2 \beta_2 - \beta_2^T X_2^T Y + \beta_2^T X_2 X_1 \beta_1 + \beta_2^T X_2^T X_2 \beta_2 \Big)\\
+\end{align}
+$$
+
+Now we can take our derivatives again.
+
+$$
+\begin{align}
+\frac{ \partial \ell }{\partial \beta_1} & = -\frac{ 1 }{ 2\sigma^2 }(-2X_1^T Y + 2 X_1^T X_1 \beta_1 + 2 X_1^T X_2 \beta_2) \\
+\frac{ \partial \ell }{\partial \beta_2} & = -\frac{ 1 }{ 2\sigma^2 }(-2X_2^T Y + 2 X_2^T X_2 \beta_2 + 2 X_2^T X_1 \beta_1) \\
+\frac{ \partial \ell }{\partial \sigma^2} & = \frac{ -n }{ 2 (\sigma^2) } +\frac{ 1 }{ 2 (\sigma^2)^2 } (Y - X_1 \beta_1 - X_2 \beta_2)^T(Y - X_1 \beta_1 - X_2 \beta_2) \\ 
+\frac{ \partial^2 \ell }{\partial \beta_1^T \beta_1} & = \frac{ -1 }{ \sigma^2 } X_1^T X_1 \\
+\frac{ \partial^2 \ell }{\partial \beta_2^T \beta_2} & = \frac{ -1 }{ \sigma^2 } X_2^T X_2 \\
+\frac{ \partial^2 \ell }{\partial (\sigma^2)^2} & = \frac{ n }{ 2 (\sigma^2)^2 } -\frac{ 1 }{  (\sigma^2)^3 } (Y - X_1 \beta_1 - X_2 \beta_2)^T(Y - X_1 \beta_1 - X_2 \beta_2) \\
+\frac{ \partial^2 \ell }{\partial \beta_1^T \beta_2} & = \frac{ -1 }{ \sigma^2 } X_1^T X_2 \\
+\frac{ \partial^2 \ell }{\partial \beta_2^T \beta_1} & = \frac{ -1 }{ \sigma^2 } X_2^T X_1 \\
+\end{align}
+$$
+
+Solving the first order equations gives $\widetilde \beta_2 = (X_2^T X_2)^{-1}(X_2^T Y - X_2^T X_1 \beta_{10}$ and $\widetilde \sigma^2 = \widehat \sigma^2$. Now we can calculate our information matrix.
+
+$$
+\begin{align}
+I_T & = \frac{ 1 }{ \widetilde \sigma^2 } \left[ 
+\begin{array}{ c | c c  }
+X_1 ^T X_1 & X_1^T X_2 & 0 \\ \hline
+X_2^T X_1 & X_2 X_2 & 0 \\
+0 & 0 & \frac{n }{ 2 \sigma^2 }
+\end{array}
+\right] \\
+       & = \frac{ 1 }{ \widetilde \sigma^2 } 
+    \left[\begin{array}{c c}
+    I_{11} & I_{12} \\ 
+    I_{21} & I_{22}
+    \end{array} \right]
+\end{align}
+$$
+
+Thus our score statistic is
+
+$$
+\begin{align}
+T_S & = S_1(\widetilde \theta)^T (I_{T , 11}( \widetilde  \theta) - I_{T , 12}( \widetilde \theta) I_{T , 22}( \widetilde \theta)^{-1} I_{T , 21}( \widetilde \theta))^{-1} S_1(\widetilde \theta) \\
+    &= \Big[ \frac{ -1 }{ 2 \widetilde \sigma^2 } (-2X_1^T Y + 2 X_1^T X_1 \beta_{10} + 2 X_1^T X_2 \widetilde \beta_2\Big]^T \\
+    & \cdot \Big[ \frac{ 1 }{ \widetilde \sigma^2 } - \frac{ 1 }{ \widetilde \sigma^2 } X_2^T X_1 (X_2^T X_2)^{-1} X_1^T X_2 \Big]^{-1} \\
+    & \cdot \Big[ \frac{ -1 }{ 2 \widetilde \sigma^2 } (-2X_1^T Y + 2 X_1^T X_1 \beta_{10} + 2 X_1^T X_2 \widetilde \beta_2\Big].
+\end{align}
+$$
+
+Finally, we can put these together to get the likelihood ratio test statistic.
+
+$$
+\begin{align}
+T_{LR} & = -2(\ell(\widetilde \theta) - \ell(\widehat \theta)) \\
+    & = -2 \Big[ \frac{ -n }{ 2 } \log( \widetilde \sigma^2) - \frac{ 1 }{ 2 \widetilde \sigma^2 } \Big( (Y - X_1 \beta_{10} - X_2 \widetilde \beta_2)^T (Y - X_1 \beta_{10} - X_2 \widetilde \beta_2)\Big) - n\log(2\pi) + \frac{ -n }{ 2 } \log( \widehat  \sigma^2)+ \frac{ 1 }{ 2 \widehat \sigma^2 }\Big( (Y-X \widehat \beta)^T(Y-X \widehat \beta) \Big) + n\log(2\pi)\Big] \\
+    & = -2 \Big[ - \frac{ 1 }{ 2 \widetilde \sigma^2 } \Big( (Y - X_1 \beta_{10} - X_2 \widetilde \beta_2)^T (Y - X_1 \beta_{10} - X_2 \widetilde \beta_2)\Big) + \frac{ 1 }{ 2 \widehat \sigma^2 }\Big( (Y-X \widehat \beta)^T(Y-X \widehat \beta) \Big) \Big]
+\end{align}
+$$
