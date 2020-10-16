@@ -70,7 +70,7 @@ S_j(\widetilde \theta) = S_j (\widehat \theta) + S'_j(\theta^{**}_j) (\widetilde
 $$
 
 
-where $\theta^{* *}\_j$ is on the line connecting $\widetilde \theta$ and $\widehat \theta$. Now we have a system of equations equivalent to the vector form we used before. Because $\theta^{* *}\_j \stackrel{ \text{p}}{\rightarrow}\theta\_0$ for each $j$, it follows that $S'(\theta^{* *}\_j) \stackrel{ \text{p}}{\rightarrow} E(S'\_j(\theta\_0)$ and $\widetilde I^*\_n \stackrel{ \text{p}}{\rightarrow} I(\theta\_0)$.
+where $\theta^{\* \*}\_j$ is on the line connecting $\widetilde \theta$ and $\widehat \theta$. Now we have a system of equations equivalent to the vector form we used before. Because $\theta^{\* \*}\_j \stackrel{ \text{p}}{\rightarrow}\theta\_0$ for each $j$, it follows that $S'(\theta^{\* \*}\_j) \stackrel{ \text{p}}{\rightarrow} E(S'\_j(\theta\_0))$ and $\widetilde I^*\_n \stackrel{ \text{p}}{\rightarrow} I(\theta\_0)$.
 
 Thus,
 
