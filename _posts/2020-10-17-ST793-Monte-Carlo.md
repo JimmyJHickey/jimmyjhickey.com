@@ -32,7 +32,7 @@ $$
 **where $\sigma^2_n = \text{Var}(  V )$ and $\mu_n = E(V)$.**
 
 # 9.13
-**In section 9.5.3 (p. 380), the phrase "mainly random noise" was used to describe the third decimal place of estimated convergence probabilities based on $N = 1000$ Monte Carlo replications. To quantify this phrase, suppose that $Y$ is $\text{binomial}(1000, 0.95)$ and $Y / 1000$ is the estimate of interest. Model the act of rounding from three decimal places to two as adding an independent uniform random variable $U$ on $(-0.005, 0.005)$ to $Y / 1000$. Show that the increase in the standard deviation of $Y/1000 + U$ compared to the standard deviation of $Y / 1000$ is 8.4$.**
+**In section 9.5.3 (p. 380), the phrase "mainly random noise" was used to describe the third decimal place of estimated convergence probabilities based on $N = 1000$ Monte Carlo replications. To quantify this phrase, suppose that $Y$ is $\text{binomial}(1000, 0.95)$ and $Y / 1000$ is the estimate of interest. Model the act of rounding from three decimal places to two as adding an independent uniform random variable $U$ on $(-0.005, 0.005)$ to $Y / 1000$. Show that the increase in the standard deviation of $Y/1000 + U$ compared to the standard deviation of $Y / 1000$ is 8.4%.**
 
 
 # 7.2
