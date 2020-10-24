@@ -3,7 +3,7 @@ layout: post
 comments: false
 title: Example Problems on Monte Carlo Simulation and M-Estimators
 description: ST793 Homework 8 on Monte Carlo Simulation and M-Estimators
-tags: ST793 Testing Asymptotics Monte Carlo Statistics M-Estimators
+tags: ST793 Asymptotics Monte Carlo Statistics M-Estimators
 category: ST793
 ---
 
