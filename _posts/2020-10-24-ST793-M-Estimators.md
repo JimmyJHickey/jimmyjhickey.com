@@ -67,12 +67,50 @@ $$
 
 **No proofs required.**
 
+Recall that
 
+$$
+S(Y; \theta) = 2 w_1 \Big[ \frac{ 1 }{n  }\sum_{i=1}^{n} \psi_1(Y_{i};\theta) \Big] \Big[ \frac{ 1 }{n  }\sum_{i=1}^{n} \psi_1'(Y_{i};\theta) \Big] + 2 w_2 \Big[ \frac{ 1 }{n  }\sum_{i=1}^{n} \psi_2(Y_{i};\theta) \Big]\Big[ \frac{ 1 }{n  }\sum_{i=1}^{n} \psi_2'(Y_{i};\theta) \Big]
+$$
+
+Then,
+
+$$
+\begin{align}
+S(Y; \theta) & = 2 w_1 \Big[ \frac{ 1 }{n  }\sum_{i=1}^{n} \psi_1(Y_{i};\theta) \Big] \Big[ \frac{ 1 }{n  }\sum_{i=1}^{n} \psi_1'(Y_{i};\theta) \Big] + 2 w_2 \Big[ \frac{ 1 }{n  }\sum_{i=1}^{n} \psi_2(Y_{i};\theta) \Big]\Big[ \frac{ 1 }{n  }\sum_{i=1}^{n} \psi_2'(Y_{i};\theta) \Big] \\
+    &  =2 w_1 \frac{ 1 }{ n^2 } \sum_{i=1}^{n} \sum_{j=1}^{n} \psi_1(Y_{i};\theta) \psi_1'(Y_{j};\theta)  + 2 w_2 \frac{ 1 }{ n^2 } \sum_{i=1}^{n} \sum_{j=1}^{n}\psi_2(Y_{i};\theta) \psi_2'(Y_{j};\theta) \\
+    & = \frac{ 1 }{ n }\sum_{i=1}^{n} \frac{ 1 }{ n }\sum_{j=1}^{n} 2 w_1 \psi_1(Y_{i};\theta) \psi_1'(Y_{j};\theta)  + 2 w_2 \frac{ 1 }{ n^2 } \psi_2(Y_{i};\theta) \psi_2'(Y_{j};\theta)
+\end{align}
+$$
+
+
+So we have
+
+$$
+h(Y_i; \theta_0) = \frac{ 1 }{ n }\sum_{j=1}^{n} 2 w_1 \psi_1(Y_{i};\theta) \psi_1'(Y_{j};\theta)  + 2 w_2 \frac{ 1 }{ n^2 } \psi_2(Y_{i};\theta) \psi_2'(Y_{j};\theta).
+$$
+
+A full proof would require showing that this has expectation 0 and finite variance. 
 
 ## c
 **The equation $S(Y; \theta)= 0$ is not in the form for using M-estimation results (because the product of sums is not a simple sum). Show how to get it in M-estimation form by adding two new parameters, $\theta_2$ and $\theta_3$, and two new equations so that the result is a system of three equations with three $\psi$ functions; call them $\psi\_1^\*, \psi\_2^\*, $ and $\psi\_3^\*$ because $\psi\_1^\*$ is actually a function of the original $\psi\_1$ and $\psi\_2$.**
 
+Take $\theta_2$ and $\theta_3$ such that
 
+$$
+\sum_{i=1}^{n} (\psi'_1(Y_i; \theta) - \theta_2) = \sum_{i=1}^{n} (\psi'_2(Y; \theta) - \theta_3) = 0.
+$$
+
+Then we get
+
+$$
+\psi^*(Y_i; \theta) = 
+\begin{bmatrix}
+2 w_1 \theta_2 \psi_1(Y_i; \theta) + 2 w_2 \theta_3 \psi_2(Y_i; \theta) \\
+\psi'_1(Y_i; \theta) - \theta_2 \\
+\psi'_2(Y_i; \theta) - \theta_3
+\end{bmatrix}.
+$$
 
 # 7.9
 **Let $Y_1, \dots , Y_n$ be iid from some continuous distribution with nonzero density at the population mean, $f(\mu_0)>0$. For defining a "positive" standard deviation similar to the positive mean deviation from the median, one needs to estimate the proportion of the population that lies above the mean, $1-p_0 = 1 - F(\mu_0)$, using $1 - F_n(\overline Y)$ where $F_n$ is the empirical distribution function. Letting $\psi(Y_i; \mu, p)^T = (Y_i - \mu, I(Y_i \leq \mu) - p)$, find $A(\theta_0)$, $B(\theta_0)$, and $V(\theta_0)$. Note that we have to use the nonsmooth definition of $A(\theta_0)$:**
@@ -180,13 +218,54 @@ $$
 \sum_{i=1}^{n} \psi^*(Y_i - \widehat \beta x_i) x_i = 0.
 $$
 
-**Write down the asymptotic variance of $\widehat \beta$ and an estimator of this asymptotic variance. You may assume that the derivative $\psi^\* ' $ of $\psi^\*$ exists everywhere and that $E \| \psi^\* ' (e_i) \|<\theta$ for all $i$.**
+**Write down the asymptotic variance of $\widehat \beta$ and an estimator of this asymptotic variance. You may assume that the derivative $\psi^\* ' $ of $\psi^\*$ exists everywhere and that $E \| \psi^\* ' (e_i) \|<\infty$ for all $i$.**
 
+First we need to find $A(\beta_0)$ and $B(\beta_0)$.
 
+$$
+\begin{align}
+A(\beta_0) & = - E(\frac{ \partial \psi^*(Y_i - \beta x_i) x_i}{\partial \beta} ) \\
+    & = -E( \psi^{* '}(Y_i - \beta_0 x_i) (-x_i^2)) \\
+    & = E(\psi^{*'}(Y_i - \beta_0 x_i)) x_i^2 \\ \\
+B(\beta_0) & =E((\psi^*(Y_i - \beta_0 x_i)x_i)^2) \\
+    & = x_i^2 E(\psi^*(Y_i - \beta_0 x_i)^2)
+\end{align}
+$$
+
+Then,
+
+$$
+V(\beta_0 = A^{-1}(\beta_0) B(\beta_0) A^{-1}(\beta_0) = \frac{ E(\psi^{*}(Y_i - \beta_0 x_i)^2 )}{ x_i^2 E(\psi^{*'}(Y_i - \beta_0 x_i))^2 }
+$$
+
+So our asymptotic variance of an estimate $\widehat \beta$ is
+
+$$
+\text{AsyVar}(  \widehat \beta ) = \frac{ 1 }{ n } \sum_{i=1}^{n} 
+\frac{ E(\psi^{*}(Y_i - \widehat \beta x_i)^2 )}{ x_i^2 E(\psi^{*'}(Y_i - \widehat \beta x_i))^2 }.
+$$
+
+As we have done in the past, we can estimate the numerator and denominator using method of moments.
+
+$$
+\begin{align}
+E\Big( \widehat{\psi^*(Y_i - \widehat \beta x_i)^2} \Big) & = \frac{ 1 }{ n } \sum_{i=1}^{n} \psi^*(Y_i - x_i \widehat \beta)^2 \\
+E \Big( \widehat{\psi^{*'}(Y_i - \widehat \beta x_i )} \Big) & = \frac{ 1 }{ n } \sum_{i=1}^{n} \psi^{*'}(Y_i - \widehat \beta x_i)
+\end{align}
+$$
 
 ## b
-**Let's simplify and assume that $e_i, \dots e_n$ are iid. How does the asymptotic variance expression from a) change? Find an improved asymptotic variance estimator in this situation.**
+**Let's simplify and assume that $e_1, \dots e_n$ are iid. How does the asymptotic variance expression from a) change? Find an improved asymptotic variance estimator in this situation.**
 
+With iid $e_i$'s, we now know that the expectations are the same for every $i$ and we get an asymptotic variance
+
+
+$$
+\text{AsyVar}(  \widehat \beta ) =
+\frac{ E(\psi^{*}(Y_i - \widehat \beta x_i)^2 )}{ x_i^2 E(\psi^{*'}(Y_i - \widehat \beta x_i))^2 }.
+$$
+
+Notice that now we only need to estimate one expected value rather than many.
 
 # 8.10
 **Suppose we have data $X_1, \dots , X_n$ that are iid. The sign test for $H_0: \text{median} = 0$ is to count the number of $X$'s that are above 0, say $Y$, and compare $Y$ to a binomial($n, p = 1/2$) distribution. Starting with the defining M-estimator equation for the sample median (see Example 7.4.2, p 312, with $p = 1/2$),**
@@ -198,7 +277,7 @@ $$
 We know $\psi = 0.5 - I(Y_i \leq \theta)$. Since $\theta$ is a scalar, we know $V(\theta_0) = B(\theta_0) = p(1-p) = \frac{ 1 }{ 4 }$. Thus,
 
 $$
-T_{GS} = \frac{ 1 }{ n } \Big[ \sum_{i=1}^{n} \psi(Y_i; 0) \Big] (\frac{ 1 }{ 4 })^{-1})\Big[ \sum_{i=1}^{n} \psi(Y_i; 0) \Big]  = \frac{ 4 }{ n } \Big[ \sum_{i=1}^{n} 0.5 - I(Y_i \leq 0) \Big] ^2
+T_{GS} = \frac{ 1 }{ n } \Big[ \sum_{i=1}^{n} \psi(Y_i; 0) \Big] (\frac{ 1 }{ 4 })^{-1}\Big[ \sum_{i=1}^{n} \psi(Y_i; 0) \Big]  = \frac{ 4 }{ n } \Big[ \sum_{i=1}^{n} 0.5 - I(Y_i \leq 0) \Big] ^2
 $$
 
 
