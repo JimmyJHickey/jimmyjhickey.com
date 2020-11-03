@@ -142,7 +142,7 @@ $$
 
 
 # 7.2
-**Let $Y_1, \dots , Y_n$ be iid from some distribution with finite fourth moment. The coefficients of variange is $\widehat \theta_3 = s_n / \overline{ Y }$.**
+**Let $Y_1, \dots , Y_n$ be iid from some distribution with finite fourth moment. The coefficients of variance is $\widehat \theta_3 = s_n / \overline{ Y }$.**
 
 ## a
 **Define a three dimensional $\psi$ so that $\widehat \theta_3$ is defined by summing the third component. Find $A$, $B$, and $V$, where**
