@@ -113,7 +113,7 @@ Since $D_n \stackrel{ \text{p}}{\rightarrow} D$, then $D_n - D \stackrel{ \text{
 By Examples 5.18 in Boos Stefanski we have the convergence of quadratic forms through the Continuous Mapping Theorem  
 
 $$
-X_n^T D X_ \stackrel{ \text{d}}{\rightarrow}X^T D X.
+X_n^T D X \stackrel{ \text{d}}{\rightarrow}X^T D X.
 $$
 
 Then take $Y_n = (D_n - D)X_n$. By Slutsky's theorem, $Y_n \stackrel{ \text{d}}{\rightarrow} 0$ which is the same as $Y_n \stackrel{ \text{p}}{\rightarrow}0$. Then we can apply Slutsky's again to say
