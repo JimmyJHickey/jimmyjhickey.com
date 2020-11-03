@@ -160,7 +160,7 @@ $$
 **Assume the data are $\{ (y\_i, x\_i), i = 1, \dots, n\}$ and arise from the regression model**
 
 $$
-Y_i = x_i^T \beta + epsilon_i, \ \epsilon_i \stackrel{ \text{iid}}{\sim} N(0, \sigma^2)
+Y_i = x_i^T \beta + \epsilon_i, \ \epsilon_i \stackrel{ \text{iid}}{\sim} N(0, \sigma^2)
 $$
 
 **where $\beta^T = (\beta_1^T, \beta_2^T)$ is a $p$-dimensional parameter and $\beta_1$ is the component corresponding to covariates that are of interest. Using the three classical tests. Relate these tests ot other commmon testing procedures that are used in this setting.**
