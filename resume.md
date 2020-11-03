@@ -99,7 +99,7 @@ July 2018 -- August 2019
 
 * Develop variant annotation, microbiome, and multiple myeloma fusion detection pipelines for research and clinical purposes. 
 * Develop a unit test framework for our pipelines.
-* Suggested and helped start an Onboarding Program from new employees in our unit.
+* Suggested and helped start an Onboarding Program for new employees in our unit.
 * Help maintain and update IT infrastructure. 
 * Provided extensive documentation and training on my projects when I left.
 
