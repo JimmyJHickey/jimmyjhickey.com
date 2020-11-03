@@ -189,9 +189,9 @@ $$
 \begin{align}
 \frac{ \partial \ell }{\partial \beta} & = \frac{ 1 }{ \sigma^2 }(X^T Y - X^T X \beta) \\
 \frac{ \partial \ell }{\partial \sigma^2} & = \frac{ -n }{ 2 } \frac{ 1 }{  \sigma^2} + \frac{ 1 }{ 2 (\sigma^2)^2 } \Big[ (Y- X\beta)^T(Y - X\beta) \Big] \\
-\frac{ \partial ^2 \ell }{\partial \beta \beta^T} & = -\frac{ 1 }{ \sigma^2 } X^T X \\
+\frac{ \partial ^2 \ell }{\partial \beta \partial \beta^T} & = -\frac{ 1 }{ \sigma^2 } X^T X \\
 \frac{ \partial ^2 \ell }{\partial (\sigma^2)^2} & = \frac{ n }{ 2 } \frac{ 1 }{ (\sigma^2)^2} - \frac{ 1 }{ (\sigma^2)^3 } \Big[ (Y- X\beta)^T(Y - X\beta) \Big] \\
-\frac{ \partial^2 \ell }{\partial \beta \ell } & = -\frac{ 1 }{ 2 (\sigma^2)^2 }(-2X^T Y + 2(X^T X)\beta)
+\frac{ \partial^2 \ell }{\partial \beta \partial \sigma^2 } & = -\frac{ 1 }{ 2 (\sigma^2)^2 }(-2X^T Y + 2(X^T X)\beta)
 \end{align}
 $$
 
