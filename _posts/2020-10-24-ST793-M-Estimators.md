@@ -235,7 +235,7 @@ $$
 Then,
 
 $$
-V(\beta_0 = A^{-1}(\beta_0) B(\beta_0) A^{-1}(\beta_0) = \frac{ E(\psi^{*}(Y_i - \beta_0 x_i)^2 )}{ x_i^2 E(\psi^{*'}(Y_i - \beta_0 x_i))^2 }
+V(\beta_0 )= A^{-1}(\beta_0) B(\beta_0) A^{-1}(\beta_0) = \frac{ E(\psi^{*}(Y_i - \beta_0 x_i)^2 )}{ x_i^2 E(\psi^{*'}(Y_i - \beta_0 x_i))^2 }
 $$
 
 So our asymptotic variance of an estimate $\widehat \beta$ is
