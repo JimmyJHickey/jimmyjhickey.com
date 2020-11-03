@@ -35,7 +35,7 @@ $$
 P(|\widehat \theta - \widetilde \theta | \geq \epsilon) & = P(|\widehat \theta - \theta_0 + \theta_0 - \widetilde \theta | \geq \epsilon) \\
     & \leq P(|\widehat \theta - \theta_0| + |  \widetilde \theta - \theta_0 | \geq \epsilon) & \text{Triangle Inequality} \\
     & \leq P(|\widehat \theta - \theta_0| \geq \epsilon / 2) + P(|  \widetilde \theta - \theta_0 | \geq \epsilon/2) & \text{Boole's Inequality} \\
-    & \stackrel{ \text{p}}{\rightarrow} 0 + 0 = 0/
+    & \stackrel{ \text{p}}{\rightarrow} 0 + 0 = 0
 \end{align}
 $$
 
