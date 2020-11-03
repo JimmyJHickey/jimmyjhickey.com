@@ -203,7 +203,7 @@ $$
 \begin{align}
 I_T & = \begin{bmatrix}
 -E(\frac{ \partial ^2 }{\partial \beta^T \partial \beta}) & -E(\frac{ \partial ^2 \ell }{\partial \beta \partial \sigma^2}) \\
--E(\frac{ \partial ^2 \ell }{\partial \beta \partial \sigma^2}) \\ & -E(\frac{ \partial ^2 \ell }{\partial (\sigma^2})^2 \\
+-E(\frac{ \partial ^2 \ell }{\partial \beta \partial \sigma^2}) & -E(\frac{ \partial ^2 \ell }{\partial (\sigma^2})^2 \\
 \end{bmatrix} \\
     & = \begin{bmatrix}
     \frac{ 1 }{ \sigma^2 } X^T X & 0 \\
