@@ -126,7 +126,7 @@ Thus, we must have $X^T_n D_n X_n \stackrel{ \text{d}}{\rightarrow} X^T D X$.
 
 Now we can show the second part of the proof, $X^T D X \sim \chi^2_r$. Since $\Sigma$ is positive definite, we can perform a Cholesky decomposition $\Sigma = \Gamma \Gamma^T$. Notice that $Y = \Gamma^{-1} X$, then $Y \sim N(0, I)$. Then take $B = \Gamma^T D \Gamma$. Thus, $Y^T B Y = X^T D X$.  
 
-Since $D \Sigma$ is idempotent, we know $D \Sigma = D \Sigma D \Sigma$ and $D = D \Sigma D$. Furher notice that $B$ is idemptotent. 
+Since $D \Sigma$ is idempotent, we know $D \Sigma = D \Sigma D \Sigma$ and $D = D \Sigma D$. Further notice that $B$ is idemptotent. 
 
 $$
 \begin{align}
