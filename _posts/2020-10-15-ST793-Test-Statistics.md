@@ -11,7 +11,7 @@ category: ST793
 {:toc}
 
 # 1
-**Consider $Y_1, \dots , Y_n$ are IID froma a model $f(y; \theta)$ where $\theta \in \mathbb{R}^b$. Let $\theta_1$ be the component of interest and denote by $\theta_2$ the remaining nuisance component; thus $\theta^T = (\theta_1^T, \theta_2^T)$. Suppose you are interested in testing the hypothesis**
+**Consider $Y_1, \dots , Y_n$ are IID from a model $f(y; \theta)$ where $\theta \in \mathbb{R}^b$. Let $\theta_1$ be the component of interest and denote by $\theta_2$ the remaining nuisance component; thus $\theta^T = (\theta_1^T, \theta_2^T)$. Suppose you are interested in testing the hypothesis**
 
 
 $$
