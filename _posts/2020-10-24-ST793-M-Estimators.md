@@ -18,7 +18,7 @@ $$
 \frac{ 1 }{ n } \sum_{i=1}^{n} \psi_j(Y_i; \theta) = 0. \ j = 1, \dots , q
 $$
 
-**motivated by the fact that $E_{\psi_j}(Y_1; \theta_0) = 0$ , $j = 1, \dots , q$, where $\theta_0$ is the true value. These motivating zero expectaions come from the theory in the subject area being studied. But notice that if $q > p$, then we have too many equations. The GMM approach is to minimize the object function**
+**motivated by the fact that $E_{\psi_j}(Y_1; \theta_0) = 0$ , $j = 1, \dots , q$, where $\theta_0$ is the true value. These motivating zero expectaions come from the theory in the subject area being studied. But notice that if $q > p$, then we have too many equations. The GMM approach is to minimize the objective function**
 
 $$
 T = \Big[ \frac{ 1 }{n  }\sum_{i=1}^{n} \psi(Y_{i};\theta) \Big]^T W \Big[ \frac{ 1 }{n  }\sum_{i=1}^{n} \psi(Y_{i};\theta) \Big].
@@ -235,7 +235,7 @@ $$
 Then,
 
 $$
-V(\beta_0 = A^{-1}(\beta_0) B(\beta_0) A^{-1}(\beta_0) = \frac{ E(\psi^{*}(Y_i - \beta_0 x_i)^2 )}{ x_i^2 E(\psi^{*'}(Y_i - \beta_0 x_i))^2 }
+V(\beta_0 )= A^{-1}(\beta_0) B(\beta_0) A^{-1}(\beta_0) = \frac{ E(\psi^{*}(Y_i - \beta_0 x_i)^2 )}{ x_i^2 E(\psi^{*'}(Y_i - \beta_0 x_i))^2 }
 $$
 
 So our asymptotic variance of an estimate $\widehat \beta$ is

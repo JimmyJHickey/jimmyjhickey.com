@@ -11,7 +11,7 @@ category: ST793
 {:toc}
 
 # 1
-**Consider $Y_1, \dots , Y_n$ are IID froma a model $f(y; \theta)$ where $\theta \in \mathbb{R}^b$. Let $\theta_1$ be the component of interest and denote by $\theta_2$ the remaining nuisance component; thus $\theta^T = (\theta_1^T, \theta_2^T)$. Suppose you are interested in testing the hypothesis**
+**Consider $Y_1, \dots , Y_n$ are IID from a model $f(y; \theta)$ where $\theta \in \mathbb{R}^b$. Let $\theta_1$ be the component of interest and denote by $\theta_2$ the remaining nuisance component; thus $\theta^T = (\theta_1^T, \theta_2^T)$. Suppose you are interested in testing the hypothesis**
 
 
 $$
@@ -35,7 +35,7 @@ $$
 P(|\widehat \theta - \widetilde \theta | \geq \epsilon) & = P(|\widehat \theta - \theta_0 + \theta_0 - \widetilde \theta | \geq \epsilon) \\
     & \leq P(|\widehat \theta - \theta_0| + |  \widetilde \theta - \theta_0 | \geq \epsilon) & \text{Triangle Inequality} \\
     & \leq P(|\widehat \theta - \theta_0| \geq \epsilon / 2) + P(|  \widetilde \theta - \theta_0 | \geq \epsilon/2) & \text{Boole's Inequality} \\
-    & \stackrel{ \text{p}}{\rightarrow} 0 + 0 = 0/
+    & \stackrel{ \text{p}}{\rightarrow} 0 + 0 = 0
 \end{align}
 $$
 
@@ -113,7 +113,7 @@ Since $D_n \stackrel{ \text{p}}{\rightarrow} D$, then $D_n - D \stackrel{ \text{
 By Examples 5.18 in Boos Stefanski we have the convergence of quadratic forms through the Continuous Mapping Theorem  
 
 $$
-X_n^T D X_ \stackrel{ \text{d}}{\rightarrow}X^T D X.
+X_n^T D X \stackrel{ \text{d}}{\rightarrow}X^T D X.
 $$
 
 Then take $Y_n = (D_n - D)X_n$. By Slutsky's theorem, $Y_n \stackrel{ \text{d}}{\rightarrow} 0$ which is the same as $Y_n \stackrel{ \text{p}}{\rightarrow}0$. Then we can apply Slutsky's again to say
@@ -126,7 +126,7 @@ Thus, we must have $X^T_n D_n X_n \stackrel{ \text{d}}{\rightarrow} X^T D X$.
 
 Now we can show the second part of the proof, $X^T D X \sim \chi^2_r$. Since $\Sigma$ is positive definite, we can perform a Cholesky decomposition $\Sigma = \Gamma \Gamma^T$. Notice that $Y = \Gamma^{-1} X$, then $Y \sim N(0, I)$. Then take $B = \Gamma^T D \Gamma$. Thus, $Y^T B Y = X^T D X$.  
 
-Since $D \Sigma$ is idempotent, we know $D \Sigma = D \Sigma D \Sigma$ and $D = D \Sigma D$. Furher notice that $B$ is idemptotent. 
+Since $D \Sigma$ is idempotent, we know $D \Sigma = D \Sigma D \Sigma$ and $D = D \Sigma D$. Further notice that $B$ is idemptotent. 
 
 $$
 \begin{align}
@@ -160,7 +160,7 @@ $$
 **Assume the data are $\{ (y\_i, x\_i), i = 1, \dots, n\}$ and arise from the regression model**
 
 $$
-Y_i = x_i^T \beta + epsilon_i, \ \epsilon_i \stackrel{ \text{iid}}{\sim} N(0, \sigma^2)
+Y_i = x_i^T \beta + \epsilon_i, \ \epsilon_i \stackrel{ \text{iid}}{\sim} N(0, \sigma^2)
 $$
 
 **where $\beta^T = (\beta_1^T, \beta_2^T)$ is a $p$-dimensional parameter and $\beta_1$ is the component corresponding to covariates that are of interest. Using the three classical tests. Relate these tests ot other commmon testing procedures that are used in this setting.**
@@ -189,9 +189,9 @@ $$
 \begin{align}
 \frac{ \partial \ell }{\partial \beta} & = \frac{ 1 }{ \sigma^2 }(X^T Y - X^T X \beta) \\
 \frac{ \partial \ell }{\partial \sigma^2} & = \frac{ -n }{ 2 } \frac{ 1 }{  \sigma^2} + \frac{ 1 }{ 2 (\sigma^2)^2 } \Big[ (Y- X\beta)^T(Y - X\beta) \Big] \\
-\frac{ \partial ^2 \ell }{\partial \beta \beta^T} & = -\frac{ 1 }{ \sigma^2 } X^T X \\
+\frac{ \partial ^2 \ell }{\partial \beta \partial \beta^T} & = -\frac{ 1 }{ \sigma^2 } X^T X \\
 \frac{ \partial ^2 \ell }{\partial (\sigma^2)^2} & = \frac{ n }{ 2 } \frac{ 1 }{ (\sigma^2)^2} - \frac{ 1 }{ (\sigma^2)^3 } \Big[ (Y- X\beta)^T(Y - X\beta) \Big] \\
-\frac{ \partial^2 \ell }{\partial \beta \ell } & = -\frac{ 1 }{ 2 (\sigma^2)^2 }(-2X^T Y + 2(X^T X)\beta)
+\frac{ \partial^2 \ell }{\partial \beta \partial \sigma^2 } & = -\frac{ 1 }{ 2 (\sigma^2)^2 }(-2X^T Y + 2(X^T X)\beta)
 \end{align}
 $$
 
@@ -203,7 +203,7 @@ $$
 \begin{align}
 I_T & = \begin{bmatrix}
 -E(\frac{ \partial ^2 }{\partial \beta^T \partial \beta}) & -E(\frac{ \partial ^2 \ell }{\partial \beta \partial \sigma^2}) \\
--E(\frac{ \partial ^2 \ell }{\partial \beta \partial \sigma^2}) \\ & -E(\frac{ \partial ^2 \ell }{\partial (\sigma^2})^2 \\
+-E(\frac{ \partial ^2 \ell }{\partial \beta \partial \sigma^2}) & -E(\frac{ \partial ^2 \ell }{\partial (\sigma^2})^2 \\
 \end{bmatrix} \\
     & = \begin{bmatrix}
     \frac{ 1 }{ \sigma^2 } X^T X & 0 \\
