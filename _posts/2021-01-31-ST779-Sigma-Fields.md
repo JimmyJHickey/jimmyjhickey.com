@@ -14,13 +14,10 @@ category: ST779
 # 1
 **Show that the collection of all finite strings of letters A-Z is countable, but the collection of all infinite (i.e. unending) sequences of letters is uncountable.**
 
-We can simplify this problem by creating a mapping between the letters A-Z and binary. For example,
-* $A \rightarrow 10000000000000000000000000$
-* $B \rightarrow 01000000000000000000000000$
-* $\vdots$
-* $Z \rightarrow 0000000000000000000000001$.
+Take $\mathcal S$ to be the collection of all finite strings of A-Z. We can write this as $\mathcal S = \bigcup_{k=1}^{\infty} \left\\{ A, \dots, Z \right\\}^k$. Since $\mid A-Z \mid < \mid \mathbb N \mid$, we can define a one-to-one function $f: A-Z \rightarrow \mathbb N$. Since $\mathcal S \rightarrow \bigcup_{k=1}^\infty \mathbb N^k$, we know that $\mathcal S$ is countable. 
 
-Now that A-Z is in 1 to 1 correspondence with binary strings, we can use the results previously shown about binary strings. That is, the collection of finite binary strings is countable. Thus, the collection of finite strings of A-Z is countable. Similarly, the collection of all infinite binary strings is uncountable. Thus, the collection of all infinite A-Z strings is uncountable as well.
+Now consider $\mathcal S_\infty$ to be the collection of infinitely long sequences of strings of A-Z. We have shown that $T = \left\\{ 0,1 \right\\}^{\infty}$ is uncountable and $\mathcal S_\infty \subset T$. Thus, $\mathcal S_\infty$ must be uncountable.                                           p
+
 
 # 2
 **Let $A_n$ be a sequence of subsets of $\Omega$. Show that $\lim \inf A\_n = \left\\{ \omega: \lim\_{n\rightarrow \infty} \mathbb I\_{A\_n}(\omega) = 1 \right\\}$.  What is $\left\\{ \omega: \lim_{n\rightarrow \infty} \mathbb I\_{A\_n}(\omega) = 0 \right\\}$? Also characterize the set $\left\\{ \omega: \mathbb I\_{A\_n}(\omega) \text{ does not converge} \right\\}$.**
@@ -56,7 +53,8 @@ $$
 # 3
 **Let $\Omega = \left\\{ 1,2,3,4,5,6 \right\\}$. Find the smallest $\sigma$-field containing the class $\left\\{  \left\\{  1,2,3\right\\}, \left\\{  2,5,6\right\\} \left\\{  3,6\right\\} \right\\}$.**
 
-We can start by creating a partition by taking intersections of the given sets and their complements.
+We can start by creating a partition by taking intersections of the given sets and their complements. 
+
 
 $$
 \begin{align}
@@ -67,13 +65,22 @@ $$
 \end{align}
 $$
 
-Our partition is
+Take $C_1 =  \left\\{  1,2,3\right\\}$, $C_2 = \left\\{  2,5,6\right\\}$, and $\left\\{  3,6\right\\}$. Our partition is
 
 $$
-P = \left\{ \left\{ 4 \right\}, \left\{ 1 \right\}, \left\{ 5 \right\}, \left\{ 2 \right\}, \left\{ 3 \right\}, \left\{ 6 \right\} \right\}.
+\begin{align}
+\mathcal P = C_1^C \cap C_2^C \cap C_3^C & = \left\{ 4 \right\} \\
+    C_1^C \cap C_2^C \cap C_3 & = \left\{ 5 \right\}\\
+    C_1^C \cap C_2 \cap C_3^C & = \varnothing\\
+    C_1^C \cap C_2 \cap C_3 & = \left\{ 1 \right\}\\
+    C_1 \cap C_2^C \cap C_3^C & = \left\{ 6 \right\}\\
+    C_1 \cap C_2^C \cap C_3 & = \left\{ 3 \right\}\\
+    C_1 \cap C_2 \cap C_3^C & = \left\{ 2 \right\}\\
+    C_1 \cap C_2 \cap C_3 & = \varnothing    
+\end{align}
 $$
 
-The partitions contains all singletons of elements in $\Omega$. From this, we can generate all 64 element of $\Omega$ by unioning them together. So the smallest $\sigma$-field is the whole set $\Omega$.
+The partitions contains all singletons of elements in $\Omega$. From this, we can generate all 64 element of $\Omega$ by unioning them together. So the smallest $\sigma$-field is the whole power set, $\mathcal P(\Omega)$.
 
 # 4
 Let $\Omega = \left\\{ 1,2,3 \right\\}$, $\mathcal F_1 = \left\\{ \varnothing, \left\\{ 1 \right\\}, \left\\{ 2,3, \right\\}, \Omega \right\\}$, $\left\\{ \varnothing, \left\\{ 1,2 \right\\}, \left\\{ 3 \right\\}, \Omega \right\\}$. Show that both $\mathcal F_1$ and $\mathcal F_2$ are $\sigma$-fields, but $\mathcal F_1 \cup \mathcal F_2$ is not a $\sigma$-field.
@@ -116,7 +123,7 @@ Take $\mathcal A$ to be the class of all periodic sets.
 
 Notice that if $A = \Omega$ then for any $x \in A$, $x \pm n \in \mathcal A$. If $A = \varnothing$, then $A$ is trivially periodic.
 
-We will show condition 2 by induction. Take $A_1$ and $A_2$ to be periodic with $a_1 \in A_1$ and $a_2 \in A_2$. Then
+<!--We will show condition 2 by induction. Take $A_1$ and $A_2$ to be periodic with $a_1 \in A_1$ and $a_2 \in A_2$. Then
 
 $$
 A_1 \cup A_2 = \left\{ \dots, a_{1}-1, a_{2}-1, a_1, a_2, a_1+1, a_2+1, \dots \right\}
@@ -148,4 +155,13 @@ $$
 
 So, $A^C$ is also periodic and $A^C \in \mathcal A$.
 
+Thus, $\mathcal A$ is a $\sigma$-field.-->
+
+
+Take $A_1, A_2, \dots, \in \mathcal A$ and $x \in \bigcup_{i=1}^\{\infty} A_i$. So, $x \in A_k$ for some $k$. Then $x\pm n \in\bigcup_{i=1}^{\infty} A_i $ for $n \in \mathbb N$. Thus, $\bigcup_{i=1}^{\infty} A_i$ is periodic.
+
+
+Take $z \in A^C$ for periodic $A$. For sake of contradiction, assume $z \pm n \notin A^C$. Then $z \pm n \in A$. But this would mean that $(z \pm n) \mp n = z \in A$. This contradicts $z \in A^C$, so $A^C$ must be periodic. 
+
 Thus, $\mathcal A$ is a $\sigma$-field.
+
