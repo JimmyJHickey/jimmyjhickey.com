@@ -4,6 +4,7 @@ comments: true
 title: On Static Websites
 description: An overview on static websites, their advantages, and an introduction on how to use them.
 category: Technology
+published: false
 ---
 
 * Do not remove this line (it will not be displayed)
