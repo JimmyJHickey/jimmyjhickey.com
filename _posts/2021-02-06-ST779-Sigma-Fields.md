@@ -70,11 +70,11 @@ Take $\Omega = \left\\{ 1,2,3,4 \right\\}$ and $\mathcal A = \left\\{ \varnothin
 # 4
 **Let $\mathcal F_n$, $n = 1, 2, \dots$ be a sequence of fields on $\Omega$ and that $\mathcal F_n \subset \mathcal F_{n+1}$ for all $n$. Show that $\bigcup_{n=1}^\infty \mathcal F_n$ is also a field.**
 
-**If $\mathcal F_n$, $n=1, 2, \dots$, is a sequence of $\sigma$-fields on $\Omega$ and that $\mathcal F_n \subset \mathcal F_{n+1}$ for all $n$, argue that $\bigcup_{n=1}^\infty \mathcal F_n$ is always a field, but construct an example to show that $\bigcup_{n=1}^\infty \mathcal F_n$ need not be a $\sigma$-field.**
+
 
 _Proof_
 
-Since $\mathcal F_1$ is a field, $\varnothing, \Omega \in \mathcal F_1$. Hence, $\varnothing, \Omega \in $\bigcup_{n=1}^\infty \mathcal F_n$. ✅
+Since $\mathcal F_1$ is a field, $\varnothing, \Omega \in \mathcal F_1$. Hence, $\varnothing, \Omega \in \bigcup_{n=1}^\infty \mathcal F_n$. ✅
 
 Take $A, B \in \bigcup_{n=1}^\infty \mathcal F_n$. Then, without loss of generality, $\exists k$ such that $A \in \mathcal F_k$ and $\exists m \geq k$ such that $B \in \mathcal F_m$. Since $\mathcal F_k \subset \mathcal F_m$, $A \in \mathcal F_m$ and $A \cup B \in \mathcal F_m$. So, $A \cap B \in \bigcup_{n=1}^\infty \mathcal F_n$. ✅
 
@@ -83,28 +83,21 @@ Take $A \in \bigcup_{n=1}^\infty \mathcal F_n$. Then $\exists k$ such that $A \i
 
 <div style="text-align: right"> 🐙 </div>
 
+**If $\mathcal F_n$, $n=1, 2, \dots$, is a sequence of $\sigma$-fields on $\Omega$ and that $\mathcal F_n \subset \mathcal F_{n+1}$ for all $n$, argue that $\bigcup_{n=1}^\infty \mathcal F_n$ is always a field, but construct an example to show that $\bigcup_{n=1}^\infty \mathcal F_n$ need not be a $\sigma$-field.**
+
 We need a counter example where $\bigcup_{n=1}^\infty \mathcal F_n$ is closed under intersection, but not under countable union. Take $\mathcal \Omega = \mathbb N$. Define $\mathcal F_i$ as
 
 $$
 \begin{align}
 \mathcal F_1 & = \left\{ \varnothing, \left\{ 1 \right\}, \mathbb N - \left\{ 1 \right\}, \Omega \right\} \\
-\mathcal F_2 & = \left\{ \varnothing, \left\{ 1 \right\}, \left\{ 2 \right\}, \mathbb N - \left\{ 1 \right\}, \mathbb N - \left\{ 2 \right\}, \Omega \right\} \\
+\mathcal F_2 & = \left\{ \varnothing, \left\{ 1 \right\}, \left\{ 2 \right\}, \left\{ 1,2 \right\}, \mathbb N - \left\{ 1 \right\}, \mathbb N - \left\{ 2 \right\}, \mathbb N - \left\{ 1,2 \right\}, \Omega \right\} \\
 & \vdots
 \end{align}
 $$
 
 
-Notice that these are all fields. Then take $A_i \in \bigcup_{n=1}^\infty \mathcal F_n$ to be
+Notice that these are all $\sigma$-fields. Take $x_i = 2i$, then $x_1, x_2, \dots \in \bigcup_{i=1}^\infty \mathcal F_i$, however, $\bigcup_{i=1}^\infty x_i \notin \bigcup_{i=1}^\infty \mathcal F_i$. So, $\bigcup_{i=1}^\infty \mathcal F_i$ is not a $\sigma$-field.
 
-$$
-\begin{align}
-A_1 & = \left\{ 3 \right\} \\
-A_2 & = \left\{ 4 \right\} \\
-& \vdots
-\end{align}
-$$
-
-Now, $\bigcup_{i=1}^\infty \mathcal A_i = \mathcal N - \left\\{ 1,2 \right\\} \notin \bigcup_{n=1}^\infty \mathcal F_n$.
 
 # 5
 **Let $\mathcal B_1$, $\mathcal B_2$ be $\sigma$-fields on $\Omega$. Then show that**
@@ -121,7 +114,7 @@ $$
 $$
 
 
-Since $\mathcal B_1$ is a \sigma field, $B_1 \in \mathcal B_1 \Rightarrow \mathcal B_1$. Similarly for $\mathcal B_2$. Thus,
+Since $\mathcal B_1$ is a $\sigma$-field, $B_1 \in \mathcal B_1 \Rightarrow B_1^C \in \mathcal B_1$. Similarly for $\mathcal B_2$. Thus,
 
 $$
 \sigma \langle  \left\{ B_1 \cap B_2: B_1 \in \mathcal B_1, B_2 \in \mathcal B_2  \right\}  \rangle = \langle \dots, \left\{ B_1 \cap B_2 \right\} , \left\{ B_1 \cup B_2^C \right\} , \left\{ B_1^C \cap B_2 \right\} \rangle. 
