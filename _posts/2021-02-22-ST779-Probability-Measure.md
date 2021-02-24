@@ -20,9 +20,47 @@ category: ST779
 **Is $P$ also countable additive? Prove or give a counterexample.**
 
 
+We can show finite additivity.
+
+$$
+\begin{align}
+P\left(\bigcup_{i=1}^m A_i \right) & = \lim_{n \rightarrow \infty}\left[  P_n \left( \bigcup_{i=1}^m A_i \right)\right] \\
+	& = \lim_{n \rightarrow \infty} \left[ \sum_{i=1}^m P_n(A_i) \right] & \text{Finite additivity of } P \\
+	& = \sum_{i=1}^m \lim_{n \rightarrow \infty} P_n(A_i) \\
+	& = \sum_{i=1}^m P(A_i)
+\end{align}
+$$
+
+
+
+However, we do not have infinite additivity. For example, take $A_n = [-n,n]$.
+
+
+
 
 # 2
 **Let $\Omega$ be a set and $\mathcal A$ be a $\sigma$-field on it. $P: \mathcal A\rightarrow [0,1]$ with $P(\Omega) = 1$ be finitely additive and satisfy the following property: For all $A_1, A_2, \dot , \in \mathcal A$ disjoint such that $\bigcup_{n=1}^\infty A_n = \Omega$, we have that $\sum_{n=1}^\infty P(A_n) = 1$. Then show that $P$ is a (countable additive) probability measure on $(\Omega, \mathcal A)$.**
+
+We need to show that $P$ is countably additive. Take $B_1, B_2, \dots \in \mathcal A$ to be disjoint sets. Then $\Omega \setminus \left( \bigcup_{i=1}^\infty B_i\right)$ is disjoint from all $B_i$ and
+
+$$
+\bigcup_{i=1}^\infty B_i \cup \left( Omega \setminus \left( \bigcup_{i=1}^\infty B_i\right) \right) = Omega.
+$$
+
+
+Then,
+
+$$
+\begin{align}
+1 & = P(\Omega) \\
+	& = \bigcup_{i=1}^\infty B_i \cup \left( \Omega \setminus \left( \bigcup_{i=1}^\infty B_i\right) \right) \\
+	& = \sum_{i=1}^\infty \left(P(B_i) \right) + P\left(\Omega \setminus \left( \bigcup_{i=1}^\infty B_i\right)\right) \\
+\sum_{i=1}^\infty P(B_i) & = 1 - P\left(\Omega \setminus \left( \bigcup_{i=1}^\infty B_i\right)\right) \\
+	& = 1 - \left( P(\Omega) - P\left(\bigcup_{i=1}^\infty B_i\right) \right) \\
+	& = P\left(\bigcup_{i=1}^\infty B_i\right)
+\end{align}
+$$
+
 
 
 # 3
@@ -35,12 +73,67 @@ $$
 **for any $A \subset \Omega$. Show that there exists $B \in \sigma \langle \mathcal C \rangle$ containing $A$ such that $P^\*(A) = P^\*(B)$.**
 
 
+By the definition of infimum
+
+$$
+\sum_{i=1}^\infty P(C_{i,k}) < P^*(A) + 1/k.
+$$
+
+Then $\forall k$, $A \subset \bigcup_{i=1}^\infty C_{i,k}$. And define $B$
+
+$$
+A \subset \bigcap_{k=1}^\infty \left( \bigcup_{i=1}^\infty C_{i,k} \right) = B \Rightarrow P^*(A) < P^*(B).
+$$
+
+But also $B \in \sigma \langle \mathcal C  \rangle$ and $B = \bigcup_{k=1}^\infty B_k$. Then,
+
+$$
+P^*(B) \leq P^*(B_k) \leq \sum_{i=1}^\infty P(C_{i,k}) < P^*(A) + 1/k, k > 0.
+$$
+
+
+Thus, $P^\*(A) = P^\*(B)$.
+
 
 # 4
 **Let $A$ be a Borel subset of $[0,1]$ such that its Lebsegue measure $0 < \lambda(A) < 1$. Let $0 < \alpha < 1$. Show that there exists a Borel subset $B$ of $A$ such that $\lambda(B) = \alpha \lambda(A)$.**
 
+Recall the intermediate value theorem, that is for a continuous function $f(x)$ on $[a,b]$ with minimum and maximum $\min$ and $\max$. Then $\forall l$ such that $\min < l < \max$, $\exists c $ such that $f(c) = l$.
 
+In this case $a = 0$ and $b=1$ and $f(x) = \lambda \left( A \cap [0,x] \right)$. And our min and max are
 
+$$
+\begin{align}
+f(0) & = \lambda \left( A \cap 0\right) = \begin{cases}
+\lambda(0) \\
+\lambda(\varnothing)
+\end{cases} = 0 \\
+f(1) & = \lambda \left( A \cap [0,1] \right) = \lambda \left( A \right)
+\end{align}
+$$
+
+Now we need to show that $f(x)$ is continuous. That is, $\forall \epsilon > 0$ $\exists \delta$ such that $\mid x - y \mid < \delta \Rightarrow \mid f(x) - f(y) \mid < \epsilon$.
+
+$$
+\begin{align}
+f(x) - f(y) & = \lambda\left( A \cap [0,x] \right) - \lambda \left( A \cap [0,y]\right) \\
+	& = \lambda \left(  \left( A \cap [0,x] \right) \setminus \left( A \cap [0,y] \right) \right) \\
+	& = \lambda \left(  \left( A \cap [0,x] \right) \cap \left( A \cap [0,y] \right)^C \right) \\
+	& = \lambda \left(  \left( A \cap [0,x] \right) \cap \left( A^C \cup (y, 1] \right) \right) \\
+	& = \lambda \left(  \left( A \cap [0,x] \cap A^C \right) \cup \left( A \cap [0,x] \cap (y, 1] \right) \right) \\
+	& = \lambda \left(  \left( \varnothing \right) \cup \left( A \cap [0,x] \cap (y, 1] \right) \right) \\
+	& = \lambda \left(  A \cap [0,x] \cap (y, 1] \right) \\
+	& < \epsilon
+\end{align}
+$$
+
+Then take $l = \alpha \lambda(A)$. By the intermediate value theorem $\exists z$ such that
+
+$$
+f(z) = l = \alpha \lambda(A) = \lambda(\underbrace{A \cap [0,z]}_{B}).
+$$
+
+Then $B \subset A$ and is a Borel subset.
 
 # 5
 **Let $\alpha > 0$. For $\delta > 0$ and $ A \in \mathbb R$, let**
@@ -58,3 +151,35 @@ $$
 $$
 
 **Show that the Hausdorff dimension of the Cantor set $C$ is $\log(2) / \log(3)$.**
+
+
+
+Recall that $C = \bigcap_{n=1}^\infty C_n$ and that $C_n$ has $2^n$ disjoint elements each of length $(1/3)^n$ with $\lambda(C_n) = (2/3)^n$. We want to take a small $\delta = (1/3)^n + \epsilon$ for $\epsilon > 0$. Then we can take each $I_m$ to be one of the elements of $C_n$. Then,
+
+$$
+\sum_{m=1}^{2^n}\mid I_m \mid ^\alpha = \sum_{m=1}^{2^n} (1/3)^{n\alpha} = \left( \frac{ 2 }{ 3^\alpha } \right)^n.
+$$
+
+This holds for all $\alpha$, so take $\alpha = 0.001$ Then,
+
+$$
+\left(\frac{ 2 }{ 3^\alpha } \right)^n \approx 2^n.
+$$
+
+And since $C = \bigcap_{n=1}^\infty C_n$ we know $C \subset C_n$ $\forall n$ and $H^\alpha(C) < H^\alpha(C_n)$. Now we can take the limit of $n$.
+
+$$
+\lim_{n\rightarrow \infty} 2^n \rightarrow \infty
+$$
+
+And if we take $\alpha$ large, such as $\alpha = 1$
+
+$$
+\lim_{n \rightarrow \infty} (2/3)^n \rightarrow 0.
+$$
+
+We want to find $\alpha$ such that $H^\alpha(C) = 1$.
+
+$$
+2/3^\alpha = 1 \rightarrow \alpha = \frac{ \log(2) }{ \log(3) }
+$$
