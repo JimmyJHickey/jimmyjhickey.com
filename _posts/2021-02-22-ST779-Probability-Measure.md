@@ -118,7 +118,7 @@ $$
 T & = (T \setminus S) \cup (T \cap S) \\
 	& = (T \setminus S) \cup S \\
 \mu(T) & = \mu(T \setminus S) \cup \mu(S) \\
-\mu(T \setminus S) = \mu(T) - \mu(S).
+\mu(T \setminus S) & = \mu(T) - \mu(S).
 \end{align}
 $$
 
