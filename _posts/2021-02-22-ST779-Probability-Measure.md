@@ -33,8 +33,18 @@ $$
 
 
 
-However, we do not have infinite additivity. For example, take $A_n = [-n,n]$.
+However, we do not have infinite additivity. For example, take $\Omega = \overline{ \mathbb R }$ and $\overline{ \mathcal A }$. Let's look at the interval $[-n,n]$. Take $A_1, \dots, A_{2n}$ to be a partition over $[-n,n]$ where each $A_i$ has length $\frac{ 1 }{ 2n }$. Looking at the finite case,
 
+$$
+1 = P \left( \bigcup_{i=1}^{2n} A_i \right) = \sum_{i=1}^{2n} P(A_i) = \sum_{i=1}^{2n}\frac{ 1 }{ 2n } = 1.
+$$
+
+
+However, if we take $n \rightarrow \infty$, notice that the length of each $A_i \rightarrow 0$, but their union covers the all of $\Omega$.
+
+$$
+\sum_{i=1}^\infty P(A_i) = \sum_{i=1}^\infty 0 = 0 \neq 1 = P(\Omega) = P\left( \bigcup_{i=1}^\infty A_i \right)
+$$
 
 
 
@@ -44,7 +54,7 @@ However, we do not have infinite additivity. For example, take $A_n = [-n,n]$.
 We need to show that $P$ is countably additive. Take $B_1, B_2, \dots \in \mathcal A$ to be disjoint sets. Then $\Omega \setminus \left( \bigcup_{i=1}^\infty B_i\right)$ is disjoint from all $B_i$ and
 
 $$
-\bigcup_{i=1}^\infty B_i \cup \left( Omega \setminus \left( \bigcup_{i=1}^\infty B_i\right) \right) = Omega.
+\bigcup_{i=1}^\infty B_i \cup \left( \Omega \setminus \left( \bigcup_{i=1}^\infty B_i\right) \right) = \Omega.
 $$
 
 
@@ -53,13 +63,15 @@ Then,
 $$
 \begin{align}
 1 & = P(\Omega) \\
-	& = \bigcup_{i=1}^\infty B_i \cup \left( \Omega \setminus \left( \bigcup_{i=1}^\infty B_i\right) \right) \\
-	& = \sum_{i=1}^\infty \left(P(B_i) \right) + P\left(\Omega \setminus \left( \bigcup_{i=1}^\infty B_i\right)\right) \\
-\sum_{i=1}^\infty P(B_i) & = 1 - P\left(\Omega \setminus \left( \bigcup_{i=1}^\infty B_i\right)\right) \\
+	& = P\left(\bigcup_{i=1}^\infty B_i \cup \left( \Omega \setminus \left( \bigcup_{i=1}^\infty B_i\right) \right)\right) \\
+	& = \sum_{j=1}^\infty \left[ P\left(B_j \right) + P\left( \Omega \setminus \left( \bigcup_{i=1}^\infty B_i\right) \right)\right] \\
+	& = \sum_{j=1}^\infty \left[P(B_j) \right] + P\left(\Omega \setminus \left( \bigcup_{i=1}^\infty B_i\right)\right) \\
+\sum_{j=1}^\infty P(B_j) & = 1 - P\left(\Omega \setminus \left( \bigcup_{i=1}^\infty B_i\right)\right) \\
 	& = 1 - \left( P(\Omega) - P\left(\bigcup_{i=1}^\infty B_i\right) \right) \\
 	& = P\left(\bigcup_{i=1}^\infty B_i\right)
 \end{align}
 $$
+
 
 
 
@@ -98,6 +110,18 @@ Thus, $P^\*(A) = P^\*(B)$.
 # 4
 **Let $A$ be a Borel subset of $[0,1]$ such that its Lebsegue measure $0 < \lambda(A) < 1$. Let $0 < \alpha < 1$. Show that there exists a Borel subset $B$ of $A$ such that $\lambda(B) = \alpha \lambda(A)$.**
 
+
+Notice that for a measure $\mu$ and $ S \subset T$,
+
+$$
+\begin{align}
+T & = (T \setminus S) \cup (T \cap S) \\
+	& = (T \setminus S) \cup S \\
+\mu(T) & = \mu(T \setminus S) \cup \mu(S) \\
+\mu(T \setminus S) = \mu(T) - \mu(S).
+\end{align}
+$$
+
 Recall the intermediate value theorem, that is for a continuous function $f(x)$ on $[a,b]$ with minimum and maximum $\min$ and $\max$. Then $\forall l$ such that $\min < l < \max$, $\exists c $ such that $f(c) = l$.
 
 In this case $a = 0$ and $b=1$ and $f(x) = \lambda \left( A \cap [0,x] \right)$. And our min and max are
@@ -112,7 +136,7 @@ f(1) & = \lambda \left( A \cap [0,1] \right) = \lambda \left( A \right)
 \end{align}
 $$
 
-Now we need to show that $f(x)$ is continuous. That is, $\forall \epsilon > 0$ $\exists \delta$ such that $\mid x - y \mid < \delta \Rightarrow \mid f(x) - f(y) \mid < \epsilon$.
+Now we need to show that $f(x)$ is continuous. That is, $\forall \epsilon > 0$ $\exists \delta$ such that $\mid x - y \mid < \delta \Rightarrow \mid f(x) - f(y) \mid < \epsilon$. Without loss of generality, take $y \geq x$ so $A \cap [0,y] \subset A \cap [0,y]$.
 
 $$
 \begin{align}
