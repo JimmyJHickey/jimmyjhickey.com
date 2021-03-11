@@ -175,4 +175,4 @@ $$
 \{ \mathcal{ A }_{j_1}, \dots , \mathcal{ A }_{j_m} \} \subset \{ \mathcal{ A_1 }, \dots \mathcal{ A_{j_m} } \}.
 $$
 
-We know that $\mathcal A_{j_m}$ is independent of $\sigma \langle \mathcal A_1, \dots , \mathcal A_{j_{m} - 1} \rangle$, so $\\{ \mathcal{ A }_{j_1}, \dots , \mathcal{ A }_{j_m} \\} are also mutually independent. So we have show that an arbitrary finite subset of $T$ is mutually indepdent, so $\\{ \mathcal A_n: n = 1, 2, \dots \\}$ is mutually independent.
+We know that $\mathcal A\_{j\_m}$ is independent of $\sigma \langle \mathcal A\_1, \dots , \mathcal A_{j_{m} - 1} \rangle$, so $\\{ \mathcal{ A }\_{j\_1}, \dots , \mathcal{ A }\_{j\_m} \\}$ are also mutually independent. So we have show that an arbitrary finite subset of $T$ is mutually indepdent, so $\\{ \mathcal A_n: n = 1, 2, \dots \\}$ is mutually independent.
