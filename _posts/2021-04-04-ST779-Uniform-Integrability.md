@@ -45,7 +45,13 @@ We know $\frac{ log(C) }{ C } \rightarrow 0$ as $C \rightarrow 0$ and $\int  X_{
 
 **Is $\log(X_{n})$ necessarily uniformly integrable under the assumed condition $\sup_{n} E(X_{n}) < \infty$? Prove or give a counter example.**
 
+Take $X_{n} = \frac{ 1 }{ n }$. Then $Y_{n} = \log(\frac{ 1 }{n  })$. Then $\sup E(\mid X_{n} \mid) = \sup E(\frac{ 1 }{ n }) = \sup \frac{ 1 }{ n } = 1 < \infty$. However,
 
+$$
+\sup E(\mid Y_{n} \mid) = \sup E( \mid \log(\frac{ 1 }{ n }) \mid) = \infty
+$$
+
+So, $Y_{n}$ is not uniformly integrable.
 
 
 # 3
@@ -84,24 +90,15 @@ Thus, $E(\sup \\{ \mid X_{n} \mid \\}: n \geq 1 \\}) < \infty$.
 # 4
 **Consider the probability space $[0,1]$ with the Borel $\sigma$-field and the Lebesgue measure on it. Define a double sequence of random variables by $X_{n,k}(\omega) n 1\\{ (k-1)/n^{2} \leq \omega \leq k/n^{2} \\}$, $k = 1, \dots , n^2$, $n = 1, 2, \dots$. Show that $\\{ X_{n,k} : k = 1, \dots , n^{2},\ n = 1, 2, \dots$ is uniformly integrable yet is not dominated by any integrable random variable.**
 
-Take $Y_{n} = \\{ X_{n,k} \\}_{k=1}^{n^{2}}$. Then,
+Notice
 
 $$
-E(Y_{n}) = \sum_{i=1}^{n^{2}} \frac{ 1 }{ n } =  \frac{ 1 }{ n }\sum_{i=1}^{n^{2}} 1 = n.
+\sup E(X_{n,k}(\omega)^2) = \sup n^2 \cdot \frac{ 1 }{ n^2 } = 1 < \infty.
 $$
 
-This is unbounded, so $\nexists Z $ such that $\mid Y_{n} \mid < Z$ $\forall n$.
+Based on the Corollary on slide 129, this is sufficient to say that $X_{n,k}$ is uniformly integrable.
 
-Now we want to show that $\sup_{n} \int_{\mid Y_{n} \mid > C} \mid Y_{n} dP \rightarrow 0$ as $C \rightarrow \infty$. Notice that 
-
-$$
-Y_{n} = \begin{cases}
-n & [0,1]\\
-0 & \text{otherwise}.
-\end{cases}
-$$
-
-If $C > n$, then $\sup_{n} \int_{\mid Y_{n} \mid > C} \mid Y_{n} dP = 0$. So take $C = n+1$. 
+However, notice that $E(\sup \mid X_{n,k} \mid ) = E(\sup X_{n,k}) = n \rightarrow \infty$. Thus, by question 3 there is no random variable that dominates $X_{n,k}$.
 
 
 # 5
