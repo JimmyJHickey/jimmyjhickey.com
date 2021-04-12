@@ -49,8 +49,18 @@ $$
 
 **Show that for $E \mid X \mid^{p} \leq E \mid X+Y \mid^{p}$.**
 
+Notice that $E(Y \mid X) = E(Y) = 0$. By Jensen's inequality, we know that
+
+$$
+\mid X \mid^{p} = \mid X + E(Y \mid X) \mid^{p} = \mid E(X + Y \mid X) \mid^{p} \leq E( \mid X+Y \mid^{p} \mid X).
+$$
 
 
+Then by the law of total expectation,
+
+$$
+E(\mid X \mid^{p}) \leq E\Big( E( \mid X + Y \mid^{p} \mid X)\Big) = E( \mid X+Y \mid^{p}).
+$$
 
 # 3
 **Show that $\int_{0}^{\infty} e^{-x^{2}/2} dx = \sqrt{ \pi / 2 }$.**
@@ -132,5 +142,5 @@ $$
 Since we are integrating over all the reals, we can re-write the inner integral (notice that the shift will not change the value).
 
 $$
-\int f(y) \Big[ \int f(x-y) dx \Big] dy = \int f(y) \Big[ \int f(z) dz \Big] dy = \int f(y) dy \cdot \int f(y) dy = \Big[ \int f(y) dy \Big]^{2} \geq 0.
+\int f(y) \Big[ \int f(x-y) dx \Big] dy = \int f(y) \Big[ \int f(z) dz \Big] dy = \int f(y) dy \cdot \int f(y) dy = \Big[ \int f(y) dy \Big]^{2} \geq 0
 $$
