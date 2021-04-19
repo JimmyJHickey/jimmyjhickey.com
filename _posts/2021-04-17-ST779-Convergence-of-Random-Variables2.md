@@ -31,15 +31,16 @@ Thus, $X_{n} \stackrel{ \text{a.s.}}{\rightarrow} X$.
 **Show that $X_{n} \stackrel{ \text{p}}{\rightarrow} X$ if and only if $E \Big[ \Big( \mid X_{n} - X  \Big) / \Big( 1+\mid X_{n} - X \mid \Big)\Big] \rightarrow 0$.**
 
 
-$$
-\Rightarrow
-$$
-
 Notice that 
 
 $$
 \frac{\Big( \mid X_{n} - X \mid \Big)}{ \Big( 1+\mid X_{n} - X \mid \Big)} \leq \mid X_{n} - X  \mid.
 $$
+
+$$
+\Rightarrow
+$$
+
 
 Assume $P( \mid X_{n} - X \mid ) > \varepsilon) \leq \varepsilon$.  We can break the expected value into two pieces.
 
@@ -62,7 +63,7 @@ $$
 \Leftarrow
 $$
 
-Now assume $E \Big[ \Big( \mid X_{n} - X  \Big) / \Big( 1+\mid X_{n} - X \mid \Big)\Big] \rightarrow 0$. Then we know for $\varepsilon> 0$, $\exists N$ such that $n > N$, $E \Big[ \Big( \mid X_{n} - X  \Big) / \Big( 1+\mid X_{n} - X \mid \Big)\Big] \leq \frac{ \varepsilon^{2} }{ 1 + \varepsilon }$. Then, we know
+Now assume $E \Big[ \Big( \mid X_{n} - X  \Big) / \Big( 1+\mid X_{n} - X \mid \Big)\Big] \rightarrow 0$. Then we know for $\varepsilon> 0$, $\exists N$ such that $n > N$, $E \Big[ \Big( \mid X_{n} - X  \Big) / \Big( 1+\mid X_{n} - X \mid \Big)\Big] \leq \varepsilon^2$. Then, we know
 
 $$
 \begin{align}
@@ -95,20 +96,30 @@ $$
 # 4
 **Let $X_{n}$ be iid with $E \Big( \mid X_{1} \mid^{p} \Big) < \infty$, $0 < p < \infty$. Show that $n^{-1/p} \max \Big( \mid X_{1} \mid, \dots , \mid X_{n} \mid \Big) \stackrel{ \text{p}}{\rightarrow}0$.**
 
-Take $\varepsilon > 0$. 
+Take $\varepsilon>0$.
+
 
 $$
 \begin{align}
-P & \Big( \mid n^{-1/p} \max \Big( \mid X_{1} \mid, \dots , \mid X_{n} \mid \Big) \mid > \varepsilon  \Big) \\
-    & = P\Big( n^{-1/p} \max \Big( \mid X_{1} \mid, \dots , \mid X_{n} \mid \Big) > \varepsilon  \Big) \\
-    & =  P\Big( \max \Big( \mid X_{1} \mid, \dots , \mid X_{n} \mid \Big) > \varepsilon  n^{1/p}  \Big) \\
-    & \leq \underbrace{\frac{ 1 }{ (\varepsilon n^{1/p})^p }}_{\rightarrow 0}  \underbrace{E \Big[ \max \Big( \mid X_{1} \mid, \dots , \mid X_{n} \mid \Big)^{p} \Big]}_{< \infty} \\
-    & \rightarrow 0 \text{ as } \lim_{n\rightarrow \infty}
+P & \Bigg(n^{-1/p} \max\Big( \mid X_{1}\mid ,\dots ,\mid X_{n} \mid \Big)\Bigg) > \varepsilon \Bigg) \\
+    & = P\Bigg(\max\Big( \mid X_{1}\mid ,\dots ,\mid X_{n} \mid \Big)\Bigg) > n^{1/p}  \varepsilon \Bigg) \\
+    & = P\Bigg(\max\Big( \mid X_{1}\mid ,\dots ,\mid X_{n} \mid \Big)^{p} \Bigg) > n \varepsilon^{p} \Bigg) \\
+    & = 1 - P\Bigg(\max\Big( \mid X_{1}\mid ,\dots ,\mid X_{n} \mid \Big)^{p} \Bigg) \leq n \varepsilon^{p} \Bigg) \\
+    & = 1 - P\Bigg(\mid X_{1} \mid^{p} \leq n \varepsilon^{p} \Bigg)^{n} 
 \end{align}
 $$
 
-Where the inequality comes from Markov's Inequality.
+Now we need to show $P\Bigg(\mid X_{1} \mid^{p} \leq n \varepsilon^{p} \Bigg) \rightarrow 1$. We can use Chebyshev's inequality.
 
+$$
+P\Bigg(\mid X_{1} \mid^{p} \leq n \varepsilon^{p} \Bigg) = 1 - P\Bigg(\mid X_{1} \mid^{p} > n \varepsilon^{p} \Bigg) \leq 1 - \frac{ E(\mid X_{1} \mid^{p}) }{ n \varepsilon^{p} } \rightarrow 1
+$$
+
+Thus, 
+
+$$
+n^{-1/p} \max \Big( \mid X_{1} \mid, \dots , \mid X_{n} \mid \Big) = 1 - P\Bigg(\mid X_{1} \mid^{p} \leq n \varepsilon^{p} \Bigg)^{n}   \stackrel{ \text{p}}{\rightarrow} 1 - 1 = 0.
+$$
 
 # 5
 **Let $X_{1}, X_{2}, \dots$ be iid standard exponential random variables. Show that $\max \Big( X_{1} , \dots X_{n} \Big) - \log(n)$ converges in distribution. Find the limiting distribution as well.**
