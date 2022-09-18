@@ -71,7 +71,7 @@ $$
 \mu = \begin{bmatrix}
 \mu_1 \\
 \mu_2
-\end{bmatrix}.
+\end{bmatrix} \text{ and }
 \Sigma = 
 \begin{bmatrix}
 \sigma_1^2 & \sigma_{12} \\
