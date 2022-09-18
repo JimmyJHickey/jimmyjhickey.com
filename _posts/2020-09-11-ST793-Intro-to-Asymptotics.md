@@ -60,7 +60,7 @@ $$
 Notice $d_i = \sqrt{ n } (\mu_i - \overline{ \mu })$ and 
 
 $$
-\overline{ d } = \frac{ 1 }{ k } \sum_{i=1}^k = \frac{ 1 }{ k } \sum_{i=1}^{k} \sqrt{ n } (\mu_i - \overline{ \mu }) = 0.
+\overline{ d } = \frac{ 1 }{ k } \sum_{i=1}^k d_{i} = \frac{ 1 }{ k } \sum_{i=1}^{k} \sqrt{ n } (\mu_i - \overline{ \mu }) = 0.
 $$
 
 Thus,
