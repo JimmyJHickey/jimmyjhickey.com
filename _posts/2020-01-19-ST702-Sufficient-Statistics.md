@@ -72,7 +72,7 @@ $$
 	\begin{align}
 		f(\mathbf{x} | \mu, \sigma) & = \prod_{i = 1}^{n} f_X \\
 			& = \prod_{ i = 1 }^{ n } \frac{ 1 }{ \sigma } e^{-(x_i - \mu) / \sigma} \mathbb{I}(\mu < x_i < \infty) \\
-			& = \frac{ 1 }{ \sigma } e^{-\sum(x_i - \mu) / \sigma} \mathbb{I}(\mu < x_(1) < \infty)
+			& = \frac{ 1 }{ \sigma } e^{-\sum(x_i - \mu) / \sigma} \mathbb{I}(\mu < x_{(1)} < \infty)
 	\end{align}
 $$
 
