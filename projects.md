@@ -10,6 +10,21 @@ Here's a big list of the programming projects I've worked on. You can click on t
 * Do not remove this line (it will not be displayed)
 {:toc}
 
+## [Craiglist Webscraper](https://github.com/JimmyJHickey/craigslist-scraper)
+<img src="img/portfolio_img/craigslist.png" width="400" />
+I received the first two novels in Terry Pratchett's Discworld series as gifts. Since then I have been on a quest to collect the other 39 books. This web scraper check Craigslist every hour for new postings and emails me if there is any activity. Nobody moves a Pratchett novel in this town without me hearing about it first.
+
+
+## [Spotify Collaborations](https://github.com/JimmyJHickey/spotify-contributions)
+<img src="img/portfolio_img/contributions.png" width="400" />
+Each month I create a themed Spotify playlist for my friends and I to add songs to. I collected from each play list and created a [GitHub style contribution chart to visualize our data](https://github.com/JimmyJHickey/spotify-contributions/blob/master/contributions_plot.png). I reign supreme atop the leaderboard.
+
+
+## [EM For Transmission Tomography](https://github.com/JimmyJHickey/EM-for-Transmission-Tomography)
+<img src="img/portfolio_img/EM.png" width="400" />
+
+I worked on this project with [Eric Yanchenko](http://www.ericyanchenko.com/) and [Alvin Sheng](https://www.linkedin.com/in/alvin-sheng-b06351110?original_referer=https%3A%2F%2Fwww.google.com%2F). We demonstarte the finite sample properties of the EM algorithm applied to simulated transmission tomography slides. We show how the number of projection angles affects the ability of the algorithm to recover the scan. You can read our <a href="/files/EM.pdf" target="_blank">report here</a> 
+
 ## [Gradient Descent Blog Post](https://jimmyjhickey.shinyapps.io/gradient_descent/)
 <img src="img/portfolio_img/gradient_descent.jpg" width="400" />
 
