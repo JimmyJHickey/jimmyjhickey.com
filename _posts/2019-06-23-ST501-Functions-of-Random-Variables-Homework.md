@@ -212,7 +212,7 @@ $$
 $$
 
 ## b. 
-**Show that if $W$ follow a Weibull distribution, then $X=(W/\alpha^\beta$ follows an exponential distribution.**
+**Show that if $W$ follow a Weibull distribution, then $X=(W/\alpha^\beta)$ follows an exponential distribution.**
 
 Let's use the CDF Method.
 
