@@ -67,7 +67,7 @@ $$
 $$
 
 # 2.60
-**Find the density function of $Y=e^X$, where $Z \sim N(\mu, \sigma^2$. This is the _lognormal density_, since $\log{Y}$ is normally distributed.**
+**Find the density function of $Y=e^X$, where $Z \sim N(\mu, \sigma^2)$. This is the _lognormal density_, since $\log{Y}$ is normally distributed.**
 
 Let's use the CDF Method.
 
