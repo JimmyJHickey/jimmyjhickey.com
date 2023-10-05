@@ -92,7 +92,7 @@ $$
 # 2.61
 **Find the density of $cX$ when $X$ follow a gamma distribution. Show that only $\lambda$ is affected by such a transformation, which justifies calling $\lambda$ a scale parameter.**
 
-For notation, say $Y = xX$. Let's use the CDF method.
+For notation, say $Y = cX$. Let's use the CDF method.
 
 $$
 	\begin{align}
