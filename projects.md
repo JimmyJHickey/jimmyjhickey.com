@@ -10,7 +10,7 @@ Here's a big list of the programming projects I've worked on. You can click on t
 * Do not remove this line (it will not be displayed)
 {:toc}
 
-## [Craiglist Webscraper](https://github.com/JimmyJHickey/craigslist-scraper)
+## [Craigslist Webscraper](https://github.com/JimmyJHickey/craigslist-scraper)
 <img src="img/portfolio_img/craigslist.png" width="400" />
 I received the first two novels in Terry Pratchett's Discworld series as gifts. Since then I have been on a quest to collect the other 39 books. This web scraper check Craigslist every hour for new postings and emails me if there is any activity. Nobody moves a Pratchett novel in this town without me hearing about it first.
 

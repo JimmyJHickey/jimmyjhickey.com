@@ -67,7 +67,7 @@ $$
 $$
 
 # 2.60
-**Find the density function of $Y=e^X$, where $Z \sim N(\mu, \sigma^2$. This is the _lognormal density_, since $\log{Y}$ is normally distributed.**
+**Find the density function of $Y=e^X$, where $Z \sim N(\mu, \sigma^2)$. This is the _lognormal density_, since $\log{Y}$ is normally distributed.**
 
 Let's use the CDF Method.
 
@@ -92,7 +92,7 @@ $$
 # 2.61
 **Find the density of $cX$ when $X$ follow a gamma distribution. Show that only $\lambda$ is affected by such a transformation, which justifies calling $\lambda$ a scale parameter.**
 
-For notation, say $Y = xX$. Let's use the CDF method.
+For notation, say $Y = cX$. Let's use the CDF method.
 
 $$
 	\begin{align}
@@ -212,7 +212,7 @@ $$
 $$
 
 ## b. 
-**Show that if $W$ follow a Weibull distribution, then $X=(W/\alpha^\beta$ follows an exponential distribution.**
+**Show that if $W$ follow a Weibull distribution, then $X=(W/\alpha^\beta)$ follows an exponential distribution.**
 
 Let's use the CDF Method.
 
