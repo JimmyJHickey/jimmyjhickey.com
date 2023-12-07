@@ -11,7 +11,7 @@ Below you can see my current list of manuscripts and presentations. I am interes
 ## Publications
 1. **J Hickey**, J P Williams, E C Hector (2022+). Transfer Learning with Uncertainty Quantification: Random Effect Calibration of Source to Target (RECaST). [arXiv](https://arxiv.org/abs/2211.16557) _In Review_
 
-2. C Hong, M Liu, D M Wojdyla, **J Hickey**, M Pencina, R Henao (2023). Trans-Balance: Reducing Demographic Disparity for Prediction Models in the Presence of Class Imbalance. To appear in _The Journal of Biomedical Informatics_
+2. C Hong, M Liu, D M Wojdyla, **J Hickey**, M Pencina, R Henao (2023). Trans-Balance: Reducing Demographic Disparity for Prediction Models in the Presence of Class Imbalance. [Link](https://www.sciencedirect.com/science/article/abs/pii/S1532046423002538?via%3Dihub) _The Journal of Biomedical Informatics_
 
 3. **J Hickey**, R Henao, M Pencina, D M Wojdyla, M Engelhard (2023+). Improving Event Time Prediction by Learning to Partition the Timeline. [arXiv](https://arxiv.org/abs/2310.15853) _In Review_
 
