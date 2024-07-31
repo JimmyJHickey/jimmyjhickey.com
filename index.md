@@ -9,7 +9,7 @@ Hi, I'm Jimmy Hickey. I'm a statistics PhD student at North Carolina State Unive
 * Hitting tennis balls into nets
 * Frantically trying to speed run the New York Times Mini Crossword
 * Spending more time automating something than it would take to complete the task
-* Reading, realizing I didn't retain anything from the last page, then re-reading
+* Making one move blunders in chess
 
 ## My more politically charged opinions
 * 0 based indexing > 1 based indexing
