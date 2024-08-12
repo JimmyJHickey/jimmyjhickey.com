@@ -10,14 +10,7 @@ Here's a big list of the programming projects I've worked on. You can click on t
 * Do not remove this line (it will not be displayed)
 {:toc}
 
-## [Craigslist Webscraper](https://github.com/JimmyJHickey/craigslist-scraper)
-<img src="img/portfolio_img/craigslist.png" width="400" />
-I received the first two novels in Terry Pratchett's Discworld series as gifts. Since then I have been on a quest to collect the other 39 books. This web scraper check Craigslist every hour for new postings and emails me if there is any activity. Nobody moves a Pratchett novel in this town without me hearing about it first.
 
-
-## [Spotify Collaborations](https://github.com/JimmyJHickey/spotify-contributions)
-<img src="img/portfolio_img/contributions.png" width="400" />
-Each month I create a themed Spotify playlist for my friends and I to add songs to. I collected from each play list and created a [GitHub style contribution chart to visualize our data](https://github.com/JimmyJHickey/spotify-contributions/blob/master/contributions_plot.png). I reign supreme atop the leaderboard.
 
 
 ## [EM For Transmission Tomography](https://github.com/JimmyJHickey/EM-for-Transmission-Tomography)
@@ -30,6 +23,17 @@ I worked on this project with [Eric Yanchenko](http://www.ericyanchenko.com/) an
 
 
 I wrote an interactive article explaining Gradient Descent. It includes some real world examples as well as simple theoretical examples. The article includes mathematical derivations and algorithmic analysis as well. You can find the code [here](https://github.com/JimmyJHickey/ST790/tree/master/mini_project) and see it live [here](https://jimmyjhickey.shinyapps.io/gradient_descent/).
+
+
+## [Craigslist Webscraper](https://github.com/JimmyJHickey/craigslist-scraper)
+<img src="img/portfolio_img/craigslist.png" width="400" />
+I received the first two novels in Terry Pratchett's Discworld series as gifts. Since then I have been on a quest to collect the other 39 books. This web scraper check Craigslist every hour for new postings and emails me if there is any activity. Nobody moves a Pratchett novel in this town without me hearing about it first.
+
+
+## [Spotify Collaborations](https://github.com/JimmyJHickey/spotify-contributions)
+<img src="img/portfolio_img/contributions.png" width="400" />
+Each month I create a themed Spotify playlist for my friends and I to add songs to. I collected from each play list and created a [GitHub style contribution chart to visualize our data](https://github.com/JimmyJHickey/spotify-contributions/blob/master/contributions_plot.png). I reign supreme atop the leaderboard.
+
 
 
 ## [Dr. Bergen's Letter of Recommendation](https://jimmyjhickey.github.io/old-site/silas.html)
