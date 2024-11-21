@@ -9,11 +9,13 @@ Below you can see my current list of manuscripts and presentations. I am interes
 
 
 ## Publications
-1. C Hong, M Liu, D M Wojdyla, **J Hickey**, M Pencina, R Henao (2023). Trans-Balance: Reducing Demographic Disparity for Prediction Models in the Presence of Class Imbalance. [[manuscript]](https://www.sciencedirect.com/science/article/abs/pii/S1532046423002538?via%3Dihub) _The Journal of Biomedical Informatics_
+1. **J Hickey**, J P Williams, E C Hector (2024). Transfer Learning with Uncertainty Quantification: Random Effect Calibration of Source to Target (RECaST). [[manuscript]](https://www.jmlr.org/papers/v25/22-1369.html) _The Journal of Machine Learning Research_
 
-2. **J Hickey**, R Henao, M Pencina, D M Wojdyla, M Engelhard (2023+). Adaptive Discretization for Event PredicTion (ADEPT). [[manuscript]](https://proceedings.mlr.press/v238/hickey24a/hickey24a.pdf) _AISTATS_
+2. **J Hickey**, R Henao, M Pencina, D M Wojdyla, M Engelhard (2024). Adaptive Discretization for Event PredicTion (ADEPT). _AISTATS_ [[manuscript]](https://proceedings.mlr.press/v238/hickey24a.html)
+ 
+3. C Hong, M Liu, D M Wojdyla, **J Hickey**, M Pencina, R Henao (2024). Trans-Balance: Reducing Demographic Disparity for Prediction Models in the Presence of Class Imbalance. [[manuscript]](https://www.sciencedirect.com/science/article/abs/pii/S1532046423002538?via%3Dihub) _The Journal of Biomedical Informatics_
 
-3. **J Hickey**, J P Williams, E C Hector (202x). Transfer Learning with Uncertainty Quantification: Random Effect Calibration of Source to Target (RECaST). [[manuscript]](https://arxiv.org/abs/2211.16557) R & R at_The Journal of Machine Learning Research_
+4. **J Hickey**, E C Hector, J P Williams (202x). Multivariate and Online Transfer Learning with Uncertainty Quantification. _In Review_ [[manuscript]](https://arxiv.org/abs/2411.12555)
 
 
 ## Presentations
