@@ -3,7 +3,7 @@ layout: page
 title: Home
 ---
 
-Hi, I'm Jimmy Hickey. I received my PhD in Statistics at North Carolina State University. My research focuses on developing new methods in transfer learning and time-to-event machine learning. You can view my <a href="/files/Jimmy_Hickey_resume.pdf" target="_blank">resume here</a> here or even my whole dang <a href="/files/Jimmy_Hickey_CV.pdf" target="_blank">CV here</a>.
+Hi, I'm Jimmy Hickey. I received my PhD in Statistics at North Carolina State University. My research focuses on developing new methods in transfer learning and time-to-event machine learning. You can view my <a href="/files/Jimmy_Hickey_Resume.pdf" target="_blank">resume here</a> here or even my whole dang <a href="/files/Jimmy_Hickey_CV.pdf" target="_blank">CV here</a>.
 You can see some of my programming misadventures in the [projects section](projects) and in the [posts section](posts/post_archive) you will mostly see my old homework solutions (let me know if you find any typos!). 
 
 
