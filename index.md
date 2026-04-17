@@ -8,13 +8,19 @@ You can see some of my programming misadventures in the [projects section](proje
 
 
 ## Publications
-1. **J Hickey**, J P Williams, E C Hector (2024). Transfer Learning with Uncertainty Quantification: Random Effect Calibration of Source to Target (RECaST). _The Journal of Machine Learning Research_ [[manuscript]](https://www.jmlr.org/papers/v25/22-1369.html)
+1. **J Hickey**, J P Williams, B J Reich, E C Hector (2026). Multivariate and Online Transfer Learning with Uncertainty Quantification. _Statistics in Medicine_ [[manuscript]](https://onlinelibrary.wiley.com/doi/10.1002/sim.70398)
 
-2. **J Hickey**, R Henao, M Pencina, D M Wojdyla, M Engelhard (2024). Adaptive Discretization for Event PredicTion (ADEPT). _AISTATS_ [[manuscript]](https://proceedings.mlr.press/v238/hickey24a.html)
+2. **J Hickey**, J P Williams, E C Hector (2024). Transfer Learning with Uncertainty Quantification: Random Effect Calibration of Source to Target (RECaST). _The Journal of Machine Learning Research_ [[manuscript]](https://www.jmlr.org/papers/v25/22-1369.html)
+
+3. **J Hickey**, R Henao, M Pencina, D M Wojdyla, M Engelhard (2024). Adaptive Discretization for Event PredicTion (ADEPT). _AISTATS_ [[manuscript]](https://proceedings.mlr.press/v238/hickey24a.html)
  
-3. C Hong, M Liu, D M Wojdyla, **J Hickey**, M Pencina, R Henao (2024). Trans-Balance: Reducing Demographic Disparity for Prediction Models in the Presence of Class Imbalance. _The Journal of Biomedical Informatics_ [[manuscript]](https://www.sciencedirect.com/science/article/abs/pii/S1532046423002538?via%3Dihub)
+4. C Hong, M Liu, D M Wojdyla, **J Hickey**, M Pencina, R Henao (2024). Trans-Balance: Reducing Demographic Disparity for Prediction Models in the Presence of Class Imbalance. _The Journal of Biomedical Informatics_ [[manuscript]](https://www.sciencedirect.com/science/article/abs/pii/S1532046423002538?via%3Dihub)
 
-4. **J Hickey**, E C Hector, J P Williams (202x). Multivariate and Online Transfer Learning with Uncertainty Quantification. _In Review_ [[manuscript]](https://arxiv.org/abs/2411.12555)
+5. D Bull, …, **J Hickey**, … (2024). CLimate Impact: Determining Etiology thRough pAthways (CLDERA). _Sandia National Lab_ [[manuscript]](https://www.osti.gov/biblio/2480139)
+
+6. K Larson-Vos, …, **J Hickey**, … (2023) Automatic detection of ship-induced cloud features in satellite imagery. _Sandia National Lab_ [[manuscript]](https://www.osti.gov/biblio/2430237)
+
+7. L Shand, …, **J Hickey**, … (2021). Local limits of detection for anthropogenic aerosol-cloud interactions. _Sandia National Lab_ [[manuscript]](https://www.osti.gov/biblio/1855009)
 
 
 ## Hobbies
