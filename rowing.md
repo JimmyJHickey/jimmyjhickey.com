@@ -51,15 +51,15 @@ Just some apes in boats.
 <img src="img/rowing/Rowing_the_English_Channel.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
 **Dates:** 2026-04-17 -- Present
 
-**Meters rowed:** 4,000
+**Meters rowed:** 4,204
 
 **Total meters:** 43,050.6
 
-**Completion Percentage:** 9.29%
+**Completion Percentage:** 9.77%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Jim Chimpsky | 4,000 | 9.29% | 0h 21m 18s | 211 |
+| Jim Chimpsky | 4,204 | 9.77% | 0h 25m 18s | 211 |
 
 ---
 
@@ -68,7 +68,7 @@ Just some apes in boats.
 <img src="img/rowing/Circumnavigating_the_Globe_like_Magellan.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
 **Dates:** 2026-04-17 -- Present
 
-**Meters rowed:** 4,000
+**Meters rowed:** 4,204
 
 **Total meters:** 56,478,072.1
 
@@ -76,4 +76,4 @@ Just some apes in boats.
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Jim Chimpsky | 4,000 | 0.01% | 0h 21m 18s | 211 |
+| Jim Chimpsky | 4,204 | 0.01% | 0h 25m 18s | 211 |
