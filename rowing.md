@@ -58,7 +58,7 @@ Just some apes in boats.
 **Completion Percentage:** 9.29%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
-| --- | --- | --- | --- | --- |
+| :--- | :--- | :--- | :--- | :--- |
 | Jim Chimpsky | 4,000 | 9.29% | 0h 21m 18s | 211 |
 
 ---
@@ -75,5 +75,5 @@ Just some apes in boats.
 **Completion Percentage:** 0.01%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
-| --- | --- | --- | --- | --- |
+| :--- | :--- | :--- | :--- | :--- |
 | Jim Chimpsky | 4,000 | 0.01% | 0h 21m 18s | 211 |
