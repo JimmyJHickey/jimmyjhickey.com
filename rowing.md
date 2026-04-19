@@ -51,15 +51,16 @@ Just some apes in boats.
 <img src="img/rowing/Rowing_the_English_Channel.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
 **Dates:** 2026-04-17 -- Present
 
-**Meters rowed:** 4,204
+**Meters rowed:** 14,545
 
 **Total meters:** 43,050.6
 
-**Completion Percentage:** 9.77%
+**Completion Percentage:** 33.79%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Jim Chimpsky | 4,204 | 9.77% | 0h 25m 18s | 211 |
+| Ham the Ast-row Chimp | 5,083 | 11.81% | 0h 32m 42s | 272 |
+| Jim Chimpsky | 9,462 | 21.98% | 1h 03m 06s | 461 |
 
 ---
 
@@ -68,12 +69,13 @@ Just some apes in boats.
 <img src="img/rowing/Circumnavigating_the_Globe_like_Magellan.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
 **Dates:** 2026-04-17 -- Present
 
-**Meters rowed:** 4,204
+**Meters rowed:** 14,545
 
 **Total meters:** 56,478,072.1
 
-**Completion Percentage:** 0.01%
+**Completion Percentage:** 0.03%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Jim Chimpsky | 4,204 | 0.01% | 0h 25m 18s | 211 |
+| Ham the Ast-row Chimp | 5,083 | 0.01% | 0h 32m 42s | 272 |
+| Jim Chimpsky | 9,462 | 0.02% | 1h 03m 06s | 461 |
