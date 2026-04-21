@@ -52,16 +52,16 @@ People can swim this, right? Surely we can row it.
 <img src="img/rowing/Rowing_the_English_Channel.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
 **Dates:** 2026-04-17 -- Present
 
-**Meters rowed:** 24,802
+**Meters rowed:** 28,887
 
 **Total meters:** 43,050.6
 
-**Completion Percentage:** 57.61%
+**Completion Percentage:** 67.1%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Ham the Ast-row Chimp | 10,083 | 23.42% | 0h 57m 52s | 546 |
 | Jim Chimpsky | 14,719 | 34.19% | 1h 37m 02s | 716 |
+| Ham the Ast-row Chimp | 14,168 | 32.91% | 1h 25m 20s | 762 |
 
 
 ## Circumnavigating the Globe like Magellan
@@ -71,13 +71,13 @@ Will we mutiny as well?
 <img src="img/rowing/Circumnavigating_the_Globe_like_Magellan.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
 **Dates:** 2026-04-17 -- Present
 
-**Meters rowed:** 24,802
+**Meters rowed:** 28,887
 
 **Total meters:** 56,478,072.1
 
-**Completion Percentage:** 0.04%
+**Completion Percentage:** 0.05%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Ham the Ast-row Chimp | 10,083 | 0.02% | 0h 57m 52s | 546 |
 | Jim Chimpsky | 14,719 | 0.03% | 1h 37m 02s | 716 |
+| Ham the Ast-row Chimp | 14,168 | 0.03% | 1h 25m 20s | 762 |
