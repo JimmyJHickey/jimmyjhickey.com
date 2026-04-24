@@ -45,25 +45,6 @@ title: Rowing
 Just some apes in boats.
 
 
-## Rowing the English Channel
-
-People can swim this, right? Surely we can row it.
-
-<img src="img/rowing/Rowing_the_English_Channel.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
-**Dates:** 2026-04-17 -- Present
-
-**Meters rowed:** 44,270
-
-**Total meters:** 43,050.6
-
-**Completion Percentage:** 100.0%
-
-| Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
-| :--- | :--- | :--- | :--- | :--- |
-| Ham the Ast-row Chimp | 24,240 | 56.31% | 2h 24m 55s | 1,304 |
-| Jim Chimpsky | 20,030 | 46.53% | 2h 11m 26s | 980 |
-
-
 ## Circumnavigating the Globe like Magellan
 
 Will we mutiny as well?
@@ -81,3 +62,25 @@ Will we mutiny as well?
 | :--- | :--- | :--- | :--- | :--- |
 | Ham the Ast-row Chimp | 24,240 | 0.04% | 2h 24m 55s | 1,304 |
 | Jim Chimpsky | 20,030 | 0.04% | 2h 11m 26s | 980 |
+
+# Archive
+
+
+## Rowing the English Channel
+
+People can swim this, right? Surely we can row it.
+
+<img src="img/rowing/Rowing_the_English_Channel.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
+**Dates:** 2026-04-17 -- 2026-04-23 2026-04-23
+
+**Meters rowed:** 44,270
+
+**Total meters:** 43,050.6
+
+**Completion Percentage:** 100.0%
+
+| Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
+| :--- | :--- | :--- | :--- | :--- |
+| Ham the Ast-row Chimp | 24,240 | 56.31% | 2h 24m 55s | 1,304 |
+| Jim Chimpsky | 20,030 | 46.53% | 2h 11m 26s | 980 |
+
