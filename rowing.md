@@ -52,16 +52,16 @@ Will we mutiny as well?
 <img src="img/rowing/Circumnavigating_the_Globe_like_Magellan.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
 **Dates:** 2026-04-17 -- Present
 
-**Meters rowed:** 49,493
+**Meters rowed:** 54,585
 
 **Total meters:** 56,478,072.1
 
-**Completion Percentage:** 0.09%
+**Completion Percentage:** 0.1%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
+| Ham the Ast-row Chimp | 29,332 | 0.05% | 2h 58m 24s | 1,581 |
 | Jim Chimpsky | 25,253 | 0.04% | 2h 49m 38s | 1,230 |
-| Ham the Ast-row Chimp | 24,240 | 0.04% | 2h 24m 55s | 1,304 |
 
 # Archive
 
