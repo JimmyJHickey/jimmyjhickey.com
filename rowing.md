@@ -46,7 +46,7 @@ Just some apes in boats.
 
 ## Rowing the North Channel
 
-Apparently also known as the Sruth na Maoile or the Sheuch
+Also known as the Sruth na Maoile or the Sheuch.
 
 <img src="img/rowing/Rowing_the_North_Channel.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
 **Dates:** 2026-05-04 -- Present
