@@ -44,6 +44,22 @@ title: Rowing
 
 Just some apes in boats.
 
+## Rowing the North Channel
+
+Apparently also known as the Sruth na Maoile or the Sheuch
+
+<img src="img/rowing/Rowing_the_North_Channel.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
+**Dates:** 2026-05-04 -- Present
+
+**Meters rowed:** 5,188
+
+**Total meters:** 55,576.7
+
+**Completion Percentage:** 9.33%
+
+| Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
+| :--- | :--- | :--- | :--- | :--- |
+| Jim Chimpsky | 5,188 | 9.33% | 0h 37m 17s | 250 |
 
 ## Circumnavigating the Globe like Magellan
 
@@ -71,7 +87,7 @@ Will we mutiny as well?
 People can swim this, right? Surely we can row it.
 
 <img src="img/rowing/Rowing_the_English_Channel.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
-**Dates:** 2026-04-17 -- 2026-04-23 2026-04-23
+**Dates:** 2026-04-17 -- 2026-04-23
 
 **Meters rowed:** 44,270
 
