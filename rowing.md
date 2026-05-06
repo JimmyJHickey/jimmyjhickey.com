@@ -51,15 +51,16 @@ Also known as the Sruth na Maoile or the Sheuch.
 <img src="img/rowing/Rowing_the_North_Channel.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
 **Dates:** 2026-05-04 -- Present
 
-**Meters rowed:** 10,423
+**Meters rowed:** 15,503
 
 **Total meters:** 55,576.7
 
-**Completion Percentage:** 18.75%
+**Completion Percentage:** 27.89%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
 | Jim Chimpsky | 10,423 | 18.75% | 1h 12m 19s | 506 |
+| Ham the Ast-row Chimp | 5,080 | 9.14% | 0h 32m 50s | 281 |
 
 ## Circumnavigating the Globe like Magellan
 
@@ -68,15 +69,15 @@ Will we mutiny as well?
 <img src="img/rowing/Circumnavigating_the_Globe_like_Magellan.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
 **Dates:** 2026-04-17 -- Present
 
-**Meters rowed:** 99,413
+**Meters rowed:** 104,493
 
 **Total meters:** 56,478,072.1
 
-**Completion Percentage:** 0.18%
+**Completion Percentage:** 0.19%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Ham the Ast-row Chimp | 58,549 | 0.1% | 5h 43m 24s | 3,198 |
+| Ham the Ast-row Chimp | 63,629 | 0.11% | 6h 16m 15s | 3,479 |
 | Jim Chimpsky | 40,864 | 0.07% | 4h 42m 00s | 1,986 |
 
 # Archive
