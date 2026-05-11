@@ -51,7 +51,7 @@ Also known as the Sruth na Maoile or the Sheuch.
 <img src="img/rowing/Rowing_the_North_Channel.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
 **Dates:** 2026-05-04 -- Present
 
-**Meters rowed:** 61,704
+**Meters rowed:** 67,704
 
 **Total meters:** 55,576.7
 
@@ -59,7 +59,7 @@ Also known as the Sruth na Maoile or the Sheuch.
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Jim Chimpsky | 21,744 | 39.12% | 2h 25m 57s | 1,068 |
+| Jim Chimpsky | 27,744 | 49.92% | 3h 02m 33s | 1,375 |
 | Ham the Ast-row Chimp | 20,154 | 36.26% | 1h 56m 12s | 1,114 |
 | Oar-angutan | 13,248 | 23.84% | 1h 20m 36s | 670 |
 | Mo Monkeys Mo Problems | 6,558 | 11.8% | 0h 35m 11s | 340 |
@@ -71,16 +71,16 @@ Will we mutiny as well?
 <img src="img/rowing/Circumnavigating_the_Globe_like_Magellan.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
 **Dates:** 2026-04-17 -- Present
 
-**Meters rowed:** 150,694
+**Meters rowed:** 156,694
 
 **Total meters:** 56,478,072.1
 
-**Completion Percentage:** 0.27%
+**Completion Percentage:** 0.28%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
 | Ham the Ast-row Chimp | 78,703 | 0.14% | 7h 39m 37s | 4,312 |
-| Jim Chimpsky | 52,185 | 0.09% | 5h 55m 39s | 2,548 |
+| Jim Chimpsky | 58,185 | 0.1% | 6h 32m 15s | 2,855 |
 | Oar-angutan | 13,248 | 0.02% | 1h 20m 36s | 670 |
 | Mo Monkeys Mo Problems | 6,558 | 0.01% | 0h 35m 11s | 340 |
 
