@@ -44,25 +44,22 @@ title: Rowing
 
 Just some apes in boats.
 
-## Rowing the North Channel
+## Rowing the Cook Strait
 
-Also known as the Sruth na Maoile or the Sheuch.
+Also known as Te Moana-o-Raukawa, which is probably better than naming it after a colonizer.
 
-<img src="img/rowing/Rowing_the_North_Channel.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
-**Dates:** 2026-05-04 -- Present
+<img src="img/rowing/Rowing_the_Cook_Strait.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
+**Dates:** 2026-05-12 -- Present
 
-**Meters rowed:** 77,868
+**Meters rowed:** 5,095
 
-**Total meters:** 55,576.7
+**Total meters:** 22,722.0
 
-**Completion Percentage:** 100.0%
+**Completion Percentage:** 22.42%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Jim Chimpsky | 27,744 | 49.92% | 3h 02m 33s | 1,375 |
-| Ham the Ast-row Chimp | 25,223 | 45.38% | 2h 29m 42s | 1,389 |
-| Oar-angutan | 18,343 | 33.0% | 1h 50m 41s | 929 |
-| Mo Monkeys Mo Problems | 6,558 | 11.8% | 0h 35m 11s | 340 |
+| Oar-angutan | 5,095 | 22.42% | 0h 30m 05s | 259 |
 
 ## Circumnavigating the Globe like Magellan
 
@@ -85,6 +82,27 @@ Will we mutiny as well?
 | Mo Monkeys Mo Problems | 6,558 | 0.01% | 0h 35m 11s | 340 |
 
 # Archive
+
+
+## Rowing the North Channel
+
+Also known as the Sruth na Maoile or the Sheuch.
+
+<img src="img/rowing/Rowing_the_North_Channel.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
+**Dates:** 2026-05-04 -- 2026-05-11
+
+**Meters rowed:** 72,773
+
+**Total meters:** 55,576.7
+
+**Completion Percentage:** 100.0%
+
+| Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
+| :--- | :--- | :--- | :--- | :--- |
+| Jim Chimpsky | 27,744 | 49.92% | 3h 02m 33s | 1,375 |
+| Ham the Ast-row Chimp | 25,223 | 45.38% | 2h 29m 42s | 1,389 |
+| Oar-angutan | 13,248 | 23.84% | 1h 20m 36s | 670 |
+| Mo Monkeys Mo Problems | 6,558 | 11.8% | 0h 35m 11s | 340 |
 
 
 ## Rowing the English Channel
