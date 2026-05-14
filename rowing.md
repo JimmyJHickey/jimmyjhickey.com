@@ -51,15 +51,18 @@ Also known as Te Moana-o-Raukawa, which is probably better than naming it after 
 <img src="img/rowing/Rowing_the_Cook_Strait.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
 **Dates:** 2026-05-12 -- Present
 
-**Meters rowed:** 5,095
+**Meters rowed:** 17,109
 
 **Total meters:** 22,722.0
 
-**Completion Percentage:** 22.42%
+**Completion Percentage:** 75.3%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
+| Jim Chimpsky | 6,000 | 26.41% | 0h 34m 56s | 310 |
 | Oar-angutan | 5,095 | 22.42% | 0h 30m 05s | 259 |
+| Ham the Ast-row Chimp | 5,000 | 22.01% | 0h 24m 16s | 280 |
+| Mo Monkeys Mo Problems | 1,014 | 4.46% | 0h 04m 55s | 56 |
 
 ## Circumnavigating the Globe like Magellan
 
@@ -68,18 +71,18 @@ Will we mutiny as well?
 <img src="img/rowing/Circumnavigating_the_Globe_like_Magellan.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
 **Dates:** 2026-04-17 -- Present
 
-**Meters rowed:** 166,858
+**Meters rowed:** 178,872
 
 **Total meters:** 56,478,072.1
 
-**Completion Percentage:** 0.3%
+**Completion Percentage:** 0.32%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Ham the Ast-row Chimp | 83,772 | 0.15% | 8h 13m 07s | 4,587 |
-| Jim Chimpsky | 58,185 | 0.1% | 6h 32m 15s | 2,855 |
+| Ham the Ast-row Chimp | 88,772 | 0.16% | 8h 37m 24s | 4,867 |
+| Jim Chimpsky | 64,185 | 0.11% | 7h 07m 11s | 3,165 |
 | Oar-angutan | 18,343 | 0.03% | 1h 50m 41s | 929 |
-| Mo Monkeys Mo Problems | 6,558 | 0.01% | 0h 35m 11s | 340 |
+| Mo Monkeys Mo Problems | 7,572 | 0.01% | 0h 40m 06s | 396 |
 
 # Archive
 
