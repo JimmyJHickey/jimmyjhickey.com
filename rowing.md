@@ -48,7 +48,8 @@ Just some apes in boats.
 
 Also known as Te Moana-o-Raukawa, which is probably better than naming it after a colonizer.
 
-<img src="img/rowing/Rowing_the_Cook_Strait.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
+<iframe src="img/rowing/Rowing_the_Cook_Strait.html" style="display:block; width:100%; max-width:800px; height:520px; border:none; border-radius:10px; margin:20px auto;" loading="lazy" title="Rowing the Cook Strait map"></iframe>
+
 **Dates:** 2026-05-12 -- Present
 
 **Meters rowed:** 22,130
@@ -68,7 +69,8 @@ Also known as Te Moana-o-Raukawa, which is probably better than naming it after 
 
 Will we mutiny as well?
 
-<img src="img/rowing/Circumnavigating_the_Globe_like_Magellan.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
+<iframe src="img/rowing/Circumnavigating_the_Globe_like_Magellan.html" style="display:block; width:100%; max-width:800px; height:520px; border:none; border-radius:10px; margin:20px auto;" loading="lazy" title="Circumnavigating the Globe like Magellan map"></iframe>
+
 **Dates:** 2026-04-17 -- Present
 
 **Meters rowed:** 183,893
