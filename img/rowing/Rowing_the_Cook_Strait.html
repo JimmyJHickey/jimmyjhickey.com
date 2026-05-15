@@ -686,9 +686,9 @@ svg.leaflet-image-layer.leaflet-interactive path {
   </script>
   <script>
     const fullSegs = [[[-41.199, 174.365], [-41.24, 174.49], [-41.278, 174.615]]];
-    const progSegs = [[[-41.199, 174.365], [-41.276013114078786, 174.60846419104865]]];
+    const progSegs = [[[-41.199, 174.365], [-41.278, 174.615]]];
     const fullFlat = [[-41.199, 174.365], [-41.24, 174.49], [-41.278, 174.615]];
-    const boatLatLng = [-41.276013114078786, 174.60846419104865];
+    const boatLatLng = [-41.278, 174.615];
 
     const map = L.map('map');
 
@@ -723,7 +723,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
     L.marker(boatLatLng, { icon: rowerIcon })
       .addTo(map)
-      .bindPopup(`<b>Current Position</b><br/>22,130&nbsp;m rowed<br/>97.39% complete<br/>Time: 2h 02m 03s<br/>Calories: 1,172`)
+      .bindPopup(`<b>Current Position</b><br/>29,148&nbsp;m rowed<br/>100.0% complete<br/>Time: 2h 47m 06s<br/>Calories: 1,528`)
       .openPopup();
 
     // Start & finish markers
