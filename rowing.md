@@ -44,13 +44,73 @@ title: Rowing
 
 Just some apes in boats.
 
+## Rowing the Molokaʻi Channel
+
+The sharks and man-of-war jellyfish won't impede us.
+
+<iframe src="img/rowing/Rowing_the_Molokaʻi_Channel.html" style="display:block; width:100%; max-width:800px; height:520px; border:none; border-radius:10px; margin:20px auto;" loading="lazy" title="Rowing the Molokaʻi Channel map"></iframe>
+
+**Dates:** 2026-05-16 -- Present
+
+**Meters rowed:** 6,000
+
+**Total meters:** 44,131.5
+
+**Completion Percentage:** 13.6%
+
+| Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
+| :--- | :--- | :--- | :--- | :--- |
+| Jim Chimpsky | 6,000 | 13.6% | 0h 35m 45s | 311 |
+
+## Circumnavigating the Globe like Magellan
+
+Will we mutiny as well?
+
+<iframe src="img/rowing/Circumnavigating_the_Globe_like_Magellan.html" style="display:block; width:100%; max-width:800px; height:520px; border:none; border-radius:10px; margin:20px auto;" loading="lazy" title="Circumnavigating the Globe like Magellan map"></iframe>
+
+**Dates:** 2026-04-17 -- Present
+
+**Meters rowed:** 209,040
+
+**Total meters:** 56,478,072.1
+
+**Completion Percentage:** 0.37%
+
+| Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
+| :--- | :--- | :--- | :--- | :--- |
+| Ham the Ast-row Chimp | 93,835 | 0.17% | 9h 12m 32s | 5,132 |
+| Jim Chimpsky | 81,206 | 0.14% | 8h 50m 43s | 4,045 |
+| Oar-angutan | 25,409 | 0.04% | 2h 30m 52s | 1,292 |
+| Mo Monkeys Mo Problems | 8,590 | 0.02% | 0h 45m 13s | 450 |
+
+
+
+
+
+
+
+
+
+
+
+# Archive
+
+
+
+
+
+
+
+
+
+
 ## Rowing the Cook Strait
 
 Also known as Te Moana-o-Raukawa, which is probably better than naming it after a colonizer.
 
-<iframe src="img/rowing/Rowing_the_Cook_Strait.html" style="display:block; width:100%; max-width:800px; height:520px; border:none; border-radius:10px; margin:20px auto;" loading="lazy" title="Rowing the Cook Strait map"></iframe>
+<img src="img/rowing/Rowing_the_Cook_Strait.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
 
-**Dates:** 2026-05-12 -- Present
+**Dates:** 2026-05-12 -- 2026-05-15
 
 **Meters rowed:** 41,277
 
@@ -64,30 +124,6 @@ Also known as Te Moana-o-Raukawa, which is probably better than naming it after 
 | Oar-angutan | 12,161 | 53.52% | 1h 10m 16s | 622 |
 | Ham the Ast-row Chimp | 10,063 | 44.29% | 0h 59m 24s | 545 |
 | Mo Monkeys Mo Problems | 2,032 | 8.94% | 0h 10m 02s | 110 |
-
-## Circumnavigating the Globe like Magellan
-
-Will we mutiny as well?
-
-<iframe src="img/rowing/Circumnavigating_the_Globe_like_Magellan.html" style="display:block; width:100%; max-width:800px; height:520px; border:none; border-radius:10px; margin:20px auto;" loading="lazy" title="Circumnavigating the Globe like Magellan map"></iframe>
-
-**Dates:** 2026-04-17 -- Present
-
-**Meters rowed:** 203,040
-
-**Total meters:** 56,478,072.1
-
-**Completion Percentage:** 0.36%
-
-| Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
-| :--- | :--- | :--- | :--- | :--- |
-| Ham the Ast-row Chimp | 93,835 | 0.17% | 9h 12m 32s | 5,132 |
-| Jim Chimpsky | 75,206 | 0.13% | 8h 14m 58s | 3,734 |
-| Oar-angutan | 25,409 | 0.04% | 2h 30m 52s | 1,292 |
-| Mo Monkeys Mo Problems | 8,590 | 0.02% | 0h 45m 13s | 450 |
-
-# Archive
-
 
 ## Rowing the North Channel
 
