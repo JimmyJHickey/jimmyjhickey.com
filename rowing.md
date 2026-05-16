@@ -52,7 +52,7 @@ Also known as Te Moana-o-Raukawa, which is probably better than naming it after 
 
 **Dates:** 2026-05-12 -- Present
 
-**Meters rowed:** 36,214
+**Meters rowed:** 41,277
 
 **Total meters:** 22,722.0
 
@@ -62,7 +62,7 @@ Also known as Te Moana-o-Raukawa, which is probably better than naming it after 
 | :--- | :--- | :--- | :--- | :--- |
 | Jim Chimpsky | 17,021 | 74.91% | 1h 42m 42s | 879 |
 | Oar-angutan | 12,161 | 53.52% | 1h 10m 16s | 622 |
-| Ham the Ast-row Chimp | 5,000 | 22.01% | 0h 24m 16s | 280 |
+| Ham the Ast-row Chimp | 10,063 | 44.29% | 0h 59m 24s | 545 |
 | Mo Monkeys Mo Problems | 2,032 | 8.94% | 0h 10m 02s | 110 |
 
 ## Circumnavigating the Globe like Magellan
@@ -73,15 +73,15 @@ Will we mutiny as well?
 
 **Dates:** 2026-04-17 -- Present
 
-**Meters rowed:** 197,977
+**Meters rowed:** 203,040
 
 **Total meters:** 56,478,072.1
 
-**Completion Percentage:** 0.35%
+**Completion Percentage:** 0.36%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Ham the Ast-row Chimp | 88,772 | 0.16% | 8h 37m 24s | 4,867 |
+| Ham the Ast-row Chimp | 93,835 | 0.17% | 9h 12m 32s | 5,132 |
 | Jim Chimpsky | 75,206 | 0.13% | 8h 14m 58s | 3,734 |
 | Oar-angutan | 25,409 | 0.04% | 2h 30m 52s | 1,292 |
 | Mo Monkeys Mo Problems | 8,590 | 0.02% | 0h 45m 13s | 450 |
