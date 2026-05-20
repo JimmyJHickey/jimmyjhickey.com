@@ -52,16 +52,16 @@ The sharks and man-of-war jellyfish won't impede us.
 
 **Dates:** 2026-05-16 -- Present
 
-**Meters rowed:** 27,551
+**Meters rowed:** 32,551
 
 **Total meters:** 44,131.5
 
-**Completion Percentage:** 62.43%
+**Completion Percentage:** 73.76%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
+| Ham the Ast-row Chimp | 15,050 | 34.1% | 1h 23m 56s | 825 |
 | Jim Chimpsky | 12,018 | 27.23% | 1h 16m 38s | 615 |
-| Ham the Ast-row Chimp | 10,050 | 22.77% | 0h 57m 39s | 549 |
 | Oar-angutan | 5,483 | 12.42% | 0h 30m 06s | 285 |
 
 ## Circumnavigating the Globe like Magellan
@@ -72,15 +72,15 @@ Will we mutiny as well?
 
 **Dates:** 2026-04-17 -- Present
 
-**Meters rowed:** 230,591
+**Meters rowed:** 235,591
 
 **Total meters:** 56,478,072.1
 
-**Completion Percentage:** 0.41%
+**Completion Percentage:** 0.42%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Ham the Ast-row Chimp | 103,885 | 0.18% | 10h 10m 11s | 5,681 |
+| Ham the Ast-row Chimp | 108,885 | 0.19% | 10h 36m 29s | 5,957 |
 | Jim Chimpsky | 87,224 | 0.15% | 9h 31m 36s | 4,349 |
 | Oar-angutan | 30,892 | 0.05% | 3h 00m 58s | 1,577 |
 | Mo Monkeys Mo Problems | 8,590 | 0.02% | 0h 45m 13s | 450 |
