@@ -675,7 +675,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 </head>
 <body>
   <div id="map"></div>
-
+ 
   <script>
 /* @preserve
  * Leaflet 1.9.4, a JS library for interactive maps. https://leafletjs.com
@@ -686,17 +686,17 @@ svg.leaflet-image-layer.leaflet-interactive path {
   </script>
   <script>
     const fullSegs = [[[21.102676, -157.309509], [21.155, -157.35], [21.205, -157.45], [21.255, -157.56], [21.28, -157.64], [21.284, -157.676]]];
-    const progSegs = [[[21.102676, -157.309509], [21.27500679281004, -157.62402173699212]]];
+    const progSegs = [[[21.102676, -157.309509], [21.155, -157.35], [21.205, -157.45], [21.255, -157.56], [21.2748055711691, -157.6233778277411]]];
     const fullFlat = [[21.102676, -157.309509], [21.155, -157.35], [21.205, -157.45], [21.255, -157.56], [21.28, -157.64], [21.284, -157.676]];
-    const boatLatLng = [21.27500679281004, -157.62402173699212];
-
+    const boatLatLng = [21.2748055711691, -157.6233778277411];
+ 
     const map = L.map('map');
-
+ 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       maxZoom: 19,
     }).addTo(map);
-
+ 
     // Full route ghost
     fullSegs.forEach((seg, i) => {
       if (seg.length > 1) {
@@ -705,7 +705,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
         }).addTo(map).bindTooltip(i === 0 ? 'Full route' : '');
       }
     });
-
+ 
     // Progress line
     progSegs.forEach((seg, i) => {
       if (seg.length > 1) {
@@ -714,29 +714,29 @@ svg.leaflet-image-layer.leaflet-interactive path {
         }).addTo(map).bindTooltip(i === 0 ? 'Distance rowed so far' : '');
       }
     });
-
+ 
     // Rowing emoji marker
     const rowerIcon = L.divIcon({
       html: '<span style="font-size:24px;line-height:1;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5));">🚣</span>',
       iconSize: [28, 28], iconAnchor: [14, 14], className: '',
     });
-
+ 
     L.marker(boatLatLng, { icon: rowerIcon })
       .addTo(map)
       .bindPopup(`<b>Current Position</b><br/>38,551&nbsp;m rowed<br/>87.35% complete<br/>Time: 3h 50m 35s<br/>Calories: 2,028`)
       .openPopup();
-
+ 
     // Start & finish markers
     if (fullFlat.length > 0) {
       L.circleMarker(fullFlat[0], {
         radius: 7, color: '#2a9d8f', fillColor: '#2a9d8f', fillOpacity: 1,
       }).addTo(map).bindTooltip('Start');
-
+ 
       L.circleMarker(fullFlat[fullFlat.length - 1], {
         radius: 7, color: '#e76f51', fillColor: '#e76f51', fillOpacity: 1,
       }).addTo(map).bindTooltip('Finish');
     }
-
+ 
     // Auto-fit — use the flat list so bounds are calculated correctly
     if (fullFlat.length > 1) {
       map.fitBounds(L.polyline(fullFlat).getBounds(), { padding: [40, 40] });
