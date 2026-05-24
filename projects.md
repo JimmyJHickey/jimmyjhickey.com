@@ -16,7 +16,7 @@ Here's a big list of the programming projects I've worked on. You can click on t
 ## [EM For Transmission Tomography](https://github.com/JimmyJHickey/EM-for-Transmission-Tomography)
 <img src="img/portfolio_img/EM.png" width="400" />
 
-I worked on this project with [Eric Yanchenko](http://www.ericyanchenko.com/) and [Alvin Sheng](https://www.linkedin.com/in/alvin-sheng-b06351110?original_referer=https%3A%2F%2Fwww.google.com%2F). We demonstarte the finite sample properties of the EM algorithm applied to simulated transmission tomography slides. We show how the number of projection angles affects the ability of the algorithm to recover the scan. You can read our <a href="/files/EM.pdf" target="_blank">report here</a> 
+I worked on this project with [Eric Yanchenko](http://www.ericyanchenko.com/) and [Alvin Sheng](https://www.linkedin.com/in/alvin-sheng-b06351110?original_referer=https%3A%2F%2Fwww.google.com%2F). We demonstrate the finite sample properties of the EM algorithm applied to simulated transmission tomography slides. We show how the number of projection angles affects the ability of the algorithm to recover the scan. You can read our <a href="/files/EM.pdf" target="_blank">report here</a> 
 
 ## [Gradient Descent Blog Post](https://jimmyjhickey.shinyapps.io/gradient_descent/)
 <img src="img/portfolio_img/gradient_descent.jpg" width="400" />
