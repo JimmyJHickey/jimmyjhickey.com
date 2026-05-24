@@ -44,25 +44,24 @@ title: Rowing
 
 Just some apes in boats.
 
-## Rowing the Molokaʻi Channel
+## Rowing the Catalina Channel
 
-The sharks and man-of-war jellyfish won't impede us.
+You already know what Wine Mixer occurs here.
 
-<iframe src="img/rowing/Rowing_the_Molokaʻi_Channel.html" style="display:block; width:100%; max-width:800px; height:520px; border:none; border-radius:10px; margin:20px auto;" loading="lazy" title="Rowing the Molokaʻi Channel map"></iframe>
+<iframe src="img/rowing/Rowing_the_Catalina_Channel.html" style="display:block; width:100%; max-width:800px; height:520px; border:none; border-radius:10px; margin:20px auto;" loading="lazy" title="Rowing the Catalina Channel map"></iframe>
 
-**Dates:** 2026-05-16 -- Present
+**Dates:** 2026-05-24 -- Present
 
-**Meters rowed:** 60,551
+**Meters rowed:** 11,000
 
-**Total meters:** 44,131.5
+**Total meters:** 31,796.4
 
-**Completion Percentage:** 100.0%
+**Completion Percentage:** 34.6%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Jim Chimpsky | 30,018 | 68.02% | 3h 08m 16s | 1,535 |
-| Ham the Ast-row Chimp | 25,050 | 56.76% | 2h 14m 55s | 1,371 |
-| Oar-angutan | 5,483 | 12.42% | 0h 30m 06s | 285 |
+| Jim Chimpsky | 6,000 | 18.87% | 0h 37m 26s | 306 |
+| Ham the Ast-row Chimp | 5,000 | 15.73% | 0h 26m 16s | 269 |
 
 ## Circumnavigating the Globe like Magellan
 
@@ -100,6 +99,27 @@ Will we mutiny as well?
 
 
 
+
+
+## Rowing the Molokaʻi Channel
+
+The sharks and man-of-war jellyfish won't impede us.
+
+<iframe src="img/rowing/Rowing_the_Molokaʻi_Channel.html" style="display:block; width:100%; max-width:800px; height:520px; border:none; border-radius:10px; margin:20px auto;" loading="lazy" title="Rowing the Molokaʻi Channel map"></iframe>
+
+**Dates:** 2026-05-16 -- 2026-05-23
+
+**Meters rowed:** 49,551
+
+**Total meters:** 44,131.5
+
+**Completion Percentage:** 100.0%
+
+| Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
+| :--- | :--- | :--- | :--- | :--- |
+| Jim Chimpsky | 24,018 | 54.42% | 2h 30m 50s | 1,229 |
+| Ham the Ast-row Chimp | 20,050 | 45.43% | 1h 48m 38s | 1,102 |
+| Oar-angutan | 5,483 | 12.42% | 0h 30m 06s | 285 |
 
 
 
