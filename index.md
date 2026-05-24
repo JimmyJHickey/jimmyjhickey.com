@@ -3,9 +3,9 @@ layout: page
 title: Home
 ---
 
-Hi, I'm Jimmy Hickey. I received my PhD in Statistics at North Carolina State University. My research focuses on developing new methods in transfer learning and time-to-event machine learning. You can view my <a href="/files/Jimmy_Hickey_Resume.pdf" target="_blank">resume here</a> here or even my whole dang <a href="/files/Jimmy_Hickey_CV.pdf" target="_blank">CV here</a>.
+Hi, I'm Jimmy Hickey. I am currently a machine learning engineer. I received my PhD in Statistics at North Carolina State University. My research focuses on developing new methods in transfer learning and time-to-event machine learning. You can view my <a href="/files/Jimmy_Hickey_Resume.pdf" target="_blank">resume here</a> here or even my whole dang <a href="/files/Jimmy_Hickey_CV.pdf" target="_blank">CV here</a>.
 You can see some of my programming misadventures in the [projects section](projects) and in the [posts section](posts/post_archive) you will mostly see my old homework solutions (let me know if you find any typos!). 
-
+You can also track my [rowing team's progress here](rowing) as we adventure around the world.
 
 ## Publications
 1. **J Hickey**, J P Williams, B J Reich, E C Hector (2026). Multivariate and Online Transfer Learning with Uncertainty Quantification. _Statistics in Medicine_ [[manuscript]](https://onlinelibrary.wiley.com/doi/10.1002/sim.70398)
@@ -31,7 +31,7 @@ You can see some of my programming misadventures in the [projects section](proje
 
 ## My more politically charged opinions
 * 0 based indexing > 1 based indexing
-* Dark theme > Light theme
+* Dark theme > Light theme (present website not included, of course)
 * Oxford comma > No Oxford comma
 * 0.5mm pencils > 0.9mm pencils
-* $E(X)^2$ is super ambiguous. Is it $E(X^2)$ or $[E(X)]^2$?! Looking at you, Casella and Berger.
+* $E(X)^2$ is confusing and ambiguous. Is it $E(X^2)$ or $[E(X)]^2$?! Looking at you, Casella and Berger.
