@@ -105,8 +105,7 @@ Will we mutiny as well?
 
 The sharks and man-of-war jellyfish won't impede us.
 
-<iframe src="img/rowing/Rowing_the_Molokaʻi_Channel.html" style="display:block; width:100%; max-width:800px; height:520px; border:none; border-radius:10px; margin:20px auto;" loading="lazy" title="Rowing the Molokaʻi Channel map"></iframe>
-
+<img src="img/rowing/Rowing_the_Molokai_Channel.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
 **Dates:** 2026-05-16 -- 2026-05-23
 
 **Meters rowed:** 49,551
