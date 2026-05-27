@@ -52,7 +52,7 @@ You already know what Wine Mixer occurs here.
 
 **Dates:** 2026-05-24 -- Present
 
-**Meters rowed:** 32,805
+**Meters rowed:** 38,701
 
 **Total meters:** 31,796.4
 
@@ -62,7 +62,7 @@ You already know what Wine Mixer occurs here.
 | :--- | :--- | :--- | :--- | :--- |
 | Ham the Ast-row Chimp | 15,073 | 47.4% | 1h 25m 49s | 812 |
 | Jim Chimpsky | 12,000 | 37.74% | 1h 13m 04s | 613 |
-| Oar-angutan | 5,732 | 18.03% | 0h 30m 05s | 305 |
+| Oar-angutan | 11,628 | 36.57% | 1h 00m 15s | 623 |
 
 ## Circumnavigating the Globe like Magellan
 
@@ -72,17 +72,17 @@ Will we mutiny as well?
 
 **Dates:** 2026-04-17 -- Present
 
-**Meters rowed:** 285,396
+**Meters rowed:** 291,292
 
 **Total meters:** 56,478,072.1
 
-**Completion Percentage:** 0.51%
+**Completion Percentage:** 0.52%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
 | Ham the Ast-row Chimp | 128,958 | 0.23% | 12h 27m 00s | 7,046 |
 | Jim Chimpsky | 111,224 | 0.2% | 11h 58m 52s | 5,576 |
-| Oar-angutan | 36,624 | 0.06% | 3h 31m 03s | 1,882 |
+| Oar-angutan | 42,520 | 0.08% | 4h 01m 13s | 2,200 |
 | Mo Monkeys Mo Problems | 8,590 | 0.02% | 0h 45m 13s | 450 |
 
 
