@@ -44,25 +44,24 @@ title: Rowing
 
 Just some apes in boats.
 
-## Rowing the Catalina Channel
+## Rowing the Tsugaru Strait
 
-You already know what Wine Mixer occurs here.
+It looks like there's a train that goes across the water anyway...
 
-<iframe src="img/rowing/Rowing_the_Catalina_Channel.html" style="display:block; width:100%; max-width:800px; height:520px; border:none; border-radius:10px; margin:20px auto;" loading="lazy" title="Rowing the Catalina Channel map"></iframe>
+<iframe src="img/rowing/Rowing_the_Tsugaru_Strait.html" style="display:block; width:100%; max-width:800px; height:520px; border:none; border-radius:10px; margin:20px auto;" loading="lazy" title="Rowing the Tsugaru Strait map"></iframe>
 
-**Dates:** 2026-05-24 -- Present
+**Dates:** 2026-05-27 -- Present
 
-**Meters rowed:** 38,701
+**Meters rowed:** 11,896
 
-**Total meters:** 31,796.4
+**Total meters:** 19,452.1
 
-**Completion Percentage:** 100.0%
+**Completion Percentage:** 61.16%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Ham the Ast-row Chimp | 15,073 | 47.4% | 1h 25m 49s | 812 |
-| Jim Chimpsky | 12,000 | 37.74% | 1h 13m 04s | 613 |
-| Oar-angutan | 11,628 | 36.57% | 1h 00m 15s | 623 |
+| Jim Chimpsky | 6,000 | 30.84% | 0h 39m 42s | 301 |
+| Oar-angutan | 5,896 | 30.31% | 0h 30m 10s | 318 |
 
 ## Circumnavigating the Globe like Magellan
 
@@ -72,16 +71,16 @@ Will we mutiny as well?
 
 **Dates:** 2026-04-17 -- Present
 
-**Meters rowed:** 291,292
+**Meters rowed:** 297,292
 
 **Total meters:** 56,478,072.1
 
-**Completion Percentage:** 0.52%
+**Completion Percentage:** 0.53%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
 | Ham the Ast-row Chimp | 128,958 | 0.23% | 12h 27m 00s | 7,046 |
-| Jim Chimpsky | 111,224 | 0.2% | 11h 58m 52s | 5,576 |
+| Jim Chimpsky | 117,224 | 0.21% | 12h 38m 35s | 5,877 |
 | Oar-angutan | 42,520 | 0.08% | 4h 01m 13s | 2,200 |
 | Mo Monkeys Mo Problems | 8,590 | 0.02% | 0h 45m 13s | 450 |
 
@@ -99,7 +98,25 @@ Will we mutiny as well?
 
 
 
+## Rowing the Catalina Channel
 
+You already know what Wine Mixer occurs here.
+
+<img src="img/rowing/Rowing_The_Catalina_Channel.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
+
+**Dates:** 2026-05-24 -- 2026-05-26
+
+**Meters rowed:** 32,805
+
+**Total meters:** 31,796.4
+
+**Completion Percentage:** 100.0%
+
+| Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
+| :--- | :--- | :--- | :--- | :--- |
+| Ham the Ast-row Chimp | 15,073 | 47.4% | 1h 25m 49s | 812 |
+| Jim Chimpsky | 12,000 | 37.74% | 1h 13m 04s | 613 |
+| Oar-angutan | 5,732 | 18.03% | 0h 30m 05s | 305 |
 
 
 ## Rowing the Molokaʻi Channel
