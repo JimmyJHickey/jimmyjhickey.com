@@ -50,19 +50,17 @@ Just some apes in boats.
 
 <iframe src="img/rowing/Rowing_the_Strait_of_Gibraltar.html" style="display:block; width:100%; max-width:800px; height:520px; border:none; border-radius:10px; margin:20px auto;" loading="lazy" title="Rowing the Strait of Gibraltar map"></iframe>
 
-**Dates:** 2026-05-27 -- Present
+**Dates:** 2026-05-29 -- Present
 
-**Meters rowed:** 33,928
+**Meters rowed:** 6,000
 
 **Total meters:** 15,341.6
 
-**Completion Percentage:** 100.0%
+**Completion Percentage:** 39.11%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Jim Chimpsky | 18,000 | 100.0% | 1h 58m 13s | 907 |
-| Ham the Ast-row Chimp | 10,032 | 65.39% | 0h 52m 57s | 556 |
-| Oar-angutan | 5,896 | 38.43% | 0h 30m 10s | 318 |
+| Jim Chimpsky | 6,000 | 39.11% | 0h 37m 00s | 304 |
 
 ## Circumnavigating the Globe like Magellan
 
