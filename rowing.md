@@ -52,7 +52,7 @@ It looks like there's a train that goes across the water anyway...
 
 **Dates:** 2026-05-27 -- Present
 
-**Meters rowed:** 22,896
+**Meters rowed:** 27,928
 
 **Total meters:** 19,452.1
 
@@ -61,8 +61,8 @@ It looks like there's a train that goes across the water anyway...
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
 | Jim Chimpsky | 12,000 | 61.69% | 1h 21m 12s | 603 |
+| Ham the Ast-row Chimp | 10,032 | 51.57% | 0h 52m 57s | 556 |
 | Oar-angutan | 5,896 | 30.31% | 0h 30m 10s | 318 |
-| Ham the Ast-row Chimp | 5,000 | 25.7% | 0h 24m 40s | 277 |
 
 ## Circumnavigating the Globe like Magellan
 
@@ -72,7 +72,7 @@ Will we mutiny as well?
 
 **Dates:** 2026-04-17 -- Present
 
-**Meters rowed:** 308,292
+**Meters rowed:** 313,324
 
 **Total meters:** 56,478,072.1
 
@@ -80,7 +80,7 @@ Will we mutiny as well?
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Ham the Ast-row Chimp | 133,958 | 0.24% | 12h 51m 40s | 7,323 |
+| Ham the Ast-row Chimp | 138,990 | 0.25% | 13h 19m 58s | 7,602 |
 | Jim Chimpsky | 123,224 | 0.22% | 13h 20m 05s | 6,179 |
 | Oar-angutan | 42,520 | 0.08% | 4h 01m 13s | 2,200 |
 | Mo Monkeys Mo Problems | 8,590 | 0.02% | 0h 45m 13s | 450 |
