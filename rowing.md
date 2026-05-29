@@ -44,25 +44,25 @@ title: Rowing
 
 Just some apes in boats.
 
-## Rowing the Tsugaru Strait
+## Rowing the Strait of Gibraltar
 
-It looks like there's a train that goes across the water anyway...
+"The Strait has been identified as an Important Bird Area."
 
-<iframe src="img/rowing/Rowing_the_Tsugaru_Strait.html" style="display:block; width:100%; max-width:800px; height:520px; border:none; border-radius:10px; margin:20px auto;" loading="lazy" title="Rowing the Tsugaru Strait map"></iframe>
+<iframe src="img/rowing/Rowing_the_Strait_of_Gibraltar.html" style="display:block; width:100%; max-width:800px; height:520px; border:none; border-radius:10px; margin:20px auto;" loading="lazy" title="Rowing the Strait of Gibraltar map"></iframe>
 
 **Dates:** 2026-05-27 -- Present
 
-**Meters rowed:** 27,928
+**Meters rowed:** 33,928
 
-**Total meters:** 19,452.1
+**Total meters:** 15,341.6
 
 **Completion Percentage:** 100.0%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Jim Chimpsky | 12,000 | 61.69% | 1h 21m 12s | 603 |
-| Ham the Ast-row Chimp | 10,032 | 51.57% | 0h 52m 57s | 556 |
-| Oar-angutan | 5,896 | 30.31% | 0h 30m 10s | 318 |
+| Jim Chimpsky | 18,000 | 100.0% | 1h 58m 13s | 907 |
+| Ham the Ast-row Chimp | 10,032 | 65.39% | 0h 52m 57s | 556 |
+| Oar-angutan | 5,896 | 38.43% | 0h 30m 10s | 318 |
 
 ## Circumnavigating the Globe like Magellan
 
@@ -72,16 +72,16 @@ Will we mutiny as well?
 
 **Dates:** 2026-04-17 -- Present
 
-**Meters rowed:** 313,324
+**Meters rowed:** 319,324
 
 **Total meters:** 56,478,072.1
 
-**Completion Percentage:** 0.55%
+**Completion Percentage:** 0.57%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
 | Ham the Ast-row Chimp | 138,990 | 0.25% | 13h 19m 58s | 7,602 |
-| Jim Chimpsky | 123,224 | 0.22% | 13h 20m 05s | 6,179 |
+| Jim Chimpsky | 129,224 | 0.23% | 13h 57m 05s | 6,483 |
 | Oar-angutan | 42,520 | 0.08% | 4h 01m 13s | 2,200 |
 | Mo Monkeys Mo Problems | 8,590 | 0.02% | 0h 45m 13s | 450 |
 
@@ -96,6 +96,28 @@ Will we mutiny as well?
 
 
 # Archive
+
+
+## Rowing the Tsugaru Strait
+
+It looks like there's a train that goes across the water anyway...
+
+<img src="img/rowing/Rowing_the_Tsugaru_Strait.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
+
+**Dates:** 2026-05-27 -- 2026-05-28
+
+**Meters rowed:** 27,928
+
+**Total meters:** 19,452.1
+
+**Completion Percentage:** 100.0%
+
+| Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
+| :--- | :--- | :--- | :--- | :--- |
+| Jim Chimpsky | 12,000 | 61.69% | 1h 21m 12s | 603 |
+| Ham the Ast-row Chimp | 10,032 | 51.57% | 0h 52m 57s | 556 |
+| Oar-angutan | 5,896 | 30.31% | 0h 30m 10s | 318 |
+
 
 
 

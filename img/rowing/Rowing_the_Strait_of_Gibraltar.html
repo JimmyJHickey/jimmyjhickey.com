@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Circumnavigating the Globe like Magellan</title>
+  <title>Rowing the Strait of Gibraltar</title>
   <style>
 /* required styles */
 
@@ -685,10 +685,10 @@ svg.leaflet-image-layer.leaflet-interactive path {
 //# sourceMappingURL=leaflet.js.map
   </script>
   <script>
-    const fullSegs = [[[36.78, -6.35], [32.0, -14.0], [28.11, -15.41], [15.0, -25.0], [0.0, -10.0], [-22.9, -43.2], [-34.9, -56.16], [-49.3, -67.7], [-52.4, -68.2], [-53.5, -71.0], [-52.5, -75.0], [-30.0, -100.0], [-15.0, -140.0], [0.11760797342192753, -180]], [[0.11760797342192753, 180], [13.44, 144.75], [11.0, 125.6], [10.31, 123.9], [7.0, 121.0], [0.64, 127.39], [-15.0, 115.0], [-30.0, 80.0], [-34.35, 18.42], [-10.0, 5.0], [15.0, -20.0], [28.0, -18.0], [37.0, -9.0], [36.78, -6.35]]];
-    const progSegs = [[[36.78, -6.35], [35.04631930450765, -9.12461450220011]]];
-    const fullFlat = [[36.78, -6.35], [32.0, -14.0], [28.11, -15.41], [15.0, -25.0], [0.0, -10.0], [-22.9, -43.2], [-34.9, -56.16], [-49.3, -67.7], [-52.4, -68.2], [-53.5, -71.0], [-52.5, -75.0], [-30.0, -100.0], [-15.0, -140.0], [13.44, 144.75], [11.0, 125.6], [10.31, 123.9], [7.0, 121.0], [0.64, 127.39], [-15.0, 115.0], [-30.0, 80.0], [-34.35, 18.42], [-10.0, 5.0], [15.0, -20.0], [28.0, -18.0], [37.0, -9.0], [36.78, -6.35]];
-    const boatLatLng = [35.04631930450765, -9.12461450220011];
+    const fullSegs = [[[36.000133, -5.610091], [35.908475, -5.482772]]];
+    const progSegs = [[[36.000133, -5.610091], [35.908475, -5.482772]]];
+    const fullFlat = [[36.000133, -5.610091], [35.908475, -5.482772]];
+    const boatLatLng = [35.908475, -5.482772];
  
     const map = L.map('map');
  
@@ -723,7 +723,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
  
     L.marker(boatLatLng, { icon: rowerIcon })
       .addTo(map)
-      .bindPopup(`<b>Current Position</b><br/>319,324&nbsp;m rowed<br/>0.57% complete<br/>Time: 32h 03m 30s<br/>Calories: 16,735`)
+      .bindPopup(`<b>Current Position</b><br/>33,928&nbsp;m rowed<br/>100.0% complete<br/>Time: 3h 21m 20s<br/>Calories: 1,781`)
       .openPopup();
  
     // Start & finish markers
@@ -741,7 +741,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
     if (fullFlat.length > 1) {
       map.fitBounds(L.polyline(fullFlat).getBounds(), { padding: [40, 40] });
     } else {
-      map.setView([13.44, 144.75], 2);
+      map.setView([35.908475, -5.482772], 5);
     }
   </script>
 </body>
