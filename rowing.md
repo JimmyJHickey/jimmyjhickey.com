@@ -52,7 +52,7 @@ Just some apes in boats.
 
 **Dates:** 2026-05-29 -- Present
 
-**Meters rowed:** 17,000
+**Meters rowed:** 21,076
 
 **Total meters:** 15,341.6
 
@@ -61,7 +61,7 @@ Just some apes in boats.
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
 | Jim Chimpsky | 12,000 | 78.22% | 1h 16m 07s | 606 |
-| Ham the Ast-row Chimp | 5,000 | 32.59% | 0h 25m 40s | 270 |
+| Ham the Ast-row Chimp | 9,076 | 59.16% | 0h 52m 44s | 493 |
 
 ## Circumnavigating the Globe like Magellan
 
@@ -71,15 +71,15 @@ Will we mutiny as well?
 
 **Dates:** 2026-04-17 -- Present
 
-**Meters rowed:** 330,324
+**Meters rowed:** 334,400
 
 **Total meters:** 56,478,072.1
 
-**Completion Percentage:** 0.58%
+**Completion Percentage:** 0.59%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Ham the Ast-row Chimp | 143,990 | 0.25% | 13h 45m 39s | 7,872 |
+| Ham the Ast-row Chimp | 148,066 | 0.26% | 14h 12m 42s | 8,095 |
 | Jim Chimpsky | 135,224 | 0.24% | 14h 36m 12s | 6,785 |
 | Oar-angutan | 42,520 | 0.08% | 4h 01m 13s | 2,200 |
 | Mo Monkeys Mo Problems | 8,590 | 0.02% | 0h 45m 13s | 450 |
