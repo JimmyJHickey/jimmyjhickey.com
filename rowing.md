@@ -44,24 +44,23 @@ title: Rowing
 
 Just some apes in boats.
 
-## Rowing the Strait of Gibraltar
+## Following the Kon-Tiki Expedition
 
-"The Strait has been identified as an Important Bird Area."
+On the finest balsa wood raft that kroner can buy.
 
-<iframe src="img/rowing/Rowing_the_Strait_of_Gibraltar.html" style="display:block; width:100%; max-width:800px; height:520px; border:none; border-radius:10px; margin:20px auto;" loading="lazy" title="Rowing the Strait of Gibraltar map"></iframe>
+<iframe src="img/rowing/Following_the_Kon-Tiki_Expedition.html" style="display:block; width:100%; max-width:800px; height:520px; border:none; border-radius:10px; margin:20px auto;" loading="lazy" title="Following the Kon-Tiki Expedition map"></iframe>
 
-**Dates:** 2026-05-29 -- Present
+**Dates:** 2026-06-02 -- Present
 
-**Meters rowed:** 27,076
+**Meters rowed:** 6,000
 
-**Total meters:** 15,341.6
+**Total meters:** 7,379,614.3
 
-**Completion Percentage:** 100.0%
+**Completion Percentage:** 0.08%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Jim Chimpsky | 18,000 | 100.0% | 1h 54m 56s | 909 |
-| Ham the Ast-row Chimp | 9,076 | 59.16% | 0h 52m 44s | 493 |
+| Jim Chimpsky | 6,000 | 0.08% | 0h 38m 49s | 303 |
 
 ## Circumnavigating the Globe like Magellan
 
@@ -95,6 +94,29 @@ Will we mutiny as well?
 
 
 # Archive
+
+
+
+## Rowing the Strait of Gibraltar
+
+"The Strait has been identified as an Important Bird Area."
+
+<img src="img/rowing/Rowing_the_Strait_of_Gibraltar.png" style="display: block; width: 80%; max-width: 800px; margin: 20px auto; height: auto;" />
+
+**Dates:** 2026-05-29 -- 2026-05-31
+
+**Meters rowed:** 21,076
+
+**Total meters:** 15,341.6
+
+**Completion Percentage:** 100.0%
+
+| Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
+| :--- | :--- | :--- | :--- | :--- |
+| Jim Chimpsky | 12,000 | 78.22% | 1h 16m 07s | 606 |
+| Ham the Ast-row Chimp | 9,076 | 59.16% | 0h 52m 44s | 493 |
+
+
 
 
 ## Rowing the Tsugaru Strait

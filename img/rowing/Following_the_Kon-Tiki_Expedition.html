@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rowing the Catalina Channel</title>
+  <title>Following the Kon-Tiki Expedition</title>
   <style>
 /* required styles */
 
@@ -685,10 +685,10 @@ svg.leaflet-image-layer.leaflet-interactive path {
 //# sourceMappingURL=leaflet.js.map
   </script>
   <script>
-    const fullSegs = [[[33.736259, -118.397899], [33.47276, -118.53284]]];
-    const progSegs = [[[33.736259, -118.397899], [33.47276, -118.53284]]];
-    const fullFlat = [[33.736259, -118.397899], [33.47276, -118.53284]];
-    const boatLatLng = [33.47276, -118.53284];
+    const fullSegs = [[[-12.0508, -77.1512], [-10.5, -85.0], [-7.2, -105.0], [-9.0, -125.0], [-13.5, -138.5], [-16.0274, -142.4372]]];
+    const progSegs = [[[-12.0508, -77.1512], [-12.040152767211524, -77.20508702650903]]];
+    const fullFlat = [[-12.0508, -77.1512], [-10.5, -85.0], [-7.2, -105.0], [-9.0, -125.0], [-13.5, -138.5], [-16.0274, -142.4372]];
+    const boatLatLng = [-12.040152767211524, -77.20508702650903];
  
     const map = L.map('map');
  
@@ -723,7 +723,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
  
     L.marker(boatLatLng, { icon: rowerIcon })
       .addTo(map)
-      .bindPopup(`<b>Current Position</b><br/>38,701&nbsp;m rowed<br/>100.0% complete<br/>Time: 3h 39m 09s<br/>Calories: 2,048`)
+      .bindPopup(`<b>Current Position</b><br/>6,000&nbsp;m rowed<br/>0.08% complete<br/>Time: 0h 38m 49s<br/>Calories: 303`)
       .openPopup();
  
     // Start & finish markers
@@ -741,7 +741,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
     if (fullFlat.length > 1) {
       map.fitBounds(L.polyline(fullFlat).getBounds(), { padding: [40, 40] });
     } else {
-      map.setView([33.47276, -118.53284], 5);
+      map.setView([-9.0, -125.0], 5);
     }
   </script>
 </body>
