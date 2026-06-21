@@ -52,15 +52,15 @@ On the finest balsa wood raft that kroner can buy.
 
 **Dates:** 2026-06-02 -- Present
 
-**Meters rowed:** 96,838
+**Meters rowed:** 101,694
 
 **Total meters:** 7,379,614.3
 
-**Completion Percentage:** 1.31%
+**Completion Percentage:** 1.38%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Ham the Ast-row Chimp | 40,802 | 0.55% | 3h 50m 41s | 2,205 |
+| Ham the Ast-row Chimp | 45,658 | 0.62% | 4h 20m 41s | 2,468 |
 | Jim Chimpsky | 30,000 | 0.41% | 3h 13m 14s | 1,521 |
 | Orangu-TingYu | 20,000 | 0.27% | 0h 46m 00s | 3,041 |
 | Oar-angutan | 6,036 | 0.08% | 0h 30m 08s | 330 |
@@ -73,15 +73,15 @@ Will we mutiny as well?
 
 **Dates:** 2026-04-17 -- Present
 
-**Meters rowed:** 431,238
+**Meters rowed:** 436,094
 
 **Total meters:** 56,478,072.1
 
-**Completion Percentage:** 0.76%
+**Completion Percentage:** 0.77%
 
 | Name | Meters Rowed | % of Total | Time Rowed | Calories Burned |
 | :--- | :--- | :--- | :--- | :--- |
-| Ham the Ast-row Chimp | 188,868 | 0.33% | 18h 03m 23s | 10,300 |
+| Ham the Ast-row Chimp | 193,724 | 0.34% | 18h 33m 23s | 10,563 |
 | Jim Chimpsky | 165,224 | 0.29% | 17h 49m 27s | 8,306 |
 | Oar-angutan | 48,556 | 0.09% | 4h 31m 21s | 2,530 |
 | Orangu-TingYu | 20,000 | 0.04% | 0h 46m 00s | 3,041 |
