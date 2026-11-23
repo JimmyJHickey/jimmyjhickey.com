@@ -40,13 +40,13 @@ title: Chess
 
 # Jimbo's All Level Chess Challenge 2026
 
-_Last updated: Nov 23, 2026 07:15 AM EST_
+_Last updated: Nov 23, 2026 07:17 AM EST_
 
 ## Highlights
 
 - **Total Elo gained (all players):** +0
-- **Best day:** JimmyJHickey gained **+0** on Nov 23, 2026
-- **Worst day:** JimmyJHickey lost **0** on Nov 23, 2026
+- **Best day:** JimmyJHickey gained **+0** on Nov 22, 2026
+- **Worst day:** JimmyJHickey lost **0** on Nov 22, 2026
 
 ## Standings
 
