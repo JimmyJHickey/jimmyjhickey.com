@@ -40,22 +40,22 @@ title: Chess
 
 # Jimbo's All Level Chess Challenge 2026
 
-_Last updated: Nov 24, 2026 02:00 AM EST_
+_Last updated: Nov 24, 2026 03:00 AM EST_
 
 ## Highlights
 
-- **Total Elo gained (all players):** -118
-- **Best day:** JimmyJHickey gained **+0** on Nov 22, 2026
+- **Total Elo gained (all players):** -103
+- **Best day:** RefriedSam gained **+15** on Nov 24, 2026
 - **Worst day:** lulunigel lost **-109** on Nov 23, 2026
 
 ## Standings
 
 | Rank | Name | Gain | Current Elo |
 |---:|:---|---:|---:|
-| ♔ 1 | RefriedSam | +0 | 940 |
-| ♔ 1 | NoDote | +0 | 1136 |
-| ♔ 1 | StarChar21 | +0 | 1051 |
-| ♔ 1 | Aopus | +0 | 1301 |
+| ♔ 1 | RefriedSam | +15 | 955 |
+| ♕ 2 | NoDote | +0 | 1136 |
+| ♕ 2 | StarChar21 | +0 | 1051 |
+| ♕ 2 | Aopus | +0 | 1301 |
 | ♘ 5 | JimmyJHickey | -3 | 1343 |
 | ♙ 6 | andypatrol | -6 | 1812 |
 | ♙ 7 | lulunigel | -109 | 1142 |
