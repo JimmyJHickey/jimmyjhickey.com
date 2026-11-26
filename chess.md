@@ -40,7 +40,7 @@ title: Chess
 
 # Jimbo's All Level Chess Challenge 2026
 
-_Last updated: Nov 26, 2026 05:00 AM EST_
+_Last updated: Nov 26, 2026 07:00 AM EST_
 
 ## Highlights
 
